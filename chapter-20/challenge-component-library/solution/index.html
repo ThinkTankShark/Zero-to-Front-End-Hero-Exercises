@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library - Complete Solution</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Component Library</h1>
+      <p class="header__subtitle">A complete, reusable CSS component system</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      
+      <!-- BUTTONS -->
+      <section class="section">
+        <h2 class="section__title">Buttons</h2>
+        <div class="component-demo">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--success">Success</button>
+          <button class="btn btn--danger">Danger</button>
+          <button class="btn btn--outline">Outline</button>
+        </div>
+        <div class="component-demo">
+          <button class="btn btn--primary btn--small">Small</button>
+          <button class="btn btn--primary">Default</button>
+          <button class="btn btn--primary btn--large">Large</button>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section class="section">
+        <h2 class="section__title">Cards</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card__header">
+              <img src="https://via.placeholder.com/300x200" alt="Card" class="card__image">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Card Title</h3>
+              <p class="card__text">This is a basic card component with image, title, and description.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--small">Read More</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__body">
+              <h3 class="card__title">Simple Card</h3>
+              <p class="card__text">A card without an image header.</p>
+            </div>
+          </div>
+
+          <div class="card card--highlight">
+            <div class="card__body">
+              <h3 class="card__title">Highlighted Card</h3>
+              <p class="card__text">This card has a highlighted variant style.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMS -->
+      <section class="section">
+        <h2 class="section__title">Form Elements</h2>
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label" for="name">Name</label>
+            <input type="text" id="name" class="form__input" placeholder="Enter your name">
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="email">Email</label>
+            <input type="email" id="email" class="form__input" placeholder="Enter your email">
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="country">Country</label>
+            <select id="country" class="form__select">
+              <option>Select a country</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="message">Message</label>
+            <textarea id="message" class="form__textarea" rows="4" placeholder="Enter your message"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Submit</button>
+        </form>
+      </section>
+
+      <!-- ALERTS -->
+      <section class="section">
+        <h2 class="section__title">Alerts</h2>
+        <div class="alert alert--success">
+          <strong class="alert__title">Success!</strong>
+          <p class="alert__message">Your operation completed successfully.</p>
+        </div>
+        <div class="alert alert--warning">
+          <strong class="alert__title">Warning!</strong>
+          <p class="alert__message">Please review this important information.</p>
+        </div>
+        <div class="alert alert--danger">
+          <strong class="alert__title">Error!</strong>
+          <p class="alert__message">Something went wrong. Please try again.</p>
+        </div>
+        <div class="alert alert--info">
+          <strong class="alert__title">Info</strong>
+          <p class="alert__message">Here's some helpful information for you.</p>
+        </div>
+      </section>
+
+      <!-- NAVIGATION -->
+      <section class="section">
+        <h2 class="section__title">Navigation</h2>
+        <nav class="navbar">
+          <div class="navbar__brand">Brand</div>
+          <ul class="navbar__menu">
+            <li class="navbar__item">
+              <a href="#" class="navbar__link navbar__link--active">Home</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Products</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">About</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="breadcrumb">
+          <a href="#" class="breadcrumb__item">Home</a>
+          <span class="breadcrumb__separator">/</span>
+          <a href="#" class="breadcrumb__item">Products</a>
+          <span class="breadcrumb__separator">/</span>
+          <span class="breadcrumb__item breadcrumb__item--active">Item</span>
+        </nav>
+      </section>
+
+      <!-- TABLE -->
+      <section class="section">
+        <h2 class="section__title">Table</h2>
+        <div class="table-container">
+          <table class="table">
+            <thead class="table__head">
+              <tr>
+                <th class="table__header">Name</th>
+                <th class="table__header">Email</th>
+                <th class="table__header">Role</th>
+                <th class="table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__cell">John Doe</td>
+                <td class="table__cell">john@example.com</td>
+                <td class="table__cell">Admin</td>
+                <td class="table__cell"><span class="badge badge--success">Active</span></td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell">Jane Smith</td>
+                <td class="table__cell">jane@example.com</td>
+                <td class="table__cell">User</td>
+                <td class="table__cell"><span class="badge badge--success">Active</span></td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell">Bob Johnson</td>
+                <td class="table__cell">bob@example.com</td>
+                <td class="table__cell">User</td>
+                <td class="table__cell"><span class="badge badge--danger">Inactive</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- UTILITIES -->
+      <section class="section">
+        <h2 class="section__title">Utility Classes</h2>
+        <div class="component-demo">
+          <p class="text-sm">Small text</p>
+          <p class="text-base">Base text</p>
+          <p class="text-lg">Large text</p>
+        </div>
+        <div class="component-demo">
+          <span class="badge badge--primary">Primary</span>
+          <span class="badge badge--success">Success</span>
+          <span class="badge badge--danger">Danger</span>
+          <span class="badge badge--warning">Warning</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2024 Component Library. Built with CSS and BEM.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

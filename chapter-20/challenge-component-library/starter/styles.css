@@ -1,0 +1,34 @@
+/* Component Library - Starter */
+
+/* TODO: Build a comprehensive component library
+
+   Requirements:
+   1. Use BEM naming for all components
+   2. Create CSS custom properties system
+   3. Build reusable components:
+      - Buttons (primary, secondary, outline, sizes)
+      - Cards (basic, with image, with footer)
+      - Form elements (inputs, selects, textareas)
+      - Navigation (navbar, breadcrumbs)
+      - Alerts (success, warning, error, info)
+      - Modals
+      - Tables
+   4. Organize CSS into logical sections
+   5. Add utility classes
+   6. Make it themeable
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TODO: Start building your component library here! */
+

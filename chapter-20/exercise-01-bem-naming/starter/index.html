@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEM Naming Practice - Starter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- TODO: Refactor these poorly-named classes to use BEM naming -->
+  
+  <!-- Card Component (poor naming) -->
+  <div class="card">
+    <div class="top">
+      <img src="https://via.placeholder.com/300x200" alt="Card image" class="img">
+    </div>
+    <div class="content">
+      <h3 class="title">Card Title</h3>
+      <p class="text">This is the card description text.</p>
+      <button class="btn blue">Read More</button>
+    </div>
+  </div>
+
+  <!-- Navigation Component (poor naming) -->
+  <nav class="nav">
+    <div class="logo">MyBrand</div>
+    <ul class="list">
+      <li class="item"><a href="#" class="link active">Home</a></li>
+      <li class="item"><a href="#" class="link">About</a></li>
+      <li class="item"><a href="#" class="link">Services</a></li>
+    </ul>
+  </nav>
+
+  <!-- Form Component (poor naming) -->
+  <form class="form">
+    <div class="group">
+      <label class="label">Email</label>
+      <input type="email" class="input" placeholder="Enter email">
+    </div>
+    <div class="group error">
+      <label class="label">Password</label>
+      <input type="password" class="input" placeholder="Enter password">
+      <span class="msg">Password is required</span>
+    </div>
+    <button class="submit large primary">Submit</button>
+  </form>
+</body>
+</html>
+

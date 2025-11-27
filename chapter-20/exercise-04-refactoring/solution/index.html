@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Refactoring - Solution (Clean Code)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- REFACTORED: Semantic HTML with BEM naming -->
+  <header class="header">
+    <div class="header__brand">MySite</div>
+    <nav class="header__nav">
+      <a href="#" class="header__link">Home</a>
+      <a href="#" class="header__link">About</a>
+      <a href="#" class="header__link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero__title">Welcome!</h1>
+      <p class="hero__description">This is some text content here.</p>
+      <button class="btn btn--primary btn--large">Click Me</button>
+    </section>
+
+    <section class="cards">
+      <div class="container">
+        <div class="card-grid">
+          <div class="card card--primary">
+            <h3 class="card__title">Card 1</h3>
+            <p class="card__description">Description 1</p>
+          </div>
+          <div class="card card--success">
+            <h3 class="card__title">Card 2</h3>
+            <p class="card__description">Description 2</p>
+          </div>
+          <div class="card card--danger">
+            <h3 class="card__title">Card 3</h3>
+            <p class="card__description">Description 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">&copy; 2024 MySite</p>
+  </footer>
+</body>
+</html>
+

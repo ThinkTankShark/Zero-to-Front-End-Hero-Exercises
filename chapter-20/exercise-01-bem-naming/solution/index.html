@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEM Naming Practice - Solution</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Card Component (BEM naming) -->
+  <div class="card">
+    <div class="card__header">
+      <img src="https://via.placeholder.com/300x200" alt="Card image" class="card__image">
+    </div>
+    <div class="card__body">
+      <h3 class="card__title">Card Title</h3>
+      <p class="card__description">This is the card description text.</p>
+      <button class="card__button card__button--primary">Read More</button>
+    </div>
+  </div>
+
+  <!-- Navigation Component (BEM naming) -->
+  <nav class="navbar">
+    <div class="navbar__brand">MyBrand</div>
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="#" class="navbar__link navbar__link--active">Home</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#" class="navbar__link">About</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#" class="navbar__link">Services</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Form Component (BEM naming) -->
+  <form class="form">
+    <div class="form__group">
+      <label class="form__label">Email</label>
+      <input type="email" class="form__input" placeholder="Enter email">
+    </div>
+    <div class="form__group form__group--error">
+      <label class="form__label">Password</label>
+      <input type="password" class="form__input form__input--error" placeholder="Enter password">
+      <span class="form__error-message">Password is required</span>
+    </div>
+    <button class="form__submit form__submit--primary form__submit--large">Submit</button>
+  </form>
+</body>
+</html>
+

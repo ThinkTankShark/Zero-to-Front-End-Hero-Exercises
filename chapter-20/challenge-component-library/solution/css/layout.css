@@ -1,0 +1,78 @@
+/* Layout Components */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+  color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.header__title {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-sm);
+  color: var(--color-white);
+}
+
+.header__subtitle {
+  font-size: var(--text-lg);
+  opacity: 0.9;
+  font-weight: var(--font-normal);
+}
+
+/* Main */
+.main {
+  padding: var(--space-3xl) 0;
+}
+
+/* Section */
+.section {
+  margin-bottom: var(--space-4xl);
+}
+
+.section__title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-width-2) solid var(--color-border);
+  color: var(--color-gray-800);
+}
+
+/* Component Demo */
+.component-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  margin-top: var(--space-4xl);
+}
+
+.footer__text {
+  text-align: center;
+  margin: 0;
+  opacity: 0.8;
+}
+

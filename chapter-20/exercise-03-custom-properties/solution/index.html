@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Custom Properties - Solution</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Design System with CSS Variables</h1>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('dark-theme')">
+        Toggle Dark Theme
+      </button>
+    </header>
+
+    <section class="section">
+      <h2 class="section__title">Color Palette</h2>
+      <div class="color-grid">
+        <div class="color-box color-box--primary">Primary</div>
+        <div class="color-box color-box--secondary">Secondary</div>
+        <div class="color-box color-box--success">Success</div>
+        <div class="color-box color-box--danger">Danger</div>
+        <div class="color-box color-box--warning">Warning</div>
+        <div class="color-box color-box--info">Info</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Spacing Scale</h2>
+      <div class="spacing-demo">
+        <div class="space-box space-box--xs">Extra Small (xs)</div>
+        <div class="space-box space-box--sm">Small (sm)</div>
+        <div class="space-box space-box--md">Medium (md)</div>
+        <div class="space-box space-box--lg">Large (lg)</div>
+        <div class="space-box space-box--xl">Extra Large (xl)</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Typography Scale</h2>
+      <div class="typography-demo">
+        <p class="text text--xs">Extra Small Text (xs)</p>
+        <p class="text text--sm">Small Text (sm)</p>
+        <p class="text text--base">Base Text (base)</p>
+        <p class="text text--lg">Large Text (lg)</p>
+        <p class="text text--xl">Extra Large Text (xl)</p>
+        <p class="text text--2xl">2XL Text (2xl)</p>
+        <p class="text text--3xl">3XL Text (3xl)</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Shadow System</h2>
+      <div class="shadow-grid">
+        <div class="shadow-box shadow-box--sm">Small Shadow</div>
+        <div class="shadow-box shadow-box--md">Medium Shadow</div>
+        <div class="shadow-box shadow-box--lg">Large Shadow</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+

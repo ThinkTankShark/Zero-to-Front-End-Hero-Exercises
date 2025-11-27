@@ -1,0 +1,147 @@
+/* BEM Naming Practice - Starter (Poor Naming) */
+/* TODO: Refactor all class names to follow BEM methodology */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f7fa;
+  padding: 40px 20px;
+}
+
+/* Card Component */
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.top {
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.text {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.blue {
+  background: #3498db;
+  color: white;
+}
+
+/* Navigation */
+.nav {
+  background: #2c3e50;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  color: #3498db;
+}
+
+/* Form */
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.error .input {
+  border-color: #e74c3c;
+}
+
+.msg {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.submit {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary {
+  background: #3498db;
+  color: white;
+}
+
+.large {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+}
+

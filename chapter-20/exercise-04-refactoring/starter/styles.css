@@ -1,0 +1,72 @@
+/* DELIBERATELY MESSY CSS - TODO: Refactor this! */
+
+/* Problems to fix:
+   1. Using IDs for styling (high specificity)
+   2. Inconsistent naming
+   3. Repeated code (no DRY principle)
+   4. Inline styles in HTML
+   5. No variables
+   6. Poor organization
+   7. Magic numbers
+   8. No BEM or consistent methodology
+*/
+
+body{margin:0;padding:0;font-family:Arial;}
+
+#top{background-color:#2c3e50;padding:15px 20px;display:flex;justify-content:space-between;}
+.logo1{color:#fff;font-size:24px;font-weight:bold;}
+.nav a{color:#fff;text-decoration:none;margin-left:20px;}
+.nav a:hover{color:#3498db;}
+
+.box1{padding:60px 20px;text-align:center;background:#3498db;color:#fff;}
+.title1{font-size:48px;margin-bottom:20px;font-weight:bold;}
+.txt{font-size:18px;margin-bottom:30px;}
+
+.btn{padding:12px 30px;border:none;border-radius:5px;cursor:pointer;font-weight:600;}
+.blue{background:#fff;color:#3498db;}
+.big{padding:15px 40px;font-size:18px;}
+.btn:hover{opacity:0.9;}
+
+.cards{display:flex;gap:20px;padding:40px 20px;justify-content:center;}
+.c{padding:30px;border-radius:8px;width:250px;}
+.t{display:block;font-size:20px;font-weight:bold;margin-bottom:10px;color:#fff;}
+.d{display:block;color:#fff;opacity:0.9;}
+
+#bottom{background:#2c3e50;color:#fff;text-align:center;padding:30px;}
+#bottom p{margin:0;}
+
+/* More repeated styles */
+div.box1 .title1 {
+    font-size: 48px !important;
+    color: white !important;
+}
+
+div.cards div.c span.t {
+    font-size: 20px;
+    color: white;
+}
+
+/* Overly specific selectors */
+body div#top div.nav a:first-child {
+    margin-left: 0;
+}
+
+/* Magic numbers everywhere */
+.box1 { padding: 60px 20px; }
+.cards { padding: 40px 20px; }
+#bottom { padding: 30px; }
+
+/* Inconsistent spacing */
+.c{padding:30px;}
+.btn {padding:12px 30px;}
+
+/* TODO: Refactor this entire file using:
+   - CSS custom properties
+   - BEM naming
+   - Proper organization
+   - Remove !important
+   - DRY principle
+   - Semantic class names
+   - Consistent formatting
+*/
+
