@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 01: BEM Practice - Starter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BEM Practice: User Profile Card</h1>
+    <p>Refactor this component to use proper BEM naming conventions.</p>
+
+    <!-- POORLY NAMED PROFILE CARD -->
+    <!-- Your task: Convert all these class names to BEM format -->
+
+    <div class="card">
+      <div class="top-section">
+        <img src="https://ui-avatars.com/api/?name=Jane+Doe&size=120&background=6366f1&color=fff"
+             alt="Jane Doe"
+             class="avatar">
+        <div class="user-info">
+          <h2 class="name">Jane Doe</h2>
+          <p class="job-title">Senior Frontend Developer</p>
+        </div>
+      </div>
+
+      <div class="bio-section">
+        <p class="bio-text">
+          Passionate about creating beautiful, accessible user interfaces.
+          Love learning new technologies and sharing knowledge with the community.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="number">127</span>
+          <span class="label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="number">2.5k</span>
+          <span class="label">Followers</span>
+        </div>
+        <div class="stat">
+          <span class="number">892</span>
+          <span class="label">Following</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary">Follow</button>
+        <button class="btn btn-secondary">Message</button>
+      </div>
+    </div>
+
+    <!-- TODO: Add a second card with a "featured" modifier -->
+
+  </div>
+</body>
+</html>
+

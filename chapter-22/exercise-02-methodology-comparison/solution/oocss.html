@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 02: OOCSS Version - Solution</title>
+  <link rel="stylesheet" href="oocss.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Methodology Comparison: OOCSS</h1>
+    <p>Product card styled with OOCSS principles (separate structure from skin)</p>
+
+    <!-- OOCSS: Object-Oriented CSS -->
+    <!-- Separate structure (layout) from skin (appearance) -->
+    <!-- Create reusable objects that can be combined -->
+
+    <article class="box box-rounded box-shadow">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop"
+           alt="Premium Wireless Headphones"
+           class="media__image media__image--cover">
+
+      <div class="box-padding">
+        <h2 class="text-heading mb-2">Premium Wireless Headphones</h2>
+
+        <div class="flex items-center mb-3">
+          <span class="text-stars text-stars--filled">★★★★</span><span class="text-stars">☆</span>
+          <span class="text-small text-muted ml-2">(128 reviews)</span>
+        </div>
+
+        <div class="flex items-center mb-3">
+          <span class="text-price text-price--sale">$79.99</span>
+          <span class="text-price-strike ml-3">$129.99</span>
+        </div>
+
+        <button class="btn btn-block btn-primary mb-2">Add to Cart</button>
+
+        <a href="#" class="link link-center">Quick View</a>
+      </div>
+    </article>
+
+    <div class="notes box box-rounded box-shadow box-padding">
+      <h3>OOCSS Structure Notes:</h3>
+      <ul>
+        <li><strong>Structure Classes (Layout & Spacing):</strong>
+          <ul>
+            <li><code>.box</code> - Generic container</li>
+            <li><code>.box-padding</code> - Padding structure</li>
+            <li><code>.flex</code> - Flexbox layout</li>
+            <li><code>.mb-2</code>, <code>.mb-3</code> - Margin bottom spacing</li>
+          </ul>
+        </li>
+        <li><strong>Skin Classes (Appearance):</strong>
+          <ul>
+            <li><code>.box-rounded</code> - Rounded corners</li>
+            <li><code>.box-shadow</code> - Shadow effect</li>
+            <li><code>.btn-primary</code> - Primary button color</li>
+            <li><code>.text-price--sale</code> - Sale price color</li>
+          </ul>
+        </li>
+        <li><strong>Media Object:</strong>
+          <ul>
+            <li><code>.media__image</code> - Reusable image container</li>
+            <li><code>.media__image--cover</code> - Object-fit cover modifier</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Pros:</strong> Highly reusable classes, separation of concerns, flexible combinations</p>
+      <p><strong>Cons:</strong> More classes in HTML, requires understanding of the system</p>
+    </div>
+
+  </div>
+</body>
+</html>
+

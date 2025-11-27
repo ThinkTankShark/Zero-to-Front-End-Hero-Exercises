@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 03: Refactoring to BEM - Solution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Refactoring Challenge: Clean BEM Solution</h1>
+    <p class="subtitle">This is the refactored version with proper BEM naming</p>
+
+    <!-- REFACTORED WITH PROPER BEM NAMING -->
+    <!-- Block: article -->
+    <!-- Elements: article__header, article__title, etc. -->
+    <!-- Modifiers: article--featured -->
+
+    <article class="article">
+      <header class="article__header">
+        <span class="article__badge">Technology</span>
+        <h2 class="article__title">Understanding CSS Methodologies: A Complete Guide</h2>
+        <div class="article__meta">
+          <span class="article__meta-date">November 27, 2024</span>
+          <span class="article__meta-separator">•</span>
+          <span class="article__meta-author">Sarah Johnson</span>
+          <span class="article__meta-separator">•</span>
+          <span class="article__meta-read-time">8 min read</span>
+        </div>
+      </header>
+
+      <div class="article__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
+             alt="Code on screen"
+             class="article__image">
+      </div>
+
+      <div class="article__content">
+        <p class="article__intro">
+          CSS methodologies provide structured approaches to writing scalable and maintainable styles.
+          In this comprehensive guide, we'll explore the most popular methodologies and when to use them.
+        </p>
+
+        <p class="article__text">
+          When projects grow beyond a few pages, unstructured CSS becomes increasingly difficult to manage.
+          Naming conflicts arise, specificity wars begin, and simple changes can have unexpected side effects
+          throughout your application.
+        </p>
+
+        <blockquote class="article__quote">
+          <p class="article__quote-text">"Good CSS architecture is about finding the right balance between reusability,
+          maintainability, and flexibility."</p>
+          <footer class="article__quote-author">— Nicole Sullivan</footer>
+        </blockquote>
+
+        <p class="article__text">
+          Popular methodologies like BEM, OOCSS, and SMACSS each solve these problems in different ways.
+          Understanding their strengths helps you choose the right approach for your project.
+        </p>
+
+        <div class="article__code-block">
+          <code class="article__code">
+.block__element--modifier { }<br>
+/* BEM naming makes relationships clear */
+          </code>
+        </div>
+      </div>
+
+      <footer class="article__footer">
+        <div class="article__tags">
+          <span class="article__tags-label">Tags:</span>
+          <span class="article__tag">CSS</span>
+          <span class="article__tag">Web Development</span>
+          <span class="article__tag">Best Practices</span>
+        </div>
+
+        <div class="article__share">
+          <span class="article__share-label">Share:</span>
+          <!-- Note: Buttons are separate blocks because they're reusable -->
+          <button class="social-button social-button--twitter">Twitter</button>
+          <button class="social-button social-button--linkedin">LinkedIn</button>
+          <button class="social-button social-button--facebook">Facebook</button>
+        </div>
+
+        <div class="article__author-bio">
+          <h4 class="article__author-bio-name">About the Author</h4>
+          <p class="article__author-bio-text">
+            Sarah Johnson is a frontend developer with 8 years of experience building
+            scalable web applications. She loves teaching others about CSS best practices.
+          </p>
+        </div>
+      </footer>
+    </article>
+
+    <!-- FEATURED ARTICLE EXAMPLE (with modifier) -->
+    <article class="article article--featured">
+      <span class="article__featured-badge">Featured Article</span>
+
+      <header class="article__header">
+        <span class="article__badge">Design</span>
+        <h2 class="article__title">The Power of BEM: Real-World Examples</h2>
+        <div class="article__meta">
+          <span class="article__meta-date">November 26, 2024</span>
+          <span class="article__meta-separator">•</span>
+          <span class="article__meta-author">Mike Chen</span>
+          <span class="article__meta-separator">•</span>
+          <span class="article__meta-read-time">5 min read</span>
+        </div>
+      </header>
+
+      <div class="article__image-wrapper">
+        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=400&fit=crop"
+             alt="Design tools"
+             class="article__image">
+      </div>
+
+      <div class="article__content">
+        <p class="article__intro">
+          BEM has transformed how we write CSS in modern web development.
+          Let's explore real-world examples that demonstrate its power.
+        </p>
+
+        <p class="article__text">
+          By establishing clear naming conventions, BEM eliminates ambiguity and makes
+          component relationships immediately obvious to any developer reading your code.
+        </p>
+      </div>
+
+      <footer class="article__footer">
+        <div class="article__tags">
+          <span class="article__tags-label">Tags:</span>
+          <span class="article__tag">BEM</span>
+          <span class="article__tag">Architecture</span>
+        </div>
+      </footer>
+    </article>
+
+    <div class="refactoring-notes">
+      <h3>BEM Refactoring Notes</h3>
+
+      <div class="refactoring-notes__section">
+        <h4>Before → After Mapping</h4>
+        <ul>
+          <li><code>.article .header</code> → <code>.article__header</code></li>
+          <li><code>.article .header .title</code> → <code>.article__title</code></li>
+          <li><code>.article .header .meta .date</code> → <code>.article__meta-date</code></li>
+          <li><code>.article .content .intro</code> → <code>.article__intro</code></li>
+          <li><code>.article .content .quote</code> → <code>.article__quote</code></li>
+          <li><code>.button.social.twitter</code> → <code>.social-button--twitter</code></li>
+        </ul>
+      </div>
+
+      <div class="refactoring-notes__section">
+        <h4>Key Improvements</h4>
+        <ul>
+          <li><strong>Flat selectors:</strong> No more deep nesting</li>
+          <li><strong>Low specificity:</strong> All selectors have same weight</li>
+          <li><strong>Clear relationships:</strong> <code>__</code> shows element belongs to block</li>
+          <li><strong>Easy modifications:</strong> <code>--</code> clearly indicates variants</li>
+          <li><strong>Independent blocks:</strong> Buttons separated into reusable <code>.social-button</code> block</li>
+        </ul>
+      </div>
+
+      <div class="refactoring-notes__section">
+        <h4>Specificity Comparison</h4>
+        <p><strong>Before:</strong> <code>.article .content .quote p</code> (specificity: 0,0,4,0)</p>
+        <p><strong>After:</strong> <code>.article__quote-text</code> (specificity: 0,0,1,0)</p>
+        <p class="benefit">✅ Much easier to override and maintain!</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+

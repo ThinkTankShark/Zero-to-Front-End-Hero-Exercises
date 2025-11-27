@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 02: BEM Version - Solution</title>
+  <link rel="stylesheet" href="bem.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Methodology Comparison: BEM</h1>
+    <p>Product card styled with BEM naming conventions</p>
+
+    <!-- BEM: Block Element Modifier -->
+    <!-- Block: product-card (the main component) -->
+    <!-- Elements: Parts of the product-card -->
+    <!-- Modifiers: Variations of elements -->
+
+    <article class="product-card">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop"
+           alt="Premium Wireless Headphones"
+           class="product-card__image">
+
+      <div class="product-card__content">
+        <h2 class="product-card__title">Premium Wireless Headphones</h2>
+
+        <div class="product-card__rating">
+          <span class="product-card__rating-stars product-card__rating-stars--filled">★★★★</span><span class="product-card__rating-stars">☆</span>
+          <span class="product-card__rating-count">(128 reviews)</span>
+        </div>
+
+        <div class="product-card__price">
+          <span class="product-card__price-current product-card__price-current--sale">$79.99</span>
+          <span class="product-card__price-original">$129.99</span>
+        </div>
+
+        <button class="product-card__button">Add to Cart</button>
+
+        <a href="#" class="product-card__link">Quick View</a>
+      </div>
+    </article>
+
+    <div class="notes">
+      <h3>BEM Structure Notes:</h3>
+      <ul>
+        <li><strong>Block:</strong> <code>.product-card</code> - The standalone component</li>
+        <li><strong>Elements:</strong>
+          <ul>
+            <li><code>.product-card__image</code></li>
+            <li><code>.product-card__content</code></li>
+            <li><code>.product-card__title</code></li>
+            <li><code>.product-card__rating</code></li>
+            <li><code>.product-card__price</code></li>
+            <li><code>.product-card__button</code></li>
+            <li><code>.product-card__link</code></li>
+          </ul>
+        </li>
+        <li><strong>Modifiers:</strong>
+          <ul>
+            <li><code>.product-card__price-current--sale</code> - Sale price styling</li>
+            <li><code>.product-card__rating-stars--filled</code> - Filled stars color</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Pros:</strong> Clear hierarchy, easy to understand component structure, no naming conflicts</p>
+      <p><strong>Cons:</strong> Longer class names, more typing</p>
+    </div>
+
+  </div>
+</body>
+</html>
+

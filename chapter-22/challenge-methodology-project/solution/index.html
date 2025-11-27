@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechShop - Component Library (BEM)</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION COMPONENT -->
+  <nav class="navigation navigation--sticky">
+    <div class="navigation__container">
+      <a href="#" class="navigation__logo">TechShop</a>
+
+      <div class="navigation__search">
+        <input type="search" class="navigation__search-input" placeholder="Search products...">
+        <button class="navigation__search-button">🔍</button>
+      </div>
+
+      <ul class="navigation__menu">
+        <li class="navigation__item">
+          <a href="#" class="navigation__link navigation__link--active">Home</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link">Products</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link">Deals</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link">Support</a>
+        </li>
+      </ul>
+
+      <div class="navigation__actions">
+        <a href="#" class="navigation__cart">
+          🛒
+          <span class="navigation__cart-badge">3</span>
+        </a>
+        <a href="#" class="navigation__user">👤</a>
+      </div>
+
+      <button class="navigation__mobile-toggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER COMPONENT -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">Welcome to TechShop</h1>
+      <p class="hero__subtitle">Discover the latest electronics at unbeatable prices</p>
+      <a href="#" class="hero__cta">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID COMPONENT -->
+  <section class="feature-grid">
+    <div class="feature-grid__container">
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">📦</div>
+        <h3 class="feature-grid__title">Free Shipping</h3>
+        <p class="feature-grid__description">On orders over $50</p>
+      </div>
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">🔄</div>
+        <h3 class="feature-grid__title">Easy Returns</h3>
+        <p class="feature-grid__description">30-day return policy</p>
+      </div>
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">⚡</div>
+        <h3 class="feature-grid__title">Fast Delivery</h3>
+        <p class="feature-grid__description">2-3 business days</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CARDS SECTION -->
+  <section class="products-section">
+    <div class="products-section__container">
+      <h2 class="products-section__title">Featured Products</h2>
+
+      <div class="products-section__grid">
+
+        <!-- Product Card 1 - Sale -->
+        <article class="product-card product-card--sale">
+          <div class="product-card__image-wrapper">
+            <span class="product-card__badge product-card__badge--sale">Sale</span>
+            <img src="https://via.placeholder.com/300x300/667eea/ffffff?text=Headphones" alt="Wireless Headphones" class="product-card__image">
+          </div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">Wireless Headphones</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">⭐⭐⭐⭐⭐</span>
+              <span class="product-card__reviews">(124)</span>
+            </div>
+            <div class="product-card__price">
+              <span class="product-card__price-current">$79.99</span>
+              <span class="product-card__price-original">$129.99</span>
+            </div>
+            <button class="product-card__button">Add to Cart</button>
+            <a href="#" class="product-card__link">Quick View</a>
+          </div>
+        </article>
+
+        <!-- Product Card 2 - New -->
+        <article class="product-card">
+          <div class="product-card__image-wrapper">
+            <span class="product-card__badge product-card__badge--new">New</span>
+            <img src="https://via.placeholder.com/300x300/667eea/ffffff?text=Laptop" alt="Gaming Laptop" class="product-card__image">
+          </div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">Gaming Laptop</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">⭐⭐⭐⭐⭐</span>
+              <span class="product-card__reviews">(89)</span>
+            </div>
+            <div class="product-card__price">
+              <span class="product-card__price-current">$1,299.99</span>
+            </div>
+            <button class="product-card__button">Add to Cart</button>
+            <a href="#" class="product-card__link">Quick View</a>
+          </div>
+        </article>
+
+        <!-- Product Card 3 -->
+        <article class="product-card">
+          <div class="product-card__image-wrapper">
+            <img src="https://via.placeholder.com/300x300/667eea/ffffff?text=Smartwatch" alt="Smart Watch" class="product-card__image">
+          </div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">Smart Watch Pro</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">⭐⭐⭐⭐</span>
+              <span class="product-card__reviews">(256)</span>
+            </div>
+            <div class="product-card__price">
+              <span class="product-card__price-current">$249.99</span>
+            </div>
+            <button class="product-card__button">Add to Cart</button>
+            <a href="#" class="product-card__link">Quick View</a>
+          </div>
+        </article>
+
+        <!-- Product Card 4 - Sale -->
+        <article class="product-card product-card--sale">
+          <div class="product-card__image-wrapper">
+            <span class="product-card__badge product-card__badge--sale">Sale</span>
+            <img src="https://via.placeholder.com/300x300/667eea/ffffff?text=Tablet" alt="Tablet" class="product-card__image">
+          </div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">Ultra HD Tablet</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">⭐⭐⭐⭐⭐</span>
+              <span class="product-card__reviews">(432)</span>
+            </div>
+            <div class="product-card__price">
+              <span class="product-card__price-current">$399.99</span>
+              <span class="product-card__price-original">$599.99</span>
+            </div>
+            <button class="product-card__button">Add to Cart</button>
+            <a href="#" class="product-card__link">Quick View</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER COMPONENT -->
+  <section class="newsletter">
+    <div class="newsletter__container">
+      <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
+      <p class="newsletter__description">Get the latest deals and product updates delivered to your inbox</p>
+
+      <form class="newsletter__form">
+        <input type="email" class="newsletter__input" placeholder="Enter your email" required>
+        <button type="submit" class="newsletter__button">Subscribe</button>
+      </form>
+
+      <p class="newsletter__message newsletter__message--success" style="display: none;">
+        ✓ Thanks for subscribing!
+      </p>
+      <p class="newsletter__message newsletter__message--error" style="display: none;">
+        ✗ Please enter a valid email address
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER COMPONENT -->
+  <footer class="footer">
+    <div class="footer__container">
+
+      <div class="footer__column">
+        <h3 class="footer__heading">About TechShop</h3>
+        <p class="footer__text">Your trusted source for the latest electronics and technology products.</p>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Shop</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">All Products</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Best Sellers</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">New Arrivals</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Deals</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">FAQs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Shipping Info</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Returns</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Follow Us</h3>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link">📘</a>
+          <a href="#" class="footer__social-link">🐦</a>
+          <a href="#" class="footer__social-link">📷</a>
+          <a href="#" class="footer__social-link">💼</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 TechShop. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

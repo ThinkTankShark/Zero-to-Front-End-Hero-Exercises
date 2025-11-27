@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 02: Utility-First Version - Solution</title>
+  <link rel="stylesheet" href="utility.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Methodology Comparison: Utility-First</h1>
+    <p>Product card styled with utility classes (Tailwind-style)</p>
+
+    <!-- UTILITY-FIRST: Single-purpose utility classes -->
+    <!-- Most styling happens in HTML through composing utilities -->
+    <!-- Minimal custom CSS needed -->
+
+    <article class="bg-white rounded-lg shadow-md overflow-hidden max-w-300 mb-8">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop"
+           alt="Premium Wireless Headphones"
+           class="w-full h-200 object-cover block">
+
+      <div class="p-6">
+        <h2 class="text-xl text-gray-900 mb-2">Premium Wireless Headphones</h2>
+
+        <div class="flex items-center mb-4">
+          <span class="text-yellow-400 text-base">★★★★</span><span class="text-gray-300 text-base">☆</span>
+          <span class="text-sm text-gray-600 ml-2">(128 reviews)</span>
+        </div>
+
+        <div class="flex items-center mb-4">
+          <span class="text-2xl font-bold text-red-600">$79.99</span>
+          <span class="text-base text-gray-400 line-through ml-3">$129.99</span>
+        </div>
+
+        <button class="w-full p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-base font-semibold cursor-pointer transition mb-3">
+          Add to Cart
+        </button>
+
+        <a href="#" class="block text-center text-blue-600 hover:underline text-sm no-underline">Quick View</a>
+      </div>
+    </article>
+
+    <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+      <h3>Utility-First Structure Notes:</h3>
+      <ul>
+        <li><strong>Layout Utilities:</strong>
+          <ul>
+            <li><code>.flex</code>, <code>.block</code> - Display types</li>
+            <li><code>.items-center</code> - Alignment</li>
+            <li><code>.w-full</code> - Full width</li>
+            <li><code>.overflow-hidden</code> - Overflow control</li>
+          </ul>
+        </li>
+        <li><strong>Spacing Utilities:</strong>
+          <ul>
+            <li><code>.p-6</code> - Padding (1.5rem)</li>
+            <li><code>.mb-2</code>, <code>.mb-4</code> - Margin bottom</li>
+            <li><code>.ml-2</code>, <code>.ml-3</code> - Margin left</li>
+          </ul>
+        </li>
+        <li><strong>Color Utilities:</strong>
+          <ul>
+            <li><code>.bg-white</code>, <code>.bg-blue-600</code> - Backgrounds</li>
+            <li><code>.text-gray-900</code>, <code>.text-red-600</code> - Text colors</li>
+          </ul>
+        </li>
+        <li><strong>Typography Utilities:</strong>
+          <ul>
+            <li><code>.text-xl</code>, <code>.text-base</code> - Font sizes</li>
+            <li><code>.font-bold</code>, <code>.font-semibold</code> - Font weights</li>
+          </ul>
+        </li>
+        <li><strong>Effects Utilities:</strong>
+          <ul>
+            <li><code>.rounded-lg</code>, <code>.rounded-md</code> - Border radius</li>
+            <li><code>.shadow-md</code> - Box shadow</li>
+            <li><code>.hover:bg-blue-700</code> - Hover states</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Pros:</strong> Very fast development, consistent spacing/colors, minimal CSS to write</p>
+      <p><strong>Cons:</strong> HTML becomes verbose, many classes per element, less semantic</p>
+    </div>
+
+  </div>
+</body>
+</html>
+

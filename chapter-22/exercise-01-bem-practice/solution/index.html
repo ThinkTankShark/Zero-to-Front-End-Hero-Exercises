@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 01: BEM Practice - Solution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BEM Practice: User Profile Card</h1>
+    <p>This solution uses proper BEM naming conventions.</p>
+
+    <!-- PROPER BEM NAMING -->
+    <!-- Block: profile-card -->
+    <!-- Elements: Use profile-card__element -->
+    <!-- Modifiers: Use profile-card--modifier -->
+
+    <article class="profile-card">
+      <div class="profile-card__header">
+        <img src="https://ui-avatars.com/api/?name=Jane+Doe&size=120&background=6366f1&color=fff"
+             alt="Jane Doe"
+             class="profile-card__avatar">
+        <div class="profile-card__info">
+          <h2 class="profile-card__name">Jane Doe</h2>
+          <p class="profile-card__title">Senior Frontend Developer</p>
+        </div>
+      </div>
+
+      <div class="profile-card__bio">
+        <p class="profile-card__bio-text">
+          Passionate about creating beautiful, accessible user interfaces.
+          Love learning new technologies and sharing knowledge with the community.
+        </p>
+      </div>
+
+      <div class="profile-card__stats">
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">127</span>
+          <span class="profile-card__stat-label">Projects</span>
+        </div>
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">2.5k</span>
+          <span class="profile-card__stat-label">Followers</span>
+        </div>
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">892</span>
+          <span class="profile-card__stat-label">Following</span>
+        </div>
+      </div>
+
+      <div class="profile-card__actions">
+        <!-- Note: Buttons are separate blocks because they're reusable components -->
+        <button class="button button--primary">Follow</button>
+        <button class="button button--secondary">Message</button>
+      </div>
+    </article>
+
+    <!-- FEATURED MODIFIER EXAMPLE -->
+    <article class="profile-card profile-card--featured">
+      <span class="profile-card__badge">Featured</span>
+
+      <div class="profile-card__header">
+        <img src="https://ui-avatars.com/api/?name=John+Smith&size=120&background=f59e0b&color=fff"
+             alt="John Smith"
+             class="profile-card__avatar">
+        <div class="profile-card__info">
+          <h2 class="profile-card__name">John Smith</h2>
+          <p class="profile-card__title">Lead UX Designer</p>
+        </div>
+      </div>
+
+      <div class="profile-card__bio">
+        <p class="profile-card__bio-text">
+          Award-winning designer with 10+ years of experience.
+          Specializing in user research and creating delightful digital experiences.
+        </p>
+      </div>
+
+      <div class="profile-card__stats">
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">89</span>
+          <span class="profile-card__stat-label">Projects</span>
+        </div>
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">5.2k</span>
+          <span class="profile-card__stat-label">Followers</span>
+        </div>
+        <div class="profile-card__stat">
+          <span class="profile-card__stat-number">1.3k</span>
+          <span class="profile-card__stat-label">Following</span>
+        </div>
+      </div>
+
+      <div class="profile-card__actions">
+        <button class="button button--primary">Follow</button>
+        <button class="button button--secondary">Message</button>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="explanation">
+    <h2>BEM Structure Explanation</h2>
+    <div class="explanation__section">
+      <h3>Block: .profile-card</h3>
+      <p>The main standalone component. It represents the entire user profile card.</p>
+    </div>
+
+    <div class="explanation__section">
+      <h3>Elements: .profile-card__*</h3>
+      <ul>
+        <li><code>.profile-card__header</code> - Top section with avatar and info</li>
+        <li><code>.profile-card__avatar</code> - User's profile image</li>
+        <li><code>.profile-card__info</code> - Container for name and title</li>
+        <li><code>.profile-card__name</code> - User's name</li>
+        <li><code>.profile-card__title</code> - User's job title</li>
+        <li><code>.profile-card__bio</code> - Biography section</li>
+        <li><code>.profile-card__bio-text</code> - The bio paragraph text</li>
+        <li><code>.profile-card__stats</code> - Statistics container</li>
+        <li><code>.profile-card__stat</code> - Individual stat item</li>
+        <li><code>.profile-card__stat-number</code> - Stat value</li>
+        <li><code>.profile-card__stat-label</code> - Stat label</li>
+        <li><code>.profile-card__actions</code> - Button container</li>
+        <li><code>.profile-card__badge</code> - Featured badge</li>
+      </ul>
+    </div>
+
+    <div class="explanation__section">
+      <h3>Modifier: .profile-card--featured</h3>
+      <p>A variation of the profile card that has special styling (gold border, badge).</p>
+    </div>
+
+    <div class="explanation__section">
+      <h3>Separate Block: .button</h3>
+      <p>Buttons are separate blocks because they're reusable components that can exist independently.</p>
+      <ul>
+        <li><code>.button--primary</code> - Primary button style</li>
+        <li><code>.button--secondary</code> - Secondary button style</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+

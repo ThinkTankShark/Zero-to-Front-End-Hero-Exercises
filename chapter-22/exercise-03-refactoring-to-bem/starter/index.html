@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 03: Refactoring to BEM - Starter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Refactoring Challenge: Messy Blog Article</h1>
+    <p class="subtitle">Refactor this poorly-organized code to use proper BEM naming</p>
+
+    <!-- MESSY, POORLY-NAMED BLOG ARTICLE COMPONENT -->
+    <!-- Your task: Refactor all class names to BEM -->
+    <!-- Current problems: nested selectors, generic names, high specificity -->
+
+    <article class="article">
+      <div class="header">
+        <span class="badge category">Technology</span>
+        <h2 class="title">Understanding CSS Methodologies: A Complete Guide</h2>
+        <div class="meta">
+          <span class="date">November 27, 2024</span>
+          <span class="separator">•</span>
+          <span class="author">Sarah Johnson</span>
+          <span class="separator">•</span>
+          <span class="readTime">8 min read</span>
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
+             alt="Code on screen">
+      </div>
+
+      <div class="content">
+        <p class="intro">
+          CSS methodologies provide structured approaches to writing scalable and maintainable styles.
+          In this comprehensive guide, we'll explore the most popular methodologies and when to use them.
+        </p>
+
+        <p class="text">
+          When projects grow beyond a few pages, unstructured CSS becomes increasingly difficult to manage.
+          Naming conflicts arise, specificity wars begin, and simple changes can have unexpected side effects
+          throughout your application.
+        </p>
+
+        <blockquote class="quote">
+          <p>"Good CSS architecture is about finding the right balance between reusability,
+          maintainability, and flexibility."</p>
+          <footer class="quoteAuthor">— Nicole Sullivan</footer>
+        </blockquote>
+
+        <p class="text">
+          Popular methodologies like BEM, OOCSS, and SMACSS each solve these problems in different ways.
+          Understanding their strengths helps you choose the right approach for your project.
+        </p>
+
+        <div class="codeBlock">
+          <code>
+.block__element--modifier { }<br>
+/* BEM naming makes relationships clear */
+          </code>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="tags">
+          <span class="label">Tags:</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">Best Practices</span>
+        </div>
+
+        <div class="share">
+          <span class="label">Share:</span>
+          <button class="button social twitter">Twitter</button>
+          <button class="button social linkedin">LinkedIn</button>
+          <button class="button social facebook">Facebook</button>
+        </div>
+
+        <div class="authorBio">
+          <div class="bioContent">
+            <h4 class="bioName">About the Author</h4>
+            <p class="bioText">
+              Sarah Johnson is a frontend developer with 8 years of experience building
+              scalable web applications. She loves teaching others about CSS best practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TODO: After refactoring, add a second article with class="article featured" -->
+
+  </div>
+</body>
+</html>
+

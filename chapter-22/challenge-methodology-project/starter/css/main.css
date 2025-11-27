@@ -1,0 +1,130 @@
+/* Base Styles */
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+}
+
+/* TODO: Add your component styles below */
+/* Organize based on your chosen methodology */
+
+/* ========================================
+   EXAMPLE: BEM Organization
+======================================== */
+/*
+.navigation { }
+.navigation__logo { }
+.navigation__link { }
+.navigation--sticky { }
+
+.product-card { }
+.product-card__image { }
+.product-card__title { }
+.product-card--sale { }
+
+... etc
+*/
+
+/* ========================================
+   EXAMPLE: OOCSS Organization
+======================================== */
+/*
+Structure classes:
+.container { }
+.grid { }
+.flex { }
+
+Skin classes:
+.bg-white { }
+.shadow-md { }
+.rounded-lg { }
+
+Component classes:
+.media { }
+.button { }
+... etc
+*/
+
+/* ========================================
+   EXAMPLE: SMACSS Organization
+======================================== */
+/*
+Base:
+html, body, h1, etc.
+
+Layout (prefix: l-):
+.l-header { }
+.l-container { }
+
+Modules:
+.card { }
+.button { }
+
+State (prefix: is-):
+.is-active { }
+.is-hidden { }
+*/
+
+/* ========================================
+   EXAMPLE: ITCSS Organization
+   (You might want to create separate files)
+======================================== */
+/*
+settings/_variables.css (already done)
+tools/_mixins.css (if using Sass)
+generic/_reset.css (already done)
+elements/_typography.css
+objects/_container.css
+components/_navigation.css
+components/_product-card.css
+utilities/_spacing.css
+*/
+
+/* ========================================
+   EXAMPLE: Utility-First Organization
+======================================== */
+/*
+Define utility classes:
+.bg-primary { background: var(--color-primary); }
+.text-white { color: white; }
+.p-4 { padding: var(--space-4); }
+.rounded-md { border-radius: var(--radius-md); }
+... etc
+*/
+
+/* ========================================
+   YOUR CODE STARTS HERE
+======================================== */
+
+/* Component 1: Navigation */
+
+
+/* Component 2: Hero Banner */
+
+
+/* Component 3: Feature Grid */
+
+
+/* Component 4: Product Card */
+
+
+/* Component 5: Newsletter Signup */
+
+
+/* Component 6: Footer */
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Mobile styles */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet styles */
+}
+
+@media (min-width: 1024px) {
+  /* Desktop styles */
+}
+

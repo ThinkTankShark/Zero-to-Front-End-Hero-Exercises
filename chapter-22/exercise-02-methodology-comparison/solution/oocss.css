@@ -1,0 +1,212 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f7fafc;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.container > p {
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   OOCSS VERSION
+   Separate Structure from Skin
+======================================== */
+
+/* STRUCTURE CLASSES (Layout & Spacing) */
+
+.box {
+  background: white;
+  max-width: 300px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.box-padding {
+  padding: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/* Spacing utilities */
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+/* SKIN CLASSES (Appearance) */
+
+.box-rounded {
+  border-radius: 8px;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* MEDIA OBJECT (Reusable image pattern) */
+
+.media__image {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.media__image--cover {
+  object-fit: cover;
+}
+
+/* TEXT STYLES (Content objects) */
+
+.text-heading {
+  font-size: 1.25rem;
+  color: #1a202c;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-muted {
+  color: #718096;
+}
+
+.text-stars {
+  color: #cbd5e0;
+  font-size: 1rem;
+}
+
+.text-stars--filled {
+  color: #fbbf24;
+}
+
+.text-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.text-price--sale {
+  color: #e53e3e;
+}
+
+.text-price-strike {
+  font-size: 1rem;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+/* BUTTON OBJECT */
+
+.btn {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+}
+
+/* LINK OBJECT */
+
+.link {
+  display: block;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.link-center {
+  text-align: center;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   NOTES SECTION
+======================================== */
+
+.notes h3 {
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.notes ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.notes li {
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.notes code {
+  background: #f7fafc;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: #667eea;
+  font-family: 'Courier New', monospace;
+}
+
+.notes p {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.notes strong {
+  color: #1a202c;
+}
+

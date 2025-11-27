@@ -1,0 +1,295 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f7fafc;
+  line-height: 1.6;
+  color: #2d3748;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.container .subtitle {
+  color: #718096;
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   MESSY, POORLY-ORGANIZED ARTICLE STYLES
+   Problems:
+   - High specificity with nested selectors
+   - Generic class names (.title, .content, .button)
+   - Inconsistent naming (camelCase, dashes, generic)
+   - Hard to understand relationships
+   - Difficult to maintain and extend
+======================================== */
+
+/* Article container */
+.article {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* Header section - MESSY NESTING */
+.article .header {
+  padding: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.article .header .badge.category {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.article .header .title {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.article .header .meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.article .header .meta .separator {
+  color: #cbd5e0;
+}
+
+.article .header .meta .date {
+  font-weight: 500;
+}
+
+.article .header .meta .author {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Image section - Generic naming */
+.imageWrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content section - VERY MESSY NESTING */
+.article .content {
+  padding: 2rem;
+}
+
+.article .content .intro {
+  font-size: 1.125rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.article .content .text {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.article .content .quote {
+  background: #f7fafc;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.article .content .quote p {
+  color: #2d3748;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.article .content .quote .quoteAuthor {
+  color: #718096;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+
+.article .content .codeBlock {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.article .content .codeBlock code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Footer section - Multiple levels of nesting */
+.article .footer {
+  background: #f7fafc;
+  padding: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.article .footer .tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article .footer .tags .label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-right: 0.5rem;
+}
+
+.article .footer .tags .tag {
+  background: white;
+  color: #667eea;
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  border: 1px solid #667eea;
+}
+
+.article .footer .share {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.article .footer .share .label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-right: 0.5rem;
+}
+
+/* Generic button class - NAMING COLLISION RISK */
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button.social {
+  color: white;
+}
+
+.button.social.twitter {
+  background: #1da1f2;
+}
+
+.button.social.twitter:hover {
+  background: #1a8cd8;
+}
+
+.button.social.linkedin {
+  background: #0077b5;
+}
+
+.button.social.linkedin:hover {
+  background: #006399;
+}
+
+.button.social.facebook {
+  background: #1877f2;
+}
+
+.button.social.facebook:hover {
+  background: #1664d8;
+}
+
+.article .footer .authorBio {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.article .footer .authorBio .bioContent .bioName {
+  color: #1a202c;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.article .footer .authorBio .bioContent .bioText {
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* Responsive - Still nested */
+@media (max-width: 768px) {
+  .article .header .title {
+    font-size: 1.5rem;
+  }
+
+  .imageWrapper {
+    height: 250px;
+  }
+
+  .article .content,
+  .article .header,
+  .article .footer {
+    padding: 1.5rem;
+  }
+
+  .article .footer .share {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* TODO: Refactor all of the above to use BEM naming */
+/* Example transformation:
+   .article .header .title → .article__title
+   .article .content .text → .article__text
+   .button.social.twitter → .button--twitter (or separate .social-button block)
+*/
+

@@ -1,0 +1,444 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f7fafc;
+  line-height: 1.6;
+  color: #2d3748;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.container .subtitle {
+  color: #718096;
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   ARTICLE - REFACTORED WITH BEM
+   Block: article
+   Improvements:
+   - Flat selectors (no nesting)
+   - Low specificity
+   - Clear component relationships
+   - Easy to understand and maintain
+   - Modifiers for variations
+======================================== */
+
+/* Block */
+.article {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Modifier: Featured article */
+.article--featured {
+  border: 3px solid #f59e0b;
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.2);
+}
+
+/* Element: Featured badge (only on featured articles) */
+.article__featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+  z-index: 10;
+}
+
+/* Element: Header */
+.article__header {
+  padding: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Element: Category badge */
+.article__badge {
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Modifier: Change badge color for featured articles */
+.article--featured .article__badge {
+  background: #f59e0b;
+}
+
+/* Element: Title */
+.article__title {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Element: Meta container */
+.article__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+/* Element: Meta separator */
+.article__meta-separator {
+  color: #cbd5e0;
+}
+
+/* Element: Meta date */
+.article__meta-date {
+  font-weight: 500;
+}
+
+/* Element: Meta author */
+.article__meta-author {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Element: Meta read time */
+.article__meta-read-time {
+  color: #718096;
+}
+
+/* Element: Image wrapper */
+.article__image-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Element: Image */
+.article__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Element: Content */
+.article__content {
+  padding: 2rem;
+}
+
+/* Element: Intro paragraph */
+.article__intro {
+  font-size: 1.125rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* Element: Text paragraph */
+.article__text {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+/* Element: Quote */
+.article__quote {
+  background: #f7fafc;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+/* Modifier: Featured article quotes have different accent color */
+.article--featured .article__quote {
+  border-left-color: #f59e0b;
+}
+
+/* Element: Quote text */
+.article__quote-text {
+  color: #2d3748;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Element: Quote author */
+.article__quote-author {
+  color: #718096;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+
+/* Element: Code block */
+.article__code-block {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* Element: Code */
+.article__code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Element: Footer */
+.article__footer {
+  background: #f7fafc;
+  padding: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Element: Tags container */
+.article__tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Element: Tags label */
+.article__tags-label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-right: 0.5rem;
+}
+
+/* Element: Individual tag */
+.article__tag {
+  background: white;
+  color: #667eea;
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  border: 1px solid #667eea;
+}
+
+/* Modifier: Featured article tags have different color */
+.article--featured .article__tag {
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+/* Element: Share container */
+.article__share {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Element: Share label */
+.article__share-label {
+  font-weight: 600;
+  color: #4a5568;
+  margin-right: 0.5rem;
+}
+
+/* Element: Author bio */
+.article__author-bio {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Element: Author bio name */
+.article__author-bio-name {
+  color: #1a202c;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Element: Author bio text */
+.article__author-bio-text {
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+/* ========================================
+   SOCIAL BUTTON - SEPARATE BLOCK
+   (Buttons are independent, reusable components)
+======================================== */
+
+/* Block: social-button */
+.social-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: white;
+}
+
+/* Modifier: Twitter */
+.social-button--twitter {
+  background: #1da1f2;
+}
+
+.social-button--twitter:hover {
+  background: #1a8cd8;
+}
+
+/* Modifier: LinkedIn */
+.social-button--linkedin {
+  background: #0077b5;
+}
+
+.social-button--linkedin:hover {
+  background: #006399;
+}
+
+/* Modifier: Facebook */
+.social-button--facebook {
+  background: #1877f2;
+}
+
+.social-button--facebook:hover {
+  background: #1664d8;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - Still using BEM
+======================================== */
+
+@media (max-width: 768px) {
+  .article__title {
+    font-size: 1.5rem;
+  }
+
+  .article__image-wrapper {
+    height: 250px;
+  }
+
+  .article__content,
+  .article__header,
+  .article__footer {
+    padding: 1.5rem;
+  }
+
+  .article__share {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article__featured-badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* ========================================
+   REFACTORING NOTES SECTION
+======================================== */
+
+.refactoring-notes {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+
+.refactoring-notes h3 {
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.refactoring-notes__section {
+  margin-bottom: 2rem;
+}
+
+.refactoring-notes__section h4 {
+  color: #667eea;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.refactoring-notes__section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.refactoring-notes__section li {
+  color: #4a5568;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.refactoring-notes__section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.refactoring-notes__section code {
+  background: #f7fafc;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: #667eea;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.refactoring-notes__section p {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.refactoring-notes__section .benefit {
+  color: #38a169;
+  font-weight: 600;
+}
+
+.refactoring-notes__section strong {
+  color: #1a202c;
+}
+
