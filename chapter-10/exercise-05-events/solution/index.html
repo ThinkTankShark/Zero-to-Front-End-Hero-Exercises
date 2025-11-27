@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5: Event Handling - SOLUTION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .task {
+      background: white;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .task h2 {
+      color: #3498db;
+      margin-top: 0;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+    #hover-box {
+      width: 100%;
+      height: 150px;
+      background: #95a5a6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .counter {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+    #double-click-box {
+      padding: 20px;
+      background: #ecf0f1;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #double-click-box.activated {
+      background: #2ecc71;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Event Handling Practice</h1>
+
+  <!-- TASK 1: Self-Updating Button -->
+  <div class="task">
+    <h2>Task 1: Self-Updating Button</h2>
+    <button id="toggle-btn">Click Me!</button>
+    <p class="counter" id="click-counter">Total clicks: 0</p>
+  </div>
+
+  <!-- TASK 2: Character Counter -->
+  <div class="task">
+    <h2>Task 2: Character Counter</h2>
+    <input type="text" id="text-input" placeholder="Start typing...">
+    <p class="counter" id="char-count">Character count: 0</p>
+  </div>
+
+  <!-- TASK 3: Color-Changing Div -->
+  <div class="task">
+    <h2>Task 3: Hover to Change Color</h2>
+    <div id="hover-box">Hover Me!</div>
+  </div>
+
+  <!-- BONUS: Keyboard Event -->
+  <div class="task">
+    <h2>Bonus: Press Enter to Change Color</h2>
+    <input type="text" id="keyboard-input" placeholder="Type and press Enter">
+  </div>
+
+  <!-- BONUS: Double Click -->
+  <div class="task">
+    <h2>Bonus: Double-Click to Activate</h2>
+    <div id="double-click-box">Double-click me!</div>
+  </div>
+
+  <!-- BONUS: Prevent Default Form Submission -->
+  <div class="task">
+    <h2>Bonus: Form with Custom Submit</h2>
+    <form id="custom-form">
+      <input type="text" placeholder="Enter your name" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="form-message" style="color: green; margin-top: 10px;"></p>
+  </div>
+
+  <script>
+    // TASK 1: Self-Updating Button
+    const toggleBtn = document.getElementById("toggle-btn");
+    const clickCounter = document.getElementById("click-counter");
+    let clickCount = 0;
+    let isClicked = false;
+
+    toggleBtn.addEventListener("click", () => {
+      clickCount++;
+      clickCounter.textContent = `Total clicks: ${clickCount}`;
+
+      if (isClicked) {
+        toggleBtn.textContent = "Click Me!";
+        isClicked = false;
+      } else {
+        toggleBtn.textContent = "Clicked!";
+        isClicked = true;
+      }
+
+      console.log(`Button clicked ${clickCount} times`);
+    });
+
+    // TASK 2: Character Counter
+    const textInput = document.getElementById("text-input");
+    const charCount = document.getElementById("char-count");
+
+    textInput.addEventListener("input", () => {
+      const count = textInput.value.length;
+      charCount.textContent = `Character count: ${count}`;
+      console.log(`Current character count: ${count}`);
+    });
+
+    // TASK 3: Color-Changing Div
+    const hoverBox = document.getElementById("hover-box");
+
+    hoverBox.addEventListener("mouseover", () => {
+      hoverBox.style.backgroundColor = "lightblue";
+      console.log("Mouse entered hover box");
+    });
+
+    hoverBox.addEventListener("mouseout", () => {
+      hoverBox.style.backgroundColor = "#95a5a6";
+      console.log("Mouse left hover box");
+    });
+
+    // BONUS 1: Click counter - Already implemented above in Task 1!
+
+    // BONUS 2: Keyboard Event (Enter key)
+    const keyboardInput = document.getElementById("keyboard-input");
+
+    keyboardInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        keyboardInput.style.color = "red";
+        keyboardInput.style.fontWeight = "bold";
+        console.log("Enter key pressed!");
+
+        // Reset after 1 second
+        setTimeout(() => {
+          keyboardInput.style.color = "";
+          keyboardInput.style.fontWeight = "";
+        }, 1000);
+      }
+    });
+
+    // BONUS 3: Double-Click Handler
+    const doubleClickBox = document.getElementById("double-click-box");
+
+    doubleClickBox.addEventListener("dblclick", () => {
+      doubleClickBox.classList.toggle("activated");
+
+      if (doubleClickBox.classList.contains("activated")) {
+        doubleClickBox.textContent = "Activated! ✓";
+        console.log("Box activated");
+      } else {
+        doubleClickBox.textContent = "Double-click me!";
+        console.log("Box deactivated");
+      }
+    });
+
+    // BONUS 4: Prevent Default Form Submission
+    const customForm = document.getElementById("custom-form");
+    const formMessage = document.getElementById("form-message");
+
+    customForm.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent actual form submission
+
+      const formInput = customForm.querySelector('input[type="text"]');
+      const name = formInput.value;
+
+      formMessage.textContent = `Hello, ${name}! Form handled with JavaScript (not submitted).`;
+      console.log(`Form intercepted! Name: ${name}`);
+
+      // Clear the form
+      formInput.value = "";
+    });
+
+    console.log("All event handlers ready!");
+  </script>
+
+</body>
+</html>
+

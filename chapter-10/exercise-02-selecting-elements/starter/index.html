@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: Selecting DOM Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card.featured {
+      border: 3px solid #3498db;
+      background: #e3f2fd;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #nav-menu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      background: #34495e;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    #nav-menu li a {
+      color: white;
+      text-decoration: none;
+    }
+    #nav-menu li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">DOM Selection Practice</h1>
+
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="card" data-category="technology">
+    <h2>First Card</h2>
+    <p>This is the first card element.</p>
+  </div>
+
+  <div class="card featured" data-category="featured">
+    <h2>Featured Card</h2>
+    <p>This card has both 'card' and 'featured' classes!</p>
+  </div>
+
+  <div class="card" data-category="design">
+    <h2>Third Card</h2>
+    <p>This is the third card element.</p>
+  </div>
+
+  <button id="action-btn">Click Me!</button>
+
+  <script>
+    // TASK 1: Select the element with id="main-title"
+    // YOUR CODE HERE
+
+
+    // TASK 2: Select the FIRST element with class "card"
+    // YOUR CODE HERE
+
+
+    // TASK 3: Select ALL elements with class "card"
+    // YOUR CODE HERE
+
+
+    // TASK 4: Select the first <button> element
+    // YOUR CODE HERE
+
+
+    // TASK 5: Select all <li> elements inside #nav-menu
+    // YOUR CODE HERE
+
+
+    // TASK 6: Select the element with both "card" and "featured" classes
+    // YOUR CODE HERE
+
+
+    // TASK 7: Select all elements with a data-category attribute
+    // YOUR CODE HERE
+
+
+    // BONUS CHALLENGES (Optional)
+    // 1. Count the cards
+    // YOUR CODE HERE
+
+    // 2. Get only the text of the main title
+    // YOUR CODE HERE
+
+    // 3. Check if element with id="footer" exists
+    // YOUR CODE HERE
+
+    // 4. Select all links in nav that start with "#"
+    // YOUR CODE HERE
+
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5: Event Handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .task {
+      background: white;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .task h2 {
+      color: #3498db;
+      margin-top: 0;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+    #hover-box {
+      width: 100%;
+      height: 150px;
+      background: #95a5a6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .counter {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Event Handling Practice</h1>
+
+  <!-- TASK 1: Self-Updating Button -->
+  <div class="task">
+    <h2>Task 1: Self-Updating Button</h2>
+    <button id="toggle-btn">Click Me!</button>
+  </div>
+
+  <!-- TASK 2: Character Counter -->
+  <div class="task">
+    <h2>Task 2: Character Counter</h2>
+    <input type="text" id="text-input" placeholder="Start typing...">
+    <p class="counter" id="char-count">Character count: 0</p>
+  </div>
+
+  <!-- TASK 3: Color-Changing Div -->
+  <div class="task">
+    <h2>Task 3: Hover to Change Color</h2>
+    <div id="hover-box">Hover Me!</div>
+  </div>
+
+  <script>
+    // TASK 1: Self-Updating Button
+    // Get the button element
+    // Add click event listener
+    // Change text based on current text or use a toggle variable
+
+
+
+    // TASK 2: Character Counter
+    // Get the input and counter elements
+    // Add input event listener
+    // Update counter with input.value.length
+
+
+
+    // TASK 3: Color-Changing Div
+    // Get the hover box element
+    // Add mouseover event listener (change to lightblue)
+    // Add mouseout event listener (change back to gray)
+
+
+
+    // BONUS CHALLENGES (Optional)
+
+    // Bonus 1: Add a click counter display
+
+
+    // Bonus 2: Keyboard event for Enter key
+
+
+    // Bonus 3: Double-click handler
+
+
+    // Bonus 4: Form with preventDefault
+
+
+  </script>
+
+</body>
+</html>
+

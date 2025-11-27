@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: Selecting DOM Elements - SOLUTION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card.featured {
+      border: 3px solid #3498db;
+      background: #e3f2fd;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #nav-menu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      background: #34495e;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    #nav-menu li a {
+      color: white;
+      text-decoration: none;
+    }
+    #nav-menu li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">DOM Selection Practice</h1>
+
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="card" data-category="technology">
+    <h2>First Card</h2>
+    <p>This is the first card element.</p>
+  </div>
+
+  <div class="card featured" data-category="featured">
+    <h2>Featured Card</h2>
+    <p>This card has both 'card' and 'featured' classes!</p>
+  </div>
+
+  <div class="card" data-category="design">
+    <h2>Third Card</h2>
+    <p>This is the third card element.</p>
+  </div>
+
+  <button id="action-btn">Click Me!</button>
+
+  <script>
+    console.log("=== EXERCISE 2 SOLUTIONS ===\n");
+
+    // TASK 1: Select the element with id="main-title"
+    const mainTitle = document.getElementById("main-title");
+    // Alternative: const mainTitle = document.querySelector("#main-title");
+    console.log("Task 1 - Main Title:", mainTitle);
+
+    // TASK 2: Select the FIRST element with class "card"
+    const firstCard = document.querySelector(".card");
+    console.log("Task 2 - First Card:", firstCard);
+
+    // TASK 3: Select ALL elements with class "card"
+    const allCards = document.querySelectorAll(".card");
+    console.log("Task 3 - All Cards:", allCards);
+    console.log(`Total cards found: ${allCards.length}`);
+
+    // TASK 4: Select the first <button> element
+    const button = document.querySelector("button");
+    // Alternative: const button = document.getElementsByTagName("button")[0];
+    console.log("Task 4 - Button:", button);
+
+    // TASK 5: Select all <li> elements inside #nav-menu
+    const navItems = document.querySelectorAll("#nav-menu li");
+    console.log("Task 5 - Nav Items:", navItems);
+    console.log(`Total nav items: ${navItems.length}`);
+
+    // TASK 6: Select the element with both "card" and "featured" classes
+    const featuredCard = document.querySelector(".card.featured");
+    console.log("Task 6 - Featured Card:", featuredCard);
+
+    // TASK 7: Select all elements with a data-category attribute
+    const categorizedElements = document.querySelectorAll("[data-category]");
+    console.log("Task 7 - Elements with data-category:", categorizedElements);
+    console.log(`Total categorized elements: ${categorizedElements.length}`);
+
+    console.log("\n=== BONUS CHALLENGES ===\n");
+
+    // BONUS 1: Count the cards
+    const cardCount = document.querySelectorAll(".card").length;
+    console.log(`Bonus 1 - Total number of cards: ${cardCount}`);
+
+    // BONUS 2: Get only the text of the main title
+    const titleText = document.getElementById("main-title").textContent;
+    console.log(`Bonus 2 - Title text: "${titleText}"`);
+
+    // BONUS 3: Check if element with id="footer" exists
+    const footer = document.getElementById("footer");
+    if (footer) {
+      console.log("Bonus 3 - Footer exists!");
+    } else {
+      console.log("Bonus 3 - Footer does NOT exist");
+    }
+    // Alternative method:
+    const footerExists = document.getElementById("footer") !== null;
+    console.log(`Footer exists: ${footerExists}`);
+
+    // BONUS 4: Select all links in nav that start with "#"
+    const hashLinks = document.querySelectorAll('#nav-menu a[href^="#"]');
+    console.log("Bonus 4 - Links starting with '#':", hashLinks);
+    console.log(`Total hash links: ${hashLinks.length}`);
+
+    console.log("\n=== ALL TASKS COMPLETE! ===");
+  </script>
+
+</body>
+</html>
+

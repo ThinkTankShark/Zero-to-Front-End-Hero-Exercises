@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4: Create and Remove Elements - SOLUTION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f7fa;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    #controls {
+      text-align: center;
+      margin: 30px 0;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    button#clear-all {
+      background: #95a5a6;
+      margin-left: 10px;
+    }
+    button#clear-all:hover {
+      background: #7f8c8d;
+    }
+    #item-list {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    li button {
+      background: #e74c3c;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+    li button:hover {
+      background: #c0392b;
+    }
+    #empty-message {
+      text-align: center;
+      color: #7f8c8d;
+      font-style: italic;
+      margin-top: 30px;
+    }
+    #counter {
+      text-align: center;
+      font-size: 18px;
+      color: #2c3e50;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Item Manager</h1>
+
+  <div id="controls">
+    <button id="add-btn">Add Item</button>
+    <button id="clear-all">Clear All</button>
+  </div>
+
+  <div id="counter">Total Items: <strong>0</strong></div>
+
+  <ul id="item-list">
+    <!-- Items will be added here dynamically -->
+  </ul>
+
+  <p id="empty-message">No items yet. Click "Add Item" to get started!</p>
+
+  <script>
+    // Get references to DOM elements
+    const addBtn = document.getElementById("add-btn");
+    const clearAllBtn = document.getElementById("clear-all");
+    const itemList = document.getElementById("item-list");
+    const emptyMessage = document.getElementById("empty-message");
+    const counterDisplay = document.getElementById("counter").querySelector("strong");
+
+    // Counter for item numbers
+    let itemCount = 0;
+
+    // Function to update the item counter display
+    function updateCounter() {
+      const currentItems = itemList.children.length;
+      counterDisplay.textContent = currentItems;
+
+      // Show/hide empty message
+      if (currentItems === 0) {
+        emptyMessage.style.display = "block";
+      } else {
+        emptyMessage.style.display = "none";
+      }
+    }
+
+    // Function to add a new item
+    function addItem() {
+      // Increment counter
+      itemCount++;
+
+      // Create new list item
+      const li = document.createElement("li");
+      li.textContent = `Item ${itemCount} `;
+
+      // Create delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+
+      // Add event listener to delete button
+      deleteBtn.addEventListener("click", () => {
+        li.remove();
+        updateCounter();
+        console.log(`Item ${itemCount} deleted`);
+      });
+
+      // Append delete button to list item
+      li.appendChild(deleteBtn);
+
+      // Append list item to list
+      itemList.appendChild(li);
+
+      // Update counter display
+      updateCounter();
+
+      console.log(`Item ${itemCount} added`);
+    }
+
+    // Add event listener to "Add Item" button
+    addBtn.addEventListener("click", addItem);
+
+    // BONUS: Clear all items
+    clearAllBtn.addEventListener("click", () => {
+      if (itemList.children.length === 0) {
+        alert("No items to clear!");
+        return;
+      }
+
+      const confirmClear = confirm("Are you sure you want to delete all items?");
+      if (confirmClear) {
+        itemList.innerHTML = "";
+        updateCounter();
+        console.log("All items cleared");
+      }
+    });
+
+    // Initialize counter display
+    updateCounter();
+
+    console.log("Item Manager ready! Click 'Add Item' to start.");
+  </script>
+
+</body>
+</html>
+

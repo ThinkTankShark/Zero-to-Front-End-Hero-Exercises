@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge: Interactive Color Picker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ecf0f1;
+      transition: background 0.5s ease;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    #color-display {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    #color-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    /* Style for each color box - you'll create these with JavaScript */
+    .color-box {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .color-box:hover {
+      transform: scale(1.1);
+      border-color: rgba(0,0,0,0.3);
+    }
+
+    .color-box.selected {
+      border-color: #2c3e50;
+      border-width: 4px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+      font-weight: 600;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #reset-btn {
+      background: #95a5a6;
+      color: white;
+    }
+
+    #random-btn {
+      background: #9b59b6;
+      color: white;
+    }
+
+    /* Optional: Bonus features styling */
+    .custom-input-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .custom-input-section input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    .custom-input-section button {
+      background: #3498db;
+      color: white;
+    }
+
+    #history-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #history-section h3 {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    #history-boxes {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .history-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      transition: transform 0.2s;
+    }
+
+    .history-box:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎨 Interactive Color Picker</h1>
+
+    <div id="color-display">
+      Current Color: <strong>Default</strong>
+    </div>
+
+    <div id="color-grid">
+      <!-- Color boxes will be added here by JavaScript -->
+    </div>
+
+    <div class="controls">
+      <button id="reset-btn">Reset</button>
+      <!-- BONUS: Add random button if you're doing bonus features -->
+    </div>
+
+    <!-- BONUS: Custom color input (optional) -->
+    <!-- Uncomment if implementing:
+    <div class="custom-input-section">
+      <input type="text" id="custom-color-input" placeholder="#ff6b6b">
+      <button id="apply-custom-btn">Apply</button>
+    </div>
+    -->
+
+    <!-- BONUS: Color history (optional) -->
+    <!-- Uncomment if implementing:
+    <div id="history-section">
+      <h3>Recent Colors</h3>
+      <div id="history-boxes"></div>
+    </div>
+    -->
+  </div>
+
+  <script>
+    // Step 1: Define your color palette
+    const colors = [
+      { name: "Red", hex: "#e74c3c" },
+      { name: "Blue", hex: "#3498db" },
+      { name: "Green", hex: "#2ecc71" },
+      { name: "Orange", hex: "#f39c12" },
+      { name: "Purple", hex: "#9b59b6" },
+      { name: "Teal", hex: "#1abc9c" },
+      { name: "Dark Gray", hex: "#34495e" },
+      { name: "Light Gray", hex: "#ecf0f1" }
+    ];
+
+    // Step 2: Get DOM references
+    const colorGrid = document.getElementById("color-grid");
+    const colorDisplay = document.getElementById("color-display");
+    const resetBtn = document.getElementById("reset-btn");
+
+    const defaultColor = "#ecf0f1";
+    let currentColor = defaultColor;
+
+    // Step 3: Create color boxes dynamically
+    // YOUR CODE HERE:
+    // - Loop through colors array
+    // - For each color, create a div
+    // - Add class "color-box"
+    // - Set background color to color.hex
+    // - Add click event listener
+    // - Append to colorGrid
+
+
+    // Step 4: Function to change background color
+    // YOUR CODE HERE:
+    // Create a function that:
+    // - Takes a color object {name, hex}
+    // - Changes document.body.style.backgroundColor
+    // - Updates colorDisplay text
+    // - Updates currentColor variable
+    // - Adds/removes "selected" class from boxes
+
+
+    // Step 5: Reset button functionality
+    // YOUR CODE HERE:
+    // Add event listener to reset button
+    // Reset to default color
+
+
+    // BONUS FEATURES (Optional)
+
+    // Bonus 1: Random color generator
+    // YOUR CODE HERE
+
+
+    // Bonus 2: Custom color input with validation
+    // YOUR CODE HERE
+
+
+    // Bonus 3: Color history tracker
+    // YOUR CODE HERE
+
+
+    console.log("Color picker loaded! Click a color to change the background.");
+  </script>
+
+</body>
+</html>
+

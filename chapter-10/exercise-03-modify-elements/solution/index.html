@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3: Modify Elements - SOLUTION</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .highlight {
+      background: yellow;
+      padding: 5px;
+    }
+    .important {
+      font-weight: bold;
+      border-left: 4px solid crimson;
+      padding-left: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    .active {
+      background: #28a745;
+      color: white;
+    }
+    #box {
+      width: 200px;
+      height: 100px;
+      background: #e9ecef;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid #333;
+      background: white;
+      border-radius: 5px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    a {
+      color: #3498db;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-heading">Original Heading</h1>
+
+  <p id="intro">This paragraph will be updated.</p>
+
+  <p id="message">This paragraph needs highlighting.</p>
+
+  <p id="secret" class="hidden">🎉 You found the secret message!</p>
+
+  <img id="main-image" src="https://via.placeholder.com/300x200/95a5a6/ffffff?text=Original+Image" alt="Placeholder image">
+
+  <div id="box">Styled Box</div>
+
+  <button id="toggle-btn">Toggle Button</button>
+
+  <br><br>
+
+  <a id="external-link" href="https://example.com">Example Link</a>
+
+  <script>
+    console.log("=== EXERCISE 3 SOLUTIONS ===\n");
+
+    // TASK 1: Change h1 text to "DOM Master"
+    const heading = document.getElementById("main-heading");
+    heading.textContent = "DOM Master";
+    console.log("Task 1: Changed h1 text to", heading.textContent);
+
+    // TASK 2: Change #intro HTML to include <strong> tags
+    const intro = document.getElementById("intro");
+    intro.innerHTML = "Welcome to <strong>DOM manipulation</strong>!";
+    console.log("Task 2: Updated intro with HTML formatting");
+
+    // TASK 3: Change the image source
+    const image = document.getElementById("main-image");
+    image.src = "https://via.placeholder.com/300x200/3498db/ffffff?text=New+Image";
+    // Alternative method:
+    // image.setAttribute("src", "https://via.placeholder.com/300x200/3498db/ffffff?text=New+Image");
+    console.log("Task 3: Changed image source");
+
+    // TASK 4: Add class "highlight" to #message
+    const message = document.getElementById("message");
+    message.classList.add("highlight");
+    console.log("Task 4: Added 'highlight' class to message");
+
+    // TASK 5: Remove class "hidden" from #secret
+    const secret = document.getElementById("secret");
+    secret.classList.remove("hidden");
+    console.log("Task 5: Revealed secret message");
+
+    // TASK 6: Toggle class "active" on the button
+    const button = document.getElementById("toggle-btn");
+    button.classList.toggle("active");
+    console.log("Task 6: Toggled 'active' class on button");
+    // Click the button to toggle again and see it in action!
+
+    // TASK 7: Change multiple styles on #box
+    const box = document.getElementById("box");
+    box.style.backgroundColor = "lightblue";
+    box.style.padding = "20px";
+    box.style.borderRadius = "10px";
+    box.style.border = "2px solid navy";
+    console.log("Task 7: Applied multiple styles to box");
+
+    // TASK 8: Update link href, target, and text
+    const link = document.getElementById("external-link");
+    link.href = "https://developer.mozilla.org";
+    link.target = "_blank";
+    link.textContent = "Visit MDN";
+    console.log("Task 8: Updated link attributes and text");
+
+    console.log("\n=== BONUS CHALLENGES ===\n");
+
+    // BONUS 1: Change all paragraphs to red
+    const allParagraphs = document.querySelectorAll("p");
+    allParagraphs.forEach(p => {
+      p.style.color = "red";
+    });
+    console.log(`Bonus 1: Changed ${allParagraphs.length} paragraphs to red`);
+
+    // BONUS 2: Add multiple classes at once
+    const messageEl = document.getElementById("message");
+    messageEl.classList.add("highlight", "important");
+    console.log("Bonus 2: Added multiple classes:", messageEl.classList);
+
+    // BONUS 3: Read current text and append " (UPDATED)"
+    const headingEl = document.getElementById("main-heading");
+    const currentText = headingEl.textContent;
+    headingEl.textContent = currentText + " (UPDATED)";
+    console.log("Bonus 3: Appended to heading:", headingEl.textContent);
+
+    // BONUS 4: Conditional styling
+    const secretEl = document.getElementById("secret");
+    if (!secretEl.classList.contains("hidden")) {
+      secretEl.style.backgroundColor = "#d4edda";
+      secretEl.style.padding = "10px";
+      secretEl.style.borderRadius = "5px";
+      console.log("Bonus 4: Applied conditional styling to visible secret");
+    }
+
+    console.log("\n=== ALL TASKS COMPLETE! ===");
+    console.log("Refresh the page to reset and try again!");
+  </script>
+
+</body>
+</html>
+

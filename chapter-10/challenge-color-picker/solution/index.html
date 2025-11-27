@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge: Interactive Color Picker - SOLUTION</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ecf0f1;
+      transition: background 0.5s ease;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    #color-display {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    #color-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .color-box {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .color-box:hover {
+      transform: scale(1.1);
+      border-color: rgba(0,0,0,0.3);
+    }
+
+    .color-box.selected {
+      border-color: #2c3e50;
+      border-width: 4px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+      font-weight: 600;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #reset-btn {
+      background: #95a5a6;
+      color: white;
+    }
+
+    #random-btn {
+      background: #9b59b6;
+      color: white;
+    }
+
+    .custom-input-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .custom-input-section input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    .custom-input-section input:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+
+    .custom-input-section button {
+      background: #3498db;
+      color: white;
+    }
+
+    #history-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #history-section h3 {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    #history-boxes {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .history-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      transition: transform 0.2s;
+    }
+
+    .history-box:hover {
+      transform: scale(1.15);
+    }
+
+    .error-message {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎨 Interactive Color Picker</h1>
+
+    <div id="color-display">
+      Current Color: <strong id="color-name">Default</strong>
+      <span id="color-code">(#ecf0f1)</span>
+    </div>
+
+    <div id="color-grid">
+      <!-- Color boxes added by JavaScript -->
+    </div>
+
+    <div class="controls">
+      <button id="reset-btn">Reset</button>
+      <button id="random-btn">Random Color</button>
+    </div>
+
+    <div class="custom-input-section">
+      <input type="text" id="custom-color-input" placeholder="#ff6b6b">
+      <button id="apply-custom-btn">Apply</button>
+      <div id="error-msg" class="error-message"></div>
+    </div>
+
+    <div id="history-section">
+      <h3>Recent Colors</h3>
+      <div id="history-boxes">
+        <!-- History boxes added here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Color palette
+    const colors = [
+      { name: "Red", hex: "#e74c3c" },
+      { name: "Blue", hex: "#3498db" },
+      { name: "Green", hex: "#2ecc71" },
+      { name: "Orange", hex: "#f39c12" },
+      { name: "Purple", hex: "#9b59b6" },
+      { name: "Teal", hex: "#1abc9c" },
+      { name: "Dark Gray", hex: "#34495e" },
+      { name: "Light Gray", hex: "#ecf0f1" }
+    ];
+
+    // Get DOM elements
+    const colorGrid = document.getElementById("color-grid");
+    const colorName = document.getElementById("color-name");
+    const colorCode = document.getElementById("color-code");
+    const resetBtn = document.getElementById("reset-btn");
+    const randomBtn = document.getElementById("random-btn");
+    const customInput = document.getElementById("custom-color-input");
+    const applyCustomBtn = document.getElementById("apply-custom-btn");
+    const errorMsg = document.getElementById("error-msg");
+    const historyBoxesContainer = document.getElementById("history-boxes");
+
+    const defaultColor = { name: "Default", hex: "#ecf0f1" };
+    let currentColor = defaultColor;
+    let colorHistory = [];
+    let selectedBox = null;
+
+    // Create color boxes
+    function createColorBoxes() {
+      colors.forEach(color => {
+        const box = document.createElement("div");
+        box.className = "color-box";
+        box.style.backgroundColor = color.hex;
+        box.setAttribute("data-color-name", color.name);
+        box.setAttribute("data-color-hex", color.hex);
+        box.setAttribute("role", "button");
+        box.setAttribute("aria-label", `Select ${color.name} color`);
+
+        box.addEventListener("click", () => {
+          changeColor(color, box);
+        });
+
+        // Keyboard accessibility
+        box.setAttribute("tabindex", "0");
+        box.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            changeColor(color, box);
+          }
+        });
+
+        colorGrid.appendChild(box);
+      });
+    }
+
+    // Change background color
+    function changeColor(color, boxElement = null) {
+      document.body.style.backgroundColor = color.hex;
+      colorName.textContent = color.name;
+      colorCode.textContent = `(${color.hex})`;
+      currentColor = color;
+
+      // Update selected state
+      if (selectedBox) {
+        selectedBox.classList.remove("selected");
+      }
+      if (boxElement) {
+        boxElement.classList.add("selected");
+        selectedBox = boxElement;
+      }
+
+      // Add to history
+      addToHistory(color);
+
+      console.log(`Color changed to: ${color.name} (${color.hex})`);
+    }
+
+    // Add color to history
+    function addToHistory(color) {
+      // Don't add duplicates of the most recent color
+      if (colorHistory.length > 0 && colorHistory[0].hex === color.hex) {
+        return;
+      }
+
+      // Add to beginning of array
+      colorHistory.unshift(color);
+
+      // Keep only last 5 colors
+      if (colorHistory.length > 5) {
+        colorHistory.pop();
+      }
+
+      updateHistoryDisplay();
+    }
+
+    // Update history display
+    function updateHistoryDisplay() {
+      historyBoxesContainer.innerHTML = "";
+
+      colorHistory.forEach(color => {
+        const historyBox = document.createElement("div");
+        historyBox.className = "history-box";
+        historyBox.style.backgroundColor = color.hex;
+        historyBox.title = `${color.name} (${color.hex})`;
+        historyBox.addEventListener("click", () => {
+          changeColor(color);
+        });
+        historyBoxesContainer.appendChild(historyBox);
+      });
+    }
+
+    // Reset button
+    resetBtn.addEventListener("click", () => {
+      changeColor(defaultColor);
+      if (selectedBox) {
+        selectedBox.classList.remove("selected");
+        selectedBox = null;
+      }
+      console.log("Reset to default color");
+    });
+
+    // Random color generator
+    randomBtn.addEventListener("click", () => {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      const hex = rgbToHex(r, g, b);
+      const randomColor = { name: "Random", hex: hex };
+
+      changeColor(randomColor);
+      if (selectedBox) {
+        selectedBox.classList.remove("selected");
+        selectedBox = null;
+      }
+      console.log(`Random color generated: ${hex}`);
+    });
+
+    // Convert RGB to Hex
+    function rgbToHex(r, g, b) {
+      return "#" + [r, g, b].map(x => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      }).join("");
+    }
+
+    // Custom color input validation
+    function isValidHexColor(hex) {
+      return /^#[0-9A-F]{6}$/i.test(hex);
+    }
+
+    // Apply custom color
+    applyCustomBtn.addEventListener("click", () => {
+      const inputValue = customInput.value.trim();
+
+      if (!inputValue.startsWith("#")) {
+        errorMsg.textContent = "Color must start with #";
+        return;
+      }
+
+      if (!isValidHexColor(inputValue)) {
+        errorMsg.textContent = "Invalid hex color. Use format: #RRGGBB";
+        return;
+      }
+
+      const customColor = { name: "Custom", hex: inputValue };
+      changeColor(customColor);
+      errorMsg.textContent = "";
+      customInput.value = "";
+
+      if (selectedBox) {
+        selectedBox.classList.remove("selected");
+        selectedBox = null;
+      }
+
+      console.log(`Custom color applied: ${inputValue}`);
+    });
+
+    // Allow Enter key in custom input
+    customInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        applyCustomBtn.click();
+      }
+    });
+
+    // Initialize
+    createColorBoxes();
+    console.log("Interactive Color Picker ready!");
+    console.log("Try clicking colors, using the random button, or entering a custom hex code!");
+  </script>
+
+</body>
+</html>
+
