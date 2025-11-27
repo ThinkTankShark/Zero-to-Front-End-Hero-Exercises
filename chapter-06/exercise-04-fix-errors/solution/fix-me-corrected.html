@@ -1,0 +1,67 @@
+<!DOCTYPE html>  <!-- Error 1 fixed: DOCTYPE should be lowercase 'html' -->
+<html lang="en">  <!-- Error 2 fixed: HTML tag should be lowercase; added lang attribute -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Broken Page</title>  <!-- Error 3 fixed: Added missing closing </title> tag -->
+</head>  <!-- Error 4 fixed: Added missing </head> closing tag -->
+<body>
+
+  <h1>Welcome to My Site</h1>  <!-- Error 5 fixed: Closing tag should be </h1>, not </h2> -->
+
+  <!-- Error 6 fixed: Proper nesting - strong tag must close before p tag -->
+  <p>This is a paragraph with <strong>bold text</strong></p>
+
+  <!-- Error 7 fixed: Added required alt attribute for accessibility -->
+  <img src="photo.jpg" alt="Description of photo">
+
+  <!-- Error 8 fixed: Added missing </a> closing tag -->
+  <a href="https://google.com">Visit Google</a>
+
+  <!-- Error 9 fixed: Proper nesting - all tags close in reverse order -->
+  <p>Another paragraph with <em>italic and <strong>bold</strong></em></p>
+
+</body>
+</html>  <!-- Error 10 fixed: Added missing </html> closing tag -->
+
+<!--
+SUMMARY OF ALL 10 ERRORS FIXED:
+
+1. <!DOCTYPE HTML> → <!DOCTYPE html>
+   Convention is to use lowercase
+
+2. <HTML> → <html lang="en">
+   Lowercase is standard; added lang attribute
+
+3. Missing </title> closing tag
+   Every opening tag needs a closing tag
+
+4. Missing </head> closing tag
+   Head section must be properly closed
+
+5. <h1>...</h2> → <h1>...</h1>
+   Closing tag must match opening tag
+
+6. <p><strong>text</p></strong> → <p><strong>text</strong></p>
+   Tags must close in reverse order (proper nesting)
+
+7. <img src="photo.jpg"> → <img src="photo.jpg" alt="Description">
+   Images require alt attribute for accessibility
+
+8. <a href="...">text → <a href="...">text</a>
+   Link was missing closing tag
+
+9. <p><em><strong>text</p></strong></em> → <p><em><strong>text</strong></em></p>
+   Improper nesting - must close in reverse order
+
+10. Missing </html> closing tag at end
+    Root html element must be closed
+
+KEY LESSONS:
+- Always close tags in reverse order (nesting)
+- Match opening and closing tags exactly
+- Include required attributes (alt for images)
+- Use lowercase for tag names (convention)
+- Validate your HTML to catch these errors!
+-->
+

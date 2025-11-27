@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Dashboard - Keyboard Issues!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    /* Issue #1: Removed focus outlines! */
+    *:focus {
+      outline: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Issue #2: These look like buttons but are divs */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 10px 5px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 500px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 1px solid #ddd;
+      min-width: 160px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/" style="color: white;">Home</a></li>
+      <li><a href="/products" style="color: white;">Products</a></li>
+      <li><a href="/about" style="color: white;">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Product Dashboard</h1>
+
+    <!-- Issue #3: Div buttons - not keyboard accessible -->
+    <div class="btn" onclick="showNotification()">
+      Show Notification
+    </div>
+
+    <div class="btn" onclick="openModal()">
+      Open Settings
+    </div>
+
+    <!-- Issue #4: Custom dropdown without keyboard support -->
+    <div class="dropdown">
+      <div class="btn" onclick="toggleDropdown()">
+        Actions ▼
+      </div>
+      <div class="dropdown-content" id="dropdown">
+        <div class="dropdown-item" onclick="alert('Edit')">Edit</div>
+        <div class="dropdown-item" onclick="alert('Delete')">Delete</div>
+        <div class="dropdown-item" onclick="alert('Share')">Share</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Product Analytics</h2>
+      <p>Click the icons below to view different metrics.</p>
+
+      <!-- Issue #5: Icon "buttons" without keyboard access -->
+      <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <div onclick="showChart('sales')" style="cursor: pointer; padding: 20px; background: #e3f2fd; border-radius: 8px;">
+          📊 Sales
+        </div>
+        <div onclick="showChart('users')" style="cursor: pointer; padding: 20px; background: #f3e5f5; border-radius: 8px;">
+          👥 Users
+        </div>
+        <div onclick="showChart('revenue')" style="cursor: pointer; padding: 20px; background: #e8f5e9; border-radius: 8px;">
+          💰 Revenue
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue #6: Modal without focus management -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h2>Settings</h2>
+      <p>Configure your dashboard preferences.</p>
+
+      <form>
+        <div style="margin: 20px 0;">
+          <label>
+            <input type="checkbox"> Enable notifications
+          </label>
+        </div>
+        <div style="margin: 20px 0;">
+          <label>
+            <input type="checkbox"> Auto-refresh data
+          </label>
+        </div>
+      </form>
+
+      <!-- Issue #7: Close button is a div -->
+      <div class="btn" onclick="closeModal()">
+        Close
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showNotification() {
+      alert('Notification shown!');
+    }
+
+    function openModal() {
+      document.getElementById('modal').classList.add('active');
+      // Issue: No focus management when modal opens
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+      // Issue: Focus not returned to trigger element
+    }
+
+    function toggleDropdown() {
+      document.getElementById('dropdown').classList.toggle('show');
+      // Issue: No keyboard support for dropdown
+    }
+
+    function showChart(type) {
+      alert(`Showing ${type} chart`);
+    }
+
+    // Issue: Modal doesn't close on Escape key
+    // Issue: Focus not trapped in modal when open
+    // Issue: Dropdown doesn't close on Escape or outside click
+  </script>
+</body>
+</html>
+

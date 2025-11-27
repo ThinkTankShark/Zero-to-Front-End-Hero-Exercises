@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Customer Satisfaction Survey</h1>
+  <p>Help us improve by completing this quick survey!</p>
+
+  <!-- 🐛 THIS FORM IS INTENTIONALLY BROKEN! FIX ALL THE ISSUES! -->
+
+  <form action="#">
+
+    <!-- Issue: No fieldset, no labels properly connected -->
+    <div>
+      <p>Personal Information</p>
+
+      <!-- Issue: No label -->
+      Name:
+      <input type="text" name="name">
+
+      <!-- Issue: Label not connected, wrong input type -->
+      <label>Email Address</label>
+      <input type="text" name="email">
+
+      <!-- Issue: Label not properly connected -->
+      <label for="wrong-id">Phone Number</label>
+      <input type="text" name="phone">
+    </div>
+
+    <!-- Issue: No fieldset, inconsistent structure -->
+    <div>
+      <p>Survey Questions</p>
+
+      <!-- Issue: No label, wrong input type -->
+      How would you rate our service? (1-10)
+      <input type="text" name="rating">
+
+      <!-- Issue: No label -->
+      When did you last visit us?
+      <input type="text" name="visit-date">
+
+      <!-- Issue: Label not connected -->
+      <label>How did you hear about us?</label>
+      <select name="source">
+        <option>Search Engine</option>
+        <option>Social Media</option>
+        <option>Friend</option>
+        <option>Advertisement</option>
+      </select>
+
+      <!-- Issue: No label, no indication it's required -->
+      Would you recommend us to a friend?
+      <input type="radio" name="recommend" value="yes"> Yes
+      <input type="radio" name="recommend" value="no"> No
+      <input type="radio" name="recommend" value="maybe"> Maybe
+    </div>
+
+    <!-- Issue: No fieldset -->
+    <div>
+      <p>Additional Feedback</p>
+
+      <!-- Issue: No label -->
+      Comments:
+      <textarea name="comments"></textarea>
+
+      <!-- Issue: Not properly structured -->
+      <input type="checkbox" name="newsletter"> Subscribe to newsletter
+    </div>
+
+    <!-- Issue: Button missing type attribute -->
+    <button>Submit Survey</button>
+    <button>Clear</button>
+
+  </form>
+
+  <!--
+    🐛 ISSUES TO FIX (at least 10!):
+
+    1. No <fieldset> elements to group related fields
+    2. No <legend> elements to describe field groups
+    3. Many labels are not properly connected (missing for/id)
+    4. Some inputs have no labels at all
+    5. Wrong input type for email (should be type="email")
+    6. Wrong input type for rating (should be type="number")
+    7. Wrong input type for date (should be type="date")
+    8. Wrong input type for phone (should be type="tel")
+    9. No required attributes on required fields
+    10. No validation patterns (e.g., phone format)
+    11. No placeholder hints
+    12. No autocomplete attributes
+    13. Buttons missing type attributes
+    14. No indication of required fields
+    15. Poor accessibility (can't navigate with keyboard properly)
+    16. Select dropdown missing default/prompt option
+    17. Radio buttons not properly labeled
+    18. Checkbox not properly labeled
+
+    FIX THEM ALL!
+  -->
+
+</body>
+</html>
+

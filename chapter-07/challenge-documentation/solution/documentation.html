@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML & CSS Fundamentals - Complete Documentation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0 0 10px 0; font-size: 2em; }
+    header nav ul { list-style: none; display: flex; gap: 25px; }
+    header nav a { color: white; text-decoration: none; font-weight: 500; }
+    header nav a:hover { text-decoration: underline; }
+    .container { display: flex; max-width: 1400px; margin: 0 auto; }
+    nav.sidebar {
+      width: 280px;
+      background-color: #f8f9fa;
+      padding: 30px 20px;
+      position: sticky;
+      top: 90px;
+      height: calc(100vh - 90px);
+      overflow-y: auto;
+      border-right: 1px solid #e0e0e0;
+    }
+    nav.sidebar h2 { font-size: 1.1em; margin-bottom: 15px; color: #667eea; }
+    nav.sidebar ul { list-style: none; }
+    nav.sidebar li { margin: 8px 0; }
+    nav.sidebar a { color: #555; text-decoration: none; display: block; padding: 5px 10px; border-radius: 4px; }
+    nav.sidebar a:hover { background-color: #e0e0e0; }
+    nav.sidebar ul ul { margin-left: 15px; }
+    main { flex: 1; padding: 40px 50px; max-width: 900px; }
+    article { margin-bottom: 60px; }
+    article > header { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #667eea; }
+    article h1 { color: #2c3e50; font-size: 2.5em; }
+    section { margin: 35px 0; }
+    h2 { color: #34495e; margin-top: 30px; padding-bottom: 8px; border-bottom: 2px solid #ecf0f1; }
+    h3 { color: #555; margin-top: 20px; }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #e74c3c;
+      font-size: 0.9em;
+    }
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 20px 0;
+      border-left: 4px solid #667eea;
+    }
+    pre code { background: none; padding: 0; color: #ecf0f1; }
+    aside {
+      width: 320px;
+      padding: 30px 20px;
+      background-color: #f8f9fa;
+      position: sticky;
+      top: 90px;
+      height: calc(100vh - 90px);
+      overflow-y: auto;
+    }
+    aside section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    aside h3 { color: #667eea; margin-top: 0; font-size: 1.1em; }
+    dl { margin: 15px 0; }
+    dt { font-weight: bold; color: #667eea; margin-top: 15px; }
+    dd { margin-left: 20px; margin-bottom: 10px; color: #555; }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    footer p { margin: 8px 0; }
+    footer a { color: #3498db; }
+    .tip { background-color: #e8f5e9; padding: 15px; border-left: 4px solid #4caf50; margin: 20px 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header>
+    <h1>HTML & CSS Fundamentals</h1>
+    <nav>
+      <ul>
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#html">HTML Guide</a></li>
+        <li><a href="#css">CSS Guide</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Sidebar Navigation (Table of Contents) -->
+    <nav class="sidebar">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#html">HTML Basics</a>
+          <ul>
+            <li><a href="#html-what">What is HTML?</a></li>
+            <li><a href="#html-structure">Document Structure</a></li>
+            <li><a href="#html-elements">Common Elements</a></li>
+            <li><a href="#html-best">Best Practices</a></li>
+          </ul>
+        </li>
+        <li><a href="#css">CSS Basics</a>
+          <ul>
+            <li><a href="#css-what">What is CSS?</a></li>
+            <li><a href="#css-selectors">Selectors</a></li>
+            <li><a href="#css-properties">Properties</a></li>
+            <li><a href="#css-example">Example Styles</a></li>
+          </ul>
+        </li>
+        <li><a href="#together">Putting it Together</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+      <!-- Article 1: Introduction -->
+      <article id="intro">
+        <header>
+          <h1>Introduction</h1>
+          <p class="meta">Last updated: <time datetime="2024-01-15">January 15, 2024</time></p>
+        </header>
+
+        <p>Welcome to the complete guide to HTML and CSS fundamentals! Whether you're just starting your web development journey or refreshing your knowledge, this documentation will provide you with a solid foundation.</p>
+
+        <section>
+          <h2>Overview</h2>
+          <p>HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are the two fundamental technologies for building web pages:</p>
+          <ul>
+            <li><strong>HTML</strong> provides the structure and content</li>
+            <li><strong>CSS</strong> handles the visual presentation and layout</li>
+          </ul>
+          <p>Together, they form the backbone of every website you visit.</p>
+        </section>
+
+        <section>
+          <h2>Why They Matter</h2>
+          <p>Understanding HTML and CSS is essential because:</p>
+          <ol>
+            <li>They're the foundation of web development</li>
+            <li>Every web developer must know them</li>
+            <li>They're relatively easy to learn</li>
+            <li>You can start building real projects immediately</li>
+            <li>They provide a gateway to more advanced topics</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>What You'll Learn</h2>
+          <p>This guide covers:</p>
+          <ul>
+            <li>HTML document structure and syntax</li>
+            <li>Common HTML elements and their uses</li>
+            <li>Semantic HTML best practices</li>
+            <li>CSS selectors and specificity</li>
+            <li>Common CSS properties and values</li>
+            <li>How to combine HTML and CSS effectively</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Article 2: HTML Basics -->
+      <article id="html">
+        <header>
+          <h1>HTML Basics</h1>
+        </header>
+
+        <section id="html-what">
+          <h2>What is HTML?</h2>
+          <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using a series of elements represented by tags.</p>
+          <p>HTML tells browsers how to display content—it's not a programming language, but a markup language.</p>
+        </section>
+
+        <section id="html-structure">
+          <h2>Document Structure</h2>
+          <p>Every HTML document has a basic structure:</p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <p>Let's break this down:</p>
+          <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code> - Declares this is an HTML5 document</li>
+            <li><code>&lt;html&gt;</code> - Root element of the page</li>
+            <li><code>&lt;head&gt;</code> - Contains metadata and page information</li>
+            <li><code>&lt;body&gt;</code> - Contains the visible page content</li>
+          </ul>
+        </section>
+
+        <section id="html-elements">
+          <h2>Common Elements</h2>
+          <p>HTML provides many elements for different types of content:</p>
+
+          <h3>Headings</h3>
+          <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Sub-subheading&lt;/h3&gt;</code></pre>
+
+          <h3>Paragraphs and Text</h3>
+          <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;</code></pre>
+
+          <h3>Links and Images</h3>
+          <pre><code>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+&lt;img src="image.jpg" alt="Description"&gt;</code></pre>
+
+          <h3>Lists</h3>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </section>
+
+        <section id="html-best">
+          <h2>Best Practices</h2>
+          <div class="tip">
+            <strong>💡 Tip:</strong> Always use semantic HTML elements that describe the meaning of your content, not just how it looks!
+          </div>
+          <ul>
+            <li>Use semantic elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, etc.)</li>
+            <li>Always include alt text for images</li>
+            <li>Use proper heading hierarchy (don't skip levels)</li>
+            <li>Keep your code properly indented</li>
+            <li>Validate your HTML regularly</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Article 3: CSS Basics -->
+      <article id="css">
+        <header>
+          <h1>CSS Basics</h1>
+        </header>
+
+        <section id="css-what">
+          <h2>What is CSS?</h2>
+          <p>CSS (Cascading Style Sheets) is the language used to style HTML documents. It controls colors, fonts, layouts, spacing, and all visual aspects of your web page.</p>
+          <p>CSS separates presentation from structure, making your code cleaner and easier to maintain.</p>
+        </section>
+
+        <section id="css-selectors">
+          <h2>Selectors</h2>
+          <p>CSS selectors target HTML elements you want to style:</p>
+
+          <h3>Element Selector</h3>
+          <pre><code>p {
+  color: blue;
+  font-size: 16px;
+}</code></pre>
+
+          <h3>Class Selector</h3>
+          <pre><code>.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}</code></pre>
+
+          <h3>ID Selector</h3>
+          <pre><code>#header {
+  background-color: navy;
+  color: white;
+}</code></pre>
+        </section>
+
+        <section id="css-properties">
+          <h2>Common Properties</h2>
+          <p>CSS offers hundreds of properties. Here are the most essential ones:</p>
+
+          <h3>Colors and Backgrounds</h3>
+          <pre><code>element {
+  color: #333;
+  background-color: #f0f0f0;
+}</code></pre>
+
+          <h3>Typography</h3>
+          <pre><code>element {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+}</code></pre>
+
+          <h3>Spacing</h3>
+          <pre><code>element {
+  margin: 20px;
+  padding: 15px;
+}</code></pre>
+        </section>
+
+        <section id="css-example">
+          <h2>Complete Example</h2>
+          <p>Here's a complete CSS stylesheet example:</p>
+          <pre><code>body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}</code></pre>
+        </section>
+      </article>
+
+      <!-- Article 4: Putting it Together -->
+      <article id="together">
+        <header>
+          <h1>Putting it Together</h1>
+        </header>
+
+        <section>
+          <h2>Complete Example</h2>
+          <p>Let's combine HTML and CSS to create a simple but complete web page:</p>
+
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Webpage&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    h1 { margin: 0; }
+
+    nav { margin: 20px 0; }
+
+    nav a {
+      margin-right: 15px;
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    article {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;About This Site&lt;/h2&gt;
+      &lt;p&gt;This is a simple example of HTML and CSS working together.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+          <h2>Tips and Tricks</h2>
+          <ul>
+            <li>Start with HTML structure first, then add CSS</li>
+            <li>Use external stylesheets for larger projects</li>
+            <li>Organize your CSS logically (layout, typography, components)</li>
+            <li>Comment your code to explain complex sections</li>
+            <li>Use browser DevTools to experiment</li>
+            <li>Test in multiple browsers</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Next Steps</h2>
+          <p>Now that you understand the basics, here's what to learn next:</p>
+          <ol>
+            <li>CSS Flexbox and Grid for advanced layouts</li>
+            <li>Responsive design with media queries</li>
+            <li>JavaScript for interactivity</li>
+            <li>Web accessibility best practices</li>
+            <li>Performance optimization</li>
+          </ol>
+          <p><strong>Keep practicing and building projects!</strong> The best way to learn is by doing.</p>
+        </section>
+      </article>
+
+    </main>
+
+    <!-- Aside: Quick Reference -->
+    <aside>
+      <section>
+        <h3>Quick Reference</h3>
+        <p><strong>Essential HTML Tags:</strong></p>
+        <ul>
+          <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+          <li><code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code></li>
+          <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></li>
+          <li><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code></li>
+        </ul>
+
+        <p><strong>CSS Properties:</strong></p>
+        <ul>
+          <li><code>color</code>, <code>background-color</code></li>
+          <li><code>font-size</code>, <code>font-family</code></li>
+          <li><code>margin</code>, <code>padding</code></li>
+          <li><code>display</code>, <code>position</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Related Resources</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML Reference</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS Reference</a></li>
+          <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+          <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Glossary</h3>
+        <dl>
+          <dt>Element</dt>
+          <dd>An HTML component defined by tags (e.g., <code>&lt;p&gt;</code>)</dd>
+
+          <dt>Attribute</dt>
+          <dd>Additional information about an element (e.g., <code>href</code>)</dd>
+
+          <dt>Selector</dt>
+          <dd>A pattern used to target elements for styling</dd>
+
+          <dt>Property</dt>
+          <dd>A CSS characteristic you can style (e.g., <code>color</code>)</dd>
+
+          <dt>Value</dt>
+          <dd>The setting for a CSS property (e.g., <code>red</code>)</dd>
+        </dl>
+      </section>
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 HTML & CSS Fundamentals Documentation</p>
+    <p>Licensed under <a href="#">MIT License</a></p>
+    <p><a href="#">Contribute on GitHub</a> | <a href="#">Report an Issue</a></p>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breaking News - Tech Daily</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+    .site-header { background-color: #2c3e50; color: white; padding: 20px; }
+    .site-title { font-size: 2em; margin: 0; }
+    .navigation { margin-top: 10px; }
+    .nav-item { display: inline; margin-right: 20px; color: white; text-decoration: none; }
+    .container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 20px; }
+    .main-content { flex: 3; }
+    .article-header { margin-bottom: 20px; }
+    .article-title { font-size: 2.5em; margin: 0; color: #2c3e50; }
+    .article-meta { color: #7f8c8d; margin: 10px 0; }
+    .article-section { margin: 30px 0; }
+    .section-title { font-size: 1.5em; color: #34495e; }
+    .sidebar { flex: 1; background-color: #ecf0f1; padding: 20px; border-radius: 5px; }
+    .sidebar-section { margin-bottom: 30px; }
+    .sidebar-title { font-size: 1.2em; margin-top: 0; }
+    .related-list { padding-left: 0; }
+    .related-item { list-style: none; padding: 8px 0; border-bottom: 1px solid #bdc3c7; }
+    .site-footer { background-color: #2c3e50; color: white; padding: 20px; text-align: center; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- 🐛 THIS IS DIV SOUP! REFACTOR TO USE SEMANTIC HTML! -->
+
+  <div class="site-header">
+    <div class="site-title">Tech Daily News</div>
+    <div class="navigation">
+      <a href="/" class="nav-item">Home</a>
+      <a href="/tech" class="nav-item">Technology</a>
+      <a href="/science" class="nav-item">Science</a>
+      <a href="/business" class="nav-item">Business</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-content">
+      <div class="article-wrapper">
+        <div class="article-header">
+          <div class="article-title">AI Revolution: How Machine Learning is Transforming Industries</div>
+          <div class="article-meta">
+            By John Smith | Published: January 20, 2024 | 5 min read
+          </div>
+        </div>
+
+        <div class="article-section">
+          <div class="section-title">Introduction</div>
+          <p>Artificial intelligence and machine learning are no longer futuristic concepts—they're reshaping industries today. From healthcare to finance, AI is driving innovation at an unprecedented pace.</p>
+        </div>
+
+        <div class="article-section">
+          <div class="section-title">Healthcare Transformation</div>
+          <p>In healthcare, AI is diagnosing diseases earlier and more accurately than ever before. Machine learning algorithms analyze medical images, predict patient outcomes, and even suggest treatment plans.</p>
+          <p>Hospitals using AI-powered systems have seen diagnostic accuracy improve by up to 20%, potentially saving thousands of lives annually.</p>
+        </div>
+
+        <div class="article-section">
+          <div class="section-title">Financial Services Innovation</div>
+          <p>The finance sector leverages AI for fraud detection, algorithmic trading, and personalized banking experiences. Machine learning models process millions of transactions in real-time, identifying suspicious patterns that humans might miss.</p>
+        </div>
+
+        <div class="article-section">
+          <div class="section-title">Looking Ahead</div>
+          <p>As AI continues to evolve, we can expect even more dramatic changes. The key will be ensuring these technologies are developed responsibly, with consideration for ethics, privacy, and societal impact.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Related Articles</div>
+        <ul class="related-list">
+          <li class="related-item">Understanding Neural Networks</li>
+          <li class="related-item">The Ethics of AI Development</li>
+          <li class="related-item">Top 10 AI Tools for Developers</li>
+          <li class="related-item">Machine Learning Career Guide</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Trending Topics</div>
+        <ul class="related-list">
+          <li class="related-item">ChatGPT Updates</li>
+          <li class="related-item">Quantum Computing</li>
+          <li class="related-item">5G Technology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    <p>&copy; 2024 Tech Daily News. All rights reserved.</p>
+    <p>Contact: news@techdaily.com</p>
+  </div>
+
+  <!--
+    🐛 PROBLEMS TO FIX:
+    1. Everything is a div - no semantic meaning
+    2. No <header>, <nav>, <main>, <article>, <aside>, <footer> elements
+    3. No <section> elements for article parts
+    4. Date not in <time> element
+    5. Navigation not in a proper list
+    6. Headings are divs instead of h1-h6
+    7. Poor document outline
+    8. Bad for screen readers and SEO
+
+    REFACTOR THIS TO USE PROPER SEMANTIC HTML!
+  -->
+
+</body>
+</html>
+

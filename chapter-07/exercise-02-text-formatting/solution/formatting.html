@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Formatting Practice</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    h1 {
+      font-family: Arial, sans-serif;
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-family: Arial, sans-serif;
+      color: #34495e;
+      margin-top: 35px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      color: #e74c3c;
+    }
+    pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+    }
+    pre code {
+      background: none;
+      color: #ecf0f1;
+      padding: 0;
+    }
+    blockquote {
+      border-left: 4px solid #3498db;
+      padding-left: 20px;
+      margin-left: 0;
+      font-style: italic;
+      color: #555;
+    }
+    .example {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Text Formatting Examples</h1>
+  <p>This page demonstrates the proper use of semantic text formatting tags in HTML.</p>
+
+  <h2>Strong Importance</h2>
+  <div class="example">
+    <p><strong>Warning:</strong> This action cannot be undone. Please proceed with caution.</p>
+    <p><strong>Important:</strong> Make sure to save your work before closing the browser.</p>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;strong&gt;</code> for text with strong importance, not just for bold styling.</p>
+
+  <h2>Emphasis</h2>
+  <div class="example">
+    <p>You <em>must</em> complete step one before proceeding to step two.</p>
+    <p>I didn't say I <em>liked</em> it, I said it was <em>interesting</em>.</p>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;em&gt;</code> for emphasis, not just for italics.</p>
+
+  <h2>Highlighted Text</h2>
+  <div class="example">
+    <p>Search results for "semantic HTML":</p>
+    <p>Learn how to write <mark>semantic HTML</mark> that improves accessibility and SEO. Using <mark>semantic HTML</mark> makes your code more meaningful.</p>
+  </div>
+  <p><em>Note:</em> <code>&lt;mark&gt;</code> is perfect for highlighting search terms or referenced text.</p>
+
+  <h2>Code Examples</h2>
+  <div class="example">
+    <p>Use the <code>console.log()</code> function to print output to the browser console.</p>
+    <p>To select an element by ID in JavaScript, use <code>document.getElementById('myId')</code>.</p>
+
+    <p>Here's a complete code example:</p>
+    <pre><code>function greet(name) {
+  console.log('Hello, ' + name + '!');
+}
+
+greet('World');</code></pre>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;code&gt;</code> for inline code and <code>&lt;pre&gt;</code> for code blocks.</p>
+
+  <h2>Abbreviations</h2>
+  <div class="example">
+    <p>
+      <abbr title="HyperText Markup Language">HTML</abbr> provides structure,
+      <abbr title="Cascading Style Sheets">CSS</abbr> handles styling, and
+      <abbr title="Application Programming Interface">API</abbr>s enable communication between systems.
+    </p>
+    <p>The <abbr title="World Wide Web Consortium">W3C</abbr> maintains web standards.</p>
+  </div>
+  <p><em>Note:</em> Hover over the abbreviations to see their full meanings!</p>
+
+  <h2>Quotes and Citations</h2>
+  <div class="example">
+    <p>As the saying goes, <q>practice makes perfect.</q></p>
+
+    <blockquote>
+      <p>The best way to predict the future is to invent it.</p>
+      <footer>— Alan Kay</footer>
+    </blockquote>
+
+    <p>I recently read <cite>Zero to Front-End Hero</cite>, which taught me semantic HTML.</p>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;q&gt;</code> for short quotes, <code>&lt;blockquote&gt;</code> for longer quotes, and <code>&lt;cite&gt;</code> for work titles.</p>
+
+  <h2>Scientific Notation</h2>
+  <div class="example">
+    <p><strong>Chemical formulas:</strong> H<sub>2</sub>O (water), CO<sub>2</sub> (carbon dioxide)</p>
+    <p><strong>Mathematical expressions:</strong> E = mc<sup>2</sup>, x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup></p>
+    <p><strong>Footnotes:</strong> This statement requires citation<sup>1</sup></p>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;sub&gt;</code> for subscripts and <code>&lt;sup&gt;</code> for superscripts.</p>
+
+  <h2>Document Changes</h2>
+  <div class="example">
+    <p>Price: <del>$99.99</del> <ins>$79.99</ins> (Limited time offer!)</p>
+    <p>My favorite color is <del>blue</del> <ins>purple</ins>.</p>
+  </div>
+  <p><em>Note:</em> Use <code>&lt;del&gt;</code> for deleted text and <code>&lt;ins&gt;</code> for inserted text.</p>
+
+  <hr>
+
+  <p><small>Remember: Choose formatting tags based on semantic meaning, not visual appearance!</small></p>
+
+</body>
+</html>
+

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    fieldset {
+      margin: 25px 0;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 0 15px;
+      color: #667eea;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .inline-label {
+      display: inline;
+      font-weight: normal;
+      margin-left: 5px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin: 10px 0;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    button {
+      margin: 25px 10px 10px 0;
+      padding: 14px 35px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="reset"] {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #d0d0d0;
+    }
+
+    .required {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    .help-text {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .optional {
+      color: #999;
+      font-weight: normal;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Create Your Account</h1>
+    <p class="intro">Join our community of developers! Fill out the form below to get started.</p>
+
+    <form action="#" method="post">
+
+      <!-- Section 1: Account Information -->
+      <fieldset>
+        <legend>Account Information</legend>
+
+        <label for="username">
+          Username: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="username"
+               name="username"
+               required
+               minlength="3"
+               maxlength="20"
+               pattern="[A-Za-z0-9_]+"
+               placeholder="john_doe123"
+               title="Username must be 3-20 characters and contain only letters, numbers, and underscores"
+               autocomplete="username">
+        <p class="help-text">3-20 characters, letters, numbers, and underscores only</p>
+
+        <label for="email">
+          Email Address: <span class="required">*</span>
+        </label>
+        <input type="email"
+               id="email"
+               name="email"
+               required
+               placeholder="you@example.com"
+               autocomplete="email">
+
+        <label for="password">
+          Password: <span class="required">*</span>
+        </label>
+        <input type="password"
+               id="password"
+               name="password"
+               required
+               minlength="8"
+               placeholder="••••••••"
+               autocomplete="new-password">
+        <p class="help-text">Password must be at least 8 characters long</p>
+
+        <label for="confirm-password">
+          Confirm Password: <span class="required">*</span>
+        </label>
+        <input type="password"
+               id="confirm-password"
+               name="confirm-password"
+               required
+               minlength="8"
+               placeholder="••••••••"
+               autocomplete="new-password">
+      </fieldset>
+
+      <!-- Section 2: Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="firstname">
+          First Name: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="firstname"
+               name="firstname"
+               required
+               placeholder="John"
+               autocomplete="given-name">
+
+        <label for="lastname">
+          Last Name: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="lastname"
+               name="lastname"
+               required
+               placeholder="Doe"
+               autocomplete="family-name">
+
+        <label for="dob">
+          Date of Birth: <span class="required">*</span>
+        </label>
+        <input type="date"
+               id="dob"
+               name="dob"
+               required
+               max="2006-12-31"
+               autocomplete="bday">
+        <p class="help-text">You must be at least 18 years old to register</p>
+
+        <p><strong>Gender:</strong> <span class="optional">(Optional)</span></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" value="male">
+            <span class="inline-label">Male</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female">
+            <span class="inline-label">Female</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other">
+            <span class="inline-label">Other</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="prefer-not-to-say">
+            <span class="inline-label">Prefer not to say</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Section 3: Address (Optional) -->
+      <fieldset>
+        <legend>Address <span class="optional">(Optional)</span></legend>
+
+        <label for="street">
+          Street Address:
+        </label>
+        <input type="text"
+               id="street"
+               name="street"
+               placeholder="123 Main Street"
+               autocomplete="street-address">
+
+        <label for="city">
+          City:
+        </label>
+        <input type="text"
+               id="city"
+               name="city"
+               placeholder="San Francisco"
+               autocomplete="address-level2">
+
+        <label for="state">
+          State/Province:
+        </label>
+        <select id="state" name="state" autocomplete="address-level1">
+          <option value="">-- Select a state --</option>
+          <option value="CA">California</option>
+          <option value="NY">New York</option>
+          <option value="TX">Texas</option>
+          <option value="FL">Florida</option>
+          <option value="WA">Washington</option>
+          <option value="IL">Illinois</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="OH">Ohio</option>
+        </select>
+
+        <label for="zip">
+          ZIP/Postal Code:
+        </label>
+        <input type="text"
+               id="zip"
+               name="zip"
+               pattern="[0-9]{5}(-[0-9]{4})?"
+               placeholder="12345 or 12345-6789"
+               title="Format: 12345 or 12345-6789"
+               autocomplete="postal-code">
+
+        <label for="country">
+          Country:
+        </label>
+        <select id="country" name="country" autocomplete="country">
+          <option value="">-- Select a country --</option>
+          <option value="US" selected>United States</option>
+          <option value="CA">Canada</option>
+          <option value="UK">United Kingdom</option>
+          <option value="AU">Australia</option>
+          <option value="DE">Germany</option>
+          <option value="FR">France</option>
+          <option value="JP">Japan</option>
+          <option value="IN">India</option>
+        </select>
+      </fieldset>
+
+      <!-- Section 4: Preferences -->
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <p><strong>Programming Interests:</strong> <span class="optional">(Select all that apply)</span></p>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="interests" value="html-css">
+            <span class="inline-label">HTML/CSS</span>
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="javascript">
+            <span class="inline-label">JavaScript</span>
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="python">
+            <span class="inline-label">Python</span>
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="java">
+            <span class="inline-label">Java</span>
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="other">
+            <span class="inline-label">Other</span>
+          </label>
+        </div>
+
+        <p><strong>Experience Level: <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="experience" value="beginner" required checked>
+            <span class="inline-label">Complete Beginner</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="some" required>
+            <span class="inline-label">Some Experience</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="intermediate" required>
+            <span class="inline-label">Intermediate</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="advanced" required>
+            <span class="inline-label">Advanced</span>
+          </label>
+        </div>
+
+        <br>
+        <label>
+          <input type="checkbox" name="newsletter" checked>
+          <span class="inline-label">Send me the weekly newsletter with tips and tutorials</span>
+        </label>
+      </fieldset>
+
+      <!-- Section 5: Terms & Conditions -->
+      <fieldset>
+        <legend>Terms & Conditions</legend>
+
+        <label>
+          <input type="checkbox" name="terms" required>
+          <span class="inline-label">
+            I agree to the <a href="/terms" target="_blank">Terms of Service</a>
+            <span class="required">*</span>
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox" name="privacy" required>
+          <span class="inline-label">
+            I agree to the <a href="/privacy" target="_blank">Privacy Policy</a>
+            <span class="required">*</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <!-- Submit Buttons -->
+      <div style="text-align: center;">
+        <button type="submit">Create My Account</button>
+        <button type="reset">Reset Form</button>
+      </div>
+
+    </form>
+
+    <p class="help-text" style="text-align: center; margin-top: 20px;">
+      <small>
+        Fields marked with <span class="required">*</span> are required.
+        <br>
+        Already have an account? <a href="/login">Sign in here</a>
+      </small>
+    </p>
+  </div>
+
+</body>
+</html>
+

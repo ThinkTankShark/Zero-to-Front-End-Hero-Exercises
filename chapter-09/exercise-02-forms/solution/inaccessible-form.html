@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form - Accessible Version</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input:focus {
+      outline: 3px solid #007bff;
+      outline-offset: 2px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:focus {
+      outline: 3px solid #0056b3;
+      outline-offset: 2px;
+    }
+    .error {
+      color: #d32f2f;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .hint {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+    .invalid {
+      border-color: #d32f2f;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    .required-indicator {
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Your Account</h1>
+
+  <form>
+    <!-- ✅ FIXED #1: Proper label with for/id association -->
+    <div class="form-group">
+      <label for="name">
+        Full Name <span class="required-indicator" aria-label="required">*</span>
+      </label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <!-- ✅ FIXED #2: Label properly associated + hint linked with aria-describedby -->
+    <div class="form-group">
+      <label for="email">
+        Email Address <span class="required-indicator" aria-label="required">*</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-describedby="email-hint"
+      >
+      <div id="email-hint" class="hint">We'll never share your email</div>
+    </div>
+
+    <!-- ✅ FIXED #3: Password hint properly associated -->
+    <div class="form-group">
+      <label for="password">
+        Password <span class="required-indicator" aria-label="required">*</span>
+      </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        aria-describedby="password-hint"
+      >
+      <div id="password-hint" class="hint">
+        Must be at least 8 characters with 1 uppercase and 1 number
+      </div>
+    </div>
+
+    <!-- ✅ FIXED #4: Required attribute added, label properly associated -->
+    <div class="form-group">
+      <label for="phone">
+        Phone Number <span class="required-indicator" aria-label="required">*</span>
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        aria-describedby="phone-hint"
+      >
+      <div id="phone-hint" class="hint">Format: (123) 456-7890</div>
+    </div>
+
+    <!-- ✅ FIXED #5: Error message associated with aria-describedby and aria-invalid -->
+    <div class="form-group">
+      <label for="username">
+        Username <span class="required-indicator" aria-label="required">*</span>
+      </label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        class="invalid"
+        aria-invalid="true"
+        aria-describedby="username-error"
+      >
+      <div id="username-error" class="error" role="alert">
+        This username is already taken. Please choose another.
+      </div>
+    </div>
+
+    <!-- ✅ FIXED #6: Radio buttons in fieldset with legend -->
+    <fieldset>
+      <legend>
+        Choose your plan <span class="required-indicator" aria-label="required">*</span>
+      </legend>
+
+      <div>
+        <label>
+          <input type="radio" name="plan" value="free" checked required>
+          Free ($0/month)
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input type="radio" name="plan" value="pro" required>
+          Pro ($10/month)
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input type="radio" name="plan" value="enterprise" required>
+          Enterprise ($50/month)
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- ✅ FIXED #7: Checkboxes with proper labels -->
+    <fieldset>
+      <legend>Preferences and Agreements</legend>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+          Subscribe to newsletter
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="terms" name="terms" value="yes" required>
+          I agree to the <a href="/terms">terms and conditions</a>
+          <span class="required-indicator" aria-label="required">*</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- ✅ FIXED #8: Proper button element -->
+    <button type="submit">Create Account</button>
+  </form>
+
+  <script>
+    // Optional: Form submission handler
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>
+

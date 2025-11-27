@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Hiking Guide - Accessible!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .logo {
+      width: 150px;
+      height: 50px;
+      background: #333;
+    }
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      background: #ddd;
+    }
+    .chart {
+      width: 600px;
+      height: 400px;
+      background: #eee;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+      background: #666;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .social-icons a {
+      margin: 0 10px;
+    }
+    .decorative-flourish {
+      width: 100px;
+      height: 100px;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- ✅ FIXED #1: Logo now has descriptive alt text -->
+    <img src="logo.png" alt="Mountain Hiking Guide" class="logo">
+
+    <h1>Mountain Hiking Guide</h1>
+
+    <!-- ✅ FIXED #2: Decorative icon marked with empty alt -->
+    <img src="star-icon.png" class="icon" alt="">
+    <p>Your complete guide to mountain adventures</p>
+  </header>
+
+  <main>
+    <!-- ✅ FIXED #3: Hero image has descriptive, contextual alt text -->
+    <img src="mountains.jpg" alt="Snow-capped mountain peaks at sunrise with pine forest in foreground" class="hero-image">
+
+    <h2>Popular Trails</h2>
+
+    <!-- ✅ FIXED #4: Linked image describes destination, not appearance -->
+    <a href="/trails/eagle-peak">
+      <img src="eagle-peak.jpg" alt="Eagle Peak Trail - 8.5 miles, moderate difficulty">
+    </a>
+
+    <!-- ✅ FIXED #5: Concise, descriptive alt text (no keyword stuffing) -->
+    <img src="sunset-trail.jpg" alt="Hikers watching sunset from mountain ridge overlooking valley">
+
+    <h2>Trail Difficulty Chart</h2>
+
+    <!-- ✅ FIXED #6: Complex chart with summary + detailed description -->
+    <figure>
+      <img src="difficulty-chart.png"
+           alt="Bar chart showing trail difficulty distribution across our 50 trails"
+           class="chart">
+      <figcaption>
+        Trail difficulty breakdown: 20 easy trails (beginner-friendly, under 3 miles),
+        18 moderate trails (some elevation gain, 3-7 miles),
+        12 difficult trails (steep climbs, over 7 miles).
+      </figcaption>
+    </figure>
+
+    <h2>Essential Gear</h2>
+
+    <ul>
+      <!-- ✅ FIXED #7: Icon is decorative (text already says "Backpack") -->
+      <li>
+        <img src="backpack-icon.png" class="icon" alt="">
+        Backpack (40-60L capacity)
+      </li>
+
+      <!-- ✅ FIXED #8: Icon decorative next to text -->
+      <li>
+        <img src="boots-icon.png" class="icon" alt="">
+        Hiking boots with ankle support
+      </li>
+    </ul>
+
+    <h2>Weather Conditions</h2>
+
+    <!-- ✅ FIXED #9: Important warning image has descriptive alt -->
+    <img src="weather-warning.png" alt="Weather alert: Thunderstorms expected this afternoon. Avoid exposed ridges and summits.">
+
+    <!-- ✅ FIXED #10: Purely decorative design element marked with empty alt -->
+    <img src="decorative-line.svg" alt="" class="decorative-flourish" role="presentation">
+
+    <h2>Follow Us</h2>
+
+    <!-- ✅ FIXED #11: Social icons describe action/destination -->
+    <div class="social-icons">
+      <a href="https://twitter.com/mountainguide">
+        <img src="twitter-icon.png" alt="Follow us on Twitter">
+      </a>
+      <a href="https://facebook.com/mountainguide">
+        <img src="facebook-icon.png" alt="Follow us on Facebook">
+      </a>
+      <a href="https://instagram.com/mountainguide">
+        <img src="instagram-icon.png" alt="Follow us on Instagram">
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <!-- ✅ FIXED #12: Background texture is decorative - empty alt + aria-hidden -->
+    <img src="footer-texture.png" alt="" aria-hidden="true">
+    <p>&copy; 2024 Mountain Hiking Guide. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

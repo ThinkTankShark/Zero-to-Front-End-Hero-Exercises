@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Hiking Guide - Accessibility Issues!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .logo {
+      width: 150px;
+      height: 50px;
+      background: #333;
+    }
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      background: #ddd;
+    }
+    .chart {
+      width: 600px;
+      height: 400px;
+      background: #eee;
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+      background: #666;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .social-icons a {
+      margin: 0 10px;
+    }
+    .decorative-flourish {
+      width: 100px;
+      height: 100px;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Issue #1: Logo missing alt text entirely -->
+    <img src="logo.png" class="logo">
+
+    <h1>Mountain Hiking Guide</h1>
+
+    <!-- Issue #2: Decorative icon not marked as decorative -->
+    <img src="star-icon.png" class="icon" alt="star icon">
+    <p>Your complete guide to mountain adventures</p>
+  </header>
+
+  <main>
+    <!-- Issue #3: Hero image has vague alt text -->
+    <img src="mountains.jpg" alt="mountains" class="hero-image">
+
+    <h2>Popular Trails</h2>
+
+    <!-- Issue #4: Linked image describes image, not destination -->
+    <a href="/trails/eagle-peak">
+      <img src="eagle-peak.jpg" alt="A photo of a mountain trail with trees">
+    </a>
+
+    <!-- Issue #5: Alt text keyword stuffing for SEO -->
+    <img src="sunset-trail.jpg" alt="hiking trails mountain hiking best hiking trails near me hiking guide mountain trails outdoor hiking scenic trails hiking tips">
+
+    <h2>Trail Difficulty Chart</h2>
+
+    <!-- Issue #6: Complex chart with inadequate description -->
+    <img src="difficulty-chart.png" alt="chart" class="chart">
+
+    <h2>Essential Gear</h2>
+
+    <ul>
+      <!-- Issue #7: Icon with redundant "image of" -->
+      <li>
+        <img src="backpack-icon.png" class="icon" alt="image of backpack icon">
+        Backpack (40-60L capacity)
+      </li>
+
+      <!-- Issue #8: Icon next to text not marked decorative -->
+      <li>
+        <img src="boots-icon.png" class="icon" alt="boots">
+        Hiking boots with ankle support
+      </li>
+    </ul>
+
+    <h2>Weather Conditions</h2>
+
+    <!-- Issue #9: Important weather warning image missing alt -->
+    <img src="weather-warning.png">
+
+    <!-- Issue #10: Decorative design flourish not marked -->
+    <img src="decorative-line.svg" alt="decorative line separator" class="decorative-flourish">
+
+    <h2>Follow Us</h2>
+
+    <!-- Issue #11: Social media icons describing image, not action -->
+    <div class="social-icons">
+      <a href="https://twitter.com/mountainguide">
+        <img src="twitter-icon.png" alt="twitter logo">
+      </a>
+      <a href="https://facebook.com/mountainguide">
+        <img src="facebook-icon.png" alt="facebook logo">
+      </a>
+      <a href="https://instagram.com/mountainguide">
+        <img src="instagram-icon.png" alt="instagram logo">
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Issue #12: Background/decorative image with alt text -->
+    <img src="footer-texture.png" alt="footer background texture">
+    <p>&copy; 2024 Mountain Hiking Guide. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

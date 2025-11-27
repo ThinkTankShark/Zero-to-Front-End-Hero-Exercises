@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form - Tech Corp</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #667eea;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    .intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    fieldset {
+      margin: 30px 0;
+      padding: 25px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.3em;
+      padding: 0 15px;
+      color: #667eea;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .inline-label {
+      display: inline;
+      font-weight: normal;
+    }
+
+    .radio-group, .checkbox-group {
+      margin: 10px 0;
+    }
+
+    .radio-group label, .checkbox-group label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: left;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    thead th {
+      background-color: #667eea;
+      color: white;
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    td input {
+      width: 100%;
+      padding: 8px;
+    }
+
+    td input[type="checkbox"] {
+      width: auto;
+    }
+
+    button {
+      margin: 25px 10px 0 0;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    button[type="reset"] {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #d0d0d0;
+    }
+
+    .required {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .optional {
+      color: #999;
+      font-weight: normal;
+      font-size: 0.9em;
+    }
+
+    .help-text {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #e0e0e0;
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Job Application</h1>
+    <p class="intro">Thank you for your interest in joining Tech Corp! Please complete all required fields below.</p>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+      <!-- Section 1: Position Details -->
+      <fieldset>
+        <legend>Position Details</legend>
+
+        <label for="position">
+          Position Applying For: <span class="required">*</span>
+        </label>
+        <select id="position" name="position" required>
+          <option value="">-- Select a position --</option>
+          <option value="frontend">Front-End Developer</option>
+          <option value="backend">Back-End Developer</option>
+          <option value="fullstack">Full-Stack Developer</option>
+          <option value="uiux">UI/UX Designer</option>
+          <option value="devops">DevOps Engineer</option>
+        </select>
+
+        <label for="department">
+          Department: <span class="required">*</span>
+        </label>
+        <select id="department" name="department" required>
+          <option value="">-- Select a department --</option>
+          <option value="engineering">Engineering</option>
+          <option value="design">Design</option>
+          <option value="product">Product</option>
+          <option value="marketing">Marketing</option>
+        </select>
+
+        <label for="start-date">
+          Expected Start Date: <span class="required">*</span>
+        </label>
+        <input type="date"
+               id="start-date"
+               name="start-date"
+               required
+               min="2024-01-01">
+
+        <p><strong>Employment Type: <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="employment-type" value="fulltime" required checked>
+            <span class="inline-label">Full-time</span>
+          </label>
+          <label>
+            <input type="radio" name="employment-type" value="parttime" required>
+            <span class="inline-label">Part-time</span>
+          </label>
+          <label>
+            <input type="radio" name="employment-type" value="contract" required>
+            <span class="inline-label">Contract</span>
+          </label>
+          <label>
+            <input type="radio" name="employment-type" value="internship" required>
+            <span class="inline-label">Internship</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Section 2: Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="firstname">
+          First Name: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="firstname"
+               name="firstname"
+               required
+               placeholder="John"
+               autocomplete="given-name">
+
+        <label for="lastname">
+          Last Name: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="lastname"
+               name="lastname"
+               required
+               placeholder="Doe"
+               autocomplete="family-name">
+
+        <label for="email">
+          Email Address: <span class="required">*</span>
+        </label>
+        <input type="email"
+               id="email"
+               name="email"
+               required
+               placeholder="you@example.com"
+               autocomplete="email">
+
+        <label for="phone">
+          Phone Number: <span class="required">*</span>
+        </label>
+        <input type="tel"
+               id="phone"
+               name="phone"
+               required
+               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+               placeholder="123-456-7890"
+               title="Format: 123-456-7890"
+               autocomplete="tel">
+        <p class="help-text">Format: 123-456-7890</p>
+
+        <label for="address">
+          Current Address: <span class="optional">(Optional)</span>
+        </label>
+        <textarea id="address"
+                  name="address"
+                  rows="3"
+                  placeholder="Street address, City, State, ZIP"
+                  autocomplete="street-address"></textarea>
+
+        <label for="linkedin">
+          LinkedIn Profile: <span class="optional">(Optional)</span>
+        </label>
+        <input type="url"
+               id="linkedin"
+               name="linkedin"
+               placeholder="https://linkedin.com/in/yourname">
+
+        <label for="portfolio">
+          Portfolio Website: <span class="optional">(Optional)</span>
+        </label>
+        <input type="url"
+               id="portfolio"
+               name="portfolio"
+               placeholder="https://yourportfolio.com">
+
+        <label for="dob">
+          Date of Birth: <span class="required">*</span>
+        </label>
+        <input type="date"
+               id="dob"
+               name="dob"
+               required
+               max="2006-12-31"
+               autocomplete="bday">
+        <p class="help-text">Must be at least 18 years old</p>
+      </fieldset>
+
+      <!-- Section 3: Professional Experience (TABLE!) -->
+      <fieldset>
+        <legend>Professional Experience</legend>
+        <p>Please list your previous three positions (most recent first):</p>
+
+        <table>
+          <caption>Work History</caption>
+          <thead>
+            <tr>
+              <th scope="col">Company Name</th>
+              <th scope="col">Job Title</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Current Job</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="company1" placeholder="Company name">
+              </td>
+              <td>
+                <input type="text" name="title1" placeholder="Your title">
+              </td>
+              <td>
+                <input type="date" name="start1">
+              </td>
+              <td>
+                <input type="date" name="end1">
+              </td>
+              <td style="text-align: center;">
+                <input type="checkbox" name="current1" value="yes">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="company2" placeholder="Company name">
+              </td>
+              <td>
+                <input type="text" name="title2" placeholder="Your title">
+              </td>
+              <td>
+                <input type="date" name="start2">
+              </td>
+              <td>
+                <input type="date" name="end2">
+              </td>
+              <td style="text-align: center;">
+                <input type="checkbox" name="current2" value="yes">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" name="company3" placeholder="Company name">
+              </td>
+              <td>
+                <input type="text" name="title3" placeholder="Your title">
+              </td>
+              <td>
+                <input type="date" name="start3">
+              </td>
+              <td>
+                <input type="date" name="end3">
+              </td>
+              <td style="text-align: center;">
+                <input type="checkbox" name="current3" value="yes">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="help-text">Check "Current Job" if you're still employed at that company</p>
+      </fieldset>
+
+      <!-- Section 4: Education -->
+      <fieldset>
+        <legend>Education</legend>
+
+        <label for="degree">
+          Highest Degree: <span class="required">*</span>
+        </label>
+        <select id="degree" name="degree" required>
+          <option value="">-- Select degree --</option>
+          <option value="highschool">High School</option>
+          <option value="associates">Associate's Degree</option>
+          <option value="bachelors">Bachelor's Degree</option>
+          <option value="masters">Master's Degree</option>
+          <option value="phd">PhD</option>
+          <option value="bootcamp">Bootcamp/Certificate</option>
+        </select>
+
+        <label for="field">
+          Field of Study: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="field"
+               name="field"
+               required
+               placeholder="Computer Science, Design, etc.">
+
+        <label for="institution">
+          Institution Name: <span class="required">*</span>
+        </label>
+        <input type="text"
+               id="institution"
+               name="institution"
+               required
+               placeholder="University name">
+
+        <label for="grad-year">
+          Graduation Year: <span class="required">*</span>
+        </label>
+        <input type="number"
+               id="grad-year"
+               name="grad-year"
+               required
+               min="1950"
+               max="2024"
+               placeholder="2020">
+
+        <label for="gpa">
+          GPA: <span class="optional">(Optional, 0.0-4.0 scale)</span>
+        </label>
+        <input type="number"
+               id="gpa"
+               name="gpa"
+               min="0.0"
+               max="4.0"
+               step="0.01"
+               placeholder="3.75">
+      </fieldset>
+
+      <!-- Section 5: Skills & Qualifications -->
+      <fieldset>
+        <legend>Skills & Qualifications</legend>
+
+        <p><strong>Technical Skills: <span class="optional">(Select all that apply)</span></strong></p>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="skills" value="html-css">
+            <span class="inline-label">HTML/CSS</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="javascript">
+            <span class="inline-label">JavaScript</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="react">
+            <span class="inline-label">React</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="nodejs">
+            <span class="inline-label">Node.js</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="python">
+            <span class="inline-label">Python</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="git">
+            <span class="inline-label">Git/GitHub</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="sql">
+            <span class="inline-label">SQL</span>
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="other">
+            <span class="inline-label">Other</span>
+          </label>
+        </div>
+
+        <p><strong>Years of Professional Experience: <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="years-exp" value="<1" required>
+            <span class="inline-label">Less than 1 year</span>
+          </label>
+          <label>
+            <input type="radio" name="years-exp" value="1-3" required>
+            <span class="inline-label">1-3 years</span>
+          </label>
+          <label>
+            <input type="radio" name="years-exp" value="3-5" required>
+            <span class="inline-label">3-5 years</span>
+          </label>
+          <label>
+            <input type="radio" name="years-exp" value="5-10" required>
+            <span class="inline-label">5-10 years</span>
+          </label>
+          <label>
+            <input type="radio" name="years-exp" value="10+" required>
+            <span class="inline-label">10+ years</span>
+          </label>
+        </div>
+
+        <label for="availability">
+          Availability to Start: <span class="required">*</span>
+        </label>
+        <select id="availability" name="availability" required>
+          <option value="">-- Select availability --</option>
+          <option value="immediate">Immediately</option>
+          <option value="2weeks">2 weeks notice</option>
+          <option value="1month">1 month</option>
+          <option value="2months">2+ months</option>
+        </select>
+      </fieldset>
+
+      <!-- Section 6: Documents & Additional Info -->
+      <fieldset>
+        <legend>Documents & Additional Information</legend>
+
+        <label for="resume">
+          Resume: <span class="required">*</span>
+        </label>
+        <input type="file"
+               id="resume"
+               name="resume"
+               required
+               accept=".pdf,.doc,.docx">
+        <p class="help-text">Accepted formats: PDF, DOC, DOCX (Max 5MB)</p>
+
+        <label for="cover-letter">
+          Cover Letter: <span class="optional">(Optional)</span>
+        </label>
+        <input type="file"
+               id="cover-letter"
+               name="cover-letter"
+               accept=".pdf,.doc,.docx">
+        <p class="help-text">Accepted formats: PDF, DOC, DOCX (Max 5MB)</p>
+
+        <label for="source">
+          How did you hear about this position? <span class="required">*</span>
+        </label>
+        <select id="source" name="source" required>
+          <option value="">-- Please select --</option>
+          <option value="website">Company Website</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="indeed">Indeed</option>
+          <option value="referral">Employee Referral</option>
+          <option value="recruiter">Recruiter</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="salary">
+          Salary Expectation (USD): <span class="optional">(Optional)</span>
+        </label>
+        <input type="number"
+               id="salary"
+               name="salary"
+               min="0"
+               step="1000"
+               placeholder="75000">
+        <p class="help-text">Annual salary in USD</p>
+
+        <label for="comments">
+          Additional Comments: <span class="optional">(Optional)</span>
+        </label>
+        <textarea id="comments"
+                  name="comments"
+                  rows="5"
+                  maxlength="1000"
+                  placeholder="Tell us anything else you'd like us to know..."></textarea>
+        <p class="help-text">Maximum 1000 characters</p>
+      </fieldset>
+
+      <!-- Section 7: Eligibility & Consent -->
+      <fieldset>
+        <legend>Eligibility & Consent</legend>
+
+        <p><strong>Are you legally authorized to work in the United States? <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="authorized" value="yes" required>
+            <span class="inline-label">Yes</span>
+          </label>
+          <label>
+            <input type="radio" name="authorized" value="no" required>
+            <span class="inline-label">No</span>
+          </label>
+        </div>
+
+        <p><strong>Do you require visa sponsorship? <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="visa" value="yes" required>
+            <span class="inline-label">Yes</span>
+          </label>
+          <label>
+            <input type="radio" name="visa" value="no" required>
+            <span class="inline-label">No</span>
+          </label>
+        </div>
+
+        <p><strong>Have you ever worked for Tech Corp before? <span class="required">*</span></strong></p>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="previous-employee" value="yes" required>
+            <span class="inline-label">Yes</span>
+          </label>
+          <label>
+            <input type="radio" name="previous-employee" value="no" required>
+            <span class="inline-label">No</span>
+          </label>
+        </div>
+
+        <br><br>
+
+        <label>
+          <input type="checkbox" name="background-check" required>
+          <span class="inline-label">
+            I consent to a background check if offered employment
+            <span class="required">*</span>
+          </span>
+        </label>
+
+        <label>
+          <input type="checkbox" name="terms" required>
+          <span class="inline-label">
+            I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and certify that all information provided is accurate
+            <span class="required">*</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <!-- Submit Buttons -->
+      <div class="button-group">
+        <button type="submit">Submit Application</button>
+        <button type="reset">Clear Form</button>
+      </div>
+
+    </form>
+
+    <p class="help-text" style="text-align: center; margin-top: 30px;">
+      <small>
+        Fields marked with <span class="required">*</span> are required.
+        <br>
+        All information will be kept confidential and used only for hiring purposes.
+        <br>
+        Questions? Contact us at <a href="mailto:careers@techcorp.com">careers@techcorp.com</a>
+      </small>
+    </p>
+  </div>
+
+</body>
+</html>
+

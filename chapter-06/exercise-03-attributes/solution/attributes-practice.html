@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Attributes Practice</title>
+</head>
+<body>
+
+  <h1>HTML Attributes Practice</h1>
+
+  <!-- ========== LINKS SECTION ========== -->
+  <h2>Different Types of Links</h2>
+
+  <!-- External link - opens in same tab -->
+  <p>
+    Here's my favorite website:
+    <a href="https://www.mozilla.org">Mozilla Developer Network</a>
+  </p>
+
+  <!-- External link - opens in new tab (note the target and rel attributes) -->
+  <p>
+    Check out my
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+      GitHub profile
+    </a>
+    (opens in a new tab)
+  </p>
+
+  <!-- Email link using mailto: -->
+  <p>
+    Send me an email:
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </p>
+
+
+  <!-- ========== IMAGES SECTION ========== -->
+  <h2>Images with Different Alt Attributes</h2>
+
+  <!-- Image with descriptive alt text -->
+  <p>
+    <img src="https://via.placeholder.com/150"
+         alt="A 150x150 pixel placeholder image in light gray">
+  </p>
+  <p>↑ This image has descriptive alt text for accessibility</p>
+
+  <!-- Decorative image with empty alt -->
+  <p>
+    <img src="https://via.placeholder.com/100" alt="">
+  </p>
+  <p>↑ This is a purely decorative image, so alt is empty</p>
+
+
+  <!-- ========== IDS AND CLASSES SECTION ========== -->
+  <h2>IDs and Classes</h2>
+
+  <!-- Paragraph with unique ID -->
+  <p id="introduction">
+    This paragraph has a unique ID of "introduction". IDs must be unique on the page
+    and can be used for navigation links, styling with CSS, or selecting with JavaScript.
+  </p>
+
+  <!-- First paragraph with "highlight" class -->
+  <p class="highlight">
+    This paragraph has a class of "highlight". Multiple elements can share the same class,
+    making classes perfect for applying consistent styling or behavior to groups of elements.
+  </p>
+
+  <!-- Second paragraph with "highlight" class -->
+  <p class="highlight">
+    This is another paragraph with the "highlight" class. Notice how multiple elements
+    can have the same class, unlike IDs which must be unique!
+  </p>
+
+  <!-- Paragraph with multiple classes -->
+  <p class="highlight important">
+    This paragraph has TWO classes: "highlight" and "important". You can apply multiple
+    classes to a single element by separating them with spaces. This is super useful
+    when you want to combine different styles!
+  </p>
+
+
+  <!-- ========== BONUS: INTERNAL LINK ========== -->
+  <h2>Bonus: Internal Navigation</h2>
+
+  <p>
+    <a href="#introduction">Click here to jump back to the Introduction paragraph</a>
+  </p>
+
+</body>
+</html>
+

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Components - With ARIA!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* Tabs */
+    .tabs {
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .tab:focus {
+      outline: 3px solid #4A90E2;
+      outline-offset: 2px;
+    }
+    .tab.active {
+      background: #007bff;
+      color: white;
+    }
+    .tab-panel {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-top: none;
+    }
+    .tab-panel.hidden {
+      display: none;
+    }
+
+    /* Accordion */
+    .accordion-item {
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .accordion-header {
+      width: 100%;
+      padding: 15px;
+      background: #f5f5f5;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .accordion-header:focus {
+      outline: 3px solid #4A90E2;
+      outline-offset: -3px;
+    }
+    .accordion-content {
+      padding: 15px;
+    }
+    .accordion-content.hidden {
+      display: none;
+    }
+
+    /* Live region */
+    .status-message {
+      padding: 10px;
+      background: #e3f2fd;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    /* Alert */
+    .alert {
+      padding: 15px;
+      background: #f44336;
+      color: white;
+      border-radius: 4px;
+      margin: 20px 0;
+      display: none;
+    }
+    .alert.show {
+      display: block;
+    }
+
+    /* Tooltip */
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .tooltip-container:hover .tooltip,
+    .tooltip-container button:focus + .tooltip {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Interactive Components</h1>
+  <p>These components now have proper ARIA for accessibility!</p>
+
+  <!-- ✅ FIXED #1: Tabs with full ARIA support -->
+  <section>
+    <h2>Tab Interface</h2>
+    <div class="tabs" role="tablist" aria-label="Account settings">
+      <button
+        class="tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel0"
+        id="tab0"
+        onclick="showTab(0)"
+      >
+        Personal Info
+      </button>
+      <button
+        class="tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel1"
+        id="tab1"
+        onclick="showTab(1)"
+      >
+        Account Settings
+      </button>
+      <button
+        class="tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel2"
+        id="tab2"
+        onclick="showTab(2)"
+      >
+        Notifications
+      </button>
+    </div>
+
+    <div
+      class="tab-panel"
+      role="tabpanel"
+      id="panel0"
+      aria-labelledby="tab0"
+      tabindex="0"
+    >
+      <h3>Personal Information</h3>
+      <p>Update your personal details here.</p>
+    </div>
+
+    <div
+      class="tab-panel hidden"
+      role="tabpanel"
+      id="panel1"
+      aria-labelledby="tab1"
+      tabindex="0"
+    >
+      <h3>Account Settings</h3>
+      <p>Manage your account preferences.</p>
+    </div>
+
+    <div
+      class="tab-panel hidden"
+      role="tabpanel"
+      id="panel2"
+      aria-labelledby="tab2"
+      tabindex="0"
+    >
+      <h3>Notification Preferences</h3>
+      <p>Choose how you want to be notified.</p>
+    </div>
+  </section>
+
+  <!-- ✅ FIXED #2: Accordion with ARIA -->
+  <section style="margin-top: 40px;">
+    <h2>FAQ Accordion</h2>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button
+          class="accordion-header"
+          id="accordion-header-0"
+          aria-expanded="false"
+          aria-controls="content0"
+          onclick="toggleAccordion(0)"
+        >
+          What is web accessibility?
+        </button>
+        <div
+          class="accordion-content hidden"
+          id="content0"
+          aria-labelledby="accordion-header-0"
+        >
+          <p>Web accessibility ensures websites are usable by everyone, including people with disabilities.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button
+          class="accordion-header"
+          id="accordion-header-1"
+          aria-expanded="false"
+          aria-controls="content1"
+          onclick="toggleAccordion(1)"
+        >
+          Why is ARIA important?
+        </button>
+        <div
+          class="accordion-content hidden"
+          id="content1"
+          aria-labelledby="accordion-header-1"
+        >
+          <p>ARIA provides semantic information to assistive technologies when HTML alone isn't sufficient.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button
+          class="accordion-header"
+          id="accordion-header-2"
+          aria-expanded="false"
+          aria-controls="content2"
+          onclick="toggleAccordion(2)"
+        >
+          How do I test accessibility?
+        </button>
+        <div
+          class="accordion-content hidden"
+          id="content2"
+          aria-labelledby="accordion-header-2"
+        >
+          <p>Use a combination of automated tools (like Lighthouse) and manual testing with screen readers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ FIXED #3: Live region with aria-live -->
+  <section style="margin-top: 40px;">
+    <h2>Status Updates</h2>
+    <button onclick="updateStatus()">Check Status</button>
+    <div
+      class="status-message"
+      id="status"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      Click the button to check status
+    </div>
+  </section>
+
+  <!-- ✅ FIXED #4: Alert with proper role -->
+  <section style="margin-top: 40px;">
+    <h2>Error Alert</h2>
+    <button onclick="showAlert()">Trigger Error</button>
+    <div
+      class="alert"
+      id="alert"
+      role="alert"
+      aria-live="assertive"
+    >
+      Error: Unable to save changes. Please try again.
+    </div>
+  </section>
+
+  <!-- ✅ FIXED #5: Tooltip with aria-describedby -->
+  <section style="margin-top: 40px;">
+    <h2>Tooltip Example</h2>
+    <p>
+      Hover over or focus the button for more information.
+    </p>
+    <div class="tooltip-container">
+      <button aria-describedby="tooltip-text">
+        Help
+      </button>
+      <span
+        class="tooltip"
+        id="tooltip-text"
+        role="tooltip"
+      >
+        This feature allows you to customize your dashboard layout
+      </span>
+    </div>
+  </section>
+
+  <script>
+    let currentTab = 0;
+
+    // ✅ FIXED: Update ARIA attributes when switching tabs
+    function showTab(index) {
+      // Hide all panels
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+
+      // Update all tab ARIA states
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+      });
+
+      // Show selected panel
+      const selectedPanel = document.getElementById(`panel${index}`);
+      selectedPanel.classList.remove('hidden');
+
+      // Update selected tab
+      const selectedTab = document.getElementById(`tab${index}`);
+      selectedTab.classList.add('active');
+      selectedTab.setAttribute('aria-selected', 'true');
+
+      currentTab = index;
+    }
+
+    // ✅ FIXED: Update aria-expanded when toggling
+    function toggleAccordion(index) {
+      const button = document.getElementById(`accordion-header-${index}`);
+      const content = document.getElementById(`content${index}`);
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      content.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', !isExpanded);
+    }
+
+    let statusCount = 0;
+    function updateStatus() {
+      statusCount++;
+      const messages = [
+        'Checking status...',
+        'Connection established',
+        'Data synced successfully',
+        'All systems operational'
+      ];
+      // Content change will be automatically announced due to aria-live
+      document.getElementById('status').textContent =
+        messages[statusCount % messages.length];
+    }
+
+    function showAlert() {
+      const alert = document.getElementById('alert');
+      alert.classList.add('show');
+      // Alert will be immediately announced due to role="alert"
+      setTimeout(() => {
+        alert.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
+

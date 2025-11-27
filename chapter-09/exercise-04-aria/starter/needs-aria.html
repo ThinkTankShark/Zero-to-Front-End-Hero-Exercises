@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Components - Need ARIA!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* Tabs */
+    .tabs {
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .tab.active {
+      background: #007bff;
+      color: white;
+    }
+    .tab-panel {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-top: none;
+    }
+    .tab-panel.hidden {
+      display: none;
+    }
+
+    /* Accordion */
+    .accordion-item {
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .accordion-header {
+      width: 100%;
+      padding: 15px;
+      background: #f5f5f5;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .accordion-content {
+      padding: 15px;
+    }
+    .accordion-content.hidden {
+      display: none;
+    }
+
+    /* Live region */
+    .status-message {
+      padding: 10px;
+      background: #e3f2fd;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    /* Alert */
+    .alert {
+      padding: 15px;
+      background: #f44336;
+      color: white;
+      border-radius: 4px;
+      margin: 20px 0;
+      display: none;
+    }
+    .alert.show {
+      display: block;
+    }
+
+    /* Tooltip */
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .tooltip-container:hover .tooltip,
+    .tooltip-container button:focus + .tooltip {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Interactive Components</h1>
+  <p>These components need ARIA to be accessible!</p>
+
+  <!-- Issue #1: Tabs without ARIA -->
+  <section>
+    <h2>Tab Interface</h2>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab(0)">
+        Personal Info
+      </button>
+      <button class="tab" onclick="showTab(1)">
+        Account Settings
+      </button>
+      <button class="tab" onclick="showTab(2)">
+        Notifications
+      </button>
+    </div>
+
+    <div class="tab-panel" id="panel0">
+      <h3>Personal Information</h3>
+      <p>Update your personal details here.</p>
+    </div>
+
+    <div class="tab-panel hidden" id="panel1">
+      <h3>Account Settings</h3>
+      <p>Manage your account preferences.</p>
+    </div>
+
+    <div class="tab-panel hidden" id="panel2">
+      <h3>Notification Preferences</h3>
+      <p>Choose how you want to be notified.</p>
+    </div>
+  </section>
+
+  <!-- Issue #2: Accordion without ARIA -->
+  <section style="margin-top: 40px;">
+    <h2>FAQ Accordion</h2>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header" onclick="toggleAccordion(0)">
+          What is web accessibility?
+        </button>
+        <div class="accordion-content hidden" id="content0">
+          <p>Web accessibility ensures websites are usable by everyone, including people with disabilities.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" onclick="toggleAccordion(1)">
+          Why is ARIA important?
+        </button>
+        <div class="accordion-content hidden" id="content1">
+          <p>ARIA provides semantic information to assistive technologies when HTML alone isn't sufficient.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" onclick="toggleAccordion(2)">
+          How do I test accessibility?
+        </button>
+        <div class="accordion-content hidden" id="content2">
+          <p>Use a combination of automated tools (like Lighthouse) and manual testing with screen readers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Issue #3: Live region without ARIA -->
+  <section style="margin-top: 40px;">
+    <h2>Status Updates</h2>
+    <button onclick="updateStatus()">Check Status</button>
+    <div class="status-message" id="status">
+      Click the button to check status
+    </div>
+  </section>
+
+  <!-- Issue #4: Alert without role -->
+  <section style="margin-top: 40px;">
+    <h2>Error Alert</h2>
+    <button onclick="showAlert()">Trigger Error</button>
+    <div class="alert" id="alert">
+      Error: Unable to save changes. Please try again.
+    </div>
+  </section>
+
+  <!-- Issue #5: Tooltip without ARIA -->
+  <section style="margin-top: 40px;">
+    <h2>Tooltip Example</h2>
+    <p>
+      Hover over or focus the button for more information.
+    </p>
+    <div class="tooltip-container">
+      <button>Help</button>
+      <span class="tooltip">
+        This feature allows you to customize your dashboard layout
+      </span>
+    </div>
+  </section>
+
+  <script>
+    let currentTab = 0;
+
+    function showTab(index) {
+      // Hide all panels
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+
+      // Remove active from all tabs
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show selected panel
+      document.getElementById(`panel${index}`).classList.remove('hidden');
+      document.querySelectorAll('.tab')[index].classList.add('active');
+      currentTab = index;
+    }
+
+    function toggleAccordion(index) {
+      const content = document.getElementById(`content${index}`);
+      content.classList.toggle('hidden');
+    }
+
+    let statusCount = 0;
+    function updateStatus() {
+      statusCount++;
+      const messages = [
+        'Checking status...',
+        'Connection established',
+        'Data synced successfully',
+        'All systems operational'
+      ];
+      document.getElementById('status').textContent =
+        messages[statusCount % messages.length];
+    }
+
+    function showAlert() {
+      const alert = document.getElementById('alert');
+      alert.classList.add('show');
+      setTimeout(() => {
+        alert.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
+

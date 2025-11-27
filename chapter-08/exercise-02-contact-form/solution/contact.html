@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    fieldset {
+      margin: 20px 0;
+      padding: 15px;
+      border: 2px solid #3498db;
+      border-radius: 8px;
+      background-color: white;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+      color: #2c3e50;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+      color: #34495e;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #3498db;
+      border-color: #3498db;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    label.inline {
+      display: inline;
+      font-weight: normal;
+      margin: 5px 0;
+    }
+
+    button {
+      margin: 20px 10px 10px 0;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button[type="submit"] {
+      background-color: #3498db;
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    button[type="reset"] {
+      background-color: #95a5a6;
+      color: white;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #7f8c8d;
+    }
+
+    .required {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    small {
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Us</h1>
+  <p>Have a question or feedback? Fill out the form below and we'll get back to you soon!</p>
+
+  <form action="#" method="post">
+
+    <!-- Personal Information Section -->
+    <fieldset>
+      <legend>Your Information</legend>
+
+      <label for="fullname">
+        Full Name: <span class="required">*</span>
+      </label>
+      <input type="text"
+             id="fullname"
+             name="fullname"
+             required
+             placeholder="John Doe"
+             autocomplete="name">
+
+      <label for="email">
+        Email Address: <span class="required">*</span>
+      </label>
+      <input type="email"
+             id="email"
+             name="email"
+             required
+             placeholder="you@example.com"
+             autocomplete="email">
+
+      <label for="phone">
+        Phone Number: (optional)
+      </label>
+      <input type="tel"
+             id="phone"
+             name="phone"
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+             placeholder="123-456-7890"
+             title="Format: 123-456-7890"
+             autocomplete="tel">
+      <small>Format: 123-456-7890</small>
+    </fieldset>
+
+    <!-- Message Details Section -->
+    <fieldset>
+      <legend>Your Message</legend>
+
+      <label for="subject">
+        Subject: <span class="required">*</span>
+      </label>
+      <select id="subject" name="subject" required>
+        <option value="">-- Please select a subject --</option>
+        <option value="general">General Inquiry</option>
+        <option value="support">Technical Support</option>
+        <option value="partnership">Partnership Opportunity</option>
+        <option value="feedback">Feedback</option>
+      </select>
+
+      <label for="message">
+        Your Message: <span class="required">*</span>
+      </label>
+      <textarea id="message"
+                name="message"
+                rows="6"
+                required
+                minlength="10"
+                maxlength="500"
+                placeholder="Please describe your inquiry in detail..."></textarea>
+      <small>Minimum 10 characters, maximum 500 characters</small>
+    </fieldset>
+
+    <!-- Contact Preferences Section -->
+    <fieldset>
+      <legend>Contact Preferences</legend>
+
+      <p><strong>Best time to contact you: <span class="required">*</span></strong></p>
+
+      <label class="inline">
+        <input type="radio" name="contact-time" value="morning" checked required>
+        Morning (9 AM - 12 PM)
+      </label>
+      <br>
+
+      <label class="inline">
+        <input type="radio" name="contact-time" value="afternoon" required>
+        Afternoon (12 PM - 5 PM)
+      </label>
+      <br>
+
+      <label class="inline">
+        <input type="radio" name="contact-time" value="evening" required>
+        Evening (5 PM - 8 PM)
+      </label>
+
+      <br><br>
+
+      <label class="inline">
+        <input type="checkbox" name="newsletter" checked>
+        Send me occasional updates and newsletters
+      </label>
+    </fieldset>
+
+    <!-- Submit Buttons -->
+    <button type="submit">Send Message</button>
+    <button type="reset">Clear Form</button>
+
+  </form>
+
+  <p><small>Fields marked with <span class="required">*</span> are required. We respect your privacy and will never share your information.</small></p>
+
+  <!--
+    ✅ This solution demonstrates:
+    - Proper form structure with action and method
+    - Fieldsets grouping related fields
+    - All inputs connected to labels
+    - Appropriate input types (text, email, tel, radio, checkbox)
+    - Validation attributes (required, minlength, maxlength, pattern)
+    - Helpful placeholders and hints
+    - Autocomplete attributes for better UX
+    - Clear visual design and focus states
+    - Required field indicators
+    - Both submit and reset buttons
+  -->
+
+</body>
+</html>
+

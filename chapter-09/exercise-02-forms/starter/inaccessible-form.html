@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form - Inaccessible Version</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .error {
+      color: #d32f2f;
+      font-size: 14px;
+    }
+    .hint {
+      font-size: 14px;
+      color: #666;
+    }
+    .invalid {
+      border-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Your Account</h1>
+
+  <form>
+    <!-- Issue #1: No label, only placeholder -->
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Full Name">
+    </div>
+
+    <!-- Issue #2: No association between label and input -->
+    <div class="form-group">
+      <div>Email Address</div>
+      <input type="email" name="email">
+      <div class="hint">We'll never share your email</div>
+    </div>
+
+    <!-- Issue #3: Password with hint, but not associated -->
+    <div class="form-group">
+      <div>Password</div>
+      <input type="password" name="password">
+      <div class="hint">Must be at least 8 characters with 1 uppercase and 1 number</div>
+    </div>
+
+    <!-- Issue #4: Required field not marked -->
+    <div class="form-group">
+      <div>Phone Number (required)</div>
+      <input type="tel" name="phone">
+    </div>
+
+    <!-- Issue #5: Error message not associated with input -->
+    <div class="form-group">
+      <div>Username</div>
+      <input type="text" name="username" class="invalid">
+      <div class="error">This username is already taken</div>
+    </div>
+
+    <!-- Issue #6: Radio buttons without fieldset/legend -->
+    <div class="form-group">
+      <div>Choose your plan</div>
+      <div>
+        <input type="radio" name="plan" value="free" checked> Free ($0/month)
+      </div>
+      <div>
+        <input type="radio" name="plan" value="pro"> Pro ($10/month)
+      </div>
+      <div>
+        <input type="radio" name="plan" value="enterprise"> Enterprise ($50/month)
+      </div>
+    </div>
+
+    <!-- Issue #7: Checkboxes without proper labels -->
+    <div class="form-group">
+      <input type="checkbox" name="newsletter" value="yes">
+      Subscribe to newsletter
+      <br>
+      <input type="checkbox" name="terms" value="yes">
+      I agree to the terms and conditions (required)
+    </div>
+
+    <!-- Issue #8: Submit button is a div -->
+    <div onclick="submitForm()" style="background: #007bff; color: white; padding: 12px 24px; display: inline-block; cursor: pointer;">
+      Create Account
+    </div>
+  </form>
+
+  <script>
+    function submitForm() {
+      alert('Form submitted!');
+    }
+  </script>
+</body>
+</html>
+

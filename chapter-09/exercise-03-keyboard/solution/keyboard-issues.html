@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Dashboard - Keyboard Accessible!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ✅ FIXED #1: Visible focus indicators */
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 3px solid #4A90E2;
+      outline-offset: 2px;
+    }
+
+    /* Modern: only show outline for keyboard navigation */
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #4A90E2;
+      outline-offset: 2px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ✅ FIXED #2: Real buttons instead of divs */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 10px 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 500px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 1px solid #ddd;
+      min-width: 160px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    /* ✅ FIXED: Dropdown items are now buttons */
+    .dropdown-item {
+      width: 100%;
+      padding: 10px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background: #f0f0f0;
+    }
+
+    /* ✅ Chart buttons with keyboard support */
+    .chart-btn {
+      cursor: pointer;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      background: none;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .chart-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .chart-btn.sales { background: #e3f2fd; }
+    .chart-btn.users { background: #f3e5f5; }
+    .chart-btn.revenue { background: #e8f5e9; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Product Dashboard</h1>
+
+    <!-- ✅ FIXED #3: Real buttons -->
+    <button class="btn" onclick="showNotification()">
+      Show Notification
+    </button>
+
+    <button class="btn" id="openModalBtn" onclick="openModal()">
+      Open Settings
+    </button>
+
+    <!-- ✅ FIXED #4: Dropdown with keyboard support -->
+    <div class="dropdown">
+      <button
+        class="btn"
+        id="dropdownBtn"
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown()"
+      >
+        Actions ▼
+      </button>
+      <div class="dropdown-content" id="dropdown" role="menu">
+        <button class="dropdown-item" role="menuitem" onclick="handleAction('edit')">
+          Edit
+        </button>
+        <button class="dropdown-item" role="menuitem" onclick="handleAction('delete')">
+          Delete
+        </button>
+        <button class="dropdown-item" role="menuitem" onclick="handleAction('share')">
+          Share
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Product Analytics</h2>
+      <p>Click the buttons below to view different metrics.</p>
+
+      <!-- ✅ FIXED #5: Real buttons for chart controls -->
+      <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <button class="chart-btn sales" onclick="showChart('sales')">
+          📊 Sales
+        </button>
+        <button class="chart-btn users" onclick="showChart('users')">
+          👥 Users
+        </button>
+        <button class="chart-btn revenue" onclick="showChart('revenue')">
+          💰 Revenue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ FIXED #6: Modal with proper focus management -->
+  <div
+    class="modal-overlay"
+    id="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="modal" id="modalContent">
+      <h2 id="modal-title">Settings</h2>
+      <p>Configure your dashboard preferences.</p>
+
+      <form>
+        <div style="margin: 20px 0;">
+          <label>
+            <input type="checkbox" id="notifications"> Enable notifications
+          </label>
+        </div>
+        <div style="margin: 20px 0;">
+          <label>
+            <input type="checkbox" id="autoRefresh"> Auto-refresh data
+          </label>
+        </div>
+      </form>
+
+      <!-- ✅ FIXED #7: Real button for close -->
+      <button class="btn" id="closeModalBtn" onclick="closeModal()">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let previousFocusedElement;
+
+    function showNotification() {
+      alert('Notification shown!');
+    }
+
+    // ✅ FIXED: Modal now manages focus properly
+    function openModal() {
+      const modal = document.getElementById('modal');
+      const firstInput = document.getElementById('notifications');
+
+      // Store currently focused element
+      previousFocusedElement = document.activeElement;
+
+      // Show modal
+      modal.classList.add('active');
+
+      // Move focus to first interactive element
+      firstInput.focus();
+
+      // Add keyboard listeners
+      document.addEventListener('keydown', handleModalKeyboard);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+
+      // Return focus to trigger button
+      if (previousFocusedElement) {
+        previousFocusedElement.focus();
+      }
+
+      // Remove keyboard listeners
+      document.removeEventListener('keydown', handleModalKeyboard);
+    }
+
+    // ✅ FIXED: Escape key closes modal
+    function handleModalKeyboard(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+
+      // ✅ FIXED: Focus trap - keep focus in modal
+      if (e.key === 'Tab') {
+        const modal = document.getElementById('modalContent');
+        const focusableElements = modal.querySelectorAll(
+          'button, input, select, textarea, a[href]'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        // Shift+Tab on first element: go to last
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+        // Tab on last element: go to first
+        else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+
+    // ✅ FIXED: Dropdown with keyboard support
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdown');
+      const btn = document.getElementById('dropdownBtn');
+      const isOpen = dropdown.classList.contains('show');
+
+      dropdown.classList.toggle('show');
+      btn.setAttribute('aria-expanded', !isOpen);
+
+      if (!isOpen) {
+        // Focus first item when opening
+        const firstItem = dropdown.querySelector('.dropdown-item');
+        firstItem.focus();
+
+        // Add keyboard support
+        document.addEventListener('keydown', handleDropdownKeyboard);
+        document.addEventListener('click', handleOutsideClick);
+      } else {
+        document.removeEventListener('keydown', handleDropdownKeyboard);
+        document.removeEventListener('click', handleOutsideClick);
+      }
+    }
+
+    // ✅ FIXED: Escape closes dropdown
+    function handleDropdownKeyboard(e) {
+      if (e.key === 'Escape') {
+        const dropdown = document.getElementById('dropdown');
+        const btn = document.getElementById('dropdownBtn');
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+        document.removeEventListener('keydown', handleDropdownKeyboard);
+        document.removeEventListener('click', handleOutsideClick);
+      }
+    }
+
+    // ✅ FIXED: Click outside closes dropdown
+    function handleOutsideClick(e) {
+      const dropdown = document.getElementById('dropdown');
+      const btn = document.getElementById('dropdownBtn');
+      if (!dropdown.contains(e.target) && e.target !== btn) {
+        dropdown.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('keydown', handleDropdownKeyboard);
+        document.removeEventListener('click', handleOutsideClick);
+      }
+    }
+
+    function handleAction(action) {
+      alert(`${action} clicked`);
+      toggleDropdown(); // Close dropdown after action
+    }
+
+    function showChart(type) {
+      alert(`Showing ${type} chart`);
+    }
+  </script>
+</body>
+</html>
+

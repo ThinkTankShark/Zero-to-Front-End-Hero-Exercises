@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Component Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Accessible Component Library</h1>
+    <p>A collection of fully accessible, WCAG 2.1 AA compliant UI components</p>
+  </header>
+
+  <main>
+    <!-- Component 1: Accordion -->
+    <section>
+      <h2>1. Accordion (Collapsible Sections)</h2>
+      <p><strong>Keyboard:</strong> Tab to navigate, Enter/Space to toggle sections</p>
+
+      <div class="accordion" id="accordion-demo">
+        <!-- TODO: Build accessible accordion here -->
+        <p>Accordion component goes here...</p>
+      </div>
+    </section>
+
+    <!-- Component 2: Modal Dialog -->
+    <section>
+      <h2>2. Modal Dialog</h2>
+      <p><strong>Keyboard:</strong> Escape to close, Tab cycles focus within modal</p>
+
+      <button id="open-modal">Open Modal</button>
+
+      <!-- TODO: Build accessible modal here -->
+      <div id="modal" class="modal-overlay" hidden>
+        <div class="modal">
+          <p>Modal component goes here...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 3: Dropdown Menu -->
+    <section>
+      <h2>3. Dropdown Menu</h2>
+      <p><strong>Keyboard:</strong> Arrow keys to navigate, Escape to close</p>
+
+      <div class="dropdown">
+        <!-- TODO: Build accessible dropdown here -->
+        <button id="dropdown-trigger">Actions</button>
+        <div id="dropdown-menu" hidden>
+          <p>Dropdown component goes here...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 4: Tabs Interface -->
+    <section>
+      <h2>4. Tabs Interface</h2>
+      <p><strong>Keyboard:</strong> Arrow keys between tabs, Tab to enter/exit tablist</p>
+
+      <div class="tabs-container">
+        <!-- TODO: Build accessible tabs here -->
+        <div class="tabs">
+          <p>Tabs component goes here...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 5: Alert/Toast Notifications -->
+    <section>
+      <h2>5. Alert Notifications</h2>
+      <p><strong>Keyboard:</strong> Focus close button to dismiss</p>
+
+      <button onclick="showAlert('info')">Show Info</button>
+      <button onclick="showAlert('success')">Show Success</button>
+      <button onclick="showAlert('warning')">Show Warning</button>
+      <button onclick="showAlert('error')">Show Error</button>
+
+      <div id="alert-container">
+        <!-- TODO: Build accessible alerts here -->
+        <p>Alert component goes here...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with accessibility in mind | WCAG 2.1 AA Compliant</p>
+  </footer>
+
+  <script src="components/accordion.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/dropdown.js"></script>
+  <script src="components/tabs.js"></script>
+  <script src="components/alert.js"></script>
+</body>
+</html>
+

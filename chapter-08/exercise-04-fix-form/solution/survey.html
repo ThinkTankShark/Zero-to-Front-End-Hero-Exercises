@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Survey - Fixed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    fieldset {
+      margin: 20px 0;
+      padding: 15px;
+      border: 2px solid #4CAF50;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #4CAF50;
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #4CAF50;
+      border-color: #4CAF50;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    button {
+      padding: 12px 25px;
+      margin: 15px 10px 0 0;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .required {
+      color: red;
+      font-weight: bold;
+    }
+
+    small {
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Customer Satisfaction Survey</h1>
+  <p>Help us improve by completing this quick survey! Your feedback matters.</p>
+
+  <form action="#" method="post">
+
+    <!-- ✅ Fixed: Proper fieldset with legend -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <!-- ✅ Fixed: Proper label connection, required attribute, autocomplete -->
+      <label for="name">
+        Full Name: <span class="required">*</span>
+      </label>
+      <input type="text"
+             id="name"
+             name="name"
+             required
+             placeholder="John Doe"
+             autocomplete="name">
+
+      <!-- ✅ Fixed: Correct input type (email), proper label, required -->
+      <label for="email">
+        Email Address: <span class="required">*</span>
+      </label>
+      <input type="email"
+             id="email"
+             name="email"
+             required
+             placeholder="you@example.com"
+             autocomplete="email">
+
+      <!-- ✅ Fixed: Correct input type (tel), pattern validation, proper label -->
+      <label for="phone">
+        Phone Number: <span class="required">*</span>
+      </label>
+      <input type="tel"
+             id="phone"
+             name="phone"
+             required
+             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+             placeholder="123-456-7890"
+             title="Format: 123-456-7890"
+             autocomplete="tel">
+      <small>Format: 123-456-7890</small>
+    </fieldset>
+
+    <!-- ✅ Fixed: Proper fieldset structure -->
+    <fieldset>
+      <legend>Survey Questions</legend>
+
+      <!-- ✅ Fixed: Correct input type (number), proper label, min/max -->
+      <label for="rating">
+        How would you rate our service? (1-10): <span class="required">*</span>
+      </label>
+      <input type="number"
+             id="rating"
+             name="rating"
+             required
+             min="1"
+             max="10"
+             placeholder="Enter 1-10">
+
+      <!-- ✅ Fixed: Correct input type (date), proper label -->
+      <label for="visit-date">
+        When did you last visit us? <span class="required">*</span>
+      </label>
+      <input type="date"
+             id="visit-date"
+             name="visit-date"
+             required
+             max="2024-12-31">
+
+      <!-- ✅ Fixed: Proper label connection, default option -->
+      <label for="source">
+        How did you hear about us? <span class="required">*</span>
+      </label>
+      <select id="source" name="source" required>
+        <option value="">-- Please select --</option>
+        <option value="search">Search Engine</option>
+        <option value="social">Social Media</option>
+        <option value="friend">Friend Referral</option>
+        <option value="ad">Advertisement</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- ✅ Fixed: Proper label structure for radio buttons -->
+      <p><strong>Would you recommend us to a friend? <span class="required">*</span></strong></p>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="recommend" value="yes" required>
+          Yes
+        </label>
+        <label>
+          <input type="radio" name="recommend" value="no" required>
+          No
+        </label>
+        <label>
+          <input type="radio" name="recommend" value="maybe" required>
+          Maybe
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- ✅ Fixed: Proper fieldset structure -->
+    <fieldset>
+      <legend>Additional Feedback</legend>
+
+      <!-- ✅ Fixed: Proper label, character limits -->
+      <label for="comments">
+        Additional Comments: (optional)
+      </label>
+      <textarea id="comments"
+                name="comments"
+                rows="5"
+                maxlength="500"
+                placeholder="Share your thoughts..."></textarea>
+      <small>Maximum 500 characters</small>
+
+      <!-- ✅ Fixed: Proper checkbox label structure -->
+      <br><br>
+      <label>
+        <input type="checkbox" name="newsletter" value="yes">
+        Subscribe to our newsletter for updates and special offers
+      </label>
+    </fieldset>
+
+    <!-- ✅ Fixed: Proper button types -->
+    <button type="submit">Submit Survey</button>
+    <button type="reset">Clear Form</button>
+
+  </form>
+
+  <p><small>Fields marked with <span class="required">*</span> are required. We respect your privacy and will never share your information.</small></p>
+
+  <!--
+    ✅ ALL ISSUES FIXED:
+
+    1. ✅ Added <fieldset> elements to group related fields
+    2. ✅ Added <legend> elements to describe each group
+    3. ✅ Connected all labels properly with for/id attributes
+    4. ✅ Added labels for all inputs
+    5. ✅ Changed email input to type="email"
+    6. ✅ Changed rating input to type="number" with min/max
+    7. ✅ Changed date input to type="date"
+    8. ✅ Changed phone input to type="tel" with pattern
+    9. ✅ Added required attributes to required fields
+    10. ✅ Added validation patterns where needed
+    11. ✅ Added helpful placeholder text
+    12. ✅ Added autocomplete attributes
+    13. ✅ Added explicit type attributes to buttons
+    14. ✅ Added visual indication of required fields (*)
+    15. ✅ Improved keyboard accessibility
+    16. ✅ Added default prompt option to select
+    17. ✅ Properly labeled radio buttons
+    18. ✅ Properly labeled checkbox
+
+    The form is now:
+    - Fully accessible
+    - Properly validated
+    - Keyboard navigable
+    - User-friendly
+    - Following best practices
+  -->
+
+</body>
+</html>
+

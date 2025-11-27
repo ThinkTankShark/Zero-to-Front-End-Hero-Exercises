@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f0f2f5;
+      line-height: 1.6;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #1a73e8;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    fieldset {
+      margin: 25px 0;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 0 15px;
+      color: #1a73e8;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1a73e8;
+      color: white;
+    }
+
+    button {
+      margin: 20px 10px 0 0;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button[type="submit"] {
+      background-color: #1a73e8;
+      color: white;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .required {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .help-text {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Job Application Form</h1>
+    <p class="intro">Thank you for your interest in joining our team! Please complete all required fields.</p>
+
+    <!-- TODO: Build your comprehensive job application form here -->
+
+    <!--
+      Required Sections:
+
+      1. Position Details
+         - Job position (dropdown)
+         - Department (dropdown)
+         - Expected start date
+         - Employment type (radio)
+
+      2. Personal Information
+         - Name, email, phone
+         - Address, LinkedIn, portfolio
+         - Date of birth
+
+      3. Professional Experience (TABLE!)
+         - Create a table for 3 previous jobs
+         - Columns: Company, Title, Start Date, End Date, Currently Employed
+
+      4. Education
+         - Degree, field, institution
+         - Graduation year, GPA
+
+      5. Skills & Qualifications
+         - Technical skills (checkboxes)
+         - Years of experience (radio)
+         - Availability
+
+      6. Documents & Additional Info
+         - File uploads (resume, cover letter)
+         - How you heard about us
+         - Salary expectation
+         - Comments
+
+      7. Eligibility & Consent
+         - Work authorization
+         - Visa requirements
+         - Background check consent
+         - Terms agreement
+
+      Remember:
+      - Use fieldsets for each section
+      - Connect all labels to inputs
+      - Use appropriate input types
+      - Add validation attributes
+      - Make the work experience section a proper HTML table
+      - Indicate required fields
+      - Add helpful placeholders
+    -->
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+      <!-- Section 1: Position Details -->
+      <!-- Your code here -->
+
+      <!-- Section 2: Personal Information -->
+      <!-- Your code here -->
+
+      <!-- Section 3: Professional Experience (Use a TABLE!) -->
+      <!-- Your code here -->
+
+      <!-- Section 4: Education -->
+      <!-- Your code here -->
+
+      <!-- Section 5: Skills & Qualifications -->
+      <!-- Your code here -->
+
+      <!-- Section 6: Documents & Additional Info -->
+      <!-- Your code here -->
+
+      <!-- Section 7: Eligibility & Consent -->
+      <!-- Your code here -->
+
+      <!-- Submit Buttons -->
+      <div style="text-align: center; margin-top: 30px;">
+        <button type="submit">Submit Application</button>
+        <button type="reset">Clear Form</button>
+      </div>
+
+    </form>
+
+    <p class="help-text" style="text-align: center; margin-top: 20px;">
+      <small>
+        Fields marked with <span class="required">*</span> are required.
+        <br>
+        All information will be kept confidential and used only for hiring purposes.
+      </small>
+    </p>
+  </div>
+
+</body>
+</html>
+
