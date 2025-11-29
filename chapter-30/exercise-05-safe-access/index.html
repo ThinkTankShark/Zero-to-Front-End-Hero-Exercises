@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5: Safe Property Access</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 15%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+    }
+    pre {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-top: 15px;
+      border: 2px solid #ffecd2;
+    }
+    .success { color: #10b981; font-weight: bold; }
+    .error { color: #ef4444; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ Exercise 5: Safe Property Access</h1>
+    <p class="subtitle">Master optional chaining (?.) and nullish coalescing (??)</p>
+
+    <div class="card">
+      <h3>Optional Chaining (?.) Examples</h3>
+      <button onclick="testOptionalChaining()">Test Optional Chaining</button>
+      <pre id="chaining-output">Click to test...</pre>
+    </div>
+
+    <div class="card">
+      <h3>Nullish Coalescing (??) Examples</h3>
+      <button onclick="testNullishCoalescing()">Test Nullish Coalescing</button>
+      <pre id="nullish-output">Click to test...</pre>
+    </div>
+
+    <div class="card">
+      <h3>Combining Both</h3>
+      <button onclick="testCombined()">Test Combined Usage</button>
+      <pre id="combined-output">Click to test...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

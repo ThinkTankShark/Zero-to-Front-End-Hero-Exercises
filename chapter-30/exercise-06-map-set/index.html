@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6: Map & Set</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #7f8c8d;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+    .section {
+      background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #2ecc71;
+    }
+    .section h3 {
+      color: #2ecc71;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-right: 10px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(46, 204, 113, 0.4);
+    }
+    .output {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      border: 2px solid #2ecc71;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .success { color: #27ae60; font-weight: bold; }
+    .error { color: #e74c3c; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗺️ Exercise 6: Map & Set</h1>
+    <p class="subtitle">Modern data structures for modern problems</p>
+
+    <div class="section">
+      <h3>Map Examples</h3>
+      <button onclick="testMap()">Test Map Operations</button>
+      <div class="output" id="map-output">Click to test...</div>
+    </div>
+
+    <div class="section">
+      <h3>Set Examples</h3>
+      <button onclick="testSet()">Test Set Operations</button>
+      <div class="output" id="set-output">Click to test...</div>
+    </div>
+
+    <div class="section">
+      <h3>Practical Applications</h3>
+      <button onclick="testCache()">Test Cache System</button>
+      <button onclick="testUniqueTags()">Test Unique Tags</button>
+      <div class="output" id="practical-output">Click to test...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4: Currying</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+    }
+    .exercise {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 5px solid #667eea;
+    }
+    .exercise h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      font-family: 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      border: 1px solid #e0e0e0;
+    }
+    .success { color: #10b981; font-weight: bold; }
+    .error { color: #ef4444; font-weight: bold; }
+    .info { color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍛 Exercise 4: Function Currying</h1>
+    <p class="subtitle">Create specialized, reusable functions</p>
+
+    <div class="exercise">
+      <h3>1. Curried Multiply</h3>
+      <button onclick="testMultiply()">Test Multiply</button>
+      <div class="output" id="multiply-output">Click to test...</div>
+    </div>
+
+    <div class="exercise">
+      <h3>2. Discount Calculator</h3>
+      <button onclick="testDiscount()">Test Discount</button>
+      <div class="output" id="discount-output">Click to test...</div>
+    </div>
+
+    <div class="exercise">
+      <h3>3. Logger Factory</h3>
+      <button onclick="testLogger()">Test Logger</button>
+      <div class="output" id="logger-output">Click to test...</div>
+    </div>
+
+    <div class="exercise">
+      <h3>4. URL Builder</h3>
+      <button onclick="testURLBuilder()">Test URL Builder</button>
+      <div class="output" id="url-output">Click to test...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

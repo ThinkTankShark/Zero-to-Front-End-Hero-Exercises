@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: Proxy & Reflect</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .card {
+      background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #2ecc71;
+    }
+    button {
+      background: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 5px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(46, 204, 113, 0.4);
+    }
+    pre {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: 2px solid #2ecc71;
+      max-height: 300px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+    .success { color: #27ae60; font-weight: bold; }
+    .error { color: #e74c3c; font-weight: bold; }
+    #reactive-display {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎭 Exercise 2: Proxy & Reflect</h1>
+    <p>Intercept and customize object behavior</p>
+
+    <div class="card">
+      <h3>Validation Proxy</h3>
+      <button onclick="testValidation()">Test Validation</button>
+      <pre id="validation-output">Click to test...</pre>
+    </div>
+
+    <div class="card">
+      <h3>Observable Object (Like Vue!)</h3>
+      <button onclick="testObservable()">Test Observable</button>
+      <div id="reactive-display">Count: 0</div>
+      <pre id="observable-output">Click to test...</pre>
+    </div>
+
+    <div class="card">
+      <h3>Negative Array Indices</h3>
+      <button onclick="testNegativeIndices()">Test Negative Indices</button>
+      <pre id="array-output">Click to test...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

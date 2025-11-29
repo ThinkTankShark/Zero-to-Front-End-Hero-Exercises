@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App with API</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="container">
+        <h1>📝 Todo App</h1>
+        <div class="header-actions">
+          <button class="btn-icon" id="refresh-btn" title="Refresh from API">
+            🔄
+          </button>
+          <button class="btn-icon" id="theme-toggle" title="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Add Todo Form -->
+      <section class="add-todo-section">
+        <form id="todo-form" class="todo-form">
+          <input
+            type="text"
+            id="todo-input"
+            class="todo-input"
+            placeholder="What needs to be done?"
+            required
+            aria-label="New todo"
+          >
+          <button type="submit" class="btn-primary">
+            Add Todo
+          </button>
+        </form>
+      </section>
+
+      <!-- Filters and Stats -->
+      <section class="controls">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">
+            All <span class="badge" id="count-all">0</span>
+          </button>
+          <button class="filter-btn" data-filter="active">
+            Active <span class="badge" id="count-active">0</span>
+          </button>
+          <button class="filter-btn" data-filter="completed">
+            Completed <span class="badge" id="count-completed">0</span>
+          </button>
+        </div>
+
+        <div class="search">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="🔍 Search todos..."
+            aria-label="Search todos"
+          >
+        </div>
+      </section>
+
+      <!-- Bulk Actions -->
+      <section class="bulk-actions">
+        <button class="btn-secondary" id="complete-all-btn">
+          ✓ Complete All
+        </button>
+        <button class="btn-secondary" id="delete-completed-btn">
+          🗑️ Delete Completed
+        </button>
+        <button class="btn-secondary" id="export-btn">
+          📥 Export JSON
+        </button>
+      </section>
+
+      <!-- Loading State -->
+      <div class="loading-state" id="loading-state" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading todos...</p>
+      </div>
+
+      <!-- Error State -->
+      <div class="error-state" id="error-state" style="display: none;">
+        <div class="error-icon">⚠️</div>
+        <h3>Oops! Something went wrong</h3>
+        <p id="error-message"></p>
+        <button class="btn-primary" id="retry-btn">Retry</button>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <div class="empty-icon">📭</div>
+        <h3>No todos yet</h3>
+        <p>Add a new todo to get started!</p>
+      </div>
+
+      <!-- Todo List -->
+      <section class="todos-section">
+        <ul class="todo-list" id="todo-list" role="list">
+          <!-- Todos will be rendered here -->
+        </ul>
+      </section>
+
+      <!-- Statistics -->
+      <section class="stats" id="stats">
+        <div class="stat">
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Active</span>
+          <span class="stat-value" id="stat-active">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Completed</span>
+          <span class="stat-value" id="stat-completed">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Completion</span>
+          <span class="stat-value" id="stat-percentage">0%</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+

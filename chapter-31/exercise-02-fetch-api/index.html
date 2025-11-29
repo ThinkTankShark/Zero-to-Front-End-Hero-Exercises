@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2: Fetch API</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 5px solid #667eea;
+    }
+
+    .section h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .output {
+      margin-top: 15px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .loading {
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    .success {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .post-card {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 3px solid #667eea;
+    }
+
+    .post-title {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .post-body {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Exercise 2: Fetch API</h1>
+    <p class="subtitle">Master HTTP requests with modern JavaScript</p>
+
+    <div class="section">
+      <h3>GET Request - Fetch Posts</h3>
+      <button onclick="fetchPosts()">Fetch All Posts</button>
+      <button onclick="fetchSinglePost()">Fetch Single Post (ID: 1)</button>
+      <div class="output" id="get-output">Click a button to fetch data...</div>
+    </div>
+
+    <div class="section">
+      <h3>POST Request - Create Post</h3>
+      <input type="text" id="post-title" placeholder="Post title">
+      <textarea id="post-body" placeholder="Post body"></textarea>
+      <button onclick="createPost()">Create Post</button>
+      <div class="output" id="post-output">Fill in the form and click Create Post...</div>
+    </div>
+
+    <div class="section">
+      <h3>PUT/PATCH Request - Update Post</h3>
+      <input type="number" id="update-id" placeholder="Post ID" value="1">
+      <input type="text" id="update-title" placeholder="New title">
+      <button onclick="updatePost()">Update Post</button>
+      <div class="output" id="update-output">Enter post ID and new title...</div>
+    </div>
+
+    <div class="section">
+      <h3>DELETE Request</h3>
+      <input type="number" id="delete-id" placeholder="Post ID" value="1">
+      <button onclick="deletePost()">Delete Post</button>
+      <div class="output" id="delete-output">Enter post ID to delete...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

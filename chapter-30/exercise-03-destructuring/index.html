@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3: Destructuring</title>
+  <style>
+    body {
+      font-family: 'SF Pro Display', -apple-system, sans-serif;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #7f8c8d;
+      margin-bottom: 30px;
+    }
+    .section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #3498db;
+    }
+    .section h3 {
+      margin-top: 0;
+      color: #3498db;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #2980b9;
+      transform: translateY(-1px);
+    }
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .success {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .error {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 Exercise 3: Destructuring</h1>
+    <p class="subtitle">Unpack values elegantly</p>
+
+    <div class="section">
+      <h3>Array Destructuring</h3>
+      <button onclick="testArrayDestructuring()">Test Array Destructuring</button>
+      <pre id="array-output">Click the button to test...</pre>
+    </div>
+
+    <div class="section">
+      <h3>Object Destructuring</h3>
+      <button onclick="testObjectDestructuring()">Test Object Destructuring</button>
+      <pre id="object-output">Click the button to test...</pre>
+    </div>
+
+    <div class="section">
+      <h3>Function Parameters</h3>
+      <button onclick="testFunctionParams()">Test Function Parameters</button>
+      <pre id="function-output">Click the button to test...</pre>
+    </div>
+
+    <div class="section">
+      <h3>API Response Destructuring</h3>
+      <button onclick="testAPIResponse()">Test API Response</button>
+      <pre id="api-output">Click the button to test...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

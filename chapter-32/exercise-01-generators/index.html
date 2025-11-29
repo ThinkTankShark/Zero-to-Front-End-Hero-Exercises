@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1: Generators</title>
+  <style>
+    body {
+      font-family: 'SF Pro Display', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .section {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 30%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .section h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 5px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+    }
+    pre {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: 2px solid #f093fb;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+    .success { color: #10b981; font-weight: bold; }
+    .error { color: #ef4444; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Exercise 1: Generators & Iterators</h1>
+    <p class="subtitle">Pauseable functions and custom iteration</p>
+
+    <div class="section">
+      <h3>Basic Generator</h3>
+      <button onclick="testBasicGenerator()">Test Basic Generator</button>
+      <pre id="basic-output">Click to test...</pre>
+    </div>
+
+    <div class="section">
+      <h3>Infinite Sequence</h3>
+      <button onclick="testInfiniteSequence()">Test ID Generator</button>
+      <pre id="infinite-output">Click to test...</pre>
+    </div>
+
+    <div class="section">
+      <h3>Custom Iterator</h3>
+      <button onclick="testCustomIterator()">Test Custom Range</button>
+      <pre id="iterator-output">Click to test...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

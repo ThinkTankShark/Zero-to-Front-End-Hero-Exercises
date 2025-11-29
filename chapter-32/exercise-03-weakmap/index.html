@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3: WeakMap & WeakSet</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .exercise-section {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .output {
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      min-height: 150px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .success {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .info {
+      color: #17a2b8;
+      font-weight: bold;
+    }
+
+    .code-example {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      overflow-x: auto;
+    }
+
+    .code-example code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+    }
+
+    .warning {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+
+    .tip {
+      background: #d1ecf1;
+      border-left: 4px solid #17a2b8;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+
+    #tracked-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tracked-item {
+      background: #f8f9fa;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .tracked-item:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗺️ WeakMap & WeakSet</h1>
+    <p class="subtitle">Memory-efficient collections with automatic garbage collection</p>
+
+    <!-- Private Data Section -->
+    <div class="exercise-section">
+      <h2>1. Private Data with WeakMap</h2>
+
+      <div class="tip">
+        <strong>💡 Concept:</strong> WeakMap allows storing private data that can't be accessed externally and doesn't prevent garbage collection.
+      </div>
+
+      <div class="button-group">
+        <button onclick="testPrivateData()">Test Private Data</button>
+        <button onclick="testMemoryCleanup()">Test Memory Cleanup</button>
+      </div>
+
+      <div id="private-output" class="output">
+Click "Test Private Data" to see how WeakMap provides true privacy.
+      </div>
+    </div>
+
+    <!-- DOM Metadata Section -->
+    <div class="exercise-section">
+      <h2>2. DOM Element Metadata</h2>
+
+      <div class="tip">
+        <strong>💡 Use Case:</strong> Store metadata for DOM elements without memory leaks. When elements are removed, metadata is automatically cleaned up!
+      </div>
+
+      <div class="button-group">
+        <button onclick="createTrackedElement()">Create Tracked Element</button>
+        <button onclick="showMetadata()">Show All Metadata</button>
+        <button onclick="clearElements()">Clear Elements</button>
+      </div>
+
+      <div id="tracked-items"></div>
+
+      <div id="metadata-output" class="output">
+Metadata for tracked elements will appear here.
+      </div>
+    </div>
+
+    <!-- WeakSet Section -->
+    <div class="exercise-section">
+      <h2>3. Object Tracking with WeakSet</h2>
+
+      <div class="tip">
+        <strong>💡 Use Case:</strong> Track which objects have been processed without preventing garbage collection.
+      </div>
+
+      <div class="button-group">
+        <button onclick="testWeakSet()">Test WeakSet</button>
+        <button onclick="testDuplicatePrevention()">Test Duplicate Prevention</button>
+      </div>
+
+      <div id="weakset-output" class="output">
+Click "Test WeakSet" to see object tracking in action.
+      </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="exercise-section">
+      <h2>4. Map vs WeakMap Comparison</h2>
+
+      <div class="warning">
+        <strong>⚠️ Important:</strong> Map keeps strong references (can cause memory leaks). WeakMap uses weak references (automatic cleanup).
+      </div>
+
+      <div class="button-group">
+        <button onclick="compareMapVsWeakMap()">Compare Map vs WeakMap</button>
+      </div>
+
+      <div id="comparison-output" class="output">
+Click "Compare" to see the differences.
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

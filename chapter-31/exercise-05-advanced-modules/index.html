@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5: Advanced Module Patterns</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 15px 0;
+      overflow-x: auto;
+    }
+
+    .demo-area {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 10px;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: #5568d3;
+      transform: translateY(-2px);
+    }
+
+    .btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #output {
+      margin-top: 20px;
+      min-height: 100px;
+    }
+
+    .info-box {
+      background: #e7f3ff;
+      border-left: 4px solid #2196f3;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .pattern-card {
+      background: white;
+      border: 2px solid #667eea;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .pattern-card h3 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .pattern-card code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>📦 Advanced Module Patterns</h1>
+      <p class="subtitle">Master ES6 module import/export patterns</p>
+
+      <div class="section">
+        <div class="section-title">🎯 Module Patterns Used</div>
+
+        <div class="pattern-grid">
+          <div class="pattern-card">
+            <h3>Named Exports</h3>
+            <p>Export specific functions/variables</p>
+            <div class="code-block">
+export { add, PI }
+import { add } from './math.js'</div>
+          </div>
+
+          <div class="pattern-card">
+            <h3>Default Export</h3>
+            <p>Single main export per module</p>
+            <div class="code-block">
+export default Logger
+import Logger from './logger.js'</div>
+          </div>
+
+          <div class="pattern-card">
+            <h3>Namespace Import</h3>
+            <p>Import everything as object</p>
+            <div class="code-block">
+import * as math from './math.js'
+math.add(1, 2)</div>
+          </div>
+
+          <div class="pattern-card">
+            <h3>Barrel Pattern</h3>
+            <p>Re-export from single entry</p>
+            <div class="code-block">
+// index.js
+export * from './math.js'</div>
+          </div>
+
+          <div class="pattern-card">
+            <h3>Dynamic Import</h3>
+            <p>Load modules on demand</p>
+            <div class="code-block">
+const mod = await import('./data.js')
+mod.doSomething()</div>
+          </div>
+
+          <div class="pattern-card">
+            <h3>Mixed Exports</h3>
+            <p>Combine default + named</p>
+            <div class="code-block">
+import config, { API_URL }
+from './config.js'</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">💡 Dynamic Import Demo</div>
+
+        <div class="info-box">
+          <strong>What is Dynamic Import?</strong><br>
+          Dynamic imports load modules only when needed, reducing initial bundle size.
+          Perfect for large libraries or optional features!
+        </div>
+
+        <div class="demo-area">
+          <p style="margin-bottom: 20px; color: #666;">
+            Click to load a large dataset module (1000 items) dynamically
+          </p>
+
+          <button id="load-data" class="btn">
+            📥 Load Data Module
+          </button>
+
+          <button id="process-data" class="btn" disabled>
+            ⚙️ Process Data
+          </button>
+
+          <div id="output"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📝 Check Console</div>
+        <div class="info-box">
+          Open the browser console to see all import patterns in action!
+          Each module logs when it's loaded.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
