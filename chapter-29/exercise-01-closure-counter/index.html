@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1: Closure Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .instructions {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .output {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-family: 'Courier New', monospace;
+    }
+
+    .log {
+      padding: 8px;
+      margin: 4px 0;
+      background: #f0f0f0;
+      border-left: 4px solid #007bff;
+      border-radius: 2px;
+    }
+
+    .hint {
+      background: #fff3cd;
+      padding: 15px;
+      border-left: 4px solid #ffc107;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise 1: Closure Counter ⭐</h1>
+
+  <div class="instructions">
+    <h2>📝 Instructions</h2>
+    <p>Create a function <code>makeCounter()</code> that returns a function. Each time the returned function is called, it should increment and log a private count.</p>
+
+    <h3>Expected Behavior:</h3>
+    <pre><code>const counter = makeCounter();
+counter(); // 1
+counter(); // 2
+counter(); // 3</code></pre>
+
+    <div class="hint">
+      <strong>💡 Hint:</strong> Create a local variable inside makeCounter().
+      Return a function that can access that variable.
+      The returned function will "remember" it (closure!).
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>Test Your Function</h2>
+    <p>Click the button to call the counter function:</p>
+    <button onclick="callCounter()">Call Counter</button>
+    <button onclick="createNew()">Create New Counter</button>
+    <button onclick="clearOutput()">Clear Output</button>
+
+    <div id="output" class="output" style="min-height: 100px;"></div>
+  </div>
+
+  <script>
+    let output = document.getElementById('output');
+    let counter;
+
+    // TODO: Implement your makeCounter function here
+    function makeCounter() {
+      // Your code here
+
+    }
+
+    // Initialize the first counter
+    counter = makeCounter();
+    log('Counter created! Click "Call Counter" to test it.');
+
+    function callCounter() {
+      if (!counter) {
+        log('❌ Please create a counter first!');
+        return;
+      }
+
+      try {
+        counter();
+      } catch (e) {
+        log(`❌ Error: ${e.message}`);
+      }
+    }
+
+    function createNew() {
+      counter = makeCounter();
+      log('✨ New counter created!');
+    }
+
+    function clearOutput() {
+      output.innerHTML = '';
+    }
+
+    function log(message) {
+      const div = document.createElement('div');
+      div.className = 'log';
+      div.textContent = message;
+      output.appendChild(div);
+      output.scrollTop = output.scrollHeight;
+    }
+
+    // Override console.log for this page
+    const originalLog = console.log;
+    console.log = function(...args) {
+      log(args.join(' '));
+      originalLog(...args);
+    };
+  </script>
+</body>
+</html>
+
