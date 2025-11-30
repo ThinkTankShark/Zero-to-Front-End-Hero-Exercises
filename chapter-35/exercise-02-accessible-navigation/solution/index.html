@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Navigation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="/">MyWebsite</a>
+        </div>
+
+        <!-- Hamburger button with ARIA -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Navigation with ARIA -->
+        <nav id="nav" aria-label="Main navigation">
+          <ul class="nav-menu" id="nav-menu" role="list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <h1>Welcome to Accessible Navigation</h1>
+      <p>This navigation is fully accessible and works with keyboard, mouse, and screen readers.</p>
+
+      <h2>Accessibility Features:</h2>
+      <ul>
+        <li>✓ Navigate with Tab key</li>
+        <li>✓ Press Enter to activate links</li>
+        <li>✓ Press Escape to close mobile menu</li>
+        <li>✓ Screen reader announces menu state</li>
+        <li>✓ Focus is trapped in mobile menu</li>
+        <li>✓ Visible focus indicators</li>
+        <li>✓ Skip to main content link</li>
+      </ul>
+
+      <h2>Test it:</h2>
+      <ol>
+        <li>Unplug your mouse and navigate with keyboard only</li>
+        <li>Use a screen reader (NVDA, VoiceOver, JAWS)</li>
+        <li>Check with WAVE or axe DevTools</li>
+        <li>Zoom to 200% and verify layout</li>
+      </ol>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

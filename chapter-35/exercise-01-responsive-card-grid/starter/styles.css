@@ -1,0 +1,136 @@
+/* ================================
+   Responsive Card Grid - STARTER
+   TODO: Make this responsive!
+   ================================ */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles - Mobile First! */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f7fafc;
+}
+
+.container {
+  /* TODO: Add responsive padding */
+  /* TODO: Add max-width for large screens */
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+h1 {
+  /* TODO: Use clamp() for fluid typography */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Products Grid */
+.products-grid {
+  /* TODO: Implement responsive grid */
+  /* Mobile: 1 column */
+  /* Tablet: 2 columns */
+  /* Desktop: 3-4 columns */
+  padding: 1rem;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  /* TODO: Add hover effect for desktop only */
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.product-description {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.btn-add-to-cart {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* TODO: Ensure min touch target size (44px × 44px) */
+}
+
+.btn-add-to-cart:hover {
+  background: #5568d3;
+}
+
+.btn-add-to-cart:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* ================================
+   TODO: Add Media Queries
+   ================================ */
+
+/* Tablet (768px and up) */
+/* @media (min-width: 768px) {
+
+} */
+
+/* Desktop (1024px and up) */
+/* @media (min-width: 1024px) {
+
+} */
+
+/* Large Desktop (1440px and up) */
+/* @media (min-width: 1440px) {
+
+} */
+

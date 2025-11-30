@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Navigation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="/">MyWebsite</a>
+        </div>
+
+        <!-- Hamburger button - TODO: Add ARIA attributes -->
+        <button class="hamburger" id="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Navigation - TODO: Add ARIA attributes -->
+        <nav id="nav">
+          <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <h1>Welcome to Accessible Navigation</h1>
+      <p>This navigation is fully accessible and works with keyboard, mouse, and screen readers.</p>
+
+      <h2>Try it out:</h2>
+      <ul>
+        <li>Navigate with Tab key</li>
+        <li>Press Enter to activate links</li>
+        <li>Press Escape to close mobile menu</li>
+        <li>Test with screen reader</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

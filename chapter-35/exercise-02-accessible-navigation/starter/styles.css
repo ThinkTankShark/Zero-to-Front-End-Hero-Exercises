@@ -1,0 +1,120 @@
+/* ================================
+   Accessible Navigation - STARTER
+   TODO: Complete the navigation styles
+   ================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Skip Link - TODO: Hide but show on focus */
+.skip-link {
+  /* TODO: Position off-screen but accessible */
+}
+
+.skip-link:focus {
+  /* TODO: Make visible when focused */
+}
+
+/* Header */
+header {
+  background: #2d3748;
+  color: white;
+  padding: 1rem 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Hamburger - TODO: Hide on desktop */
+.hamburger {
+  /* TODO: Style hamburger button */
+  /* TODO: Hide on desktop */
+  /* TODO: Ensure min 44px touch target */
+}
+
+.hamburger-line {
+  /* TODO: Style hamburger lines */
+}
+
+/* Navigation - TODO: Make responsive */
+nav {
+  /* TODO: Desktop: inline */
+  /* TODO: Mobile: dropdown */
+}
+
+.nav-menu {
+  list-style: none;
+  /* TODO: Style menu */
+}
+
+.nav-menu li {
+  /* TODO: Style list items */
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  /* TODO: Ensure good hit area */
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  /* TODO: Add focus/hover styles */
+}
+
+/* Main Content */
+main {
+  padding: 3rem 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin: 2rem 0 1rem;
+}
+
+ul {
+  margin-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   TODO: Add Media Queries
+   ================================ */
+
+/* Mobile styles here (default) */
+
+/* Desktop (768px and up) */
+/* @media (min-width: 768px) {
+
+} */
+
