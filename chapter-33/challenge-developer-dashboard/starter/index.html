@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <h1>🚀 Developer Dashboard</h1>
+      <p class="subtitle">Your personalized dev workspace</p>
+    </header>
+
+    <main class="container">
+      <!-- Widgets Grid -->
+      <div class="widgets-grid">
+
+        <!-- GitHub Stats Widget -->
+        <div class="widget github-widget">
+          <div class="widget-header">
+            <h2>📊 GitHub Stats</h2>
+          </div>
+          <div id="github-content" class="widget-content">
+            <!-- TODO: GitHub stats will be rendered here -->
+            <p class="placeholder">Loading GitHub stats...</p>
+          </div>
+        </div>
+
+        <!-- Dev Jokes Widget -->
+        <div class="widget jokes-widget">
+          <div class="widget-header">
+            <h2>😂 Dev Jokes</h2>
+            <button id="new-joke-btn" class="btn-icon">🔄</button>
+          </div>
+          <div id="jokes-content" class="widget-content">
+            <!-- TODO: Jokes will be rendered here -->
+            <p class="placeholder">Click refresh to get a joke!</p>
+          </div>
+        </div>
+
+        <!-- Quick Links Widget -->
+        <div class="widget links-widget">
+          <div class="widget-header">
+            <h2>🔗 Quick Links</h2>
+          </div>
+          <div id="links-content" class="widget-content">
+            <!-- TODO: Add your favorite dev resources -->
+            <p class="placeholder">Add your links in app.js</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Code Snippet Manager (Full Width) -->
+      <div class="widget snippet-widget">
+        <div class="widget-header">
+          <h2>💾 Code Snippets</h2>
+        </div>
+        <div class="widget-content">
+
+          <!-- Add Snippet Form -->
+          <form id="snippet-form" class="snippet-form">
+            <input
+              type="text"
+              id="snippet-title"
+              placeholder="Snippet title..."
+              required
+            >
+            <select id="snippet-language">
+              <option value="javascript">JavaScript</option>
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="python">Python</option>
+              <option value="bash">Bash</option>
+              <option value="other">Other</option>
+            </select>
+            <textarea
+              id="snippet-code"
+              placeholder="Paste your code here..."
+              required
+            ></textarea>
+            <button type="submit" class="btn-primary">Add Snippet</button>
+          </form>
+
+          <!-- Snippets List -->
+          <div id="snippets-container" class="snippets-container">
+            <!-- TODO: Snippets will be rendered here -->
+            <p class="placeholder">No snippets yet. Add one above!</p>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- TODO: Add your JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
+

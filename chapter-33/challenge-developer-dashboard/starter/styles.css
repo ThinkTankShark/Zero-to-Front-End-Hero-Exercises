@@ -1,0 +1,462 @@
+/* ===========================================
+   CSS Variables
+   =========================================== */
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #5568d3;
+  --secondary: #764ba2;
+  --success: #48bb78;
+  --danger: #f56565;
+  --warning: #ed8936;
+
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e0;
+  --text-muted: #94a3b8;
+
+  --border: #334155;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ===========================================
+   Reset and Base Styles
+   =========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+/* ===========================================
+   Container and Layout
+   =========================================== */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================================
+   Widgets
+   =========================================== */
+
+.widget {
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.widget:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.widget-header {
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header h2 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.widget-content {
+  padding: 1.5rem;
+}
+
+.placeholder {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ===========================================
+   Buttons
+   =========================================== */
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-icon:hover {
+  background: var(--bg-hover);
+}
+
+/* ===========================================
+   GitHub Widget
+   =========================================== */
+
+.github-card {
+  text-align: center;
+}
+
+.github-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  margin-bottom: 1rem;
+}
+
+.github-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.github-bio {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.github-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-main);
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ===========================================
+   Jokes Widget
+   =========================================== */
+
+.joke-container {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.joke-setup {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.joke-punchline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.joke-count {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===========================================
+   Quick Links Widget
+   =========================================== */
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-main);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.link-item:hover {
+  background: var(--bg-hover);
+  transform: translateX(5px);
+}
+
+.link-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.link-info {
+  flex: 1;
+}
+
+.link-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.link-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ===========================================
+   Snippet Widget
+   =========================================== */
+
+.snippet-widget {
+  grid-column: 1 / -1;
+}
+
+.snippet-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.snippet-form input,
+.snippet-form select,
+.snippet-form textarea {
+  padding: 0.75rem;
+  background: var(--bg-main);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.snippet-form textarea {
+  grid-column: 1 / -1;
+  min-height: 120px;
+  font-family: 'Courier New', monospace;
+  resize: vertical;
+}
+
+.snippet-form input:focus,
+.snippet-form select:focus,
+.snippet-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.snippet-form button {
+  grid-column: 1 / -1;
+}
+
+.snippets-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.snippet {
+  background: var(--bg-main);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+
+.snippet:hover {
+  border-color: var(--primary);
+}
+
+.snippet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.snippet-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.snippet-language {
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.snippet-code {
+  background: #0d1117;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.snippet-code code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #c9d1d9;
+  white-space: pre;
+}
+
+.snippet-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-copy,
+.btn-delete {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-copy {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-copy:hover {
+  background: var(--primary-dark);
+}
+
+.btn-delete {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #e53e3e;
+}
+
+/* ===========================================
+   Loading State
+   =========================================== */
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.spinner {
+  border: 3px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .widgets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .snippet-form {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
