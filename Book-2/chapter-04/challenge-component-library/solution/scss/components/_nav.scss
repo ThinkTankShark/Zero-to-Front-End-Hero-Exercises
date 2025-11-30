@@ -1,0 +1,41 @@
+// Navigation Component
+@use '../abstracts' as *;
+
+.nav {
+  display: flex;
+  gap: space('2');
+  padding: space('4');
+  background: var(--color-surface);
+  border-radius: map-get($border-radius, 'lg');
+  @include elevation('base');
+
+  &__link {
+    padding: space('3') space('4');
+    font-size: map-get($font-sizes, 'base');
+    font-weight: map-get($font-weights, 'medium');
+    color: var(--color-text-muted);
+    border-radius: map-get($border-radius, 'md');
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--color-surface-hover);
+      color: var(--color-text);
+    }
+
+    @include focus-ring();
+
+    &--active {
+      background: var(--color-primary);
+      color: white;
+
+      &:hover {
+        background: var(--color-primary-hover);
+      }
+    }
+  }
+
+  @include responsive('md') {
+    gap: space('4');
+  }
+}
+

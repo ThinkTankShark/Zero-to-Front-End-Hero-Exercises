@@ -1,0 +1,14 @@
+{
+  "name": "uikit-pro-component-library",
+  "version": "1.0.0",
+  "description": "Challenge: UIKit Pro Component Library",
+  "scripts": {
+    "watch": "sass --watch scss:css --style expanded",
+    "build": "sass scss:css --style compressed"
+  },
+  "keywords": ["sass", "component-library", "design-system", "theming"],
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
+

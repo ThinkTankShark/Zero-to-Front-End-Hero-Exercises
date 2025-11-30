@@ -1,0 +1,16 @@
+// Footer Layout
+@use '../abstracts' as *;
+
+.footer {
+  background: map-get($colors, 'background-alt');
+  padding: map-get($spacing, 'lg') 0;
+  margin-top: map-get($spacing, 'xl');
+  text-align: center;
+  border-top: 1px solid map-get($colors, 'border');
+
+  p {
+    color: map-get($colors, 'text-muted');
+    margin: 0;
+  }
+}
+

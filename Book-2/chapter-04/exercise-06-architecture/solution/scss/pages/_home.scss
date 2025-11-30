@@ -1,0 +1,20 @@
+// Home Page Styles
+@use '../abstracts' as *;
+
+.hero {
+  text-align: center;
+  padding: map-get($spacing, 'xl') 0;
+  margin-bottom: map-get($spacing, 'lg');
+
+  h2 {
+    font-size: map-get($typography, '3xl');
+    margin-bottom: map-get($spacing, 'sm');
+  }
+
+  p {
+    font-size: map-get($typography, 'lg');
+    color: map-get($colors, 'text-muted');
+    margin-bottom: map-get($spacing, 'md');
+  }
+}
+

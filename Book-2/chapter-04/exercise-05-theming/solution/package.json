@@ -1,0 +1,12 @@
+{
+  "name": "sass-theming",
+  "version": "1.0.0",
+  "description": "Exercise 5: Theming with Sass + CSS Variables",
+  "scripts": {
+    "watch": "sass --watch scss:css --style expanded",
+    "build": "sass scss:css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

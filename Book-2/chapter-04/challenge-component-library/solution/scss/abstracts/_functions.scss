@@ -1,0 +1,60 @@
+// Utility Functions
+
+// Convert px to rem
+@function px-to-rem($px, $base: 16) {
+  @return calc($px / $base) * 1rem;
+}
+
+// Strip unit from a number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return calc($number / ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+// Get color from primitives
+@function color($color-name, $shade: '500') {
+  @if map-has-key($color-primitives, $color-name) {
+    $color-map: map-get($color-primitives, $color-name);
+    @if map-has-key($color-map, $shade) {
+      @return map-get($color-map, $shade);
+    }
+  }
+  @warn "Color #{$color-name} with shade #{$shade} not found.";
+  @return null;
+}
+
+// Get semantic color
+@function semantic($name) {
+  @if map-has-key($semantic-colors, $name) {
+    @return map-get($semantic-colors, $name);
+  }
+  @warn "Semantic color #{$name} not found.";
+  @return null;
+}
+
+// Get spacing value
+@function space($size) {
+  @if map-has-key($spacing, $size) {
+    @return map-get($spacing, $size);
+  }
+  @warn "Spacing #{$size} not found.";
+  @return null;
+}
+
+// Auto contrast - returns white or black based on background
+@function auto-contrast($bg-color) {
+  $r: red($bg-color) / 255;
+  $g: green($bg-color) / 255;
+  $b: blue($bg-color) / 255;
+
+  $luminance: (0.299 * $r + 0.587 * $g + 0.114 * $b);
+
+  @if $luminance > 0.5 {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+

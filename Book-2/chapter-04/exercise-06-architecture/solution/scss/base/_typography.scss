@@ -1,0 +1,19 @@
+// Typography Base Styles
+@use '../abstracts' as *;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: map-get($typography, 'base');
+  line-height: 1.6;
+  color: map-get($colors, 'text');
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-bottom: map-get($spacing, 'sm');
+}
+
+p {
+  margin-bottom: map-get($spacing, 'sm');
+}
+

@@ -1,0 +1,20 @@
+// Card Component
+@use '../abstracts' as *;
+
+.card {
+  background: white;
+  padding: map-get($spacing, 'md');
+  border-radius: 0.75rem;
+  border: 1px solid map-get($colors, 'border');
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    font-size: map-get($typography, 'xl');
+    margin-bottom: map-get($spacing, 'xs');
+  }
+
+  p {
+    color: map-get($colors, 'text-muted');
+  }
+}
+

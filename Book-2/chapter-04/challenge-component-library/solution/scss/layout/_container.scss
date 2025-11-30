@@ -1,0 +1,29 @@
+// Container Layout
+@use '../abstracts' as *;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 space('4');
+
+  @include responsive('md') {
+    padding: 0 space('6');
+  }
+
+  @include responsive('lg') {
+    padding: 0 space('8');
+  }
+}
+
+.section {
+  margin-bottom: space('12');
+
+  &__title {
+    font-size: map-get($font-sizes, '2xl');
+    font-weight: map-get($font-weights, 'bold');
+    margin-bottom: space('6');
+    color: var(--color-text);
+  }
+}
+

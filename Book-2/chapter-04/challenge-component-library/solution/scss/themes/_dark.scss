@@ -1,0 +1,59 @@
+// Dark Theme
+@use '../abstracts' as *;
+
+[data-theme="dark"] {
+  // Surface colors
+  --color-background: #{color('gray', '900')};
+  --color-surface: #{color('gray', '800')};
+  --color-surface-hover: #{color('gray', '700')};
+  --color-surface-disabled: #{color('gray', '800')};
+
+  // Text colors
+  --color-text: #{color('gray', '50')};
+  --color-text-muted: #{color('gray', '400')};
+
+  // Border colors
+  --color-border: #{color('gray', '700')};
+  --color-border-hover: #{color('gray', '600')};
+
+  // Semantic colors (brighter for dark mode)
+  --color-primary: #{color('blue', '400')};
+  --color-primary-hover: #{color('blue', '300')};
+  --color-secondary: #{color('gray', '500')};
+  --color-secondary-hover: #{color('gray', '400')};
+  --color-success: #{color('green', '500')};
+  --color-success-hover: #{color('green', '600')};
+  --color-danger: #{color('red', '500')};
+  --color-danger-hover: #{color('red', '600')};
+
+  // Utility colors
+  --color-bg-primary: #{color('blue', '600')};
+  --color-bg-success: #{color('green', '600')};
+  --color-bg-danger: #{color('red', '600')};
+}
+
+// Respect system preference
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: #{color('gray', '900')};
+    --color-surface: #{color('gray', '800')};
+    --color-surface-hover: #{color('gray', '700')};
+    --color-surface-disabled: #{color('gray', '800')};
+    --color-text: #{color('gray', '50')};
+    --color-text-muted: #{color('gray', '400')};
+    --color-border: #{color('gray', '700')};
+    --color-border-hover: #{color('gray', '600')};
+    --color-primary: #{color('blue', '400')};
+    --color-primary-hover: #{color('blue', '300')};
+    --color-secondary: #{color('gray', '500')};
+    --color-secondary-hover: #{color('gray', '400')};
+    --color-success: #{color('green', '500')};
+    --color-success-hover: #{color('green', '600')};
+    --color-danger: #{color('red', '500')};
+    --color-danger-hover: #{color('red', '600')};
+    --color-bg-primary: #{color('blue', '600')};
+    --color-bg-success: #{color('green', '600')};
+    --color-bg-danger: #{color('red', '600')};
+  }
+}
+

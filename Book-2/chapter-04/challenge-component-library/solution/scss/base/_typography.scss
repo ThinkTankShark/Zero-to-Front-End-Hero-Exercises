@@ -1,0 +1,53 @@
+// Typography Base Styles
+@use '../abstracts' as *;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: map-get($font-sizes, 'base');
+  font-weight: map-get($font-weights, 'normal');
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: map-get($font-weights, 'bold');
+  line-height: 1.2;
+  margin-bottom: space('4');
+}
+
+h1 {
+  font-size: map-get($font-sizes, '4xl');
+}
+
+h2 {
+  font-size: map-get($font-sizes, '3xl');
+}
+
+h3 {
+  font-size: map-get($font-sizes, '2xl');
+}
+
+h4 {
+  font-size: map-get($font-sizes, 'xl');
+}
+
+h5 {
+  font-size: map-get($font-sizes, 'lg');
+}
+
+h6 {
+  font-size: map-get($font-sizes, 'base');
+}
+
+p {
+  margin-bottom: space('4');
+}
+
+strong {
+  font-weight: map-get($font-weights, 'bold');
+}
+
+small {
+  font-size: map-get($font-sizes, 'sm');
+}
+

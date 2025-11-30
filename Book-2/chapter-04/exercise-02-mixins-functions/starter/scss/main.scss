@@ -1,0 +1,200 @@
+// Mixins & Functions Exercise - Starter
+// Your task: Create useful mixins and functions
+
+// ===== FUNCTIONS =====
+
+// TODO: Create px-to-rem function
+// Converts px to rem (assuming 16px base)
+// Example: px-to-rem(24) should return 1.5rem
+
+// TODO: Create auto-contrast function
+// Returns white or black text based on background luminance
+// Example: auto-contrast(#3b82f6) should return white
+
+// TODO: Create elevation function
+// Generates box-shadow based on elevation level (1-4)
+// Example: elevation(2) should return appropriate shadow
+
+// ===== MIXINS =====
+
+// TODO: Create focus-ring mixin
+// Adds consistent focus styles
+// Should accept optional color parameter
+
+// TODO: Create fluid-type mixin
+// Creates responsive typography using clamp()
+// Parameters: min-size, max-size, min-viewport, max-viewport
+
+// TODO: Create responsive mixin
+// Media query helper for breakpoints
+// Example: @include responsive('md') { ... }
+
+// ===== BASE STYLES =====
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #1f2937;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+// ===== BUTTON STYLES =====
+// TODO: Apply focus-ring mixin to buttons
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+
+  &:hover {
+    background: #2563eb;
+  }
+
+  // TODO: Add focus-ring mixin here
+}
+
+.btn-secondary {
+  background: #6b7280;
+
+  &:hover {
+    background: #4b5563;
+  }
+}
+
+// ===== FLUID TYPOGRAPHY =====
+// TODO: Apply fluid-type mixin
+
+.fluid-heading {
+  // TODO: Use fluid-type mixin for responsive sizing
+  font-size: 2rem;  // Fallback
+  font-weight: 800;
+}
+
+.fluid-text {
+  // TODO: Use fluid-type mixin
+  font-size: 1rem;  // Fallback
+}
+
+// ===== RESPONSIVE BOX =====
+// TODO: Apply responsive mixin
+
+.responsive-box {
+  padding: 2rem;
+  background: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+
+  // TODO: Use responsive mixin to change colors at breakpoints
+}
+
+// ===== AUTO CONTRAST DEMO =====
+// TODO: Use auto-contrast function
+
+.contrast-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.box {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.box-light {
+  background: #f9fafb;
+  // TODO: Use auto-contrast function for text color
+  color: black;
+}
+
+.box-dark {
+  background: #111827;
+  // TODO: Use auto-contrast function
+  color: white;
+}
+
+.box-medium {
+  background: #3b82f6;
+  // TODO: Use auto-contrast function
+  color: white;
+}
+
+// ===== ELEVATION DEMO =====
+// TODO: Use elevation function
+
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2rem 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.elevation-1 {
+  // TODO: Use elevation function
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.elevation-2 {
+  // TODO: Use elevation function
+  box-shadow: 0 4px 6px rgba(0,0,0,0.16);
+}
+
+.elevation-3 {
+  // TODO: Use elevation function
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+}
+
+.elevation-4 {
+  // TODO: Use elevation function
+  box-shadow: 0 15px 30px rgba(0,0,0,0.22);
+}
+

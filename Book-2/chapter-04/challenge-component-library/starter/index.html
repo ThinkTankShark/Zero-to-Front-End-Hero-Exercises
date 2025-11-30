@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIKit Pro - Component Library</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">UIKit Pro</h1>
+      <button class="btn btn--primary theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span> Toggle Theme
+      </button>
+    </header>
+
+    <main class="content">
+      <!-- Introduction -->
+      <section class="section">
+        <div class="card">
+          <h2>Welcome to UIKit Pro</h2>
+          <p>A professional component library built with Sass, featuring:</p>
+          <ul>
+            <li>✅ Complete design token system</li>
+            <li>✅ Light and dark themes</li>
+            <li>✅ Auto-generated utilities</li>
+            <li>✅ BEM methodology</li>
+            <li>✅ 7-1 architecture</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <section class="section">
+        <h2 class="section__title">Buttons</h2>
+        <div class="demo-grid">
+          <button class="btn btn--primary">Primary Button</button>
+          <button class="btn btn--secondary">Secondary Button</button>
+          <button class="btn btn--outline">Outline Button</button>
+          <button class="btn btn--danger">Danger Button</button>
+          <button class="btn btn--primary btn--small">Small Button</button>
+          <button class="btn btn--primary btn--large">Large Button</button>
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section class="section">
+        <h2 class="section__title">Cards</h2>
+        <div class="grid grid--3">
+          <div class="card">
+            <h3 class="card__title">Basic Card</h3>
+            <p class="card__description">A simple card component with clean styling.</p>
+            <button class="card__button btn btn--primary">Action</button>
+          </div>
+
+          <div class="card card--featured">
+            <span class="badge badge--primary">Featured</span>
+            <h3 class="card__title">Featured Card</h3>
+            <p class="card__description">This card stands out with special styling.</p>
+            <button class="card__button btn btn--primary">Get Started</button>
+          </div>
+
+          <div class="card card--compact">
+            <h3 class="card__title">Compact Card</h3>
+            <p class="card__description">Less padding for tighter layouts.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Inputs -->
+      <section class="section">
+        <h2 class="section__title">Form Inputs</h2>
+        <div class="card">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-input" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-input" placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-input" rows="4" placeholder="Your message"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox">
+                <input type="checkbox">
+                <span>I agree to the terms</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <section class="section">
+        <h2 class="section__title">Navigation</h2>
+        <nav class="nav">
+          <a href="#" class="nav__link nav__link--active">Home</a>
+          <a href="#" class="nav__link">Components</a>
+          <a href="#" class="nav__link">Documentation</a>
+          <a href="#" class="nav__link">About</a>
+        </nav>
+      </section>
+
+      <!-- Utilities Demo -->
+      <section class="section">
+        <h2 class="section__title">Utility Classes</h2>
+        <div class="card">
+          <p class="mb-4">These boxes use auto-generated utility classes:</p>
+          <div class="flex gap-4">
+            <div class="p-4 bg-primary text-white">p-4</div>
+            <div class="p-6 bg-success text-white">p-6</div>
+            <div class="p-8 bg-danger text-white">p-8</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal (hidden by default) -->
+  <div class="modal" id="modal" style="display: none;">
+    <div class="modal__backdrop" onclick="closeModal()"></div>
+    <div class="modal__dialog">
+      <div class="modal__header">
+        <h3 class="modal__title">Modal Title</h3>
+        <button class="modal__close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal__body">
+        <p>This is a modal dialog component.</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn btn--primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', newTheme);
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+</body>
+</html>
+

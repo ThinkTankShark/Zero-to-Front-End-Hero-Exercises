@@ -1,0 +1,183 @@
+// BEM Component Exercise - Complete Solution
+
+// ===== DESIGN TOKENS =====
+$primary-color: #3b82f6;
+$primary-hover: #2563eb;
+$featured-color: #10b981;
+$text-color: #1f2937;
+$text-muted: #6b7280;
+$border-color: #e5e7eb;
+$background: #ffffff;
+$spacing: 1.5rem;
+
+// ===== BASE STYLES =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+// ===== CARD COMPONENT (BEM) =====
+
+.card {
+  // Block: base card styles
+  background: $background;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  // Elements
+  &__header {
+    padding: $spacing;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $text-color;
+    font-weight: 600;
+  }
+
+  &__badge {
+    display: inline-block;
+    background: $featured-color;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__body {
+    padding: $spacing;
+  }
+
+  &__description {
+    color: $text-muted;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__footer {
+    padding: $spacing;
+    border-top: 1px solid $border-color;
+    background: #f9fafb;
+  }
+
+  &__button {
+    background: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+
+    // Element modifier
+    &--primary {
+      background: $primary-color;
+      color: white;
+
+      &:hover {
+        background: $primary-hover;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  // Block modifiers
+  &--featured {
+    border: 2px solid $featured-color;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+  }
+
+  &--compact {
+    #{&}__header,
+    #{&}__body,
+    #{&}__footer {
+      padding: 1rem;
+    }
+  }
+
+  &--bordered {
+    border: 2px solid $border-color;
+    box-shadow: none;
+  }
+
+  // Hover state
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &--bordered:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/*
+ * BEM BENEFITS DEMONSTRATED:
+ *
+ * 1. CLEAR RELATIONSHIPS
+ *    - .card is the block
+ *    - .card__title is part of card
+ *    - .card--featured is a variant
+ *
+ * 2. NO NESTING CONFLICTS
+ *    - All selectors are single-class
+ *    - Low specificity (0,1,0) or (0,2,0)
+ *    - Easy to override if needed
+ *
+ * 3. SELF-DOCUMENTING
+ *    - Class names explain structure
+ *    - No confusion about relationships
+ *    - New developers understand instantly
+ *
+ * 4. PORTABLE
+ *    - Card works anywhere
+ *    - No context dependencies
+ *    - Can be moved to any page
+ *
+ * 5. SASS NESTING
+ *    - & (ampersand) keeps it DRY
+ *    - Compiled output is flat
+ *    - Easy to read and maintain
+ */

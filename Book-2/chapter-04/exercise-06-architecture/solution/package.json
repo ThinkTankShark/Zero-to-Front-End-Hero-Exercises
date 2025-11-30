@@ -1,0 +1,13 @@
+{
+  "name": "sass-professional-architecture",
+  "version": "1.0.0",
+  "description": "Exercise 6: Professional Sass Architecture (7-1 Pattern)",
+  "scripts": {
+    "watch": "sass --watch scss:css --style expanded",
+    "build": "sass scss:css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
+

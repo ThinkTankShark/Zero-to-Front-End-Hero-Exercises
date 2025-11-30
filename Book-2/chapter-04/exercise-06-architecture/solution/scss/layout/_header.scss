@@ -1,0 +1,34 @@
+// Header Layout
+@use '../abstracts' as *;
+
+.header {
+  background: white;
+  border-bottom: 1px solid map-get($colors, 'border');
+  padding: map-get($spacing, 'md') 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: map-get($typography, '2xl');
+    margin: 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: map-get($spacing, 'md');
+
+    a {
+      color: map-get($colors, 'text-muted');
+      text-decoration: none;
+
+      &:hover {
+        color: map-get($colors, 'primary');
+      }
+    }
+  }
+}
+

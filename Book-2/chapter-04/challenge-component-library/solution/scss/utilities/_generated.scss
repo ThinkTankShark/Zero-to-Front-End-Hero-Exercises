@@ -1,0 +1,61 @@
+// Auto-Generated Utility Classes
+@use '../abstracts' as *;
+
+// Padding utilities
+@each $name, $value in $spacing {
+  .p-#{$name} { padding: $value; }
+  .px-#{$name} { padding-left: $value; padding-right: $value; }
+  .py-#{$name} { padding-top: $value; padding-bottom: $value; }
+  .pt-#{$name} { padding-top: $value; }
+  .pr-#{$name} { padding-right: $value; }
+  .pb-#{$name} { padding-bottom: $value; }
+  .pl-#{$name} { padding-left: $value; }
+}
+
+// Margin utilities
+@each $name, $value in $spacing {
+  .m-#{$name} { margin: $value; }
+  .mx-#{$name} { margin-left: $value; margin-right: $value; }
+  .my-#{$name} { margin-top: $value; margin-bottom: $value; }
+  .mt-#{$name} { margin-top: $value; }
+  .mr-#{$name} { margin-right: $value; }
+  .mb-#{$name} { margin-bottom: $value; }
+  .ml-#{$name} { margin-left: $value; }
+}
+
+// Background color utilities
+.bg-primary {
+  background: var(--color-bg-primary);
+}
+
+.bg-success {
+  background: var(--color-bg-success);
+}
+
+.bg-danger {
+  background: var(--color-bg-danger);
+}
+
+// Text color utilities
+.text-white {
+  color: white;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+// Font weight utilities
+@each $name, $value in $font-weights {
+  .font-#{$name} {
+    font-weight: $value;
+  }
+}
+
+// Text size utilities
+@each $name, $value in $font-sizes {
+  .text-#{$name} {
+    font-size: $value;
+  }
+}
+

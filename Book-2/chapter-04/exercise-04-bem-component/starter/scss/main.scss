@@ -1,0 +1,85 @@
+// BEM Component Exercise - Starter
+// Your task: Build a card component using BEM methodology
+
+// ===== DESIGN TOKENS =====
+$primary-color: #3b82f6;
+$text-color: #1f2937;
+$border-color: #e5e7eb;
+$background: #ffffff;
+
+// ===== BASE STYLES =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+// ===== TODO: BUILD CARD COMPONENT WITH BEM =====
+
+// Block: .card
+.card {
+  // TODO: Add base card styles
+  // Background, padding, border-radius, margin, etc.
+
+  // TODO: Element: .card__header
+  // &__header { }
+
+  // TODO: Element: .card__title
+  // &__title { }
+
+  // TODO: Element: .card__badge
+  // &__badge { }
+
+  // TODO: Element: .card__body
+  // &__body { }
+
+  // TODO: Element: .card__description
+  // &__description { }
+
+  // TODO: Element: .card__footer
+  // &__footer { }
+
+  // TODO: Element: .card__button
+  // &__button { }
+
+  // TODO: Element modifier: .card__button--primary
+  // &__button--primary { }
+
+  // TODO: Element: .card__image
+  // &__image { }
+
+  // TODO: Modifier: .card--featured
+  // &--featured { }
+
+  // TODO: Modifier: .card--compact
+  // &--compact { }
+
+  // TODO: Modifier: .card--bordered
+  // &--bordered { }
+
+  // TODO: Add hover state for card
+  // &:hover { }
+}

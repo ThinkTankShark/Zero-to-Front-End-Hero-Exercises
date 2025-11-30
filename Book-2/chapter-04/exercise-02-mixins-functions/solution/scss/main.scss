@@ -1,0 +1,302 @@
+// Mixins & Functions Exercise - Complete Solution
+
+// ===== FUNCTIONS =====
+
+// Convert px to rem
+@function px-to-rem($px, $base: 16) {
+  @return calc($px / $base) * 1rem;
+}
+
+// Strip unit from a number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return calc($number / ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+// Auto contrast - returns white or black based on background
+@function auto-contrast($bg-color) {
+  $r: red($bg-color) / 255;
+  $g: green($bg-color) / 255;
+  $b: blue($bg-color) / 255;
+
+  // Calculate relative luminance
+  $luminance: (0.299 * $r + 0.587 * $g + 0.114 * $b);
+
+  @if $luminance > 0.5 {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+// Generate box-shadow based on elevation level
+@function elevation($level) {
+  @if $level == 1 {
+    @return 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  } @else if $level == 2 {
+    @return 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  } @else if $level == 3 {
+    @return 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  } @else if $level == 4 {
+    @return 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  } @else {
+    @return 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ===== MIXINS =====
+
+// Focus ring mixin
+@mixin focus-ring($color: #3b82f6, $width: 2px, $offset: 2px) {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: $offset;
+    border-radius: 0.5rem;
+  }
+}
+
+// Fluid typography using clamp()
+@mixin fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+  $min-size-unitless: strip-unit($min-size);
+  $max-size-unitless: strip-unit($max-size);
+  $min-vw-unitless: strip-unit($min-vw);
+  $max-vw-unitless: strip-unit($max-vw);
+
+  font-size: clamp(
+    #{$min-size},
+    calc(#{$min-size} + (#{$max-size-unitless} - #{$min-size-unitless}) * ((100vw - #{$min-vw}) / (#{$max-vw-unitless} - #{$min-vw-unitless}))),
+    #{$max-size}
+  );
+}
+
+// Responsive breakpoint mixin
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px
+);
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+  }
+}
+
+// ===== BASE STYLES =====
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #1f2937;
+  padding: px-to-rem(32);
+}
+
+.container {
+  max-width: px-to-rem(1200);
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: px-to-rem(40);
+  margin-bottom: px-to-rem(16);
+}
+
+h2 {
+  font-size: px-to-rem(24);
+  margin-bottom: px-to-rem(16);
+  margin-top: px-to-rem(32);
+}
+
+.lead {
+  font-size: px-to-rem(18);
+  color: #6b7280;
+  margin-bottom: px-to-rem(32);
+}
+
+.section {
+  margin-bottom: px-to-rem(48);
+}
+
+// ===== BUTTON STYLES =====
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  padding: px-to-rem(12) px-to-rem(24);
+  border: none;
+  border-radius: px-to-rem(8);
+  font-size: px-to-rem(16);
+  cursor: pointer;
+  margin-right: px-to-rem(16);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #2563eb;
+  }
+
+  @include focus-ring();
+}
+
+.btn-secondary {
+  background: #6b7280;
+
+  &:hover {
+    background: #4b5563;
+  }
+
+  @include focus-ring(#6b7280);
+}
+
+// ===== FLUID TYPOGRAPHY =====
+
+.fluid-heading {
+  @include fluid-type(1.5rem, 3rem);
+  font-weight: 800;
+}
+
+.fluid-text {
+  @include fluid-type(1rem, 1.25rem);
+}
+
+// ===== RESPONSIVE BOX =====
+
+.responsive-box {
+  padding: px-to-rem(32);
+  background: #3b82f6;
+  color: white;
+  border-radius: px-to-rem(8);
+  text-align: center;
+  font-weight: 600;
+  transition: background 0.3s ease;
+
+  @include responsive('md') {
+    background: #10b981;
+  }
+
+  @include responsive('lg') {
+    background: #f59e0b;
+  }
+
+  @include responsive('xl') {
+    background: #ef4444;
+  }
+}
+
+// ===== AUTO CONTRAST DEMO =====
+
+.contrast-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: px-to-rem(16);
+}
+
+.box {
+  padding: px-to-rem(32);
+  border-radius: px-to-rem(8);
+  text-align: center;
+  font-weight: 600;
+}
+
+.box-light {
+  $bg: #f9fafb;
+  background: $bg;
+  color: auto-contrast($bg);
+}
+
+.box-dark {
+  $bg: #111827;
+  background: $bg;
+  color: auto-contrast($bg);
+}
+
+.box-medium {
+  $bg: #3b82f6;
+  background: $bg;
+  color: auto-contrast($bg);
+}
+
+// ===== ELEVATION DEMO =====
+
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: px-to-rem(24);
+}
+
+.card {
+  padding: px-to-rem(32) px-to-rem(16);
+  background: white;
+  border-radius: px-to-rem(8);
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.elevation-1 {
+  box-shadow: elevation(1);
+
+  &:hover {
+    box-shadow: elevation(2);
+  }
+}
+
+.elevation-2 {
+  box-shadow: elevation(2);
+
+  &:hover {
+    box-shadow: elevation(3);
+  }
+}
+
+.elevation-3 {
+  box-shadow: elevation(3);
+
+  &:hover {
+    box-shadow: elevation(4);
+  }
+}
+
+.elevation-4 {
+  box-shadow: elevation(4);
+}
+
+/*
+ * SOLUTION NOTES:
+ *
+ * FUNCTIONS:
+ * - px-to-rem: Converts pixels to rem for scalable sizing
+ * - strip-unit: Helper for calculations
+ * - auto-contrast: Ensures readable text on any background
+ * - elevation: Consistent shadow system
+ *
+ * MIXINS:
+ * - focus-ring: Accessible focus states
+ * - fluid-type: Responsive typography with clamp()
+ * - responsive: Clean breakpoint management
+ *
+ * BENEFITS:
+ * - DRY code (Don't Repeat Yourself)
+ * - Consistent patterns across project
+ * - Easy to maintain and update
+ * - Accessibility built-in
+ * - Responsive by default
+ */
+

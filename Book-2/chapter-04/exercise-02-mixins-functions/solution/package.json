@@ -1,0 +1,13 @@
+{
+  "name": "sass-mixins-functions",
+  "version": "1.0.0",
+  "description": "Exercise 2: Mixins & Functions Library",
+  "scripts": {
+    "watch": "sass --watch scss:css --style expanded",
+    "build": "sass scss:css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
+

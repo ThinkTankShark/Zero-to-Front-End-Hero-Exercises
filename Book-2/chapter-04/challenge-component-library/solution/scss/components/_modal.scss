@@ -1,0 +1,77 @@
+// Modal Component
+@use '../abstracts' as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: map-get($z-index, 'modal');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: space('4');
+
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: map-get($z-index, 'modal-backdrop');
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: map-get($z-index, 'modal');
+    background: var(--color-surface);
+    border-radius: map-get($border-radius, 'lg');
+    max-width: 500px;
+    width: 100%;
+    @include elevation('xl');
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: space('6');
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__title {
+    font-size: map-get($font-sizes, 'xl');
+    font-weight: map-get($font-weights, 'semibold');
+    color: var(--color-text);
+  }
+
+  &__close {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: map-get($border-radius, 'base');
+    color: var(--color-text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--color-surface-hover);
+      color: var(--color-text);
+    }
+
+    @include focus-ring();
+  }
+
+  &__body {
+    padding: space('6');
+    color: var(--color-text);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: space('3');
+    padding: space('6');
+    border-top: 1px solid var(--color-border);
+  }
+}
+

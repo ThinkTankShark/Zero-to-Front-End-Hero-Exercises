@@ -1,0 +1,129 @@
+// Design Tokens Exercise - Starter
+// Your task: Create comprehensive design token maps
+
+// TODO: Create color map with primitives
+$colors: (
+  // Add color tokens here
+);
+
+// TODO: Create spacing map (4px base)
+$spacing: (
+  // Add spacing tokens here
+);
+
+// TODO: Create typography map
+$typography: (
+  // Add font sizes here
+);
+
+// TODO: Create shadow map
+$shadows: (
+  // Add shadows here
+);
+
+// TODO: Create border radius map
+$radii: (
+  // Add border radii here
+);
+
+// Base styles (provided)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  // TODO: Use tokens for background and text color
+  background: #ffffff;
+  color: #333333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// TODO: Style the demo sections using your tokens
+.section {
+  margin-bottom: 40px;
+}
+
+// Color swatches
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.color-swatch {
+  padding: 32px 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+// TODO: Apply color tokens to swatches
+.color-primary { background: #3b82f6; color: white; }
+.color-secondary { background: #6366f1; color: white; }
+.color-success { background: #10b981; color: white; }
+.color-warning { background: #f59e0b; color: white; }
+.color-danger { background: #ef4444; color: white; }
+
+// Spacing demo
+.spacing-demo {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.box {
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+// TODO: Apply spacing tokens
+.spacing-1 { width: 16px; height: 16px; }
+.spacing-2 { width: 32px; height: 32px; }
+.spacing-3 { width: 48px; height: 48px; }
+.spacing-4 { width: 64px; height: 64px; }
+.spacing-6 { width: 96px; height: 96px; }
+.spacing-8 { width: 128px; height: 128px; }
+
+// TODO: Apply typography tokens
+.text-xs { font-size: 12px; }
+.text-sm { font-size: 14px; }
+.text-base { font-size: 16px; }
+.text-lg { font-size: 18px; }
+.text-xl { font-size: 20px; }
+.text-2xl { font-size: 24px; }
+
+// Shadow demo
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+}
+
+.shadow-box {
+  padding: 32px 16px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+// TODO: Apply shadow tokens
+.shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.shadow-md { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.shadow-lg { box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.shadow-xl { box-shadow: 0 20px 25px rgba(0,0,0,0.1); }
+

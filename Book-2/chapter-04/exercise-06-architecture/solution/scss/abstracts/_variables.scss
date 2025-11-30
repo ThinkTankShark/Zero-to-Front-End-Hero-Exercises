@@ -1,0 +1,35 @@
+// Design Tokens and Variables
+
+$colors: (
+  'primary': #3b82f6,
+  'primary-dark': #2563eb,
+  'text': #1f2937,
+  'text-muted': #6b7280,
+  'background': #ffffff,
+  'background-alt': #f9fafb,
+  'border': #e5e7eb
+);
+
+$spacing: (
+  'xs': 0.5rem,
+  'sm': 1rem,
+  'md': 1.5rem,
+  'lg': 2rem,
+  'xl': 3rem
+);
+
+$typography: (
+  'base': 1rem,
+  'lg': 1.125rem,
+  'xl': 1.25rem,
+  '2xl': 1.5rem,
+  '3xl': 2rem
+);
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px
+);
+

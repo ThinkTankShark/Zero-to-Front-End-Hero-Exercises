@@ -1,0 +1,34 @@
+// Light Theme
+@use '../abstracts' as *;
+
+:root {
+  // Surface colors
+  --color-background: #{color('gray', '50')};
+  --color-surface: #ffffff;
+  --color-surface-hover: #{color('gray', '100')};
+  --color-surface-disabled: #{color('gray', '100')};
+
+  // Text colors
+  --color-text: #{color('gray', '900')};
+  --color-text-muted: #{color('gray', '600')};
+
+  // Border colors
+  --color-border: #{color('gray', '200')};
+  --color-border-hover: #{color('gray', '300')};
+
+  // Semantic colors
+  --color-primary: #{semantic('primary')};
+  --color-primary-hover: #{semantic('primary-hover')};
+  --color-secondary: #{semantic('secondary')};
+  --color-secondary-hover: #{semantic('secondary-hover')};
+  --color-success: #{semantic('success')};
+  --color-success-hover: #{semantic('success-hover')};
+  --color-danger: #{semantic('danger')};
+  --color-danger-hover: #{semantic('danger-hover')};
+
+  // Utility colors (for utilities)
+  --color-bg-primary: #{semantic('primary')};
+  --color-bg-success: #{semantic('success')};
+  --color-bg-danger: #{semantic('danger')};
+}
+

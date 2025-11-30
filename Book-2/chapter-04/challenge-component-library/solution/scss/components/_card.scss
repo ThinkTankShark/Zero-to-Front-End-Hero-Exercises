@@ -1,0 +1,59 @@
+// Card Component
+@use '../abstracts' as *;
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: map-get($border-radius, 'lg');
+  padding: space('6');
+  transition: all 0.3s ease;
+  @include elevation('base');
+
+  &:hover {
+    transform: translateY(-2px);
+    @include elevation('md');
+  }
+
+  &__title {
+    font-size: map-get($font-sizes, 'xl');
+    font-weight: map-get($font-weights, 'semibold');
+    color: var(--color-text);
+    margin-bottom: space('3');
+  }
+
+  &__description {
+    color: var(--color-text-muted);
+    margin-bottom: space('4');
+    line-height: 1.6;
+  }
+
+  &__button {
+    margin-top: space('4');
+  }
+
+  // Featured modifier
+  &--featured {
+    border-color: var(--color-primary);
+    border-width: map-get($border-widths, 'base');
+    @include elevation('lg');
+
+    &:hover {
+      @include elevation('xl');
+    }
+  }
+
+  // Compact modifier
+  &--compact {
+    padding: space('4');
+
+    #{&}__title {
+      font-size: map-get($font-sizes, 'lg');
+      margin-bottom: space('2');
+    }
+
+    #{&}__description {
+      margin-bottom: space('2');
+    }
+  }
+}
+

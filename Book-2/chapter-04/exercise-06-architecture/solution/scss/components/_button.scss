@@ -1,0 +1,22 @@
+// Button Component
+@use '../abstracts' as *;
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  @include focus-ring();
+
+  &--primary {
+    background: map-get($colors, 'primary');
+    color: white;
+
+    &:hover {
+      background: map-get($colors, 'primary-dark');
+    }
+  }
+}
+

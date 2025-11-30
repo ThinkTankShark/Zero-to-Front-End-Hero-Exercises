@@ -1,0 +1,283 @@
+// Design Tokens Exercise - Complete Solution
+// Professional design token system using Sass maps
+
+// ===== Color Tokens =====
+$colors: (
+  // Blue primitives
+  'blue-50': #eff6ff,
+  'blue-100': #dbeafe,
+  'blue-500': #3b82f6,
+  'blue-600': #2563eb,
+  'blue-900': #1e3a8a,
+
+  // Gray primitives
+  'gray-50': #f9fafb,
+  'gray-100': #f3f4f6,
+  'gray-500': #6b7280,
+  'gray-700': #374151,
+  'gray-900': #111827,
+
+  // Other colors
+  'indigo-500': #6366f1,
+  'green-500': #10b981,
+  'yellow-500': #f59e0b,
+  'red-500': #ef4444,
+  'white': #ffffff,
+
+  // Semantic tokens
+  'primary': #3b82f6,
+  'secondary': #6366f1,
+  'success': #10b981,
+  'warning': #f59e0b,
+  'danger': #ef4444,
+  'text': #111827,
+  'text-muted': #6b7280,
+  'background': #ffffff,
+  'background-alt': #f9fafb
+);
+
+// ===== Spacing Tokens (4px base) =====
+$spacing: (
+  '1': 0.25rem,   // 4px
+  '2': 0.5rem,    // 8px
+  '3': 0.75rem,   // 12px
+  '4': 1rem,      // 16px
+  '5': 1.25rem,   // 20px
+  '6': 1.5rem,    // 24px
+  '8': 2rem,      // 32px
+  '10': 2.5rem,   // 40px
+  '12': 3rem,     // 48px
+  '16': 4rem      // 64px
+);
+
+// ===== Typography Tokens =====
+$typography: (
+  'xs': 0.75rem,    // 12px
+  'sm': 0.875rem,   // 14px
+  'base': 1rem,     // 16px
+  'lg': 1.125rem,   // 18px
+  'xl': 1.25rem,    // 20px
+  '2xl': 1.5rem,    // 24px
+  '3xl': 2rem,      // 32px
+  '4xl': 2.5rem     // 40px
+);
+
+// ===== Shadow Tokens =====
+$shadows: (
+  'sm': 0 1px 2px rgba(0, 0, 0, 0.05),
+  'md': 0 4px 6px rgba(0, 0, 0, 0.1),
+  'lg': 0 10px 15px rgba(0, 0, 0, 0.1),
+  'xl': 0 20px 25px rgba(0, 0, 0, 0.1),
+  '2xl': 0 25px 50px rgba(0, 0, 0, 0.15)
+);
+
+// ===== Border Radius Tokens =====
+$radii: (
+  'sm': 0.25rem,   // 4px
+  'md': 0.5rem,    // 8px
+  'lg': 0.75rem,   // 12px
+  'xl': 1rem,      // 16px
+  'full': 9999px
+);
+
+// ===== Base Styles =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: map-get($colors, 'background');
+  color: map-get($colors, 'text');
+  padding: map-get($spacing, '5');
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: map-get($typography, '4xl');
+  margin-bottom: map-get($spacing, '4');
+}
+
+h2 {
+  font-size: map-get($typography, '2xl');
+  margin-bottom: map-get($spacing, '4');
+  color: map-get($colors, 'text');
+}
+
+.lead {
+  font-size: map-get($typography, 'lg');
+  color: map-get($colors, 'text-muted');
+  margin-bottom: map-get($spacing, '8');
+}
+
+// ===== Sections =====
+.section {
+  margin-bottom: map-get($spacing, '10');
+}
+
+// ===== Color Swatches =====
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: map-get($spacing, '4');
+}
+
+.color-swatch {
+  padding: map-get($spacing, '8') map-get($spacing, '4');
+  border-radius: map-get($radii, 'md');
+  text-align: center;
+  font-weight: 600;
+}
+
+.color-primary {
+  background: map-get($colors, 'primary');
+  color: map-get($colors, 'white');
+}
+
+.color-secondary {
+  background: map-get($colors, 'secondary');
+  color: map-get($colors, 'white');
+}
+
+.color-success {
+  background: map-get($colors, 'success');
+  color: map-get($colors, 'white');
+}
+
+.color-warning {
+  background: map-get($colors, 'warning');
+  color: map-get($colors, 'white');
+}
+
+.color-danger {
+  background: map-get($colors, 'danger');
+  color: map-get($colors, 'white');
+}
+
+// ===== Spacing Demo =====
+.spacing-demo {
+  display: flex;
+  gap: map-get($spacing, '2');
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.box {
+  background: map-get($colors, 'primary');
+  color: map-get($colors, 'white');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: map-get($radii, 'sm');
+}
+
+.spacing-1 {
+  width: map-get($spacing, '4');
+  height: map-get($spacing, '4');
+}
+
+.spacing-2 {
+  width: map-get($spacing, '8');
+  height: map-get($spacing, '8');
+}
+
+.spacing-3 {
+  width: map-get($spacing, '12');
+  height: map-get($spacing, '12');
+}
+
+.spacing-4 {
+  width: map-get($spacing, '16');
+  height: map-get($spacing, '16');
+}
+
+.spacing-6 {
+  width: calc(#{map-get($spacing, '16')} + #{map-get($spacing, '8')});
+  height: calc(#{map-get($spacing, '16')} + #{map-get($spacing, '8')});
+}
+
+.spacing-8 {
+  width: calc(#{map-get($spacing, '16')} * 2);
+  height: calc(#{map-get($spacing, '16')} * 2);
+}
+
+// ===== Typography Demo =====
+.text-xs {
+  font-size: map-get($typography, 'xs');
+}
+
+.text-sm {
+  font-size: map-get($typography, 'sm');
+}
+
+.text-base {
+  font-size: map-get($typography, 'base');
+}
+
+.text-lg {
+  font-size: map-get($typography, 'lg');
+}
+
+.text-xl {
+  font-size: map-get($typography, 'xl');
+}
+
+.text-2xl {
+  font-size: map-get($typography, '2xl');
+}
+
+// ===== Shadow Demo =====
+.shadow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: map-get($spacing, '6');
+}
+
+.shadow-box {
+  padding: map-get($spacing, '8') map-get($spacing, '4');
+  background: map-get($colors, 'white');
+  border-radius: map-get($radii, 'md');
+  text-align: center;
+  font-weight: 600;
+}
+
+.shadow-sm {
+  box-shadow: map-get($shadows, 'sm');
+}
+
+.shadow-md {
+  box-shadow: map-get($shadows, 'md');
+}
+
+.shadow-lg {
+  box-shadow: map-get($shadows, 'lg');
+}
+
+.shadow-xl {
+  box-shadow: map-get($shadows, 'xl');
+}
+
+/*
+ * SOLUTION NOTES:
+ *
+ * 1. All hardcoded values replaced with map-get()
+ * 2. Tokens organized by category (colors, spacing, etc.)
+ * 3. Semantic tokens make intent clear
+ * 4. Primitive tokens allow for precise control
+ * 5. Consistent naming convention throughout
+ *
+ * BENEFITS:
+ * - Single source of truth for design values
+ * - Easy to update entire design system
+ * - Self-documenting code
+ * - Prevents inconsistencies
+ */
+

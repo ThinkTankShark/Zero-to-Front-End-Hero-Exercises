@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEM Component - Sass Exercise</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Card Component with BEM</h1>
+    <p class="lead">Building a complete card component using BEM methodology</p>
+
+    <!-- Basic Card -->
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title">Basic Card</h2>
+      </div>
+      <div class="card__body">
+        <p class="card__description">This is a basic card component with BEM naming.</p>
+      </div>
+      <div class="card__footer">
+        <button class="card__button">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Featured Card -->
+    <div class="card card--featured">
+      <div class="card__header">
+        <span class="card__badge">Featured</span>
+        <h2 class="card__title">Featured Card</h2>
+      </div>
+      <div class="card__body">
+        <p class="card__description">This card stands out with the featured modifier.</p>
+      </div>
+      <div class="card__footer">
+        <button class="card__button card__button--primary">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Compact Card -->
+    <div class="card card--compact">
+      <div class="card__header">
+        <h2 class="card__title">Compact Card</h2>
+      </div>
+      <div class="card__body">
+        <p class="card__description">Less padding for a tighter layout.</p>
+      </div>
+    </div>
+
+    <!-- Card with Image -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Card image" class="card__image">
+      <div class="card__header">
+        <h2 class="card__title">Card with Image</h2>
+      </div>
+      <div class="card__body">
+        <p class="card__description">This card includes an image element.</p>
+      </div>
+      <div class="card__footer">
+        <button class="card__button">View Details</button>
+      </div>
+    </div>
+
+    <!-- Bordered Card -->
+    <div class="card card--bordered">
+      <div class="card__header">
+        <h2 class="card__title">Bordered Card</h2>
+      </div>
+      <div class="card__body">
+        <p class="card__description">This card has a visible border.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+// UIKit Pro Component Library - Main Stylesheet
+// Complete Solution using 7-1 Architecture
+
+// 1. Configuration and helpers
+@use 'abstracts';
+
+// 2. Themes (generates CSS variables)
+@use 'themes';
+
+// 3. Base styles
+@use 'base';
+
+// 4. Layout system
+@use 'layout';
+
+// 5. Components
+@use 'components';
+
+// 6. Auto-generated utilities
+@use 'utilities';
+
+// Global body styles
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/*
+ * UIKit Pro Component Library
+ *
+ * Architecture: 7-1 Pattern
+ * - abstracts/   Variables, functions, mixins
+ * - themes/      Light and dark themes
+ * - base/        Reset and typography
+ * - layout/      Container, grid, header
+ * - components/  Button, card, form, nav, modal, badge
+ * - utilities/   Auto-generated helper classes
+ *
+ * Features:
+ * - Complete design token system
+ * - Light/dark theming with CSS variables
+ * - BEM naming methodology
+ * - Auto-generated utilities
+ * - Accessible components
+ * - Responsive by default
+ *
+ * Usage:
+ * npm install
+ * npm run watch  (development)
+ * npm run build  (production)
+ */
+

@@ -1,0 +1,15 @@
+// Grid Layout
+@use '../abstracts' as *;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 map-get($spacing, 'md');
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: map-get($spacing, 'md');
+}
+

@@ -1,0 +1,129 @@
+// Design Tokens - Complete System
+
+// ===== COLOR PRIMITIVES =====
+$color-primitives: (
+  'blue': (
+    '50': #eff6ff,
+    '100': #dbeafe,
+    '200': #bfdbfe,
+    '300': #93c5fd,
+    '400': #60a5fa,
+    '500': #3b82f6,
+    '600': #2563eb,
+    '700': #1d4ed8,
+    '800': #1e40af,
+    '900': #1e3a8a
+  ),
+  'gray': (
+    '50': #f9fafb,
+    '100': #f3f4f6,
+    '200': #e5e7eb,
+    '300': #d1d5db,
+    '400': #9ca3af,
+    '500': #6b7280,
+    '600': #4b5563,
+    '700': #374151,
+    '800': #1f2937,
+    '900': #111827
+  ),
+  'green': (
+    '500': #10b981,
+    '600': #059669,
+    '700': #047857
+  ),
+  'red': (
+    '500': #ef4444,
+    '600': #dc2626,
+    '700': #b91c1c
+  )
+);
+
+// ===== SEMANTIC COLORS =====
+// These map to primitives but provide meaning
+$semantic-colors: (
+  'primary': map-get(map-get($color-primitives, 'blue'), '500'),
+  'primary-hover': map-get(map-get($color-primitives, 'blue'), '600'),
+  'secondary': map-get(map-get($color-primitives, 'gray'), '600'),
+  'secondary-hover': map-get(map-get($color-primitives, 'gray'), '700'),
+  'success': map-get(map-get($color-primitives, 'green'), '500'),
+  'success-hover': map-get(map-get($color-primitives, 'green'), '600'),
+  'danger': map-get(map-get($color-primitives, 'red'), '500'),
+  'danger-hover': map-get(map-get($color-primitives, 'red'), '600')
+);
+
+// ===== SPACING SCALE (4px base) =====
+$spacing: (
+  '0': 0,
+  '1': 0.25rem,   // 4px
+  '2': 0.5rem,    // 8px
+  '3': 0.75rem,   // 12px
+  '4': 1rem,      // 16px
+  '5': 1.25rem,   // 20px
+  '6': 1.5rem,    // 24px
+  '8': 2rem,      // 32px
+  '10': 2.5rem,   // 40px
+  '12': 3rem,     // 48px
+  '16': 4rem      // 64px
+);
+
+// ===== TYPOGRAPHY SCALE =====
+$font-sizes: (
+  'xs': 0.75rem,      // 12px
+  'sm': 0.875rem,     // 14px
+  'base': 1rem,       // 16px
+  'lg': 1.125rem,     // 18px
+  'xl': 1.25rem,      // 20px
+  '2xl': 1.5rem,      // 24px
+  '3xl': 1.875rem,    // 30px
+  '4xl': 2.25rem      // 36px
+);
+
+$font-weights: (
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700
+);
+
+// ===== SHADOWS =====
+$shadows: (
+  'sm': (0 1px 2px 0 rgba(0, 0, 0, 0.05)),
+  'base': (0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)),
+  'md': (0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)),
+  'lg': (0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)),
+  'xl': (0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1))
+);
+
+// ===== BORDERS =====
+$border-radius: (
+  'sm': 0.25rem,
+  'base': 0.375rem,
+  'md': 0.5rem,
+  'lg': 0.75rem,
+  'full': 9999px
+);
+
+$border-widths: (
+  'thin': 1px,
+  'base': 2px,
+  'thick': 4px
+);
+
+// ===== BREAKPOINTS =====
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px
+);
+
+// ===== Z-INDEX SCALE =====
+$z-index: (
+  'dropdown': 100,
+  'sticky': 200,
+  'fixed': 300,
+  'modal-backdrop': 400,
+  'modal': 500,
+  'tooltip': 600
+);
+

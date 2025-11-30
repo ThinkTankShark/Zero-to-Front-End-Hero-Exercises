@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theming - Sass Exercise</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Dark Mode with Sass + CSS Variables</h1>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="theme-toggle__icon">🌙</span>
+        <span class="theme-toggle__text">Toggle Theme</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Welcome to Theming</h2>
+        <p>This page demonstrates the hybrid Sass + CSS Variables approach for theming.</p>
+        <p>Click the button above to toggle between light and dark mode!</p>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3 class="feature-card__title">Fast</h3>
+          <p class="feature-card__description">Instant theme switching</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎨</div>
+          <h3 class="feature-card__title">Beautiful</h3>
+          <p class="feature-card__description">Carefully crafted colors</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">♿</div>
+          <h3 class="feature-card__title">Accessible</h3>
+          <p class="feature-card__description">WCAG compliant contrast</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>How It Works</h2>
+        <ol>
+          <li>Sass maps define theme colors</li>
+          <li>Sass generates CSS variables for each theme</li>
+          <li>JavaScript toggles the data-theme attribute</li>
+          <li>CSS variables update instantly!</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      
+      // Update button icon
+      const icon = document.querySelector('.theme-toggle__icon');
+      icon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      
+      // Save preference
+      localStorage.setItem('theme', newTheme);
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+      document.querySelector('.theme-toggle__icon').textContent = '☀️';
+    }
+
+    // Detect system preference
+    if (!localStorage.getItem('theme')) {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.querySelector('.theme-toggle__icon').textContent = '☀️';
+      }
+    }
+  </script>
+</body>
+</html>

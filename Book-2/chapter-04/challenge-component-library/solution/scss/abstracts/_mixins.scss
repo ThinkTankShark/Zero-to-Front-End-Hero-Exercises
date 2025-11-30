@@ -1,0 +1,68 @@
+// Reusable Mixins
+
+// Focus ring for accessibility
+@mixin focus-ring($color: semantic('primary'), $width: 2px, $offset: 2px) {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: $offset;
+  }
+}
+
+// Responsive breakpoint helper
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found.";
+  }
+}
+
+// Fluid typography
+@mixin fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+  $min-size-unitless: strip-unit($min-size);
+  $max-size-unitless: strip-unit($max-size);
+  $min-vw-unitless: strip-unit($min-vw);
+  $max-vw-unitless: strip-unit($max-vw);
+
+  font-size: clamp(
+    #{$min-size},
+    calc(#{$min-size} + (#{$max-size-unitless} - #{$min-size-unitless}) * ((100vw - #{$min-vw}) / (#{$max-vw-unitless} - #{$min-vw-unitless}))),
+    #{$max-size}
+  );
+}
+
+// Card elevation
+@mixin elevation($level: 'base') {
+  @if map-has-key($shadows, $level) {
+    box-shadow: map-get($shadows, $level);
+  } @else {
+    @warn "Shadow level #{$level} not found.";
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Visually hide content (accessible)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

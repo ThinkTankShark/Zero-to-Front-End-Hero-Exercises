@@ -1,0 +1,23 @@
+// Header Layout
+@use '../abstracts' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: space('6') 0;
+  margin-bottom: space('8');
+  flex-wrap: wrap;
+  gap: space('4');
+
+  &__title {
+    font-size: map-get($font-sizes, '3xl');
+    font-weight: map-get($font-weights, 'bold');
+    color: var(--color-text);
+  }
+}
+
+.theme-toggle {
+  // Uses button component styles
+}
+

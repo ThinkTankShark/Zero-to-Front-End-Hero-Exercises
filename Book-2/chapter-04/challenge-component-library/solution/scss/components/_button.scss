@@ -1,0 +1,88 @@
+// Button Component
+@use '../abstracts' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: space('2');
+  padding: space('3') space('6');
+  font-size: map-get($font-sizes, 'base');
+  font-weight: map-get($font-weights, 'medium');
+  line-height: 1;
+  border-radius: map-get($border-radius, 'md');
+  border: map-get($border-widths, 'base') solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  @include focus-ring();
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Primary variant
+  &--primary {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-hover);
+      border-color: var(--color-primary-hover);
+      transform: translateY(-1px);
+      @include elevation('md');
+    }
+  }
+
+  // Secondary variant
+  &--secondary {
+    background: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+
+    &:hover:not(:disabled) {
+      background: var(--color-secondary-hover);
+      border-color: var(--color-secondary-hover);
+      transform: translateY(-1px);
+    }
+  }
+
+  // Outline variant
+  &--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-border);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+      border-color: var(--color-primary);
+    }
+  }
+
+  // Danger variant
+  &--danger {
+    background: var(--color-danger);
+    color: white;
+    border-color: var(--color-danger);
+
+    &:hover:not(:disabled) {
+      background: var(--color-danger-hover);
+      border-color: var(--color-danger-hover);
+      transform: translateY(-1px);
+    }
+  }
+
+  // Size modifiers
+  &--small {
+    padding: space('2') space('4');
+    font-size: map-get($font-sizes, 'sm');
+  }
+
+  &--large {
+    padding: space('4') space('8');
+    font-size: map-get($font-sizes, 'lg');
+  }
+}
+
