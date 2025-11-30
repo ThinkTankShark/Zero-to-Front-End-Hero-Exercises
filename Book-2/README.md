@@ -18,11 +18,11 @@ This repository contains all exercises, projects, and quizzes for **Zero to Fron
 ```
 Book-2/
 ├── README.md (this file)
-├── chapter-36/ (Frameworks and Libraries) ✅
-├── chapter-37/ (State Management) - Coming soon
-├── chapter-38/ (Styling at Scale) - Coming soon
-├── ... (chapters 39-61)
-└── chapter-62/ (AI-Powered Development) 🎁 - Coming soon
+├── chapter-01/ (Frameworks and Libraries) ✅
+├── chapter-02/ (State Management) - Coming soon
+├── chapter-03/ (Styling at Scale) - Coming soon
+├── ... (chapters 04-26)
+└── chapter-27/ (AI-Powered Development) 🎁 - Coming soon
 ```
 
 ---
@@ -52,39 +52,39 @@ Book-2/
 
 | Chapter | Topic | Exercises | Project | Status |
 |---------|-------|-----------|---------|--------|
-| 36 | Frameworks & Libraries | 6 | Weather Dashboard | ✅ |
-| 37 | State Management | 6 | E-commerce App | 🔄 |
-| 38-43 | Styling at Scale | 30+ | Design System | 📅 |
-| 44-49 | Performance & Testing | 24+ | Optimized App | 📅 |
-| 50-53 | Security & Deployment | 20+ | Production Deploy | 📅 |
+| 1 | Frameworks & Libraries | 6 | Weather Dashboard | ✅ |
+| 2 | State Management | 6 | E-commerce App | 🔄 |
+| 3-8 | Styling at Scale | 30+ | Design System | 📅 |
+| 9-14 | Performance & Testing | 24+ | Optimized App | 📅 |
+| 15-18 | Security & Deployment | 20+ | Production Deploy | 📅 |
 
 ### **Part IV: Backend Basics**
 
 | Chapter | Topic | Exercises | Project | Status |
 |---------|-------|-----------|---------|--------|
-| 54 | Backend Basics | 8 | REST API | 📅 |
-| 55 | Containerization | 5 | Docker Deploy | 📅 |
-| 56 | Cloud Computing | 6 | AWS Deploy | 📅 |
+| 19 | Backend Basics | 8 | REST API | 📅 |
+| 20 | Containerization | 5 | Docker Deploy | 📅 |
+| 21 | Cloud Computing | 6 | AWS Deploy | 📅 |
 
 ### **Part V: Professional Tools**
 
 | Chapter | Topic | Exercises | Project | Status |
 |---------|-------|-----------|---------|--------|
-| 57 | Chrome DevTools | 10 | Debug Challenge | 📅 |
+| 22 | Chrome DevTools | 10 | Debug Challenge | 📅 |
 
 ### **Part VI: Career Development**
 
 | Chapter | Topic | Exercises | Project | Status |
 |---------|-------|-----------|---------|--------|
-| 58-59 | Career Growth | 10 | Portfolio Site | 📅 |
-| 60 | Algorithms & System Design | 15 | Practice Problems | 📅 |
-| 61 | Interview Prep | 8-Week Plan | Mock Interviews | 📅 |
+| 23-24 | Career Growth | 10 | Portfolio Site | 📅 |
+| 25 | Algorithms & System Design | 15 | Practice Problems | 📅 |
+| 26 | Interview Prep | 8-Week Plan | Mock Interviews | 📅 |
 
 ### **Part VII: AI Bonus** 🎁
 
 | Chapter | Topic | Exercises | Project | Status |
 |---------|-------|-----------|---------|--------|
-| 62 | AI-Powered Development | 8 | AI-Enhanced App | 📅 |
+| 27 | AI-Powered Development | 8 | AI-Enhanced App | 📅 |
 
 ---
 
@@ -126,7 +126,7 @@ npm create vite@latest -- --template vue
 
 ---
 
-## 📝 Chapter 36: Frameworks and Libraries ✅
+## 📝 Chapter 1: Frameworks and Libraries ✅
 
 **Status:** Complete
 
@@ -149,13 +149,13 @@ npm create vite@latest -- --template vue
 - Custom hooks and composables
 - Production-quality code
 
-[→ Start Chapter 36 Exercises](./chapter-36/README.md)
+[→ Start Chapter 1 Exercises](./chapter-01/README.md)
 
 ---
 
 ## 🏗️ Coming Soon
 
-### **Chapter 37: State Management**
+### **Chapter 2: State Management**
 - Redux Toolkit fundamentals
 - Zustand lightweight state
 - Pinia for Vue
@@ -163,9 +163,9 @@ npm create vite@latest -- --template vue
 - **Project:** E-commerce app with shopping cart
 - **Due:** Week of December 2, 2025
 
-### **Chapters 38-62**
+### **Chapters 3-27**
 - Will be added as Book 2 chapters are polished
-- Follow the same high-quality pattern as Chapter 36
+- Follow the same high-quality pattern as Chapter 1
 - Each includes exercises, projects, and quizzes
 
 ---
@@ -232,28 +232,28 @@ Each project is designed for your portfolio:
 ## ✅ Tracking Your Progress
 
 **Part III: Modern Front-End**
-- [x] Chapter 36: Frameworks and Libraries ✅
-- [ ] Chapter 37: State Management
-- [ ] Chapters 38-43: Styling at Scale
-- [ ] Chapters 44-49: Performance & Testing
-- [ ] Chapters 50-53: Security & Deployment
+- [x] Chapter 1: Frameworks and Libraries ✅
+- [ ] Chapter 2: State Management
+- [ ] Chapters 3-8: Styling at Scale
+- [ ] Chapters 9-14: Performance & Testing
+- [ ] Chapters 15-18: Security & Deployment
 
 **Part IV: Backend Basics**
-- [ ] Chapter 54: Backend for Front-End Devs
-- [ ] Chapter 55: Containerization
-- [ ] Chapter 56: Cloud Computing
+- [ ] Chapter 19: Backend for Front-End Devs
+- [ ] Chapter 20: Containerization
+- [ ] Chapter 21: Cloud Computing
 
 **Part V: Professional Tools**
-- [ ] Chapter 57: Chrome DevTools
+- [ ] Chapter 22: Chrome DevTools
 
 **Part VI: Career Development**
-- [ ] Chapter 58: Professional Workflows
-- [ ] Chapter 59: Career Growth
-- [ ] Chapter 60: Algorithms & System Design
-- [ ] Chapter 61: Interview Preparation
+- [ ] Chapter 23: Professional Workflows
+- [ ] Chapter 24: Career Growth
+- [ ] Chapter 25: Algorithms & System Design
+- [ ] Chapter 26: Interview Preparation
 
 **Part VII: AI Bonus** 🎁
-- [ ] Chapter 62: AI-Powered Development
+- [ ] Chapter 27: AI-Powered Development
 
 ---
 
