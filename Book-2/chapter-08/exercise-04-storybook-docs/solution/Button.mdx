@@ -1,0 +1,363 @@
+import { Meta, Story, Canvas, Controls, Description } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Primary UI component for user actions and form submissions. Buttons communicate actions that users can take.
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+</Canvas>
+
+## When to Use
+
+✅ **Use buttons for:**
+- Primary actions (save, submit, confirm, purchase)
+- Secondary actions (cancel, back, skip)
+- Destructive actions (delete, remove, clear)
+- Opening modals or dialogs
+- Triggering interactions
+
+❌ **Don't use buttons for:**
+- Navigation between pages - use **links** (`<a>`) instead
+- Toggling on/off state - use **checkbox** or **switch**
+- Selecting from options - use **radio buttons**
+- Submitting without interaction - use **form submit**
+
+---
+
+## Variants
+
+Buttons come in 5 variants to communicate different levels of importance and context.
+
+<Canvas>
+  <Story of={ButtonStories.AllVariants} />
+</Canvas>
+
+### Primary
+
+The most important action on the page. Use sparingly - typically one primary button visible at a time.
+
+**Example use cases:**
+- "Save Changes" in a settings form
+- "Purchase Now" on a product page
+- "Sign Up" on a landing page
+
+### Secondary
+
+For actions that are important but not primary. Can be used multiple times on a page.
+
+**Example use cases:**
+- "Learn More" alongside a primary CTA
+- "Preview" before "Publish"
+- Alternative actions in a workflow
+
+### Outline
+
+For tertiary actions or when you need a button with minimal visual weight.
+
+**Example use cases:**
+- "Cancel" in a form
+- Filters and toggles
+- Tertiary actions in button groups
+
+### Ghost
+
+Least visually prominent. Use for actions that should be available but not emphasized.
+
+**Example use cases:**
+- "Skip" in an onboarding flow
+- Nested actions within cards
+- Toolbar buttons
+
+### Danger
+
+For destructive or irreversible actions. Always confirm before proceeding.
+
+**Example use cases:**
+- "Delete Account"
+- "Remove Item"
+- "Clear All Data"
+
+⚠️ **Always pair danger buttons with confirmation dialogs!**
+
+---
+
+## Sizes
+
+<Canvas>
+  <Story of={ButtonStories.AllSizes} />
+</Canvas>
+
+- **Small (32px):** Use in tight spaces, toolbars, or data tables
+- **Medium (40px):** Default size for most use cases
+- **Large (48px):** Use for primary CTAs on landing pages or mobile
+
+💡 **Tip:** Maintain a minimum 44x44px touch target for mobile accessibility.
+
+---
+
+## States
+
+### Default
+
+The normal, interactive state.
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+</Canvas>
+
+### Disabled
+
+Use when an action is temporarily unavailable. Provides visual feedback that the button cannot be clicked.
+
+<Canvas>
+  <Story of={ButtonStories.Disabled} />
+</Canvas>
+
+**When to disable:**
+- Form is invalid
+- Required action not yet completed
+- Action unavailable due to permissions
+
+**Best practice:** Provide a tooltip or helper text explaining why the button is disabled.
+
+### Loading
+
+Shows a spinner to indicate an action is in progress. Prevents double-submission.
+
+<Canvas>
+  <Story of={ButtonStories.Loading} />
+</Canvas>
+
+**Use for:**
+- Form submissions
+- API calls
+- File uploads
+- Any async operation
+
+---
+
+## Full Width
+
+<Canvas>
+  <Story of={ButtonStories.FullWidth} />
+</Canvas>
+
+Full width buttons span their container. Common in:
+- Mobile layouts
+- Form footers
+- Modal actions
+- Call-to-action sections
+
+---
+
+## Accessibility
+
+### Keyboard Navigation
+
+- **Tab:** Move focus to the button
+- **Space/Enter:** Activate the button
+- **Shift + Tab:** Move focus backward
+
+### Screen Reader Support
+
+- Button text is announced
+- `aria-busy="true"` is announced when loading
+- `disabled` attribute prevents interaction
+
+### Focus Visible
+
+Clear focus outline appears when navigating with keyboard. Never remove focus styles without providing an alternative.
+
+**✅ Good:**
+```css
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+```
+
+**❌ Bad:**
+```css
+.btn:focus {
+  outline: none; /* No alternative provided! */
+}
+```
+
+---
+
+## Best Practices
+
+### Do's ✅
+
+- Use clear, action-oriented labels ("Save Changes" not "Submit")
+- Place primary action on the right in button groups
+- Use loading state for async operations
+- Keep labels short (1-3 words)
+- Maintain consistent sizing across similar contexts
+- Use icons to reinforce meaning (not replace text)
+- Ensure 44x44px minimum touch target on mobile
+
+### Don'ts ❌
+
+- Don't use multiple primary buttons on the same screen
+- Don't use generic labels like "Click Here" or "OK"
+- Don't disable buttons without explanation
+- Don't use buttons for navigation (use links instead)
+- Don't make buttons too small (< 32px height)
+- Don't remove focus outlines without alternatives
+- Don't use ALL CAPS unless part of brand style
+
+---
+
+## Common Patterns
+
+### Button Groups
+
+Place related actions together. Primary action goes on the right.
+
+<Canvas>
+  <Story of={ButtonStories.ButtonGroup} />
+</Canvas>
+
+```html
+<div class="button-group">
+  <button class="btn btn--ghost">Cancel</button>
+  <button class="btn btn--primary">Save Changes</button>
+</div>
+```
+
+### With Icons
+
+Icons can reinforce the button's purpose, but don't rely on icons alone.
+
+<Canvas>
+  <Story of={ButtonStories.WithIcon} />
+</Canvas>
+
+```html
+<button class="btn btn--primary">
+  <svg>...</svg>
+  Favorite
+</button>
+```
+
+**Icon guidelines:**
+- Place icons before text (left side)
+- Use 16px or 20px icons
+- Ensure sufficient color contrast
+- Don't use icon-only buttons without accessible labels
+
+---
+
+## Props
+
+<Controls of={ButtonStories.Primary} />
+
+---
+
+## Component API
+
+### CSS Classes
+
+| Class | Description |
+|-------|-------------|
+| `.btn` | Base button class (required) |
+| `.btn--primary` | Primary variant |
+| `.btn--secondary` | Secondary variant |
+| `.btn--outline` | Outline variant |
+| `.btn--ghost` | Ghost variant |
+| `.btn--danger` | Danger variant |
+| `.btn--small` | Small size (32px) |
+| `.btn--medium` | Medium size (40px, default) |
+| `.btn--large` | Large size (48px) |
+| `.btn--loading` | Loading state with spinner |
+| `.btn--full-width` | Full width button |
+
+### HTML Attributes
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| `disabled` | boolean | Disables the button |
+| `aria-busy` | boolean | Indicates loading state |
+| `aria-label` | string | Accessible label (for icon-only buttons) |
+| `type` | string | Button type (`button`, `submit`, `reset`) |
+
+---
+
+## Code Examples
+
+### Basic Button
+
+```html
+<button class="btn btn--primary btn--medium">
+  Click Me
+</button>
+```
+
+### Loading Button
+
+```html
+<button class="btn btn--primary btn--medium btn--loading" aria-busy="true">
+  <span class="btn__spinner"></span>
+  Saving...
+</button>
+```
+
+### Disabled Button
+
+```html
+<button class="btn btn--primary btn--medium" disabled>
+  Save Changes
+</button>
+```
+
+### Button Group
+
+```html
+<div style="display: flex; gap: 12px;">
+  <button class="btn btn--ghost">Cancel</button>
+  <button class="btn btn--primary">Confirm</button>
+</div>
+```
+
+---
+
+## Related Components
+
+- **[Input](#)** - Form input fields
+- **[Checkbox](#)** - Toggle selections
+- **[Modal](#)** - Dialog triggered by buttons
+- **[Link](#)** - For navigation (not actions)
+
+---
+
+## Design Tokens Used
+
+This component uses the following design tokens:
+
+- `--color-primary-500`, `--color-primary-600`
+- `--color-gray-500`, `--color-gray-600`
+- `--color-error`
+- `--space-2`, `--space-3`, `--space-4`, `--space-6`
+- `--font-size-sm`, `--font-size-base`, `--font-size-lg`
+- `--font-weight-medium`
+- `--radius-md`
+- `--shadow-md`, `--shadow-lg`, `--shadow-focus`
+
+---
+
+## Version History
+
+- **v1.0.0** - Initial release with 5 variants and 3 sizes
+- **v1.1.0** - Added loading state
+- **v1.2.0** - Added full-width option
+- **v1.3.0** - Improved accessibility (ARIA attributes)
+
+---
+
+**Questions or feedback?** [Open an issue](#) or [contribute](#)
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode System</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #111827;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #1f2937;
+      --color-text: #f9fafb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      padding: 40px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dark Mode System</h1>
+  <p>TODO: Implement theme toggle, system preference detection, and localStorage persistence</p>
+
+  <!-- TODO: Add theme toggle button -->
+  <!-- TODO: Add theme toggle JavaScript -->
+  <!-- TODO: Test all components in both themes -->
+
+  <script>
+    // TODO: Implement theme system
+  </script>
+</body>
+</html>
+

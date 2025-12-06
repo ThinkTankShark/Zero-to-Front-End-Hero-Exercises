@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Component - Solution</title>
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="checkbox.css">
+  <style>
+    body {
+      font-family: var(--font-family-sans);
+      padding: var(--space-10);
+      background: var(--color-bg-secondary);
+    }
+    .demo-section {
+      background: var(--color-bg-primary);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: 600px;
+    }
+    h1 {
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--space-6);
+      max-width: 600px;
+    }
+    h2 {
+      font-size: var(--font-size-2xl);
+      margin-top: 0;
+      margin-bottom: var(--space-4);
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+  <h1>☑️ Checkbox Component</h1>
+
+  <!-- Basic Checkbox -->
+  <div class="demo-section">
+    <h2>Basic Checkbox</h2>
+    <div class="checkbox">
+      <input type="checkbox" id="terms" class="checkbox__input" />
+      <label for="terms" class="checkbox__label">
+        <span class="checkbox__box">
+          <svg class="checkbox__icon" viewBox="0 0 16 16">
+            <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="checkbox__text">I agree to the terms and conditions</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Checked State -->
+  <div class="demo-section">
+    <h2>Checked State</h2>
+    <div class="checkbox">
+      <input type="checkbox" id="checked" class="checkbox__input" checked />
+      <label for="checked" class="checkbox__label">
+        <span class="checkbox__box">
+          <svg class="checkbox__icon" viewBox="0 0 16 16">
+            <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="checkbox__text">This checkbox is pre-checked</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Indeterminate State -->
+  <div class="demo-section">
+    <h2>Indeterminate State</h2>
+    <div class="checkbox">
+      <input type="checkbox" id="indeterminate" class="checkbox__input" />
+      <label for="indeterminate" class="checkbox__label">
+        <span class="checkbox__box">
+          <svg class="checkbox__icon" viewBox="0 0 16 16">
+            <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="checkbox__text">Select All (indeterminate state)</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Disabled States -->
+  <div class="demo-section">
+    <h2>Disabled States</h2>
+    <div class="checkbox-group">
+      <div class="checkbox">
+        <input type="checkbox" id="disabled-unchecked" class="checkbox__input" disabled />
+        <label for="disabled-unchecked" class="checkbox__label">
+          <span class="checkbox__box">
+            <svg class="checkbox__icon" viewBox="0 0 16 16">
+              <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="checkbox__text">Disabled (unchecked)</span>
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="disabled-checked" class="checkbox__input" checked disabled />
+        <label for="disabled-checked" class="checkbox__label">
+          <span class="checkbox__box">
+            <svg class="checkbox__icon" viewBox="0 0 16 16">
+              <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="checkbox__text">Disabled (checked)</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkbox Group -->
+  <div class="demo-section">
+    <h2>Checkbox Group</h2>
+    <fieldset style="border: none; padding: 0; margin: 0;">
+      <legend style="font-weight: var(--font-weight-medium); margin-bottom: var(--space-3);">
+        Select your interests:
+      </legend>
+      <div class="checkbox-group">
+        <div class="checkbox">
+          <input type="checkbox" id="interest-1" class="checkbox__input" name="interests" value="design" checked />
+          <label for="interest-1" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Design Systems</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="interest-2" class="checkbox__input" name="interests" value="frontend" checked />
+          <label for="interest-2" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Frontend Development</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="interest-3" class="checkbox__input" name="interests" value="accessibility" />
+          <label for="interest-3" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Accessibility</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="interest-4" class="checkbox__input" name="interests" value="testing" />
+          <label for="interest-4" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Testing</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- Interactive Demo -->
+  <div class="demo-section">
+    <h2>Interactive Demo</h2>
+    <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+      Try clicking, using Space key, and tabbing through these checkboxes
+    </p>
+    <div class="checkbox-group">
+      <div class="checkbox">
+        <input type="checkbox" id="demo-1" class="checkbox__input" />
+        <label for="demo-1" class="checkbox__label">
+          <span class="checkbox__box">
+            <svg class="checkbox__icon" viewBox="0 0 16 16">
+              <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="checkbox__text">Checkbox 1</span>
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="demo-2" class="checkbox__input" />
+        <label for="demo-2" class="checkbox__label">
+          <span class="checkbox__box">
+            <svg class="checkbox__icon" viewBox="0 0 16 16">
+              <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="checkbox__text">Checkbox 2</span>
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="demo-3" class="checkbox__input" />
+        <label for="demo-3" class="checkbox__label">
+          <span class="checkbox__box">
+            <svg class="checkbox__icon" viewBox="0 0 16 16">
+              <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="checkbox__text">Checkbox 3</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set indeterminate state
+    document.getElementById('indeterminate').indeterminate = true;
+  </script>
+</body>
+</html>
+

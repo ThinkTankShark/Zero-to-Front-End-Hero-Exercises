@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Component - Solution</title>
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="input.css">
+  <style>
+    body {
+      font-family: var(--font-family-sans);
+      padding: var(--space-10);
+      background: var(--color-bg-secondary);
+    }
+    .demo-section {
+      background: var(--color-bg-primary);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: 600px;
+    }
+    h1 {
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--space-6);
+      max-width: 600px;
+    }
+    h2 {
+      font-size: var(--font-size-2xl);
+      margin-top: 0;
+      margin-bottom: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Input Component</h1>
+
+  <!-- Basic Input -->
+  <div class="demo-section">
+    <h2>Basic Input</h2>
+    <div class="input-field">
+      <label for="name" class="input-field__label">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        class="input-field__input"
+        placeholder="Enter your full name"
+        aria-describedby="name-help"
+      />
+      <p id="name-help" class="input-field__helper">
+        This will be displayed on your profile
+      </p>
+    </div>
+  </div>
+
+  <!-- Required Input -->
+  <div class="demo-section">
+    <h2>Required Input</h2>
+    <div class="input-field">
+      <label for="email" class="input-field__label">
+        Email Address
+        <span class="input-field__required" aria-label="required">*</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        class="input-field__input"
+        placeholder="you@example.com"
+        aria-describedby="email-help"
+        required
+        aria-required="true"
+      />
+      <p id="email-help" class="input-field__helper">
+        We'll never share your email with anyone
+      </p>
+    </div>
+  </div>
+
+  <!-- Error State -->
+  <div class="demo-section">
+    <h2>Error State</h2>
+    <div class="input-field input-field--error">
+      <label for="email-error" class="input-field__label">
+        Email Address
+        <span class="input-field__required">*</span>
+      </label>
+      <input
+        type="email"
+        id="email-error"
+        class="input-field__input"
+        value="invalid-email"
+        aria-describedby="email-error-msg"
+        aria-invalid="true"
+      />
+      <p id="email-error-msg" class="input-field__error-message" role="alert">
+        Please enter a valid email address
+      </p>
+    </div>
+  </div>
+
+  <!-- Disabled Input -->
+  <div class="demo-section">
+    <h2>Disabled Input</h2>
+    <div class="input-field">
+      <label for="disabled" class="input-field__label">Username</label>
+      <input
+        type="text"
+        id="disabled"
+        class="input-field__input"
+        value="johndoe"
+        disabled
+      />
+      <p class="input-field__helper">
+        Username cannot be changed
+      </p>
+    </div>
+  </div>
+
+  <!-- Different Input Types -->
+  <div class="demo-section">
+    <h2>Input Types</h2>
+
+    <div class="input-field" style="margin-bottom: var(--space-6);">
+      <label for="password" class="input-field__label">
+        Password
+        <span class="input-field__required">*</span>
+      </label>
+      <input
+        type="password"
+        id="password"
+        class="input-field__input"
+        placeholder="Enter your password"
+        required
+      />
+      <p class="input-field__helper">
+        Must be at least 8 characters
+      </p>
+    </div>
+
+    <div class="input-field" style="margin-bottom: var(--space-6);">
+      <label for="phone" class="input-field__label">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        class="input-field__input"
+        placeholder="(555) 123-4567"
+      />
+    </div>
+
+    <div class="input-field" style="margin-bottom: var(--space-6);">
+      <label for="age" class="input-field__label">Age</label>
+      <input
+        type="number"
+        id="age"
+        class="input-field__input"
+        placeholder="18"
+        min="0"
+        max="120"
+      />
+    </div>
+
+    <div class="input-field">
+      <label for="website" class="input-field__label">Website</label>
+      <input
+        type="url"
+        id="website"
+        class="input-field__input"
+        placeholder="https://example.com"
+      />
+    </div>
+  </div>
+
+  <!-- Complete Form Example -->
+  <div class="demo-section">
+    <h2>Complete Form Example</h2>
+    <form onsubmit="event.preventDefault(); alert('Form submitted!');">
+      <div class="input-field" style="margin-bottom: var(--space-4);">
+        <label for="form-name" class="input-field__label">
+          Full Name
+          <span class="input-field__required">*</span>
+        </label>
+        <input
+          type="text"
+          id="form-name"
+          class="input-field__input"
+          required
+        />
+      </div>
+
+      <div class="input-field" style="margin-bottom: var(--space-4);">
+        <label for="form-email" class="input-field__label">
+          Email
+          <span class="input-field__required">*</span>
+        </label>
+        <input
+          type="email"
+          id="form-email"
+          class="input-field__input"
+          required
+        />
+      </div>
+
+      <div class="input-field" style="margin-bottom: var(--space-6);">
+        <label for="form-message" class="input-field__label">Message</label>
+        <textarea
+          id="form-message"
+          class="input-field__input"
+          rows="4"
+          placeholder="Your message..."
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary">Submit Form</button>
+    </form>
+  </div>
+
+  <style>
+    .btn {
+      padding: var(--space-3) var(--space-6);
+      background: var(--color-primary-500);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: var(--color-primary-600);
+    }
+    textarea.input-field__input {
+      resize: vertical;
+      font-family: var(--font-family-sans);
+    }
+  </style>
+</body>
+</html>
+

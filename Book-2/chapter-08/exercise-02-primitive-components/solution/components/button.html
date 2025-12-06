@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component - Solution</title>
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="button.css">
+  <style>
+    body {
+      font-family: var(--font-family-sans);
+      padding: var(--space-10);
+      background: var(--color-bg-secondary);
+    }
+    .demo-section {
+      background: var(--color-bg-primary);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    h1 {
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--space-6);
+    }
+    h2 {
+      font-size: var(--font-size-2xl);
+      margin-top: 0;
+      margin-bottom: var(--space-4);
+    }
+    .button-group {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+    .vertical {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Button Component</h1>
+
+  <!-- Variants -->
+  <div class="demo-section">
+    <h2>Button Variants</h2>
+    <div class="button-group">
+      <button class="btn btn--primary btn--medium">Primary</button>
+      <button class="btn btn--secondary btn--medium">Secondary</button>
+      <button class="btn btn--outline btn--medium">Outline</button>
+      <button class="btn btn--ghost btn--medium">Ghost</button>
+      <button class="btn btn--danger btn--medium">Danger</button>
+    </div>
+  </div>
+
+  <!-- Sizes -->
+  <div class="demo-section">
+    <h2>Button Sizes</h2>
+    <div class="button-group">
+      <button class="btn btn--primary btn--small">Small Button</button>
+      <button class="btn btn--primary btn--medium">Medium Button</button>
+      <button class="btn btn--primary btn--large">Large Button</button>
+    </div>
+  </div>
+
+  <!-- States -->
+  <div class="demo-section">
+    <h2>Button States</h2>
+    <div class="button-group">
+      <button class="btn btn--primary btn--medium">Default</button>
+      <button class="btn btn--primary btn--medium" disabled>Disabled</button>
+      <button class="btn btn--primary btn--medium btn--loading" aria-busy="true">
+        <span class="btn__spinner"></span>
+        Loading...
+      </button>
+    </div>
+  </div>
+
+  <!-- Full Width -->
+  <div class="demo-section">
+    <h2>Full Width</h2>
+    <button class="btn btn--primary btn--medium btn--full-width">Full Width Button</button>
+  </div>
+
+  <!-- All Variants in All Sizes -->
+  <div class="demo-section">
+    <h2>All Combinations</h2>
+
+    <h3 style="margin-bottom: var(--space-3);">Small</h3>
+    <div class="button-group" style="margin-bottom: var(--space-6);">
+      <button class="btn btn--primary btn--small">Primary</button>
+      <button class="btn btn--secondary btn--small">Secondary</button>
+      <button class="btn btn--outline btn--small">Outline</button>
+      <button class="btn btn--ghost btn--small">Ghost</button>
+      <button class="btn btn--danger btn--small">Danger</button>
+    </div>
+
+    <h3 style="margin-bottom: var(--space-3);">Medium</h3>
+    <div class="button-group" style="margin-bottom: var(--space-6);">
+      <button class="btn btn--primary btn--medium">Primary</button>
+      <button class="btn btn--secondary btn--medium">Secondary</button>
+      <button class="btn btn--outline btn--medium">Outline</button>
+      <button class="btn btn--ghost btn--medium">Ghost</button>
+      <button class="btn btn--danger btn--medium">Danger</button>
+    </div>
+
+    <h3 style="margin-bottom: var(--space-3);">Large</h3>
+    <div class="button-group">
+      <button class="btn btn--primary btn--large">Primary</button>
+      <button class="btn btn--secondary btn--large">Secondary</button>
+      <button class="btn btn--outline btn--large">Outline</button>
+      <button class="btn btn--ghost btn--large">Ghost</button>
+      <button class="btn btn--danger btn--large">Danger</button>
+    </div>
+  </div>
+
+  <!-- Interactive Demo -->
+  <div class="demo-section">
+    <h2>Interactive Demo</h2>
+    <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+      Try hovering, clicking, and tabbing through these buttons
+    </p>
+    <div class="button-group">
+      <button class="btn btn--primary" onclick="alert('Primary clicked!')">Click Me</button>
+      <button class="btn btn--secondary" onclick="this.classList.toggle('btn--loading'); setTimeout(() => this.classList.remove('btn--loading'), 2000)">
+        Toggle Loading
+      </button>
+      <button class="btn btn--outline" onclick="this.disabled = !this.disabled">Toggle Disabled</button>
+    </div>
+  </div>
+</body>
+</html>
+

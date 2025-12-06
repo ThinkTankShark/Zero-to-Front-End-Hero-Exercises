@@ -1,0 +1,60 @@
+/* Button Component - Minimal version for modal demo */
+/* Copy from Exercise 2 solution for complete button component */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: #3B82F6;
+  color: white;
+}
+
+.btn--primary:hover {
+  background: #2563EB;
+}
+
+.btn--secondary {
+  background: #6B7280;
+  color: white;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #3B82F6;
+}
+
+.btn--ghost:hover {
+  background: #EFF6FF;
+}
+
+.btn--danger {
+  background: #EF4444;
+  color: white;
+}
+
+.btn--danger:hover {
+  background: #DC2626;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.btn--full-width {
+  width: 100%;
+}
+

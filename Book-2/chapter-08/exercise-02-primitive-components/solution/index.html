@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primitive Components Showcase - Solution</title>
+  <link rel="stylesheet" href="tokens/tokens.css">
+  <link rel="stylesheet" href="components/button.css">
+  <link rel="stylesheet" href="components/input.css">
+  <link rel="stylesheet" href="components/checkbox.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-family-sans);
+      background: var(--color-bg-secondary);
+      padding: var(--space-10) var(--space-5);
+      color: var(--color-text-primary);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: var(--font-size-5xl);
+      margin-bottom: var(--space-3);
+      color: var(--color-text-primary);
+    }
+    .subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-10);
+    }
+    .section {
+      background: var(--color-bg-primary);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    h2 {
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--space-6);
+      color: var(--color-text-primary);
+    }
+    h3 {
+      font-size: var(--font-size-xl);
+      margin: var(--space-6) 0 var(--space-3) 0;
+      color: var(--color-text-primary);
+    }
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+    }
+    .component-group {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-4);
+    }
+    .form-demo {
+      max-width: 500px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--color-primary-500);
+      color: white;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      margin-left: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Primitive Components Library <span class="badge">Solution</span></h1>
+    <p class="subtitle">
+      A complete set of primitive components built with design tokens, BEM methodology, and accessibility best practices.
+    </p>
+
+    <!-- Buttons Section -->
+    <div class="section">
+      <h2>Buttons</h2>
+
+      <h3>Variants</h3>
+      <div class="component-group">
+        <button class="btn btn--primary btn--medium">Primary</button>
+        <button class="btn btn--secondary btn--medium">Secondary</button>
+        <button class="btn btn--outline btn--medium">Outline</button>
+        <button class="btn btn--ghost btn--medium">Ghost</button>
+        <button class="btn btn--danger btn--medium">Danger</button>
+      </div>
+
+      <h3>Sizes</h3>
+      <div class="component-group">
+        <button class="btn btn--primary btn--small">Small</button>
+        <button class="btn btn--primary btn--medium">Medium</button>
+        <button class="btn btn--primary btn--large">Large</button>
+      </div>
+
+      <h3>States</h3>
+      <div class="component-group">
+        <button class="btn btn--primary btn--medium">Default</button>
+        <button class="btn btn--primary btn--medium" disabled>Disabled</button>
+        <button class="btn btn--primary btn--medium btn--loading">
+          <span class="btn__spinner"></span>
+          Loading...
+        </button>
+      </div>
+    </div>
+
+    <!-- Inputs Section -->
+    <div class="section">
+      <h2>Input Fields</h2>
+
+      <div class="form-demo">
+        <h3>Basic Input</h3>
+        <div class="input-field" style="margin-bottom: var(--space-6);">
+          <label for="name" class="input-field__label">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            class="input-field__input"
+            placeholder="John Doe"
+          />
+          <p class="input-field__helper">Enter your full legal name</p>
+        </div>
+
+        <h3>Required Input</h3>
+        <div class="input-field" style="margin-bottom: var(--space-6);">
+          <label for="email" class="input-field__label">
+            Email <span class="input-field__required">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            class="input-field__input"
+            placeholder="you@example.com"
+            required
+          />
+          <p class="input-field__helper">We'll never share your email</p>
+        </div>
+
+        <h3>Error State</h3>
+        <div class="input-field input-field--error" style="margin-bottom: var(--space-6);">
+          <label for="email-error" class="input-field__label">
+            Email <span class="input-field__required">*</span>
+          </label>
+          <input
+            type="email"
+            id="email-error"
+            class="input-field__input"
+            value="invalid-email"
+            aria-invalid="true"
+          />
+          <p class="input-field__error-message">Please enter a valid email address</p>
+        </div>
+
+        <h3>Disabled Input</h3>
+        <div class="input-field">
+          <label for="disabled" class="input-field__label">Username</label>
+          <input
+            type="text"
+            id="disabled"
+            class="input-field__input"
+            value="johndoe"
+            disabled
+          />
+          <p class="input-field__helper">Username cannot be changed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkboxes Section -->
+    <div class="section">
+      <h2>Checkboxes</h2>
+
+      <h3>Basic States</h3>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-6);">
+        <div class="checkbox">
+          <input type="checkbox" id="cb1" class="checkbox__input" />
+          <label for="cb1" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Unchecked</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="cb2" class="checkbox__input" checked />
+          <label for="cb2" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Checked</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="cb3" class="checkbox__input" disabled />
+          <label for="cb3" class="checkbox__label">
+            <span class="checkbox__box">
+              <svg class="checkbox__icon" viewBox="0 0 16 16">
+                <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+              </svg>
+            </span>
+            <span class="checkbox__text">Disabled</span>
+          </label>
+        </div>
+      </div>
+
+      <h3>Checkbox Group</h3>
+      <fieldset style="border: none; padding: 0; margin: 0;">
+        <legend style="font-weight: var(--font-weight-medium); margin-bottom: var(--space-3);">
+          Notification preferences:
+        </legend>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+          <div class="checkbox">
+            <input type="checkbox" id="notif1" class="checkbox__input" checked />
+            <label for="notif1" class="checkbox__label">
+              <span class="checkbox__box">
+                <svg class="checkbox__icon" viewBox="0 0 16 16">
+                  <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+                </svg>
+              </span>
+              <span class="checkbox__text">Email notifications</span>
+            </label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="notif2" class="checkbox__input" checked />
+            <label for="notif2" class="checkbox__label">
+              <span class="checkbox__box">
+                <svg class="checkbox__icon" viewBox="0 0 16 16">
+                  <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+                </svg>
+              </span>
+              <span class="checkbox__text">Push notifications</span>
+            </label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="notif3" class="checkbox__input" />
+            <label for="notif3" class="checkbox__label">
+              <span class="checkbox__box">
+                <svg class="checkbox__icon" viewBox="0 0 16 16">
+                  <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+                </svg>
+              </span>
+              <span class="checkbox__text">SMS notifications</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Complete Form Example -->
+    <div class="section">
+      <h2>Complete Form Example</h2>
+      <form class="form-demo" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+        <div class="input-field" style="margin-bottom: var(--space-4);">
+          <label for="form-name" class="input-field__label">
+            Full Name <span class="input-field__required">*</span>
+          </label>
+          <input
+            type="text"
+            id="form-name"
+            class="input-field__input"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+
+        <div class="input-field" style="margin-bottom: var(--space-4);">
+          <label for="form-email" class="input-field__label">
+            Email <span class="input-field__required">*</span>
+          </label>
+          <input
+            type="email"
+            id="form-email"
+            class="input-field__input"
+            placeholder="you@example.com"
+            required
+          />
+          <p class="input-field__helper">We'll send updates to this email</p>
+        </div>
+
+        <div class="input-field" style="margin-bottom: var(--space-6);">
+          <label for="form-message" class="input-field__label">Message</label>
+          <textarea
+            id="form-message"
+            class="input-field__input"
+            rows="4"
+            placeholder="Your message here..."
+            style="resize: vertical; font-family: var(--font-family-sans);"
+          ></textarea>
+        </div>
+
+        <div style="margin-bottom: var(--space-6);">
+          <div class="checkbox">
+            <input type="checkbox" id="form-terms" class="checkbox__input" required />
+            <label for="form-terms" class="checkbox__label">
+              <span class="checkbox__box">
+                <svg class="checkbox__icon" viewBox="0 0 16 16">
+                  <polyline points="3 8 7 12 13 4" stroke="currentColor" fill="none" stroke-width="2"/>
+                </svg>
+              </span>
+              <span class="checkbox__text">I agree to the terms and conditions *</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="component-group">
+          <button type="submit" class="btn btn--primary btn--medium">Submit Form</button>
+          <button type="reset" class="btn btn--ghost btn--medium">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: var(--space-10); padding: var(--space-6); color: var(--color-text-secondary);">
+      <p style="font-size: var(--font-size-sm);">
+        Built with design tokens • 100% accessible • Production-ready
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+

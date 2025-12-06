@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Token Test</title>
+
+  <!-- Link your generated CSS here -->
+  <!-- <link rel="stylesheet" href="tokens/build.css"> -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* TODO: Use design tokens instead of hardcoded values */
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #1f2937;
+      padding: 32px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      /* TODO: Use token for font-size */
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    .token-demo {
+      display: grid;
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .button {
+      /* TODO: Replace all these with design tokens */
+      background: #3B82F6;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .card {
+      /* TODO: Use design tokens */
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-toggle {
+      margin-top: 32px;
+      padding: 16px;
+      background: #f3f4f6;
+      border-radius: 8px;
+    }
+
+    .theme-toggle button {
+      margin-right: 8px;
+    }
+
+    /* Dark mode styles (once you implement tokens) */
+    [data-theme="dark"] body {
+      /* TODO: Override with dark mode tokens */
+      background: #1f2937;
+      color: #f9fafb;
+    }
+
+    [data-theme="dark"] .card {
+      background: #374151;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: #4b5563;
+    }
+
+    .token-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .token-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    [data-theme="dark"] .token-list li {
+      border-bottom-color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Design Token System Test</h1>
+
+    <div class="token-demo">
+      <div class="card">
+        <h2>Button Examples</h2>
+        <p style="margin: 16px 0;">Once you implement design tokens, these buttons will use your token values:</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="button">Primary Button</button>
+          <button class="button" style="background: #6b7280;">Secondary</button>
+          <button class="button" style="background: #10b981;">Success</button>
+          <button class="button" style="background: #ef4444;">Error</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Current Tokens</h2>
+        <p style="margin: 16px 0;">After running your build script, you should have these tokens available:</p>
+        <ul class="token-list">
+          <li>
+            <span>--color-primary-500</span>
+            <span style="color: #3B82F6;">■ #3B82F6</span>
+          </li>
+          <li>
+            <span>--color-gray-500</span>
+            <span style="color: #6B7280;">■ #6B7280</span>
+          </li>
+          <li>
+            <span>--space-4</span>
+            <span>16px</span>
+          </li>
+          <li>
+            <span>--font-size-base</span>
+            <span>16px</span>
+          </li>
+          <li>
+            <span>--radius-md</span>
+            <span>6px</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Instructions</h2>
+        <ol style="margin-left: 20px; line-height: 1.8;">
+          <li>Complete <code>tokens/tokens.json</code> with all your design tokens</li>
+          <li>Finish <code>tokens/build.js</code> to generate CSS, Sass, and JS outputs</li>
+          <li>Run <code>node tokens/build.js</code></li>
+          <li>Uncomment the CSS link in the &lt;head&gt; above</li>
+          <li>Replace hardcoded values in this file with CSS variables</li>
+          <li>Test the dark mode toggle below</li>
+        </ol>
+      </div>
+
+      <div class="theme-toggle">
+        <h3 style="margin-bottom: 12px;">Theme Switcher</h3>
+        <button class="button" onclick="setTheme('light')">☀️ Light Mode</button>
+        <button class="button" onclick="setTheme('dark')" style="background: #374151;">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme('dark');
+    }
+  </script>
+</body>
+</html>
+

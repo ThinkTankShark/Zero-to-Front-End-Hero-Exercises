@@ -1,0 +1,23 @@
+Component Type,Location,Count,Unique Styles,Issues,Recommended Token,Current Value,Proposed Value,Priority,Effort (hours)
+Button,Homepage Hero,3,3,"3 different blue shades (#3B82F6, #2563EB, #4F46E5)",color-primary-500,Multiple,#3B82F6,High,2
+Button,Product Cards,24,2,"Inconsistent padding (10px, 12px)",space-3,10px/12px,12px,High,4
+Button,Checkout Flow,8,2,"Mixed border-radius (4px, 6px)",radius-md,4px/6px,6px,Medium,2
+Button,User Dashboard,12,3,"Different font weights (400, 500, 600)",font-weight-medium,Multiple,500,Medium,3
+Input,Login Form,2,2,Different border colors,color-border-primary,Multiple,#E5E7EB,High,1
+Input,Signup Form,6,3,"Inconsistent heights (36px, 40px, 44px)",input-height,Multiple,40px,High,3
+Input,Search Bars,4,4,Different border-radius values,radius-md,Multiple,6px,Medium,2
+Input,Filters,8,2,Mixed padding values,space-3,Multiple,12px,Medium,2
+Card,Product Cards,156,5,5 different shadow values,shadow-md,Multiple,Standard,High,8
+Card,Blog Cards,23,3,3 different padding patterns,space-6,Multiple,24px,Medium,3
+Card,Dashboard Widgets,18,4,4 different border-radius values,radius-lg,Multiple,8px,Low,2
+Typography,Headings,89,8,"8 different sizes (14px-48px)",font-size-*,Multiple,Scale,High,6
+Typography,Body Text,234,5,"5 sizes for body text",font-size-base,Multiple,16px,High,4
+Spacing,Margins,412,23,23 unique margin values,space-*,Multiple,4px scale,Critical,20
+Spacing,Padding,389,19,19 unique padding values,space-*,Multiple,4px scale,Critical,18
+Colors,Primary Blues,203,23,23 different blue shades,color-primary-*,Multiple,9-shade scale,Critical,10
+Colors,Grays,456,18,18 different gray shades,color-gray-*,Multiple,9-shade scale,Critical,10
+Colors,Success,45,5,5 different green shades,color-success,Multiple,#10B981,Medium,3
+Colors,Error,34,4,4 different red shades,color-error,Multiple,#EF4444,Medium,2
+Shadows,All Elements,345,12,12 unique shadow definitions,shadow-*,Multiple,6 levels,High,8
+Border Radius,All Elements,289,15,15 unique radius values,radius-*,Multiple,7 levels,Medium,6
+

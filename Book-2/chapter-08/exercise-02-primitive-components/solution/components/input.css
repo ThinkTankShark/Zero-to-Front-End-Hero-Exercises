@@ -1,0 +1,105 @@
+/* Input Component - Complete Solution */
+
+/* Input field container */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+/* Label styles */
+.input-field__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Required indicator */
+.input-field__required {
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Input styles */
+.input-field__input {
+  padding: var(--space-3);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-sans);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+/* Input placeholder */
+.input-field__input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* Input focus state */
+.input-field__input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Input hover state */
+.input-field__input:hover:not(:disabled):not(:focus) {
+  border-color: var(--color-gray-400);
+}
+
+/* Input disabled state */
+.input-field__input:disabled {
+  background: var(--color-gray-100);
+  color: var(--color-text-tertiary);
+  cursor: not-allowed;
+  border-color: var(--color-gray-200);
+}
+
+/* Helper text */
+.input-field__helper {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Error state modifier */
+.input-field--error .input-field__input {
+  border-color: var(--color-error);
+}
+
+.input-field--error .input-field__input:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Error message */
+.input-field__error-message {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.input-field__error-message::before {
+  content: "⚠";
+}
+
+/* Hide error message by default */
+.input-field:not(.input-field--error) .input-field__error-message {
+  display: none;
+}
+
+/* Hide helper text when error is shown */
+.input-field--error .input-field__helper {
+  display: none;
+}
+

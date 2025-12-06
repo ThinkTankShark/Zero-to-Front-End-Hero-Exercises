@@ -1,0 +1,80 @@
+/* Button Component Styles */
+/* TODO: Complete this stylesheet using design tokens from ../tokens/tokens.css */
+
+/* Base button styles */
+.btn {
+  /* TODO: Add base button styles */
+  /* Hint: padding, border, border-radius, font styles, cursor, transition */
+}
+
+/* Button variants */
+.btn--primary {
+  /* TODO: Primary button styles (use tokens) */
+}
+
+.btn--secondary {
+  /* TODO: Secondary button styles */
+}
+
+.btn--outline {
+  /* TODO: Outline button styles */
+}
+
+.btn--ghost {
+  /* TODO: Ghost/text button styles */
+}
+
+.btn--danger {
+  /* TODO: Danger button styles */
+}
+
+/* Button sizes */
+.btn--small {
+  /* TODO: Small button styles */
+}
+
+.btn--medium {
+  /* TODO: Medium button styles (default) */
+}
+
+.btn--large {
+  /* TODO: Large button styles */
+}
+
+/* Button states */
+.btn:hover:not(:disabled) {
+  /* TODO: Hover state */
+}
+
+.btn:active:not(:disabled) {
+  /* TODO: Active state */
+}
+
+.btn:focus {
+  /* TODO: Focus state (accessibility) */
+}
+
+.btn:disabled {
+  /* TODO: Disabled state */
+}
+
+/* Loading state */
+.btn--loading {
+  /* TODO: Loading button styles */
+}
+
+.btn__spinner {
+  /* TODO: Create a CSS spinner */
+  /* Hint: Use border, border-radius, and animation */
+}
+
+/* Hide spinner when not loading */
+.btn:not(.btn--loading) .btn__spinner {
+  display: none;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  /* TODO: Create rotation animation */
+}
+

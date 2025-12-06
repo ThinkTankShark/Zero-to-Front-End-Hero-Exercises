@@ -1,0 +1,61 @@
+/* Checkbox Component Styles */
+/* TODO: Complete this stylesheet using design tokens from ../tokens/tokens.css */
+
+/* Checkbox container */
+.checkbox {
+  /* TODO: Add container styles if needed */
+}
+
+/* Hide native checkbox (but keep accessible) */
+.checkbox__input {
+  /* TODO: Visually hide the native checkbox */
+  /* Hint: position absolute, opacity 0, width/height 1px */
+}
+
+/* Label (clickable area) */
+.checkbox__label {
+  /* TODO: Add label styles */
+  /* Hint: display flex, align items, gap, cursor pointer */
+}
+
+/* Custom checkbox box */
+.checkbox__box {
+  /* TODO: Add checkbox box styles */
+  /* Hint: display flex, width, height, border, border-radius, transition */
+}
+
+/* Checkbox icon (checkmark) */
+.checkbox__icon {
+  /* TODO: Add icon styles */
+  /* Hint: width, height, color, opacity 0 by default, transform scale */
+}
+
+/* Checked state - show checkmark */
+.checkbox__input:checked + .checkbox__label .checkbox__box {
+  /* TODO: Style checked box (background color, border color) */
+}
+
+.checkbox__input:checked + .checkbox__label .checkbox__icon {
+  /* TODO: Show and scale up the checkmark */
+}
+
+/* Focus state */
+.checkbox__input:focus + .checkbox__label .checkbox__box {
+  /* TODO: Add focus styles (box shadow) */
+}
+
+/* Hover state */
+.checkbox__label:hover .checkbox__box {
+  /* TODO: Add hover styles (optional) */
+}
+
+/* Disabled state */
+.checkbox__input:disabled + .checkbox__label {
+  /* TODO: Add disabled styles (opacity, cursor) */
+}
+
+/* Checkbox text */
+.checkbox__text {
+  /* TODO: Add text styles */
+}
+

@@ -1,0 +1,132 @@
+/* Checkbox Component - Complete Solution */
+
+/* Checkbox container */
+.checkbox {
+  display: inline-block;
+}
+
+/* Hide native checkbox (but keep accessible) */
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Label (clickable area) */
+.checkbox__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+/* Custom checkbox box */
+.checkbox__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--color-gray-400);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-primary);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Checkbox icon (checkmark) */
+.checkbox__icon {
+  width: 14px;
+  height: 14px;
+  color: white;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+}
+
+/* Checkbox text */
+.checkbox__text {
+  line-height: var(--font-lineHeight-normal);
+}
+
+/* Checked state */
+.checkbox__input:checked + .checkbox__label .checkbox__box {
+  background: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.checkbox__input:checked + .checkbox__label .checkbox__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Indeterminate state */
+.checkbox__input:indeterminate + .checkbox__label .checkbox__box {
+  background: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.checkbox__input:indeterminate + .checkbox__label .checkbox__box::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+/* Hide checkmark when indeterminate */
+.checkbox__input:indeterminate + .checkbox__label .checkbox__icon {
+  display: none;
+}
+
+/* Focus state */
+.checkbox__input:focus + .checkbox__label .checkbox__box {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Hover state */
+.checkbox__label:hover .checkbox__box {
+  border-color: var(--color-primary-500);
+}
+
+.checkbox__input:checked + .checkbox__label:hover .checkbox__box {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+
+/* Disabled state */
+.checkbox__input:disabled + .checkbox__label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox__input:disabled + .checkbox__label .checkbox__box {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+}
+
+.checkbox__input:disabled:checked + .checkbox__label .checkbox__box {
+  background: var(--color-gray-400);
+  border-color: var(--color-gray-400);
+}
+
+/* Optional: Checkbox description */
+.checkbox__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+  margin-left: calc(20px + var(--space-2));
+}
+

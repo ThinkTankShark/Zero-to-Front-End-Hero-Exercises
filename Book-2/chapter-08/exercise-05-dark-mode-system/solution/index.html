@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode System - Solution</title>
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Prevent FOUC (Flash of Unstyled Content) -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (theme === 'dark' || (!theme && systemPrefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/theme-toggle.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with theme toggle -->
+    <header class="header">
+      <h1>🌓 Dark Mode System</h1>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="20" height="20">
+          <circle cx="12" cy="12" r="4" fill="currentColor"/>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Demo sections -->
+    <main>
+      <section class="section">
+        <h2>Welcome to Dark Mode</h2>
+        <p>Click the toggle button in the header to switch between light and dark themes. Your preference will be saved!</p>
+        <p>The system also respects your operating system's theme preference on first visit.</p>
+      </section>
+
+      <section class="section">
+        <h2>Buttons</h2>
+        <div class="button-group">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--outline">Outline</button>
+          <button class="btn btn--ghost">Ghost</button>
+          <button class="btn btn--danger">Danger</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Form Elements</h2>
+        <div class="input-field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com">
+          <p class="helper-text">We'll never share your email</p>
+        </div>
+
+        <div class="checkbox-group">
+          <div class="checkbox">
+            <input type="checkbox" id="updates" checked>
+            <label for="updates">Send me updates</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="newsletter">
+            <label for="newsletter">Subscribe to newsletter</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Cards</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Feature One</h3>
+            <p>This card automatically adapts to the current theme.</p>
+          </div>
+          <div class="card">
+            <h3>Feature Two</h3>
+            <p>All colors come from design tokens, making theming effortless.</p>
+          </div>
+          <div class="card">
+            <h3>Feature Three</h3>
+            <p>The transition between themes is smooth and pleasant.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Code Example</h2>
+        <pre><code>// Theme switching is automatic!
+const theme = localStorage.getItem('theme');
+if (theme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}</code></pre>
+      </section>
+
+      <section class="section">
+        <h2>System Features</h2>
+        <ul>
+          <li>✅ Respects system preference (<code>prefers-color-scheme</code>)</li>
+          <li>✅ Saves preference to localStorage</li>
+          <li>✅ Watches for system preference changes</li>
+          <li>✅ No FOUC (Flash of Unstyled Content)</li>
+          <li>✅ Smooth transitions between themes</li>
+          <li>✅ Updates meta theme-color for mobile browsers</li>
+          <li>✅ Fully accessible (keyboard + screen reader)</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built with design tokens • Dark mode ready • Accessible</p>
+    </footer>
+  </div>
+
+  <script src="scripts/theme-system.js"></script>
+</body>
+</html>
+

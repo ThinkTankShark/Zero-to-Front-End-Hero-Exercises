@@ -1,0 +1,59 @@
+/* Input Component Styles */
+/* TODO: Complete this stylesheet using design tokens from ../tokens/tokens.css */
+
+/* Input field container */
+.input-field {
+  /* TODO: Add container styles */
+  /* Hint: Use flexbox column layout with gap */
+}
+
+/* Label styles */
+.input-field__label {
+  /* TODO: Add label styles */
+}
+
+/* Required indicator */
+.input-field__required {
+  /* TODO: Style the asterisk */
+}
+
+/* Input styles */
+.input-field__input {
+  /* TODO: Add input styles */
+  /* Hint: padding, border, border-radius, font styles, transition */
+}
+
+/* Input focus state */
+.input-field__input:focus {
+  /* TODO: Add focus styles (border color, box shadow) */
+}
+
+/* Input disabled state */
+.input-field__input:disabled {
+  /* TODO: Add disabled styles */
+}
+
+/* Helper text */
+.input-field__helper {
+  /* TODO: Add helper text styles */
+}
+
+/* Error state modifier */
+.input-field--error .input-field__input {
+  /* TODO: Add error border color */
+}
+
+.input-field--error .input-field__input:focus {
+  /* TODO: Add error focus styles */
+}
+
+/* Error message */
+.input-field__error-message {
+  /* TODO: Add error message styles */
+}
+
+/* Hide error message by default */
+.input-field:not(.input-field--error) .input-field__error-message {
+  display: none;
+}
+

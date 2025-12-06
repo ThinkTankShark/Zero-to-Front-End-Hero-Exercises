@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Token System - Solution</title>
+
+  <!-- Generated design tokens -->
+  <link rel="stylesheet" href="tokens/build.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family-sans);
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      padding: var(--space-8);
+      line-height: var(--font-lineHeight-normal);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-6);
+      color: var(--color-text-primary);
+    }
+
+    h2 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-4);
+      color: var(--color-text-primary);
+    }
+
+    h3 {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--space-3);
+      color: var(--color-text-primary);
+    }
+
+    .token-demo {
+      display: grid;
+      gap: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+
+    .button {
+      background: var(--color-primary-500);
+      color: white;
+      padding: var(--space-3) var(--space-6);
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: var(--font-family-sans);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .button:focus {
+      outline: none;
+      box-shadow: var(--shadow-focus);
+    }
+
+    .button-secondary {
+      background: var(--color-gray-500);
+    }
+
+    .button-success {
+      background: var(--color-success);
+    }
+
+    .button-error {
+      background: var(--color-error);
+    }
+
+    .button-warning {
+      background: var(--color-warning);
+    }
+
+    .card {
+      background: var(--color-bg-primary);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-gray-200);
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    [data-theme="dark"] .card {
+      border-color: var(--color-gray-700);
+    }
+
+    .theme-toggle {
+      margin-top: var(--space-8);
+      padding: var(--space-4);
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-lg);
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle button {
+      margin-right: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
+
+    .token-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .token-list li {
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-family-mono);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    [data-theme="dark"] .token-list li {
+      border-bottom-color: var(--color-gray-700);
+    }
+
+    .token-list li:last-child {
+      border-bottom: none;
+    }
+
+    .color-swatch {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: var(--radius-sm);
+      margin-left: var(--space-2);
+      vertical-align: middle;
+      border: 1px solid var(--color-gray-300);
+    }
+
+    .spacing-demo {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .spacing-box {
+      background: var(--color-primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .shadow-demo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-4);
+      padding: var(--space-4);
+    }
+
+    .shadow-box {
+      background: var(--color-bg-primary);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-size: var(--font-size-sm);
+      transition: background-color 0.3s;
+    }
+
+    code {
+      font-family: var(--font-family-mono);
+      background: var(--color-bg-tertiary);
+      padding: 2px var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-primary);
+      transition: background-color 0.3s;
+    }
+
+    ol {
+      margin-left: var(--space-5);
+      line-height: var(--font-lineHeight-relaxed);
+    }
+
+    ol li {
+      margin: var(--space-2) 0;
+    }
+
+    .success-badge {
+      display: inline-block;
+      background: var(--color-success);
+      color: white;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      margin-left: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Design Token System <span class="success-badge">✓ Complete</span></h1>
+
+    <div class="token-demo">
+      <!-- Color Tokens -->
+      <div class="card">
+        <h2>Colors</h2>
+        <p style="margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          All buttons use design tokens for colors
+        </p>
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <button class="button">Primary</button>
+          <button class="button button-secondary">Secondary</button>
+          <button class="button button-success">Success</button>
+          <button class="button button-warning">Warning</button>
+          <button class="button button-error">Error</button>
+        </div>
+      </div>
+
+      <!-- Spacing Tokens -->
+      <div class="card">
+        <h2>Spacing Scale (4px base)</h2>
+        <p style="margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          Consistent spacing creates visual rhythm
+        </p>
+        <div class="spacing-demo">
+          <div class="spacing-box" style="width: var(--space-1); height: var(--space-1);">1</div>
+          <div class="spacing-box" style="width: var(--space-2); height: var(--space-2);">2</div>
+          <div class="spacing-box" style="width: var(--space-3); height: var(--space-3);">3</div>
+          <div class="spacing-box" style="width: var(--space-4); height: var(--space-4);">4</div>
+          <div class="spacing-box" style="width: var(--space-6); height: var(--space-6);">6</div>
+          <div class="spacing-box" style="width: var(--space-8); height: var(--space-8);">8</div>
+          <div class="spacing-box" style="width: var(--space-12); height: var(--space-12);">12</div>
+          <div class="spacing-box" style="width: var(--space-16); height: var(--space-16);">16</div>
+        </div>
+      </div>
+
+      <!-- Shadow Tokens -->
+      <div class="card">
+        <h2>Elevation (Shadows)</h2>
+        <p style="margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          Shadows create depth and hierarchy
+        </p>
+        <div class="shadow-demo">
+          <div class="shadow-box" style="box-shadow: var(--shadow-xs);">xs</div>
+          <div class="shadow-box" style="box-shadow: var(--shadow-sm);">sm</div>
+          <div class="shadow-box" style="box-shadow: var(--shadow-md);">md</div>
+          <div class="shadow-box" style="box-shadow: var(--shadow-lg);">lg</div>
+          <div class="shadow-box" style="box-shadow: var(--shadow-xl);">xl</div>
+          <div class="shadow-box" style="box-shadow: var(--shadow-2xl);">2xl</div>
+        </div>
+      </div>
+
+      <!-- Typography Tokens -->
+      <div class="card">
+        <h2>Typography</h2>
+        <div style="margin: var(--space-4) 0;">
+          <div style="font-size: var(--font-size-xs); margin: var(--space-2) 0;">XS - The quick brown fox</div>
+          <div style="font-size: var(--font-size-sm); margin: var(--space-2) 0;">SM - The quick brown fox</div>
+          <div style="font-size: var(--font-size-base); margin: var(--space-2) 0;">Base - The quick brown fox</div>
+          <div style="font-size: var(--font-size-lg); margin: var(--space-2) 0;">LG - The quick brown fox</div>
+          <div style="font-size: var(--font-size-xl); margin: var(--space-2) 0;">XL - The quick brown fox</div>
+          <div style="font-size: var(--font-size-2xl); margin: var(--space-2) 0;">2XL - The quick brown fox</div>
+        </div>
+      </div>
+
+      <!-- Token List -->
+      <div class="card">
+        <h2>All Available Tokens</h2>
+        <p style="margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          Run <code>node tokens/build.js</code> to see the complete list
+        </p>
+        <ul class="token-list">
+          <li>
+            <span>--color-primary-500</span>
+            <span><span class="color-swatch" style="background: var(--color-primary-500);"></span> Primary</span>
+          </li>
+          <li>
+            <span>--color-success</span>
+            <span><span class="color-swatch" style="background: var(--color-success);"></span> Success</span>
+          </li>
+          <li>
+            <span>--space-4</span>
+            <span>16px</span>
+          </li>
+          <li>
+            <span>--font-size-base</span>
+            <span>16px</span>
+          </li>
+          <li>
+            <span>--radius-md</span>
+            <span>6px</span>
+          </li>
+          <li>
+            <span>--shadow-md</span>
+            <span>Elevation</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="theme-toggle">
+        <h3>Theme Switcher</h3>
+        <button class="button" onclick="setTheme('light')">☀️ Light Mode</button>
+        <button class="button" onclick="setTheme('dark')" style="background: var(--color-gray-700);">🌙 Dark Mode</button>
+        <p style="margin-top: var(--space-3); font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+          Dark mode uses token overrides with <code>[data-theme="dark"]</code>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setTheme('dark');
+    }
+
+    // Respect system preference
+    if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+  </script>
+</body>
+</html>
+

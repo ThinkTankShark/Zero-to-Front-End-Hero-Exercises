@@ -1,0 +1,45 @@
+{
+  "name": "my-design-system",
+  "version": "1.0.0",
+  "description": "A complete production-ready design system",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "storybook": "npm run storybook --workspace=apps/storybook",
+    "build-storybook": "npm run build-storybook --workspace=apps/storybook",
+    "publish-packages": "lerna publish",
+    "clean": "lerna clean && rm -rf node_modules",
+    "bootstrap": "lerna bootstrap",
+    "lint": "eslint packages/**/src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,json,css,md}\""
+  },
+  "devDependencies": {
+    "lerna": "^8.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/my-design-system"
+  },
+  "keywords": [
+    "design-system",
+    "components",
+    "react",
+    "ui",
+    "tokens"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
+
