@@ -1,0 +1,62 @@
+{
+  "budget": [
+    {
+      "path": "/*",
+      "resourceSizes": [
+        {
+          "resourceType": "script",
+          "budget": 200,
+          "comment": "Total JavaScript budget: 200 KB"
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 50,
+          "comment": "Total CSS budget: 50 KB"
+        },
+        {
+          "resourceType": "image",
+          "budget": 500,
+          "comment": "Total images budget: 500 KB"
+        },
+        {
+          "resourceType": "document",
+          "budget": 30,
+          "comment": "HTML document: 30 KB"
+        },
+        {
+          "resourceType": "font",
+          "budget": 100,
+          "comment": "Web fonts: 100 KB"
+        },
+        {
+          "resourceType": "total",
+          "budget": 1000,
+          "comment": "Total page weight: 1000 KB (1 MB)"
+        }
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "metric": "interactive",
+      "budget": 3000,
+      "comment": "Time to Interactive: 3 seconds"
+    },
+    {
+      "metric": "first-contentful-paint",
+      "budget": 1500,
+      "comment": "First Contentful Paint: 1.5 seconds"
+    },
+    {
+      "metric": "largest-contentful-paint",
+      "budget": 2500,
+      "comment": "Largest Contentful Paint: 2.5 seconds"
+    },
+    {
+      "metric": "cumulative-layout-shift",
+      "budget": 0.1,
+      "comment": "Cumulative Layout Shift: 0.1"
+    }
+  ]
+}
+

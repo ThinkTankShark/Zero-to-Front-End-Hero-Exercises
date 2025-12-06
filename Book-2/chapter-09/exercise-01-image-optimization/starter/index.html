@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery - Optimization Exercise</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📸 Image Gallery</h1>
+      <p>Optimized with modern image formats and lazy loading</p>
+    </header>
+
+    <main class="gallery">
+      <!--
+        TODO: Add your optimized images here
+
+        For each image, create a structure like this:
+
+        <div class="gallery-item">
+          <picture>
+            <source srcset="..." type="image/avif">
+            <source srcset="..." type="image/webp">
+            <img src="..." alt="..." width="..." height="...">
+          </picture>
+          <div class="gallery-caption">
+            <h3>Image Title</h3>
+            <p>Image description</p>
+          </div>
+        </div>
+
+        Remember:
+        - First 2 images: NO loading="lazy"
+        - Images 3+: Add loading="lazy" to <img>
+        - Always include width and height attributes
+        - Use srcset for responsive images
+      -->
+
+      <!-- Example for Image 1 (above the fold - no lazy loading) -->
+      <div class="gallery-item">
+        <!-- TODO: Add your picture element here -->
+        <div class="gallery-caption">
+          <h3>Image 1</h3>
+          <p>Replace with your image</p>
+        </div>
+      </div>
+
+      <!-- Example for Image 2 (above the fold - no lazy loading) -->
+      <div class="gallery-item">
+        <!-- TODO: Add your picture element here -->
+        <div class="gallery-caption">
+          <h3>Image 2</h3>
+          <p>Replace with your image</p>
+        </div>
+      </div>
+
+      <!-- Example for Image 3+ (below the fold - ADD loading="lazy") -->
+      <div class="gallery-item">
+        <!-- TODO: Add your picture element here with loading="lazy" -->
+        <div class="gallery-caption">
+          <h3>Image 3</h3>
+          <p>Replace with your image</p>
+        </div>
+      </div>
+
+      <!-- TODO: Add more images... -->
+
+    </main>
+
+    <footer>
+      <h2>📊 Performance Stats</h2>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Total Size</h3>
+          <p class="stat-value">Check Network tab</p>
+        </div>
+        <div class="stat-card">
+          <h3>LCP</h3>
+          <p class="stat-value">Run Lighthouse</p>
+        </div>
+        <div class="stat-card">
+          <h3>Lighthouse Score</h3>
+          <p class="stat-value">Run Lighthouse</p>
+        </div>
+      </div>
+      <p class="tip">
+        💡 <strong>Tip:</strong> Open DevTools → Network tab to see which formats are loading.
+        Modern browsers should load AVIF!
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
+

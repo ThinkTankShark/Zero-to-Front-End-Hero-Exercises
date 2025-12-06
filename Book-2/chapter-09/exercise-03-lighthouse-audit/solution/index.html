@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Web Design Services | YourCompany</title>
+  <meta name="description" content="Expert web design and development services for modern businesses. Fast, accessible, and SEO-optimized websites.">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="images/hero.webp" as="image">
+
+  <!-- Inline critical CSS for above-the-fold content -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    header { text-align: center; padding: 2rem; background: #333; color: white; }
+    header h1 { font-size: 2rem; margin-bottom: 1rem; }
+  </style>
+
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+  <!-- Deferred JavaScript -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Website</h1>
+    <picture>
+      <source srcset="images/hero.avif" type="image/avif">
+      <source srcset="images/hero.webp" type="image/webp">
+      <img src="images/hero.jpg"
+           alt="Modern office workspace with team collaboration"
+           width="1200"
+           height="800"
+           fetchpriority="high">
+    </picture>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>We create fast, accessible, and beautiful websites for modern businesses.</p>
+
+      <img src="images/photo1.webp"
+           alt="Professional team meeting"
+           width="800"
+           height="600"
+           loading="lazy">
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Web Design</h3>
+          <p>Beautiful, modern designs that convert visitors to customers.</p>
+        </div>
+        <div class="service-card">
+          <h3>Development</h3>
+          <p>Fast, optimized code built with modern best practices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 YourCompany. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

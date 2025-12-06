@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Add descriptive title and meta description for SEO -->
+  <title>Page</title>
+
+  <!-- ❌ ISSUE: Render-blocking CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="unused-framework.css">
+
+  <!-- ❌ ISSUE: Render-blocking JavaScript -->
+  <script src="app.js"></script>
+  <script src="analytics.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Website</h1>
+    <!-- ❌ ISSUE: Large unoptimized image, no width/height -->
+    <img src="images/hero-large.jpg" alt="">
+  </header>
+
+  <main>
+    <section>
+      <h3>About Us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      <!-- ❌ ISSUE: Multiple large images without lazy loading -->
+      <img src="images/photo1-large.jpg">
+      <img src="images/photo2-large.jpg">
+      <img src="images/photo3-large.jpg">
+    </section>
+
+    <section>
+      <h3>Our Services</h3>
+      <div class="services">
+        <div class="service-card">
+          <h4>Service 1</h4>
+          <p style="color: #ccc;">Low contrast text</p>
+        </div>
+        <div class="service-card">
+          <h4>Service 2</h4>
+          <p style="color: #ddd;">Another low contrast</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Contact Form</h3>
+      <form>
+        <!-- ❌ ISSUE: No labels for accessibility -->
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button>Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <!-- ❌ ISSUE: Large offscreen images not lazy loaded -->
+      <img src="images/gallery1-large.jpg">
+      <img src="images/gallery2-large.jpg">
+      <img src="images/gallery3-large.jpg">
+      <img src="images/gallery4-large.jpg">
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Company Name</p>
+  </footer>
+
+  <!-- ❌ ISSUE: More render-blocking scripts -->
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</body>
+</html>
+

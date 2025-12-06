@@ -1,0 +1,16 @@
+{
+  "name": "image-optimization-exercise",
+  "version": "1.0.0",
+  "description": "Exercise for optimizing images with Sharp",
+  "main": "optimize-images.js",
+  "scripts": {
+    "optimize": "node optimize-images.js"
+  },
+  "keywords": ["image", "optimization", "webp", "avif", "performance"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}
+
