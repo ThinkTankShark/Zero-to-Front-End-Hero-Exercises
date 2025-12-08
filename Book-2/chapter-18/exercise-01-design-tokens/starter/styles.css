@@ -1,0 +1,105 @@
+/* ============================================
+   DESIGN TOKENS SYSTEM - STARTER
+   Your task: Complete this design token system
+   ============================================ */
+
+/* ============================================
+   Light Theme (Default)
+   TODO: Define CSS custom properties
+   ============================================ */
+:root {
+  /* Brand Colors - Blue palette (9 shades) */
+  /* TODO: Define --color-brand-50 through --color-brand-800 */
+
+  /* Semantic Colors */
+  /* TODO: Define --color-success, --color-warning, --color-error, --color-info */
+
+  /* Neutral Colors (9 shades) */
+  /* TODO: Define --color-neutral-50 through --color-neutral-900 */
+
+  /* Text Colors */
+  /* TODO: Define --color-text-primary, --color-text-secondary, --color-text-tertiary */
+
+  /* Background Colors */
+  /* TODO: Define --color-bg-primary, --color-bg-secondary, --color-bg-tertiary */
+
+  /* Spacing Scale (4px base) */
+  /* TODO: Define spacing from --space-0 to --space-24 */
+  /* Hint: 1 = 0.25rem (4px), 2 = 0.5rem (8px), etc. */
+
+  /* Typography - Font Families */
+  /* TODO: Define --font-sans, --font-serif, --font-mono */
+
+  /* Typography - Font Sizes */
+  /* TODO: Define --text-xs through --text-4xl */
+
+  /* Typography - Font Weights */
+  /* TODO: Define --font-normal, --font-medium, --font-semibold, --font-bold */
+
+  /* Typography - Line Heights */
+  /* TODO: Define --leading-tight, --leading-normal, --leading-relaxed, --leading-loose */
+
+  /* Shadows */
+  /* TODO: Define --shadow-sm, --shadow-base, --shadow-md, --shadow-lg, --shadow-xl */
+
+  /* Border Radius */
+  /* TODO: Define --radius-none through --radius-full */
+
+  /* Transitions */
+  /* TODO: Define --transition-fast, --transition-base, --transition-slow */
+}
+
+/* ============================================
+   Dark Theme
+   TODO: Define dark theme overrides
+   ============================================ */
+[data-theme='dark'] {
+  /* TODO: Override colors for dark mode */
+  /* Hint: Invert text and background colors */
+  /* Adjust semantic colors to be brighter */
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* TODO: Use your design tokens here */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* TODO: Add color and background-color using tokens */
+  /* TODO: Add transition for theme switching */
+}
+
+/* ============================================
+   Your Styles
+   TODO: Style your components using the tokens
+   ============================================ */
+
+.container {
+  /* TODO: Add max-width, margin, padding using tokens */
+}
+
+.header {
+  /* TODO: Style header */
+}
+
+.section {
+  /* TODO: Style sections using tokens */
+}
+
+/* TODO: Add more styles as needed */
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  /* TODO: Add responsive styles */
+}
+

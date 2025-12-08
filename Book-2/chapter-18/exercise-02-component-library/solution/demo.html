@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library Demo</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="Button.css">
+  <link rel="stylesheet" href="Input.css">
+  <link rel="stylesheet" href="Card.css">
+  <link rel="stylesheet" href="../exercise-01-design-tokens/styles.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background-color: var(--color-bg-secondary);
+    }
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .demo-section {
+      background-color: var(--color-bg-primary);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .demo-section h2 {
+      margin-top: 0;
+      color: var(--color-brand-600);
+    }
+    .demo-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .demo-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .demo-label {
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    // Import components (inline for demo)
+    // In real usage, these would be imported from separate files
+
+    function Demo() {
+      const [isLoading, setIsLoading] = useState(false);
+      const [theme, setTheme] = useState('light');
+
+      const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        if (newTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      };
+
+      return (
+        <div className="demo-container">
+          <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h1>Component Library Demo</h1>
+            <button
+              onClick={toggleTheme}
+              style={{
+                padding: '0.5rem 1rem',
+                borderRadius: '0.5rem',
+                border: '1px solid var(--color-neutral-300)',
+                background: 'var(--color-bg-primary)',
+                cursor: 'pointer'
+              }}
+            >
+              Toggle Theme: {theme}
+            </button>
+          </header>
+
+          {/* Button Demos */}
+          <section className="demo-section">
+            <h2>Button Component</h2>
+
+            <div className="demo-grid">
+              <div>
+                <span className="demo-label">Variants</span>
+                <div className="demo-row">
+                  <button className="btn btn--primary btn--md">Primary</button>
+                  <button className="btn btn--secondary btn--md">Secondary</button>
+                  <button className="btn btn--outline btn--md">Outline</button>
+                  <button className="btn btn--ghost btn--md">Ghost</button>
+                  <button className="btn btn--danger btn--md">Danger</button>
+                </div>
+              </div>
+
+              <div>
+                <span className="demo-label">Sizes</span>
+                <div className="demo-row">
+                  <button className="btn btn--primary btn--sm">Small</button>
+                  <button className="btn btn--primary btn--md">Medium</button>
+                  <button className="btn btn--primary btn--lg">Large</button>
+                </div>
+              </div>
+
+              <div>
+                <span className="demo-label">States</span>
+                <div className="demo-row">
+                  <button className="btn btn--primary btn--md btn--loading" disabled>
+                    <span className="btn__spinner" role="status" aria-label="Loading">
+                      <svg className="btn__spinner-icon" viewBox="0 0 24 24">
+                        <circle className="btn__spinner-circle" cx="12" cy="12" r="10" fill="none" strokeWidth="3"/>
+                      </svg>
+                    </span>
+                    Loading
+                  </button>
+                  <button className="btn btn--primary btn--md" disabled>Disabled</button>
+                </div>
+              </div>
+
+              <div>
+                <span className="demo-label">With Icons</span>
+                <div className="demo-row">
+                  <button className="btn btn--primary btn--md">
+                    <span className="btn__icon btn__icon--left">👈</span>
+                    <span className="btn__content">Left Icon</span>
+                  </button>
+                  <button className="btn btn--primary btn--md">
+                    <span className="btn__content">Right Icon</span>
+                    <span className="btn__icon btn__icon--right">👉</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Input Demos */}
+          <section className="demo-section">
+            <h2>Input Component</h2>
+
+            <div className="demo-grid" style={{ maxWidth: '600px' }}>
+              <div>
+                <span className="demo-label">Variants</span>
+                <div style={{ display: 'grid', gap: '1rem' }}>
+                  <div className="input-wrapper input-wrapper--outline input-wrapper--md">
+                    <label className="input__label" htmlFor="outline-input">
+                      Outline Variant
+                    </label>
+                    <input
+                      id="outline-input"
+                      type="text"
+                      className="input input--outline input--md"
+                      placeholder="Outline input"
+                    />
+                  </div>
+
+                  <div className="input-wrapper input-wrapper--filled input-wrapper--md">
+                    <label className="input__label" htmlFor="filled-input">
+                      Filled Variant
+                    </label>
+                    <input
+                      id="filled-input"
+                      type="text"
+                      className="input input--filled input--md"
+                      placeholder="Filled input"
+                    />
+                  </div>
+
+                  <div className="input-wrapper input-wrapper--flushed input-wrapper--md">
+                    <label className="input__label" htmlFor="flushed-input">
+                      Flushed Variant
+                    </label>
+                    <input
+                      id="flushed-input"
+                      type="text"
+                      className="input input--flushed input--md"
+                      placeholder="Flushed input"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <span className="demo-label">With Helper Text</span>
+                <div className="input-wrapper input-wrapper--outline input-wrapper--md">
+                  <label className="input__label" htmlFor="helper-input">
+                    Email
+                  </label>
+                  <input
+                    id="helper-input"
+                    type="email"
+                    className="input input--outline input--md"
+                    placeholder="you@example.com"
+                    aria-describedby="helper-text"
+                  />
+                  <p id="helper-text" className="input__helper">
+                    We'll never share your email with anyone else.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <span className="demo-label">Error State</span>
+                <div className="input-wrapper input-wrapper--outline input-wrapper--md input-wrapper--invalid">
+                  <label className="input__label" htmlFor="error-input">
+                    Password
+                    <span className="input__required" aria-label="required">*</span>
+                  </label>
+                  <input
+                    id="error-input"
+                    type="password"
+                    className="input input--outline input--md"
+                    aria-invalid="true"
+                    aria-describedby="error-text"
+                  />
+                  <p id="error-text" className="input__error" role="alert">
+                    Password must be at least 8 characters
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Card Demos */}
+          <section className="demo-section">
+            <h2>Card Component</h2>
+
+            <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+              <div className="card card--elevated card--padding-md">
+                <div className="card__header">
+                  <h3 className="card__title">Elevated Card</h3>
+                </div>
+                <div className="card__body">
+                  <p>This is an elevated card with a subtle shadow. It's the default variant.</p>
+                </div>
+                <div className="card__footer">
+                  <button className="btn btn--ghost btn--sm">Cancel</button>
+                  <button className="btn btn--primary btn--sm">Save</button>
+                </div>
+              </div>
+
+              <div className="card card--outline card--padding-md">
+                <div className="card__header">
+                  <h3 className="card__title">Outline Card</h3>
+                </div>
+                <div className="card__body">
+                  <p>This card has a border instead of a shadow.</p>
+                </div>
+              </div>
+
+              <div className="card card--filled card--padding-md">
+                <div className="card__header">
+                  <div>
+                    <h3 className="card__title">Filled Card</h3>
+                    <p className="card__subtitle">With subtitle</p>
+                  </div>
+                </div>
+                <div className="card__body">
+                  <p>This card has a filled background color.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Complete Example */}
+          <section className="demo-section">
+            <h2>Complete Example: User Profile Form</h2>
+
+            <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+              <div className="card card--elevated card--padding-none">
+                <div className="card__header">
+                  <h3 className="card__title">Edit Profile</h3>
+                </div>
+                <div className="card__body">
+                  <div style={{ display: 'grid', gap: '1.5rem' }}>
+                    <div className="input-wrapper input-wrapper--outline input-wrapper--md">
+                      <label className="input__label" htmlFor="name">
+                        Full Name
+                        <span className="input__required">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        className="input input--outline input--md"
+                        placeholder="John Doe"
+                        required
+                      />
+                    </div>
+
+                    <div className="input-wrapper input-wrapper--outline input-wrapper--md">
+                      <label className="input__label" htmlFor="email-complete">
+                        Email Address
+                        <span className="input__required">*</span>
+                      </label>
+                      <input
+                        id="email-complete"
+                        type="email"
+                        className="input input--outline input--md"
+                        placeholder="john@example.com"
+                        required
+                        aria-describedby="email-helper"
+                      />
+                      <p id="email-helper" className="input__helper">
+                        We'll send confirmation to this email.
+                      </p>
+                    </div>
+
+                    <div className="input-wrapper input-wrapper--filled input-wrapper--md">
+                      <label className="input__label" htmlFor="bio">
+                        Bio
+                      </label>
+                      <textarea
+                        id="bio"
+                        className="input input--filled input--md"
+                        rows="4"
+                        placeholder="Tell us about yourself..."
+                        style={{ resize: 'vertical' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="card__footer">
+                  <button className="btn btn--ghost btn--md">Cancel</button>
+                  <button className="btn btn--primary btn--md">Save Changes</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<Demo />, document.getElementById('root'));
+  </script>
+</body>
+</html>
+

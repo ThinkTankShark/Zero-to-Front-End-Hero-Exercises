@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens System - Solution</title>
+  <link rel="stylesheet" href="solution.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1>Design Tokens System</h1>
+        <p class="subtitle">Complete token system with JavaScript export</p>
+      </div>
+      <div class="header-controls">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+        <button id="export-tokens" class="export-button">
+          Export Tokens
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Token Overview -->
+      <section class="section overview-section">
+        <h2>🎨 Token Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="overview-icon">🎨</div>
+            <h3>Colors</h3>
+            <p>Brand, semantic, and neutral palettes with 9 shades each</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">📏</div>
+            <h3>Spacing</h3>
+            <p>Consistent scale from 0-24 based on 4px increments</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">📝</div>
+            <h3>Typography</h3>
+            <p>Font families, sizes, weights, and line heights</p>
+          </div>
+          <div class="overview-card">
+            <div class="overview-icon">✨</div>
+            <h3>Effects</h3>
+            <p>Shadows, borders, and transitions</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Color Palette Section -->
+      <section class="section">
+        <h2>Color Palette</h2>
+
+        <div class="token-group">
+          <h3>Brand Colors</h3>
+          <div class="color-grid">
+            <div class="color-item" style="background-color: var(--color-brand-50);">
+              <div class="color-info">
+                <span class="color-name">50</span>
+                <code class="color-value">--color-brand-50</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-100);">
+              <div class="color-info">
+                <span class="color-name">100</span>
+                <code class="color-value">--color-brand-100</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-200);">
+              <div class="color-info">
+                <span class="color-name">200</span>
+                <code class="color-value">--color-brand-200</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-300);">
+              <div class="color-info">
+                <span class="color-name">300</span>
+                <code class="color-value">--color-brand-300</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-400);">
+              <div class="color-info">
+                <span class="color-name">400</span>
+                <code class="color-value">--color-brand-400</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-500);">
+              <div class="color-info">
+                <span class="color-name">500</span>
+                <code class="color-value">--color-brand-500</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-600);">
+              <div class="color-info">
+                <span class="color-name">600</span>
+                <code class="color-value">--color-brand-600</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-700);">
+              <div class="color-info">
+                <span class="color-name">700</span>
+                <code class="color-value">--color-brand-700</code>
+              </div>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-800);">
+              <div class="color-info">
+                <span class="color-name">800</span>
+                <code class="color-value">--color-brand-800</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Semantic Colors</h3>
+          <div class="semantic-grid">
+            <div class="semantic-card success">
+              <span class="semantic-icon">✓</span>
+              <span class="semantic-name">Success</span>
+              <code>--color-success</code>
+            </div>
+            <div class="semantic-card warning">
+              <span class="semantic-icon">⚠</span>
+              <span class="semantic-name">Warning</span>
+              <code>--color-warning</code>
+            </div>
+            <div class="semantic-card error">
+              <span class="semantic-icon">✕</span>
+              <span class="semantic-name">Error</span>
+              <code>--color-error</code>
+            </div>
+            <div class="semantic-card info">
+              <span class="semantic-icon">ℹ</span>
+              <span class="semantic-name">Info</span>
+              <code>--color-info</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spacing Section -->
+      <section class="section">
+        <h2>Spacing Scale</h2>
+        <div class="spacing-table">
+          <div class="spacing-row spacing-header">
+            <div>Token</div>
+            <div>Value</div>
+            <div>Visual</div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-1</code>
+            <div>4px</div>
+            <div class="spacing-visual" style="width: var(--space-1);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-2</code>
+            <div>8px</div>
+            <div class="spacing-visual" style="width: var(--space-2);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-3</code>
+            <div>12px</div>
+            <div class="spacing-visual" style="width: var(--space-3);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-4</code>
+            <div>16px</div>
+            <div class="spacing-visual" style="width: var(--space-4);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-6</code>
+            <div>24px</div>
+            <div class="spacing-visual" style="width: var(--space-6);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-8</code>
+            <div>32px</div>
+            <div class="spacing-visual" style="width: var(--space-8);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-12</code>
+            <div>48px</div>
+            <div class="spacing-visual" style="width: var(--space-12);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-16</code>
+            <div>64px</div>
+            <div class="spacing-visual" style="width: var(--space-16);"></div>
+          </div>
+          <div class="spacing-row">
+            <code>--space-24</code>
+            <div>96px</div>
+            <div class="spacing-visual" style="width: var(--space-24);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section class="section">
+        <h2>Typography</h2>
+
+        <div class="token-group">
+          <h3>Font Families</h3>
+          <div class="font-samples">
+            <div class="font-sample">
+              <code>--font-sans</code>
+              <p style="font-family: var(--font-sans);">The quick brown fox jumps over the lazy dog</p>
+            </div>
+            <div class="font-sample">
+              <code>--font-serif</code>
+              <p style="font-family: var(--font-serif);">The quick brown fox jumps over the lazy dog</p>
+            </div>
+            <div class="font-sample">
+              <code>--font-mono</code>
+              <p style="font-family: var(--font-mono);">The quick brown fox jumps over the lazy dog</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Font Sizes</h3>
+          <div class="font-sizes">
+            <div class="size-sample" style="font-size: var(--text-xs);">
+              <code>--text-xs</code>
+              <span>Extra Small (12px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-sm);">
+              <code>--text-sm</code>
+              <span>Small (14px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-base);">
+              <code>--text-base</code>
+              <span>Base (16px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-lg);">
+              <code>--text-lg</code>
+              <span>Large (18px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-xl);">
+              <code>--text-xl</code>
+              <span>XL (20px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-2xl);">
+              <code>--text-2xl</code>
+              <span>2XL (24px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-3xl);">
+              <code>--text-3xl</code>
+              <span>3XL (30px)</span>
+            </div>
+            <div class="size-sample" style="font-size: var(--text-4xl);">
+              <code>--text-4xl</code>
+              <span>4XL (36px)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Font Weights</h3>
+          <div class="weight-samples">
+            <p style="font-weight: var(--font-normal);">
+              <code>--font-normal</code> Normal (400)
+            </p>
+            <p style="font-weight: var(--font-medium);">
+              <code>--font-medium</code> Medium (500)
+            </p>
+            <p style="font-weight: var(--font-semibold);">
+              <code>--font-semibold</code> Semibold (600)
+            </p>
+            <p style="font-weight: var(--font-bold);">
+              <code>--font-bold</code> Bold (700)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shadows Section -->
+      <section class="section">
+        <h2>Shadows</h2>
+        <div class="shadow-demo">
+          <div class="shadow-card" style="box-shadow: var(--shadow-sm);">
+            <p>Small</p>
+            <code>--shadow-sm</code>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-base);">
+            <p>Base</p>
+            <code>--shadow-base</code>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-md);">
+            <p>Medium</p>
+            <code>--shadow-md</code>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-lg);">
+            <p>Large</p>
+            <code>--shadow-lg</code>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-xl);">
+            <p>Extra Large</p>
+            <code>--shadow-xl</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Border Radius Section -->
+      <section class="section">
+        <h2>Border Radius</h2>
+        <div class="radius-demo">
+          <div class="radius-card" style="border-radius: var(--radius-none);">
+            <span>None</span>
+            <code>--radius-none</code>
+          </div>
+          <div class="radius-card" style="border-radius: var(--radius-sm);">
+            <span>Small</span>
+            <code>--radius-sm</code>
+          </div>
+          <div class="radius-card" style="border-radius: var(--radius-base);">
+            <span>Base</span>
+            <code>--radius-base</code>
+          </div>
+          <div class="radius-card" style="border-radius: var(--radius-md);">
+            <span>Medium</span>
+            <code>--radius-md</code>
+          </div>
+          <div class="radius-card" style="border-radius: var(--radius-lg);">
+            <span>Large</span>
+            <code>--radius-lg</code>
+          </div>
+          <div class="radius-card" style="border-radius: var(--radius-full);">
+            <span>Full</span>
+            <code>--radius-full</code>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast notification for export -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+  </div>
+
+  <script src="tokens.js"></script>
+  <script src="solution.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,109 @@
+/* Button Component Styles - STARTER
+
+   Your task: Style the button component with variants, sizes, and states
+
+   Requirements:
+   - 5 variants: primary, secondary, outline, ghost, danger
+   - 3 sizes: sm, md, lg
+   - Loading state with spinner animation
+   - Disabled state
+   - Hover and active states
+   - Focus styles for accessibility
+*/
+
+/* TODO: Button Base Styles */
+.btn {
+  /* Add base button styles */
+}
+
+/* TODO: Button focus state (for accessibility) */
+.btn:focus {
+  outline: none;
+  /* Add focus ring */
+}
+
+/* TODO: Button disabled state */
+.btn:disabled {
+  /* Reduce opacity, change cursor */
+}
+
+/* TODO: Button Sizes */
+.btn--sm {
+  /* Small: smaller padding and font-size */
+}
+
+.btn--md {
+  /* Medium: default size */
+}
+
+.btn--lg {
+  /* Large: larger padding and font-size */
+}
+
+/* TODO: Button Variants */
+.btn--primary {
+  /* Primary: blue background, white text */
+}
+
+.btn--primary:hover:not(:disabled) {
+  /* Darker blue on hover */
+}
+
+.btn--secondary {
+  /* Secondary: gray background */
+}
+
+.btn--outline {
+  /* Outline: transparent bg, blue border and text */
+}
+
+.btn--ghost {
+  /* Ghost: transparent bg, no border */
+}
+
+.btn--danger {
+  /* Danger: red background */
+}
+
+/* TODO: Button Content */
+.btn__content {
+  /* Style for button text */
+}
+
+/* TODO: Button Icons */
+.btn__icon {
+  /* Style for icon containers */
+}
+
+/* TODO: Loading State */
+.btn--loading {
+  /* Make text invisible, show spinner */
+}
+
+.btn__spinner {
+  /* Position spinner in center */
+}
+
+.btn__spinner-icon {
+  /* Size and animation for spinner */
+}
+
+.btn__spinner-circle {
+  /* Spinner circle styles */
+}
+
+/* TODO: Spinner animation */
+@keyframes btn-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* TODO: Dark theme adjustments (optional) */
+[data-theme='dark'] .btn--outline {
+  /* Adjust colors for dark mode */
+}
+

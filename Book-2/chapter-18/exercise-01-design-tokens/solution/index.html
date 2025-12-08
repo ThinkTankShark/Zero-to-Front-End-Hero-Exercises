@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1: Design Tokens System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Design Tokens System</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </header>
+
+    <main class="main">
+      <!-- Color Palette Section -->
+      <section class="section">
+        <h2>Color Palette</h2>
+
+        <div class="token-group">
+          <h3>Brand Colors</h3>
+          <div class="color-grid">
+            <div class="color-item" style="background-color: var(--color-brand-50);">
+              <span>50</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-100);">
+              <span>100</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-200);">
+              <span>200</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-300);">
+              <span>300</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-400);">
+              <span>400</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-500);">
+              <span>500</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-600);">
+              <span>600</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-700);">
+              <span>700</span>
+            </div>
+            <div class="color-item" style="background-color: var(--color-brand-800);">
+              <span>800</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-group">
+          <h3>Semantic Colors</h3>
+          <div class="color-row">
+            <div class="color-card" style="background-color: var(--color-success);">
+              <span>Success</span>
+            </div>
+            <div class="color-card" style="background-color: var(--color-warning);">
+              <span>Warning</span>
+            </div>
+            <div class="color-card" style="background-color: var(--color-error);">
+              <span>Error</span>
+            </div>
+            <div class="color-card" style="background-color: var(--color-info);">
+              <span>Info</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spacing Section -->
+      <section class="section">
+        <h2>Spacing Scale</h2>
+        <div class="spacing-demo">
+          <div class="spacing-item" style="width: var(--space-1);">1</div>
+          <div class="spacing-item" style="width: var(--space-2);">2</div>
+          <div class="spacing-item" style="width: var(--space-3);">3</div>
+          <div class="spacing-item" style="width: var(--space-4);">4</div>
+          <div class="spacing-item" style="width: var(--space-6);">6</div>
+          <div class="spacing-item" style="width: var(--space-8);">8</div>
+          <div class="spacing-item" style="width: var(--space-12);">12</div>
+          <div class="spacing-item" style="width: var(--space-16);">16</div>
+          <div class="spacing-item" style="width: var(--space-24);">24</div>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section class="section">
+        <h2>Typography</h2>
+
+        <div class="token-group">
+          <h3>Font Families</h3>
+          <p style="font-family: var(--font-sans);">Sans Serif: The quick brown fox jumps over the lazy dog</p>
+          <p style="font-family: var(--font-serif);">Serif: The quick brown fox jumps over the lazy dog</p>
+          <p style="font-family: var(--font-mono);">Mono: The quick brown fox jumps over the lazy dog</p>
+        </div>
+
+        <div class="token-group">
+          <h3>Font Sizes</h3>
+          <p style="font-size: var(--text-xs);">Extra Small (xs)</p>
+          <p style="font-size: var(--text-sm);">Small (sm)</p>
+          <p style="font-size: var(--text-base);">Base</p>
+          <p style="font-size: var(--text-lg);">Large (lg)</p>
+          <p style="font-size: var(--text-xl);">Extra Large (xl)</p>
+          <p style="font-size: var(--text-2xl);">2XL</p>
+          <p style="font-size: var(--text-3xl);">3XL</p>
+          <p style="font-size: var(--text-4xl);">4XL</p>
+        </div>
+
+        <div class="token-group">
+          <h3>Font Weights</h3>
+          <p style="font-weight: var(--font-normal);">Normal (400)</p>
+          <p style="font-weight: var(--font-medium);">Medium (500)</p>
+          <p style="font-weight: var(--font-semibold);">Semibold (600)</p>
+          <p style="font-weight: var(--font-bold);">Bold (700)</p>
+        </div>
+      </section>
+
+      <!-- Shadows Section -->
+      <section class="section">
+        <h2>Shadows</h2>
+        <div class="shadow-demo">
+          <div class="shadow-card" style="box-shadow: var(--shadow-sm);">
+            <p>Small</p>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-base);">
+            <p>Base</p>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-md);">
+            <p>Medium</p>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-lg);">
+            <p>Large</p>
+          </div>
+          <div class="shadow-card" style="box-shadow: var(--shadow-xl);">
+            <p>Extra Large</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Border Radius Section -->
+      <section class="section">
+        <h2>Border Radius</h2>
+        <div class="radius-demo">
+          <div class="radius-card" style="border-radius: var(--radius-none);">None</div>
+          <div class="radius-card" style="border-radius: var(--radius-sm);">Small</div>
+          <div class="radius-card" style="border-radius: var(--radius-base);">Base</div>
+          <div class="radius-card" style="border-radius: var(--radius-md);">Medium</div>
+          <div class="radius-card" style="border-radius: var(--radius-lg);">Large</div>
+          <div class="radius-card" style="border-radius: var(--radius-full);">Full</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

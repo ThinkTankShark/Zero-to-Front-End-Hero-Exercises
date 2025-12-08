@@ -1,0 +1,122 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# Component Library Documentation
+
+Welcome to our component library! This Storybook contains comprehensive documentation for all our reusable React components.
+
+## 🎯 What's Inside
+
+This design system includes:
+
+- **Design Tokens** - Consistent colors, spacing, typography, and more
+- **Components** - Reusable, accessible UI components
+- **Patterns** - Best practices for composition and usage
+- **Examples** - Real-world use cases
+
+## 📚 Components
+
+### Button
+A flexible button component with multiple variants, sizes, and states.
+- 5 variants: primary, secondary, outline, ghost, danger
+- 3 sizes: sm, md, lg
+- Loading and disabled states
+- Icon support
+
+### Input
+A comprehensive input component for forms.
+- 3 variants: outline, filled, flushed
+- 3 sizes: sm, md, lg
+- Labels, helper text, and error messages
+- Full accessibility support
+
+### Card
+A compound component for card layouts.
+- 3 variants: elevated, outline, filled
+- Header, Body, and Footer subcomponents
+- Flexible padding options
+- Perfect for content organization
+
+## 🎨 Design Tokens
+
+All components use a consistent set of design tokens:
+
+- **Colors**: Brand, semantic, and neutral palettes
+- **Spacing**: 4px-based scale (0-24)
+- **Typography**: Font families, sizes, and weights
+- **Effects**: Shadows, border radius, transitions
+
+## ♿ Accessibility
+
+All components are built with accessibility in mind:
+
+- Proper ARIA attributes
+- Keyboard navigation support
+- Screen reader friendly
+- Color contrast compliance
+- Focus management
+
+## 🚀 Getting Started
+
+### Installation
+
+```bash
+npm install @your-org/component-library
+```
+
+### Usage
+
+```jsx
+import { Button, Input, Card } from '@your-org/component-library';
+
+function App() {
+  return (
+    <Card>
+      <Card.Header>
+        <h2>Welcome</h2>
+      </Card.Header>
+      <Card.Body>
+        <Input label="Email" type="email" />
+      </Card.Body>
+      <Card.Footer>
+        <Button variant="primary">Submit</Button>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+
+## 🔧 Development
+
+### Run Storybook Locally
+
+```bash
+npm run storybook
+```
+
+### Build Storybook
+
+```bash
+npm run build-storybook
+```
+
+## 📝 Contributing
+
+We welcome contributions! Please ensure:
+
+1. All components have tests
+2. Documentation is up to date
+3. Accessibility standards are met
+4. Design tokens are used consistently
+
+## 📖 Resources
+
+- [React Documentation](https://react.dev)
+- [Storybook Documentation](https://storybook.js.org)
+- [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+
+---
+
+**Happy building!** 🎉
+
