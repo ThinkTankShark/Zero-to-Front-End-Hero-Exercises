@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  max-width: 600px;
+}
+
+.info-card h2 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.info-card ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.info-card li {
+  padding: 0.5rem 0;
+}
+
+.comparison {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 150px;
+}
+
+.box.target {
+  background: rgba(76, 175, 80, 0.2);
+  border: 2px solid #4caf50;
+}
+
+.size {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.arrow {
+  font-size: 3rem;
+}
+

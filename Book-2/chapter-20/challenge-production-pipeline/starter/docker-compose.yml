@@ -1,0 +1,10 @@
+# TODO: Create docker-compose.yml
+#
+# This file should orchestrate:
+# 1. Frontend service (React)
+# 2. Backend service (Node.js)
+# 3. Database service (PostgreSQL)
+# 4. Cache service (Redis)
+#
+# See Exercise 3 for reference
+
