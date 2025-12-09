@@ -1,0 +1,12 @@
+# TODO: Use Node.js base image
+
+# TODO: Set working directory
+
+# TODO: Copy package files and install dependencies
+
+# TODO: Copy application code
+
+# TODO: Expose port
+
+# TODO: Start the application
+

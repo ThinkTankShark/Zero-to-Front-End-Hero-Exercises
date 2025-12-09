@@ -1,0 +1,40 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isImageFile() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    function isUnder5MB() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+
+    // Post images
+    match /posts/{postId}/{fileName} {
+      // Anyone can read
+      allow read: if true;
+
+      // Authenticated users can upload images
+      allow write: if isAuthenticated()
+        && isImageFile()
+        && isUnder5MB();
+
+      // Users can delete their own files
+      allow delete: if isAuthenticated();
+    }
+
+    // User avatars
+    match /avatars/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth.uid == userId
+        && isImageFile()
+        && isUnder5MB();
+    }
+  }
+}
+

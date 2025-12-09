@@ -1,0 +1,60 @@
+# AWS Budget Configuration
+AWSBudget:
+  BudgetName: "monthly-cloud-budget"
+  BudgetLimit:
+    Amount: 500
+    Unit: USD
+  TimeUnit: MONTHLY
+  BudgetType: COST
+  CostFilters: {}
+
+  Notifications:
+    - ComparisonOperator: GREATER_THAN
+      Threshold: 50
+      ThresholdType: PERCENTAGE
+      NotificationType: ACTUAL
+      Subscribers:
+        - SubscriptionType: EMAIL
+          Address: alerts@example.com
+
+    - ComparisonOperator: GREATER_THAN
+      Threshold: 80
+      ThresholdType: PERCENTAGE
+      NotificationType: ACTUAL
+      Subscribers:
+        - SubscriptionType: EMAIL
+          Address: alerts@example.com
+
+    - ComparisonOperator: GREATER_THAN
+      Threshold: 100
+      ThresholdType: PERCENTAGE
+      NotificationType: FORECASTED
+      Subscribers:
+        - SubscriptionType: EMAIL
+          Address: alerts@example.com
+
+---
+
+# GCP Budget Configuration
+GCPBudget:
+  displayName: "Monthly Cloud Budget"
+  budgetFilter:
+    projects:
+      - "projects/your-project-id"
+  amount:
+    specifiedAmount:
+      currencyCode: "USD"
+      units: "500"
+
+  thresholdRules:
+    - thresholdPercent: 0.5
+      spendBasis: CURRENT_SPEND
+    - thresholdPercent: 0.8
+      spendBasis: CURRENT_SPEND
+    - thresholdPercent: 1.0
+      spendBasis: FORECASTED_SPEND
+
+  notificationsRule:
+    pubsubTopic: "projects/your-project-id/topics/budget-alerts"
+    schemaVersion: "1.0"
+

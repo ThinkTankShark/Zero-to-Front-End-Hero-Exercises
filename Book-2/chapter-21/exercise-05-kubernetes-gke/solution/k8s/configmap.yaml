@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-app-config
+data:
+  LOG_LEVEL: "info"
+  MAX_REQUESTS_PER_MINUTE: "100"
+  CACHE_ENABLED: "true"
+  API_TIMEOUT: "30000"
+

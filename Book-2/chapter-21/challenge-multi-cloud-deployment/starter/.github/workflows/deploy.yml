@@ -1,0 +1,23 @@
+# TODO: Add GitHub Actions workflow
+#
+# Jobs to implement:
+# 1. test-frontend
+# 2. test-backend
+# 3. deploy-frontend (to AWS S3 + CloudFront)
+# 4. deploy-backend (to GCP Cloud Run)
+# 5. deploy-firebase (rules and functions)
+
+name: Deploy Multi-Cloud App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  # TODO: Add jobs here
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Add deployment jobs"
+

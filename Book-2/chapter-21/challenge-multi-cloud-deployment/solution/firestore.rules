@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isValidTask() {
+      let data = request.resource.data;
+      return data.title is string &&
+             data.title.size() > 0 &&
+             data.title.size() <= 200 &&
+             data.description is string &&
+             data.status in ['todo', 'in-progress', 'done'] &&
+             data.priority in ['low', 'medium', 'high'] &&
+             data.userId == request.auth.uid;
+    }
+
+    // Tasks collection
+    match /tasks/{taskId} {
+      // Users can only read their own tasks
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+
+      // Users can create tasks with their own userId
+      allow create: if isAuthenticated() &&
+                      isValidTask() &&
+                      request.resource.data.userId == request.auth.uid &&
+                      request.resource.data.createdAt == request.time;
+
+      // Users can only update their own tasks
+      allow update: if isAuthenticated() &&
+                      isOwner(resource.data.userId) &&
+                      request.resource.data.userId == resource.data.userId;
+
+      // Users can only delete their own tasks
+      allow delete: if isAuthenticated() && isOwner(resource.data.userId);
+    }
+
+    // User profiles (optional)
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+  }
+}
+

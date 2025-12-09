@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // TODO: Add security rules for file uploads
+    // - Allow authenticated users to upload
+    // - Limit file size and type
+
+    match /posts/{postId}/{fileName} {
+      allow read: if true; // Change this
+      allow write: if true; // Change this
+    }
+  }
+}
+

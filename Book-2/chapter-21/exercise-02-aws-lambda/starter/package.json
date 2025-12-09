@@ -1,0 +1,17 @@
+{
+  "name": "serverless-contact-api",
+  "version": "1.0.0",
+  "description": "Serverless contact form API with AWS Lambda",
+  "main": "lambda/index.js",
+  "scripts": {
+    "test": "jest",
+    "deploy": "./deploy.sh"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1500.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
+

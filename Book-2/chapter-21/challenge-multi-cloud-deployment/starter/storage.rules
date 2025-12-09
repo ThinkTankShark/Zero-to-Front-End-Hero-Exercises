@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // TODO: Implement storage rules
+    // Requirements:
+    // - Only authenticated users can upload
+    // - Files must be images
+    // - Max size 5MB
+
+    match /tasks/{taskId}/{fileName} {
+      allow read: if true; // CHANGE THIS
+      allow write: if true; // CHANGE THIS
+    }
+  }
+}
+

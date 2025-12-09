@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // TODO: Add security rules for posts collection
+    // - Allow read for authenticated users
+    // - Allow write only for post owner
+
+    match /posts/{postId} {
+      allow read: if true; // Change this
+      allow create: if true; // Change this
+      allow update, delete: if true; // Change this
+    }
+  }
+}
+

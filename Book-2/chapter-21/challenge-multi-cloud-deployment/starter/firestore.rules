@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // TODO: Implement security rules for tasks collection
+    // Requirements:
+    // - Users can only read their own tasks
+    // - Users can only create tasks with their own userId
+    // - Users can only update/delete their own tasks
+
+    match /tasks/{taskId} {
+      allow read: if true; // CHANGE THIS
+      allow create: if true; // CHANGE THIS
+      allow update: if true; // CHANGE THIS
+      allow delete: if true; // CHANGE THIS
+    }
+  }
+}
+
