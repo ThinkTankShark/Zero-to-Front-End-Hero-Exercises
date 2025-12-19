@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master - Test Your Knowledge</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen">
+      <div class="container">
+        <div class="card setup-card">
+          <h1 class="app-title">🎯 Quiz Master</h1>
+          <p class="subtitle">Test your knowledge and compete for high scores!</p>
+
+          <form id="setup-form" class="setup-form">
+
+            <!-- Player Name -->
+            <div class="form-group">
+              <label for="player-name">Your Name:</label>
+              <input
+                type="text"
+                id="player-name"
+                class="form-input"
+                placeholder="Enter your name"
+                maxlength="20"
+                required
+              >
+            </div>
+
+            <!-- Category Selection -->
+            <div class="form-group">
+              <label for="category">Category:</label>
+              <select id="category" class="form-input">
+                <option value="all">All Categories</option>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Science">Science</option>
+                <option value="History">History</option>
+              </select>
+            </div>
+
+            <!-- Difficulty Selection -->
+            <div class="form-group">
+              <label for="difficulty">Difficulty:</label>
+              <select id="difficulty" class="form-input">
+                <option value="Easy">Easy</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+
+            <!-- Number of Questions -->
+            <div class="form-group">
+              <label for="question-count">Number of Questions:</label>
+              <select id="question-count" class="form-input">
+                <option value="5">5 Questions</option>
+                <option value="10" selected>10 Questions</option>
+                <option value="15">15 Questions</option>
+                <option value="20">20 Questions</option>
+              </select>
+            </div>
+
+            <!-- Timer Toggle -->
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="timer-enabled" checked>
+                <span>Enable Timer (30 seconds per question)</span>
+              </label>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+              <button type="submit" class="btn btn--primary">Start Quiz</button>
+              <button type="button" id="view-scores-btn" class="btn btn--secondary">View High Scores</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen" style="display: none;">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="quiz-header">
+          <div class="quiz-info">
+            <div id="question-counter" class="question-counter">Question 1 of 10</div>
+            <div id="score-display" class="score-display">Score: 0</div>
+          </div>
+          <div class="timer-container" id="timer-container">
+            <div class="timer-label">Time:</div>
+            <div id="timer" class="timer">30</div>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="card question-card">
+          <div id="question-text" class="question-text">
+            <!-- Question will be inserted here -->
+          </div>
+
+          <div id="answers-container" class="answers-container">
+            <!-- Answer options will be inserted here -->
+          </div>
+
+          <div id="feedback-message" class="feedback-message" style="display: none;">
+            <!-- Feedback will be shown here -->
+          </div>
+
+          <div class="question-actions">
+            <button id="submit-answer-btn" class="btn btn--primary" disabled>Submit Answer</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen" style="display: none;">
+      <div class="container">
+        <div class="card results-card">
+
+          <div class="results-header">
+            <h2>Quiz Complete!</h2>
+          </div>
+
+          <div class="results-summary">
+            <div class="score-circle">
+              <div id="final-score" class="final-score">0</div>
+              <div class="score-label">points</div>
+            </div>
+
+            <div id="performance-rating" class="performance-rating">
+              <!-- Rating will be inserted -->
+            </div>
+
+            <div class="results-stats">
+              <div class="stat-item">
+                <div class="stat-icon correct">✓</div>
+                <div class="stat-info">
+                  <div class="stat-label">Correct</div>
+                  <div id="correct-count" class="stat-value">0</div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon incorrect">✗</div>
+                <div class="stat-info">
+                  <div class="stat-label">Incorrect</div>
+                  <div id="incorrect-count" class="stat-value">0</div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon time">⏱</div>
+                <div class="stat-info">
+                  <div class="stat-label">Time</div>
+                  <div id="time-taken" class="stat-value">0:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-review">
+            <h3>Review Your Answers</h3>
+            <div id="answers-review" class="answers-review">
+              <!-- Answer review will be inserted -->
+            </div>
+          </div>
+
+          <div class="results-actions">
+            <button id="retake-quiz-btn" class="btn btn--primary">Retake Quiz</button>
+            <button id="new-quiz-btn" class="btn btn--secondary">New Quiz</button>
+            <button id="show-scores-btn" class="btn btn--outline">High Scores</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- High Scores Screen -->
+    <div id="scores-screen" class="screen" style="display: none;">
+      <div class="container">
+        <div class="card scores-card">
+
+          <div class="scores-header">
+            <h2>🏆 High Scores</h2>
+            <button id="close-scores-btn" class="btn-close">×</button>
+          </div>
+
+          <div class="scores-filters">
+            <label>
+              Filter by Difficulty:
+              <select id="difficulty-filter" class="form-input">
+                <option value="all">All</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="scores-table" class="scores-table">
+            <!-- High scores table will be inserted -->
+          </div>
+
+          <div class="scores-actions">
+            <button id="clear-scores-btn" class="btn btn--danger">Clear All Scores</button>
+            <button id="back-to-setup-btn" class="btn btn--secondary">Back to Setup</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/questions.js"></script>
+  <script src="js/Timer.js"></script>
+  <script src="js/QuizManager.js"></script>
+  <script src="js/HighScores.js"></script>
+  <script src="js/UI.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

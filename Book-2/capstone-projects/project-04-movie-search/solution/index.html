@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search - Find Your Next Favorite Film</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">🎬 Movie Search</h1>
+        <nav class="header__nav">
+          <button id="home-btn" class="nav-btn active">Search</button>
+          <button id="watchlist-btn" class="nav-btn">
+            Watchlist <span id="watchlist-count" class="badge">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search for movies..."
+            aria-label="Search movies"
+          >
+          <button id="search-btn" class="btn btn--primary">🔍 Search</button>
+          <button id="clear-btn" class="btn btn--secondary" style="display: none;">Clear</button>
+        </div>
+        <p class="search-hint">Enter at least 3 characters to search</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+
+        <!-- Loading State -->
+        <div id="loading" class="loading" style="display: none;">
+          <div class="spinner"></div>
+          <p>Searching for movies...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <!-- Search View -->
+        <div id="search-view" class="view">
+          <!-- Welcome State -->
+          <div id="welcome-state" class="welcome-state">
+            <div class="welcome-icon">🎬</div>
+            <h2>Welcome to Movie Search</h2>
+            <p>Search for your favorite movies and add them to your watchlist</p>
+            <div class="welcome-examples">
+              <p>Try searching for:</p>
+              <div class="example-searches">
+                <button class="example-btn" onclick="quickSearch('Inception')">Inception</button>
+                <button class="example-btn" onclick="quickSearch('The Matrix')">The Matrix</button>
+                <button class="example-btn" onclick="quickSearch('Interstellar')">Interstellar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Container -->
+          <div id="results-section" class="results-section" style="display: none;">
+            <div class="results-header">
+              <h2 id="results-title">Search Results</h2>
+              <p id="results-info" class="results-info"></p>
+            </div>
+            <div id="results-container" class="results-grid">
+              <!-- Movie cards will be inserted here -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="pagination"></div>
+          </div>
+        </div>
+
+        <!-- Watchlist View -->
+        <div id="watchlist-view" class="view" style="display: none;">
+          <div class="watchlist-header">
+            <h2>My Watchlist</h2>
+            <button id="clear-watchlist-btn" class="btn btn--danger">Clear All</button>
+          </div>
+
+          <!-- Empty Watchlist -->
+          <div id="empty-watchlist" class="empty-state">
+            <div class="empty-icon">⭐</div>
+            <h3>Your watchlist is empty</h3>
+            <p>Search for movies and add them to your watchlist</p>
+            <button onclick="showSearchView()" class="btn btn--primary">Start Searching</button>
+          </div>
+
+          <!-- Watchlist Grid -->
+          <div id="watchlist-container" class="results-grid" style="display: none;">
+            <!-- Watchlist movies will be inserted here -->
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="modal" class="modal" style="display: none;">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
+        <div id="modal-body" class="modal-body">
+          <!-- Movie details will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Movie Search | Powered by OMDb API</p>
+        <p class="footer-note">Get your own API key at <a href="http://www.omdbapi.com/" target="_blank">OMDb API</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" style="display: none;"></div>
+
+  <!-- JavaScript Files -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/watchlist.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

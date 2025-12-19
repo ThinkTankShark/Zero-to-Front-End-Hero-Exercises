@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard - Live Weather Updates</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">🌤️ Weather Dashboard</h1>
+        <div class="header__controls">
+          <button id="unit-toggle" class="btn btn--secondary" aria-label="Toggle temperature unit">
+            °F / °C
+          </button>
+          <button id="favorites-toggle" class="btn btn--secondary" aria-label="Toggle favorites">
+            ⭐ Favorites
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="city-input"
+            class="search-input"
+            placeholder="Enter city name..."
+            aria-label="City name"
+          >
+          <button id="search-btn" class="btn btn--primary">
+            🔍 Search
+          </button>
+          <button id="location-btn" class="btn btn--outline" aria-label="Use my location">
+            📍 My Location
+          </button>
+        </div>
+
+        <!-- Recent Searches -->
+        <div id="recent-searches" class="recent-searches" style="display: none;">
+          <p class="recent-label">Recent:</p>
+          <div id="recent-list" class="recent-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorites Sidebar -->
+    <aside id="favorites-sidebar" class="favorites-sidebar">
+      <div class="favorites-header">
+        <h2>Favorite Cities</h2>
+        <button id="close-favorites" class="btn-close" aria-label="Close favorites">&times;</button>
+      </div>
+      <div id="favorites-list" class="favorites-list">
+        <p class="empty-message">No favorites yet. Add cities to quickly access them!</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main container">
+
+      <!-- Loading State -->
+      <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading weather data...</p>
+      </div>
+
+      <!-- Error Message -->
+      <div id="error-message" class="error-message" style="display: none;">
+        <span class="error-icon">⚠️</span>
+        <p id="error-text"></p>
+        <button id="retry-btn" class="btn btn--secondary">Try Again</button>
+      </div>
+
+      <!-- Welcome State -->
+      <div id="welcome-state" class="welcome-state">
+        <div class="welcome-icon">🌍</div>
+        <h2>Welcome to Weather Dashboard</h2>
+        <p>Search for a city or use your location to get started</p>
+      </div>
+
+      <!-- Weather Display -->
+      <div id="weather-display" class="weather-display" style="display: none;">
+
+        <!-- Current Weather -->
+        <section class="current-weather">
+          <div class="current-weather__header">
+            <div class="location-info">
+              <h2 id="city-name" class="city-name">City Name</h2>
+              <p id="current-date" class="current-date">Date</p>
+            </div>
+            <button id="add-favorite-btn" class="btn-favorite" aria-label="Add to favorites">
+              ⭐
+            </button>
+          </div>
+
+          <div class="current-weather__main">
+            <div class="temperature-display">
+              <img id="weather-icon" class="weather-icon" src="" alt="Weather icon">
+              <div class="temp-info">
+                <p id="temperature" class="temperature" data-temp="">--°</p>
+                <p id="feels-like" class="feels-like">Feels like <span data-temp="">--°</span></p>
+              </div>
+            </div>
+            <div class="condition-info">
+              <p id="condition" class="condition">--</p>
+              <p id="description" class="description">--</p>
+            </div>
+          </div>
+
+          <div class="current-weather__details">
+            <div class="detail-card">
+              <span class="detail-icon">💧</span>
+              <div>
+                <p class="detail-label">Humidity</p>
+                <p id="humidity" class="detail-value">--%</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon">💨</span>
+              <div>
+                <p class="detail-label">Wind Speed</p>
+                <p id="wind-speed" class="detail-value">-- km/h</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon">🌡️</span>
+              <div>
+                <p class="detail-label">Pressure</p>
+                <p id="pressure" class="detail-value">-- hPa</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon">👁️</span>
+              <div>
+                <p class="detail-label">Visibility</p>
+                <p id="visibility" class="detail-value">-- km</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon">🌅</span>
+              <div>
+                <p class="detail-label">Sunrise</p>
+                <p id="sunrise" class="detail-value">--:--</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon">🌇</span>
+              <div>
+                <p class="detail-label">Sunset</p>
+                <p id="sunset" class="detail-value">--:--</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5-Day Forecast -->
+        <section class="forecast-section">
+          <h3 class="section-title">5-Day Forecast</h3>
+          <div id="forecast-container" class="forecast-container">
+            <!-- Forecast cards will be inserted here -->
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Weather Dashboard | Powered by OpenWeatherMap API</p>
+        <p class="footer-note">Enter your own API key in config.js</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/config.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
