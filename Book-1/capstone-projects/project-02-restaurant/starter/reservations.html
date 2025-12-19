@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Restaurant Name] - Reservations</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Restaurant Name</a>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li class="nav__item"><a href="reservations.html" class="nav__link nav__link--active">Reservations</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Make a Reservation</h1>
+        <p>Book your table for an unforgettable dining experience</p>
+      </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section class="section reservation-section">
+      <div class="container">
+        <div class="reservation-content">
+
+          <!-- Form -->
+          <form class="reservation-form" action="#" method="post">
+            <h2>Reservation Details</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your.email@example.com"
+                  class="form-input"
+                >
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="(555) 555-5555"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="guests">Number of Guests <span class="required">*</span></label>
+                <select id="guests" name="guests" required class="form-input">
+                  <option value="">Select number of guests</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                  <option value="5">5 People</option>
+                  <option value="6">6 People</option>
+                  <option value="7">7 People</option>
+                  <option value="8">8 People</option>
+                  <option value="more">More than 8 (call us)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date <span class="required">*</span></label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                  min="2025-01-01"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="time">Time <span class="required">*</span></label>
+                <input
+                  type="time"
+                  id="time"
+                  name="time"
+                  required
+                  min="17:00"
+                  max="22:00"
+                  class="form-input"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="special-requests">Special Requests or Dietary Restrictions</label>
+              <textarea
+                id="special-requests"
+                name="special-requests"
+                rows="4"
+                placeholder="Any special requests, allergies, or dietary needs?"
+                class="form-input"
+              ></textarea>
+            </div>
+
+            <div class="form-group form-group--checkbox">
+              <input
+                type="checkbox"
+                id="occasion"
+                name="occasion"
+                class="form-checkbox"
+              >
+              <label for="occasion">This is for a special occasion</label>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--large">
+              Reserve Table
+            </button>
+
+            <p class="form-note">
+              <small>
+                * Required fields. You will receive a confirmation email shortly after submitting.
+                For parties larger than 8, please call us at (555) 555-1234.
+              </small>
+            </p>
+          </form>
+
+          <!-- Reservation Info -->
+          <div class="reservation-info">
+            <h3>Reservation Information</h3>
+
+            <div class="info-card">
+              <h4>📞 Need Help?</h4>
+              <p>Call us at <a href="tel:+15555551234">(555) 555-1234</a></p>
+            </div>
+
+            <div class="info-card">
+              <h4>⏰ Hours</h4>
+              <ul>
+                <li>Monday - Thursday: 5:00 PM - 10:00 PM</li>
+                <li>Friday - Saturday: 5:00 PM - 11:00 PM</li>
+                <li>Sunday: 4:00 PM - 9:00 PM</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h4>ℹ️ Cancellation Policy</h4>
+              <p>
+                Please notify us at least 24 hours in advance if you need to
+                cancel or modify your reservation.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>👔 Dress Code</h4>
+              <p>Smart casual attire recommended</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>About Us</h3>
+          <p>Serving exceptional cuisine since [Year]</p>
+        </div>
+        <div class="footer__section">
+          <h3>Hours</h3>
+          <p>Mon-Thu: 5PM-10PM<br>Fri-Sat: 5PM-11PM<br>Sun: 4PM-9PM</p>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>123 Main Street<br>Phone: (555) 555-1234</p>
+        </div>
+        <div class="footer__section">
+          <h3>Follow Us</h3>
+          <div class="footer__social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">&copy; 2025 [Restaurant Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

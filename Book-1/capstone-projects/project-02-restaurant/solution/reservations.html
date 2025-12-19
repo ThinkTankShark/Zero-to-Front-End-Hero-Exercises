@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations - Bella Trattoria</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">Bella Trattoria</a>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li class="nav__item"><a href="reservations.html" class="nav__link nav__link--active">Reservations</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--reservations">
+      <div class="container">
+        <h1>Make a Reservation</h1>
+        <p>Reserve your table for an unforgettable dining experience</p>
+      </div>
+    </section>
+
+    <section class="section reservation-section">
+      <div class="container">
+        <div class="reservation-content">
+          <form class="reservation-form" action="#" method="post">
+            <h2>Reservation Details</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com" autocomplete="email" class="form-input">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555" autocomplete="tel" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="guests">Number of Guests <span class="required">*</span></label>
+                <select id="guests" name="guests" required class="form-input">
+                  <option value="">Select number of guests</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                  <option value="5">5 People</option>
+                  <option value="6">6 People</option>
+                  <option value="7">7 People</option>
+                  <option value="8">8 People</option>
+                  <option value="more">More than 8 (we'll call you)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date <span class="required">*</span></label>
+                <input type="date" id="date" name="date" required min="2025-01-01" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="time">Time <span class="required">*</span></label>
+                <select id="time" name="time" required class="form-input">
+                  <option value="">Select time</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="special-requests">Special Requests or Dietary Restrictions</label>
+              <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any allergies, dietary needs, or special occasions?" class="form-input"></textarea>
+            </div>
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="occasion" name="occasion" class="form-checkbox">
+              <label for="occasion">This is for a special occasion (anniversary, birthday, etc.)</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large">Reserve Table</button>
+            <p class="form-note"><small>* Required fields. You will receive a confirmation email shortly after submitting. For parties larger than 8, please call us at (555) 555-1234.</small></p>
+          </form>
+
+          <div class="reservation-info">
+            <h3>Reservation Information</h3>
+            <div class="info-card">
+              <h4><i class="fas fa-phone"></i> Need Help?</h4>
+              <p>Call us at <a href="tel:+15555551234">(555) 555-1234</a></p>
+              <p>Monday-Saturday: 11:00 AM - 10:00 PM</p>
+            </div>
+            <div class="info-card">
+              <h4><i class="fas fa-clock"></i> Hours</h4>
+              <ul>
+                <li>Monday - Thursday: 5:00 PM - 10:00 PM</li>
+                <li>Friday - Saturday: 5:00 PM - 11:00 PM</li>
+                <li>Sunday: 4:00 PM - 9:00 PM</li>
+              </ul>
+              <p><strong>Lunch Service (Fri-Sun):</strong><br>12:00 PM - 3:00 PM</p>
+            </div>
+            <div class="info-card">
+              <h4><i class="fas fa-info-circle"></i> Cancellation Policy</h4>
+              <p>Please notify us at least 24 hours in advance if you need to cancel or modify your reservation.</p>
+            </div>
+            <div class="info-card">
+              <h4><i class="fas fa-user-tie"></i> Dress Code</h4>
+              <p>Smart casual attire recommended. We kindly request no athletic wear or beach attire.</p>
+            </div>
+            <div class="info-card">
+              <h4><i class="fas fa-users"></i> Private Events</h4>
+              <p>Planning a special event? We have a private dining room that seats up to 30 guests. <a href="contact.html">Contact us</a> for details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__title">Bella Trattoria</h3>
+          <p class="footer__text">Authentic Italian cuisine crafted with passion and tradition since 2010.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Hours</h3>
+          <ul class="footer__hours">
+            <li>Mon-Thu: 5PM-10PM</li>
+            <li>Fri-Sat: 5PM-11PM</li>
+            <li>Sunday: 4PM-9PM</li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Contact</h3>
+          <address class="footer__address">
+            123 Main Street<br>
+            City, State 12345<br>
+            <a href="tel:+15555551234">(555) 555-1234</a><br>
+            <a href="mailto:info@bellatrattoria.com">info@bellatrattoria.com</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Bella Trattoria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

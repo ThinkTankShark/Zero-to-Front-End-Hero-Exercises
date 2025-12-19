@@ -196,6 +196,34 @@ chapter-##/
 
 ---
 
+## 🎯 Capstone Projects
+
+**Ready to build something complete?**
+
+After completing the chapter exercises, challenge yourself with a **capstone project** that demonstrates mastery of all Volume 1 concepts.
+
+📁 **Location:** `capstone-projects/`
+
+**Available Projects:**
+1. **Personal Portfolio** ⭐⭐ - Professional portfolio website (20-30 hours)
+2. **Restaurant Website** ⭐⭐⭐ - Complete multi-page restaurant site (30-40 hours)
+3. **Course Landing Page** ⭐⭐⭐ - Marketing landing page (35-45 hours)
+4. **Component Library** ⭐⭐⭐⭐ - Documentation site for your own CSS components (40-50 hours)
+
+Each capstone includes:
+- Complete requirements and specifications
+- Design guidelines and wireframes
+- Starter template (optional to use)
+- Reference solution
+- Evaluation rubric
+- Deployment guidance
+
+**Choose ONE project that excites you and build it from scratch!**
+
+See `capstone-projects/README.md` for full details.
+
+---
+
 ## 🏆 Volume 1 Completion
 
 After finishing all Volume 1 exercises:
@@ -204,6 +232,7 @@ After finishing all Volume 1 exercises:
 - ✅ Responsive design skills
 - ✅ Accessibility knowledge
 - ✅ Git version control
+- ✅ **Portfolio-quality capstone project**
 - ✅ **Ready for Volume 2: JavaScript!**
 
 ---

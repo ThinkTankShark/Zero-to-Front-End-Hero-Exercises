@@ -234,6 +234,33 @@ chapter-##/
 
 ---
 
+## 🎯 Capstone Projects
+
+**Ready to build interactive applications?**
+
+After completing the chapter exercises, take on a **capstone project** that showcases your JavaScript mastery.
+
+📁 **Location:** `capstone-projects/`
+
+**Available Projects:**
+1. **Task Manager App** ⭐⭐ - Full-featured todo app with localStorage (30-40 hours)
+2. **Weather Dashboard** ⭐⭐⭐ - API-powered weather app (35-45 hours)
+3. **Quiz Application** ⭐⭐⭐ - Interactive quiz game with scoring (40-50 hours)
+4. **Movie Search App** ⭐⭐⭐⭐ - Advanced API integration with TMDB (50-60 hours)
+
+Each capstone includes:
+- Detailed feature requirements
+- Technical specifications
+- Code organization guidelines
+- Testing checklist
+- Bonus features for extra challenge
+
+**Build with vanilla JavaScript only - no frameworks!**
+
+See `capstone-projects/README.md` for full details.
+
+---
+
 ## 🏆 Volume 2 Completion
 
 After finishing all Volume 2 exercises:
@@ -241,6 +268,7 @@ After finishing all Volume 2 exercises:
 - ✅ DOM manipulation mastery
 - ✅ Async programming skills
 - ✅ API integration knowledge
+- ✅ **Complete JavaScript application in portfolio**
 - ✅ **Ready for Volume 3: Modern Frameworks!**
 
 ---

@@ -1,0 +1,505 @@
+/* ================================
+   Task Manager App - Starter CSS
+   ================================ */
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --color-border: #e5e7eb;
+  --color-bg: #f9fafb;
+  --color-bg-light: #ffffff;
+
+  /* Priority Colors */
+  --priority-low: #10b981;
+  --priority-medium: #f59e0b;
+  --priority-high: #ef4444;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+/* ================================
+   Reset & Base Styles
+   ================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ================================
+   Container
+   ================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ================================
+   Header
+   ================================ */
+.header {
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.header__title {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.header__stats {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat__label {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.stat__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ================================
+   Main Content
+   ================================ */
+.main {
+  padding-bottom: var(--spacing-xl);
+}
+
+/* ================================
+   Sections
+   ================================ */
+section {
+  margin-bottom: var(--spacing-xl);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+/* ================================
+   Add Task Section
+   ================================ */
+.add-task-section {
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ================================
+   Forms
+   ================================ */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.form-input {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ================================
+   Buttons
+   ================================ */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  transition: color var(--transition);
+}
+
+.btn-icon:hover {
+  color: var(--color-primary);
+}
+
+.btn-delete:hover {
+  color: var(--color-danger);
+}
+
+/* ================================
+   Controls (Filters, Sort, Search)
+   ================================ */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.filters {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.filter-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  background-color: white;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn--active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.search .form-input {
+  width: 100%;
+}
+
+/* ================================
+   Tasks Section
+   ================================ */
+.tasks-section {
+  /* Add your styles here */
+}
+
+/* ================================
+   Empty State
+   ================================ */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  display: none;
+}
+
+.empty-state__icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state__title {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.empty-state__message {
+  color: var(--color-text-light);
+}
+
+/* ================================
+   Task Cards
+   TODO: Complete the task card styles
+   ================================ */
+.tasks-list {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.task-card {
+  /* Add your card styles here */
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid transparent;
+  transition: all var(--transition);
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Priority Indicators */
+.task-card.priority-low {
+  border-left-color: var(--priority-low);
+}
+
+.task-card.priority-medium {
+  border-left-color: var(--priority-medium);
+}
+
+.task-card.priority-high {
+  border-left-color: var(--priority-high);
+}
+
+/* Completed Task */
+.task-card--completed {
+  opacity: 0.6;
+}
+
+.task-card--completed .task-title {
+  text-decoration: line-through;
+}
+
+/* Task Card Header */
+.task-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.task-priority {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.priority-low .task-priority {
+  background-color: var(--priority-low);
+  color: white;
+}
+
+.priority-medium .task-priority {
+  background-color: var(--priority-medium);
+  color: white;
+}
+
+.priority-high .task-priority {
+  background-color: var(--priority-high);
+  color: white;
+}
+
+/* Task Description */
+.task-description {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+/* Task Meta */
+.task-card__meta {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+/* Task Actions */
+.task-card__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-sm);
+}
+
+/* ================================
+   Modal (for editing tasks)
+   TODO: Add modal styles
+   ================================ */
+.modal {
+  /* Add modal styles here */
+}
+
+/* ================================
+   Toast Notifications
+   ================================ */
+.toast {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-text);
+  color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toast--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast--success {
+  background-color: var(--color-success);
+}
+
+.toast--error {
+  background-color: var(--color-danger);
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    justify-content: center;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
+

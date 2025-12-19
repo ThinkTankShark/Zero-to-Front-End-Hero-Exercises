@@ -259,6 +259,34 @@ Each major project is designed for your portfolio:
 
 ---
 
+## 🎯 Capstone Projects
+
+**Ready to build production-ready apps?**
+
+After mastering modern frameworks and tools, build a **capstone project** that demonstrates professional-level skills.
+
+📁 **Location:** `capstone-projects/`
+
+**Available Projects:**
+1. **E-Commerce Store (React)** ⭐⭐⭐ - Full shopping cart and checkout (60-80 hours)
+2. **Social Dashboard (Vue)** ⭐⭐⭐ - Analytics dashboard with data viz (60-80 hours)
+3. **Project Management Tool** ⭐⭐⭐⭐ - Trello/Asana clone with drag-and-drop (80-100 hours)
+4. **Design System & Component Library** ⭐⭐⭐⭐ - Complete component library with Storybook (80-100 hours)
+
+Each capstone includes:
+- Complete architecture plan
+- State management requirements
+- Testing requirements (70%+ coverage)
+- Performance optimization checklist
+- Deployment instructions
+- CI/CD pipeline setup
+
+**These projects are designed for your professional portfolio!**
+
+See `capstone-projects/README.md` for full details.
+
+---
+
 ## 🏆 Volume 3 Completion
 
 After finishing all Volume 3 exercises:
@@ -267,6 +295,7 @@ After finishing all Volume 3 exercises:
 - ✅ CSS architecture at scale
 - ✅ Testing and quality assurance
 - ✅ Performance optimization skills
+- ✅ **Deployed capstone project with CI/CD**
 - ✅ **Ready for Volume 4: Full-Stack Professional!**
 
 ---

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Restaurant Name] - Contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Restaurant Name</a>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" action="#" method="post">
+
+              <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your.email@example.com"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(555) 555-5555"
+                  class="form-input"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <select id="subject" name="subject" required class="form-input">
+                  <option value="">Select a subject</option>
+                  <option value="reservation">Reservation Inquiry</option>
+                  <option value="private-event">Private Events</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="catering">Catering Services</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Your message..."
+                  class="form-input"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--large">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <div class="contact-detail">
+              <h3>📍 Address</h3>
+              <p>
+                123 Main Street<br>
+                City, State 12345<br>
+                United States
+              </p>
+            </div>
+
+            <div class="contact-detail">
+              <h3>📞 Phone</h3>
+              <p>
+                <a href="tel:+15555551234">(555) 555-1234</a>
+              </p>
+            </div>
+
+            <div class="contact-detail">
+              <h3>📧 Email</h3>
+              <p>
+                <a href="mailto:info@restaurant.com">info@restaurant.com</a>
+              </p>
+            </div>
+
+            <div class="contact-detail">
+              <h3>⏰ Hours</h3>
+              <ul class="hours-list">
+                <li>
+                  <span>Monday - Thursday</span>
+                  <span>5:00 PM - 10:00 PM</span>
+                </li>
+                <li>
+                  <span>Friday - Saturday</span>
+                  <span>5:00 PM - 11:00 PM</span>
+                </li>
+                <li>
+                  <span>Sunday</span>
+                  <span>4:00 PM - 9:00 PM</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-detail">
+              <h3>🌐 Follow Us</h3>
+              <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <h2 class="section__title">Find Us</h2>
+      </div>
+
+      <!-- TODO: Add Google Maps embed here -->
+      <!-- See hints.md for implementation details -->
+
+      <div class="map-container">
+        <!-- Placeholder for map -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Restaurant location map"
+        ></iframe>
+      </div>
+
+      <div class="container">
+        <div class="directions-info">
+          <h3>Directions & Parking</h3>
+          <p>
+            We're located in the heart of downtown, easily accessible by car or public transit.
+            Street parking is available, and there's a parking garage one block away.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>About Us</h3>
+          <p>Serving exceptional cuisine since [Year]</p>
+        </div>
+        <div class="footer__section">
+          <h3>Hours</h3>
+          <p>Mon-Thu: 5PM-10PM<br>Fri-Sat: 5PM-11PM<br>Sun: 4PM-9PM</p>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>123 Main Street<br>Phone: (555) 555-1234</p>
+        </div>
+        <div class="footer__section">
+          <h3>Follow Us</h3>
+          <div class="footer__social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">&copy; 2025 [Restaurant Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Bella Trattoria</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">Bella Trattoria</a>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+          <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--gallery">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>A glimpse into our culinary world</p>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <div class="container">
+        <div class="gallery-grid">
+          <a href="#img1" class="gallery-item">
+            <img src="images/gallery/pasta-carbonara.jpg" alt="Fresh spaghetti carbonara" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Spaghetti Carbonara</span>
+            </div>
+          </a>
+          <a href="#img2" class="gallery-item">
+            <img src="images/gallery/interior-main.jpg" alt="Main dining room" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Our Dining Room</span>
+            </div>
+          </a>
+          <a href="#img3" class="gallery-item">
+            <img src="images/gallery/osso-buco.jpg" alt="Osso buco dish" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Osso Buco</span>
+            </div>
+          </a>
+          <a href="#img4" class="gallery-item">
+            <img src="images/gallery/wine-cellar.jpg" alt="Wine cellar" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Our Wine Cellar</span>
+            </div>
+          </a>
+          <a href="#img5" class="gallery-item">
+            <img src="images/gallery/tiramisu.jpg" alt="Homemade tiramisu" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Tiramisù</span>
+            </div>
+          </a>
+          <a href="#img6" class="gallery-item">
+            <img src="images/gallery/chef-cooking.jpg" alt="Chef preparing pasta" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Fresh Pasta Making</span>
+            </div>
+          </a>
+          <a href="#img7" class="gallery-item">
+            <img src="images/gallery/antipasto.jpg" alt="Antipasto platter" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Antipasto Misto</span>
+            </div>
+          </a>
+          <a href="#img8" class="gallery-item">
+            <img src="images/gallery/private-dining.jpg" alt="Private dining room" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Private Dining</span>
+            </div>
+          </a>
+          <a href="#img9" class="gallery-item">
+            <img src="images/gallery/risotto.jpg" alt="Mushroom risotto" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Risotto ai Funghi</span>
+            </div>
+          </a>
+          <a href="#img10" class="gallery-item">
+            <img src="images/gallery/bar-area.jpg" alt="Bar and lounge area" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Bar & Lounge</span>
+            </div>
+          </a>
+          <a href="#img11" class="gallery-item">
+            <img src="images/gallery/branzino.jpg" alt="Whole roasted fish" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Branzino al Forno</span>
+            </div>
+          </a>
+          <a href="#img12" class="gallery-item">
+            <img src="images/gallery/outdoor-seating.jpg" alt="Outdoor patio seating" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">Outdoor Patio</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modals -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/pasta-carbonara.jpg" alt="Fresh spaghetti carbonara">
+      <p class="lightbox__caption">Spaghetti Carbonara - Classic Roman pasta with guanciale, eggs, and Pecorino Romano</p>
+    </div>
+  </div>
+
+  <div id="img2" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/interior-main.jpg" alt="Main dining room">
+      <p class="lightbox__caption">Our elegantly designed main dining room with Italian-inspired décor</p>
+    </div>
+  </div>
+
+  <div id="img3" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/osso-buco.jpg" alt="Osso buco dish">
+      <p class="lightbox__caption">Osso Buco alla Milanese - Slow-braised veal shanks served with saffron risotto</p>
+    </div>
+  </div>
+
+  <div id="img4" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/wine-cellar.jpg" alt="Wine cellar">
+      <p class="lightbox__caption">Our curated wine cellar featuring selections from Italy's finest regions</p>
+    </div>
+  </div>
+
+  <div id="img5" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/tiramisu.jpg" alt="Homemade tiramisu">
+      <p class="lightbox__caption">Tiramisù - House-made with espresso-soaked ladyfingers and mascarpone</p>
+    </div>
+  </div>
+
+  <div id="img6" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/chef-cooking.jpg" alt="Chef preparing pasta">
+      <p class="lightbox__caption">Our chefs prepare fresh pasta daily using traditional techniques</p>
+    </div>
+  </div>
+
+  <div id="img7" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/antipasto.jpg" alt="Antipasto platter">
+      <p class="lightbox__caption">Antipasto Misto - Assorted Italian cold cuts, cheeses, and marinated vegetables</p>
+    </div>
+  </div>
+
+  <div id="img8" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/private-dining.jpg" alt="Private dining room">
+      <p class="lightbox__caption">Our intimate private dining room, perfect for special events</p>
+    </div>
+  </div>
+
+  <div id="img9" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/risotto.jpg" alt="Mushroom risotto">
+      <p class="lightbox__caption">Risotto ai Funghi - Creamy Arborio rice with porcini mushrooms</p>
+    </div>
+  </div>
+
+  <div id="img10" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/bar-area.jpg" alt="Bar and lounge area">
+      <p class="lightbox__caption">Enjoy aperitivos in our stylish bar and lounge area</p>
+    </div>
+  </div>
+
+  <div id="img11" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/branzino.jpg" alt="Whole roasted fish">
+      <p class="lightbox__caption">Branzino al Forno - Whole roasted Mediterranean sea bass</p>
+    </div>
+  </div>
+
+  <div id="img12" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/outdoor-seating.jpg" alt="Outdoor patio seating">
+      <p class="lightbox__caption">Al fresco dining on our charming outdoor patio</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__title">Bella Trattoria</h3>
+          <p class="footer__text">Authentic Italian cuisine crafted with passion and tradition since 2010.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Hours</h3>
+          <ul class="footer__hours">
+            <li>Mon-Thu: 5PM-10PM</li>
+            <li>Fri-Sat: 5PM-11PM</li>
+            <li>Sunday: 4PM-9PM</li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Contact</h3>
+          <address class="footer__address">
+            123 Main Street<br>
+            City, State 12345<br>
+            <a href="tel:+15555551234">(555) 555-1234</a><br>
+            <a href="mailto:info@bellatrattoria.com">info@bellatrattoria.com</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Bella Trattoria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

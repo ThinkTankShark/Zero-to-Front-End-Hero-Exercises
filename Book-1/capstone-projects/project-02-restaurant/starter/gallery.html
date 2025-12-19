@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Restaurant Name] - Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Restaurant Name</a>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+        <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>A visual journey through our culinary world</p>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section gallery-section">
+      <div class="container">
+
+        <!-- TODO: Add CSS-only lightbox using :target pseudo-class -->
+        <!-- See hints.md for implementation details -->
+
+        <div class="gallery-grid">
+
+          <!-- Gallery Item 1 -->
+          <a href="#img1" class="gallery-item">
+            <img src="images/gallery/food-1.jpg" alt="Signature dish description" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">View</span>
+            </div>
+          </a>
+
+          <!-- Add more gallery items (minimum 12) -->
+
+          <!-- Gallery Item 2 -->
+          <a href="#img2" class="gallery-item">
+            <img src="images/gallery/interior-1.jpg" alt="Restaurant interior" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__text">View</span>
+            </div>
+          </a>
+
+          <!-- Continue with more items... -->
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox Modals -->
+  <!-- TODO: Create lightbox modals for each image -->
+
+  <div id="img1" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/food-1.jpg" alt="Signature dish description">
+      <p class="lightbox__caption">Caption for image 1</p>
+    </div>
+  </div>
+
+  <div id="img2" class="lightbox">
+    <a href="#" class="lightbox__close">&times;</a>
+    <div class="lightbox__content">
+      <img src="images/gallery/interior-1.jpg" alt="Restaurant interior">
+      <p class="lightbox__caption">Caption for image 2</p>
+    </div>
+  </div>
+
+  <!-- Add more lightbox modals for all images -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>About Us</h3>
+          <p>Serving exceptional cuisine since [Year]</p>
+        </div>
+        <div class="footer__section">
+          <h3>Hours</h3>
+          <p>Mon-Thu: 5PM-10PM<br>Fri-Sat: 5PM-11PM<br>Sun: 4PM-9PM</p>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>123 Main Street<br>Phone: (555) 555-1234</p>
+        </div>
+        <div class="footer__section">
+          <h3>Follow Us</h3>
+          <div class="footer__social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">&copy; 2025 [Restaurant Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

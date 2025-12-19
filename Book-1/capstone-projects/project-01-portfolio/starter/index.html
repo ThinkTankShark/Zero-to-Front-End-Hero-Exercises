@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of [Your Name], a front-end developer specializing in HTML, CSS, and responsive web design.">
+  <title>[Your Name] - Front-End Developer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content Link for Accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">YourName</a>
+
+      <!-- Navigation Links -->
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero__content container">
+      <h1 class="hero__title">Hi, I'm [Your Name]</h1>
+      <p class="hero__subtitle">Front-End Developer</p>
+      <p class="hero__tagline">I build beautiful, accessible websites with clean code</p>
+      <a href="#projects" class="btn btn--primary">View My Work</a>
+      <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section__title">About Me</h2>
+        <div class="about__content">
+          <div class="about__image">
+            <img src="images/profile.jpg" alt="Your Name - Front-End Developer">
+          </div>
+          <div class="about__text">
+            <p>
+              Write your bio here. Tell your story - how you got into web development,
+              what excites you about building for the web, and what makes you unique.
+            </p>
+            <p>
+              Talk about your journey, your interests, and what you're passionate about
+              building. Keep it authentic and professional.
+            </p>
+            <p>
+              Mention your goals and what kind of projects or roles you're looking for.
+            </p>
+            <a href="assets/resume.pdf" class="btn btn--outline" download>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section__title">My Projects</h2>
+        <p class="section__subtitle">Here are some of my recent works</p>
+
+        <div class="projects__grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <img src="images/projects/project1.jpg" alt="Project 1 screenshot" class="project-card__image">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Project Title 1</h3>
+              <p class="project-card__description">
+                Brief description of your project. What problem does it solve?
+                What technologies did you use?
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">Grid</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small btn--primary" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn--small btn--outline" target="_blank" rel="noopener">
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <img src="images/projects/project2.jpg" alt="Project 2 screenshot" class="project-card__image">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Project Title 2</h3>
+              <p class="project-card__description">
+                Brief description of your project. What problem does it solve?
+                What technologies did you use?
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">Flexbox</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small btn--primary" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn--small btn--outline" target="_blank" rel="noopener">
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <img src="images/projects/project3.jpg" alt="Project 3 screenshot" class="project-card__image">
+            <div class="project-card__content">
+              <h3 class="project-card__title">Project Title 3</h3>
+              <p class="project-card__description">
+                Brief description of your project. What problem does it solve?
+                What technologies did you use?
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">Responsive</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--small btn--primary" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="btn btn--small btn--outline" target="_blank" rel="noopener">
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section__title">Skills & Technologies</h2>
+
+        <div class="skills__grid">
+          <div class="skills__category">
+            <h3 class="skills__category-title">Front-End</h3>
+            <ul class="skills__list">
+              <li class="skill-item">HTML5</li>
+              <li class="skill-item">CSS3 / Sass</li>
+              <li class="skill-item">Responsive Design</li>
+              <li class="skill-item">CSS Grid & Flexbox</li>
+              <li class="skill-item">Accessibility (WCAG)</li>
+            </ul>
+          </div>
+
+          <div class="skills__category">
+            <h3 class="skills__category-title">Tools & Workflow</h3>
+            <ul class="skills__list">
+              <li class="skill-item">Git & GitHub</li>
+              <li class="skill-item">VS Code</li>
+              <li class="skill-item">Chrome DevTools</li>
+              <li class="skill-item">Figma</li>
+              <li class="skill-item">npm</li>
+            </ul>
+          </div>
+
+          <div class="skills__category">
+            <h3 class="skills__category-title">Currently Learning</h3>
+            <ul class="skills__list">
+              <li class="skill-item">JavaScript</li>
+              <li class="skill-item">React</li>
+              <li class="skill-item">TypeScript</li>
+              <li class="skill-item">Node.js</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section__title">Get In Touch</h2>
+        <p class="section__subtitle">
+          I'm currently looking for new opportunities. Whether you have a question or
+          just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <div class="contact__content">
+          <!-- Contact Form -->
+          <form class="contact__form" action="#" method="post">
+            <div class="form-group">
+              <label for="name" class="form-label">Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                placeholder="Your name"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                placeholder="your.email@example.com"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message <span class="required">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-input form-textarea"
+                rows="5"
+                required
+                placeholder="Your message..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+          </form>
+
+          <!-- Contact Info -->
+          <div class="contact__info">
+            <h3>Let's Connect</h3>
+            <div class="contact__links">
+              <a href="mailto:your.email@example.com" class="contact__link">
+                <span>Email: your.email@example.com</span>
+              </a>
+              <a href="https://github.com/yourusername" class="contact__link" target="_blank" rel="noopener">
+                <span>GitHub: @yourusername</span>
+              </a>
+              <a href="https://linkedin.com/in/yourprofile" class="contact__link" target="_blank" rel="noopener">
+                <span>LinkedIn: /in/yourprofile</span>
+              </a>
+              <a href="https://twitter.com/yourusername" class="contact__link" target="_blank" rel="noopener">
+                <span>Twitter: @yourusername</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        &copy; 2025 [Your Name]. Built with HTML & CSS.
+      </p>
+      <div class="footer__social">
+        <a href="https://github.com/yourusername" class="footer__link" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" class="footer__link" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/yourusername" class="footer__link" aria-label="Twitter" target="_blank" rel="noopener">Twitter</a>
+      </div>
+      <a href="#hero" class="footer__back-to-top">Back to Top ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+

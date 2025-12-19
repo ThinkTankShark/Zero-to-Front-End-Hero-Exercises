@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Restaurant Name] - Menu</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation (Same as homepage) -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Restaurant Name</a>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+        <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+      <div class="container">
+        <h1>Our Menu</h1>
+        <p class="menu-header__subtitle">
+          Fresh, locally sourced ingredients prepared with love
+        </p>
+      </div>
+    </section>
+
+    <!-- Menu Filters -->
+    <section class="menu-filters">
+      <div class="container">
+        <!-- TODO: Add CSS-only filter system using radio buttons or checkboxes -->
+        <div class="filters">
+          <button class="filter-btn filter-btn--active">All</button>
+          <button class="filter-btn">Appetizers</button>
+          <button class="filter-btn">Mains</button>
+          <button class="filter-btn">Desserts</button>
+          <button class="filter-btn">Drinks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Grid -->
+    <section class="menu-section">
+      <div class="container">
+
+        <!-- Appetizers -->
+        <div class="menu-category">
+          <h2 class="menu-category__title">Appetizers</h2>
+          <div class="menu-grid">
+
+            <article class="menu-item" data-category="appetizer">
+              <div class="menu-item__content">
+                <div class="menu-item__header">
+                  <h3 class="menu-item__name">Dish Name</h3>
+                  <span class="menu-item__price">$X.XX</span>
+                </div>
+                <p class="menu-item__description">
+                  Brief description of the dish and its key ingredients.
+                </p>
+                <div class="menu-item__meta">
+                  <span class="diet-badge diet-badge--vegetarian">🌱 Vegetarian</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Add more appetizer items -->
+
+          </div>
+        </div>
+
+        <!-- Mains -->
+        <div class="menu-category">
+          <h2 class="menu-category__title">Main Courses</h2>
+          <div class="menu-grid">
+
+            <article class="menu-item" data-category="main">
+              <div class="menu-item__content">
+                <div class="menu-item__header">
+                  <h3 class="menu-item__name">Dish Name</h3>
+                  <span class="menu-item__price">$XX.XX</span>
+                </div>
+                <p class="menu-item__description">
+                  Description of the main course.
+                </p>
+              </div>
+            </article>
+
+            <!-- Add more main course items -->
+
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-category">
+          <h2 class="menu-category__title">Desserts</h2>
+          <div class="menu-grid">
+
+            <article class="menu-item" data-category="dessert">
+              <div class="menu-item__content">
+                <div class="menu-item__header">
+                  <h3 class="menu-item__name">Dessert Name</h3>
+                  <span class="menu-item__price">$X.XX</span>
+                </div>
+                <p class="menu-item__description">
+                  Description of the dessert.
+                </p>
+              </div>
+            </article>
+
+            <!-- Add more dessert items -->
+
+          </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-category">
+          <h2 class="menu-category__title">Beverages</h2>
+          <div class="menu-grid">
+
+            <article class="menu-item" data-category="drink">
+              <div class="menu-item__content">
+                <div class="menu-item__header">
+                  <h3 class="menu-item__name">Drink Name</h3>
+                  <span class="menu-item__price">$X.XX</span>
+                </div>
+                <p class="menu-item__description">
+                  Description of the beverage.
+                </p>
+              </div>
+            </article>
+
+            <!-- Add more drink items -->
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (Same as homepage) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3>About Us</h3>
+          <p>Serving exceptional cuisine since [Year]</p>
+        </div>
+        <div class="footer__section">
+          <h3>Hours</h3>
+          <p>Mon-Thu: 5PM-10PM<br>Fri-Sat: 5PM-11PM<br>Sun: 4PM-9PM</p>
+        </div>
+        <div class="footer__section">
+          <h3>Contact</h3>
+          <p>123 Main Street<br>Phone: (555) 555-1234</p>
+        </div>
+        <div class="footer__section">
+          <h3>Follow Us</h3>
+          <div class="footer__social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright">&copy; 2025 [Restaurant Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+

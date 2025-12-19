@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Bella Trattoria</title>
+  <meta name="description" content="Explore our authentic Italian menu featuring fresh pasta, seafood, meats, and traditional desserts.">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">Bella Trattoria</a>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+          <li class="nav__item"><a href="reservations.html" class="nav__link">Reservations</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero page-hero--menu">
+      <div class="container">
+        <h1>Our Menu</h1>
+        <p>Authentic Italian dishes crafted with passion</p>
+      </div>
+    </section>
+
+    <section class="section menu-section">
+      <div class="container">
+
+        <!-- Menu Filter -->
+        <div class="menu-filter">
+          <input type="radio" name="category" id="filter-all" class="menu-filter__input" checked>
+          <label for="filter-all" class="menu-filter__label">All</label>
+
+          <input type="radio" name="category" id="filter-antipasti" class="menu-filter__input">
+          <label for="filter-antipasti" class="menu-filter__label">Antipasti</label>
+
+          <input type="radio" name="category" id="filter-primi" class="menu-filter__input">
+          <label for="filter-primi" class="menu-filter__label">Primi</label>
+
+          <input type="radio" name="category" id="filter-secondi" class="menu-filter__input">
+          <label for="filter-secondi" class="menu-filter__label">Secondi</label>
+
+          <input type="radio" name="category" id="filter-dolci" class="menu-filter__input">
+          <label for="filter-dolci" class="menu-filter__label">Dolci</label>
+
+          <input type="radio" name="category" id="filter-bevande" class="menu-filter__input">
+          <label for="filter-bevande" class="menu-filter__label">Bevande</label>
+        </div>
+
+        <div class="menu-grid">
+
+          <!-- Antipasti Section -->
+          <div class="menu-category" data-category="antipasti">
+            <h2 class="menu-category__title">Antipasti <span class="menu-category__subtitle">Appetizers</span></h2>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Bruschetta al Pomodoro</h3>
+                <span class="menu-item__price">$12</span>
+              </div>
+              <p class="menu-item__description">
+                Grilled bread rubbed with garlic, topped with fresh tomatoes, basil, and extra virgin olive oil
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Caprese Salad</h3>
+                <span class="menu-item__price">$14</span>
+              </div>
+              <p class="menu-item__description">
+                Fresh mozzarella, vine-ripened tomatoes, basil, balsamic reduction
+              </p>
+              <span class="menu-item__badge">Vegetarian</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Calamari Fritti</h3>
+                <span class="menu-item__price">$16</span>
+              </div>
+              <p class="menu-item__description">
+                Lightly breaded and fried squid served with spicy marinara sauce
+              </p>
+            </article>
+
+            <article class="menu-item menu-item--featured">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Antipasto Misto</h3>
+                <span class="menu-item__price">$22</span>
+              </div>
+              <p class="menu-item__description">
+                Assorted Italian cold cuts, cheeses, olives, roasted peppers, and grilled vegetables
+              </p>
+              <span class="menu-item__badge">Chef's Choice</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Arancini</h3>
+                <span class="menu-item__price">$13</span>
+              </div>
+              <p class="menu-item__description">
+                Sicilian rice balls stuffed with meat ragù, peas, and mozzarella, fried until golden
+              </p>
+            </article>
+          </div>
+
+          <!-- Primi Section -->
+          <div class="menu-category" data-category="primi">
+            <h2 class="menu-category__title">Primi Piatti <span class="menu-category__subtitle">First Courses</span></h2>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Spaghetti Carbonara</h3>
+                <span class="menu-item__price">$22</span>
+              </div>
+              <p class="menu-item__description">
+                Classic Roman pasta with guanciale, eggs, Pecorino Romano, and black pepper
+              </p>
+            </article>
+
+            <article class="menu-item menu-item--featured">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Pappardelle al Cinghiale</h3>
+                <span class="menu-item__price">$28</span>
+              </div>
+              <p class="menu-item__description">
+                Wide ribbon pasta with wild boar ragù, fresh herbs, and Parmigiano-Reggiano
+              </p>
+              <span class="menu-item__badge">Signature</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Risotto ai Funghi</h3>
+                <span class="menu-item__price">$26</span>
+              </div>
+              <p class="menu-item__description">
+                Creamy Arborio rice with porcini mushrooms, white wine, and aged Parmigiano-Reggiano
+              </p>
+              <span class="menu-item__badge">Vegetarian</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Linguine alle Vongole</h3>
+                <span class="menu-item__price">$27</span>
+              </div>
+              <p class="menu-item__description">
+                Linguine with fresh clams, white wine, garlic, parsley, and chili flakes
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Gnocchi alla Sorrentina</h3>
+                <span class="menu-item__price">$24</span>
+              </div>
+              <p class="menu-item__description">
+                Homemade potato gnocchi with tomato sauce, mozzarella, and fresh basil
+              </p>
+              <span class="menu-item__badge">Vegetarian</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Ravioli di Ricotta e Spinaci</h3>
+                <span class="menu-item__price">$25</span>
+              </div>
+              <p class="menu-item__description">
+                House-made ravioli filled with ricotta and spinach in sage butter sauce
+              </p>
+            </article>
+          </div>
+
+          <!-- Secondi Section -->
+          <div class="menu-category" data-category="secondi">
+            <h2 class="menu-category__title">Secondi Piatti <span class="menu-category__subtitle">Main Courses</span></h2>
+
+            <article class="menu-item menu-item--featured">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Osso Buco alla Milanese</h3>
+                <span class="menu-item__price">$42</span>
+              </div>
+              <p class="menu-item__description">
+                Slow-braised veal shanks in white wine, vegetables, and broth, served with saffron risotto
+              </p>
+              <span class="menu-item__badge">Chef's Special</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Branzino al Forno</h3>
+                <span class="menu-item__price">$38</span>
+              </div>
+              <p class="menu-item__description">
+                Whole roasted Mediterranean sea bass with lemon, herbs, and roasted potatoes
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Bistecca alla Fiorentina</h3>
+                <span class="menu-item__price">$58</span>
+              </div>
+              <p class="menu-item__description">
+                24oz T-bone steak grilled to perfection, served with arugula and lemon (serves 2)
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Pollo alla Cacciatora</h3>
+                <span class="menu-item__price">$32</span>
+              </div>
+              <p class="menu-item__description">
+                Hunter-style chicken braised with tomatoes, mushrooms, bell peppers, and herbs
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Saltimbocca alla Romana</h3>
+                <span class="menu-item__price">$36</span>
+              </div>
+              <p class="menu-item__description">
+                Veal scaloppine topped with prosciutto and sage in white wine butter sauce
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Melanzane alla Parmigiana</h3>
+                <span class="menu-item__price">$28</span>
+              </div>
+              <p class="menu-item__description">
+                Layers of eggplant, tomato sauce, mozzarella, and Parmigiano-Reggiano, baked until golden
+              </p>
+              <span class="menu-item__badge">Vegetarian</span>
+            </article>
+          </div>
+
+          <!-- Dolci Section -->
+          <div class="menu-category" data-category="dolci">
+            <h2 class="menu-category__title">Dolci <span class="menu-category__subtitle">Desserts</span></h2>
+
+            <article class="menu-item menu-item--featured">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Tiramisù</h3>
+                <span class="menu-item__price">$12</span>
+              </div>
+              <p class="menu-item__description">
+                Classic Italian dessert with espresso-soaked ladyfingers, mascarpone cream, and cocoa
+              </p>
+              <span class="menu-item__badge">House-Made</span>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Panna Cotta</h3>
+                <span class="menu-item__price">$10</span>
+              </div>
+              <p class="menu-item__description">
+                Silky vanilla cream custard with mixed berry compote
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Cannoli Siciliani</h3>
+                <span class="menu-item__price">$11</span>
+              </div>
+              <p class="menu-item__description">
+                Crispy pastry shells filled with sweet ricotta cream, chocolate chips, and pistachios
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Gelato</h3>
+                <span class="menu-item__price">$8</span>
+              </div>
+              <p class="menu-item__description">
+                House-made Italian ice cream - ask server for today's flavors
+              </p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Affogato</h3>
+                <span class="menu-item__price">$9</span>
+              </div>
+              <p class="menu-item__description">
+                Vanilla gelato "drowned" in a shot of hot espresso
+              </p>
+            </article>
+          </div>
+
+          <!-- Bevande Section -->
+          <div class="menu-category" data-category="bevande">
+            <h2 class="menu-category__title">Bevande <span class="menu-category__subtitle">Beverages</span></h2>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Espresso</h3>
+                <span class="menu-item__price">$4</span>
+              </div>
+              <p class="menu-item__description">Traditional Italian espresso</p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">Cappuccino</h3>
+                <span class="menu-item__price">$5</span>
+              </div>
+              <p class="menu-item__description">Espresso with steamed milk and foam</p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">San Pellegrino Sparkling Water</h3>
+                <span class="menu-item__price">$6</span>
+              </div>
+              <p class="menu-item__description">Italian sparkling mineral water (750ml)</p>
+            </article>
+
+            <article class="menu-item">
+              <div class="menu-item__header">
+                <h3 class="menu-item__name">House Wine</h3>
+                <span class="menu-item__price">$10/glass, $38/bottle</span>
+              </div>
+              <p class="menu-item__description">Red or white - ask server for selection</p>
+            </article>
+          </div>
+
+        </div>
+
+        <div class="menu-note">
+          <p><strong>Note:</strong> All pasta dishes are made fresh daily. We can accommodate dietary restrictions - please inform your server of any allergies or dietary needs.</p>
+          <p class="menu-note__wine">Ask your server about our extensive wine list featuring selections from Italy's finest regions.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h3 class="footer__title">Bella Trattoria</h3>
+          <p class="footer__text">Authentic Italian cuisine crafted with passion and tradition since 2010.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Hours</h3>
+          <ul class="footer__hours">
+            <li>Mon-Thu: 5PM-10PM</li>
+            <li>Fri-Sat: 5PM-11PM</li>
+            <li>Sunday: 4PM-9PM</li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h3 class="footer__title">Contact</h3>
+          <address class="footer__address">
+            123 Main Street<br>
+            City, State 12345<br>
+            <a href="tel:+15555551234">(555) 555-1234</a><br>
+            <a href="mailto:info@bellatrattoria.com">info@bellatrattoria.com</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Bella Trattoria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

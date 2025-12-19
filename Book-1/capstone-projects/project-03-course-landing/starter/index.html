@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn web development from scratch - Complete course for beginners">
+  <title>Complete Web Development Course - Learn to Code</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Optional: Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">CourseTitle</a>
+
+      <!-- TODO: Add hamburger menu for mobile (CSS-only) -->
+      <!-- Hint: Use hidden checkbox + label pattern -->
+
+      <ul class="nav__menu">
+        <li class="nav__item"><a href="#overview" class="nav__link">Overview</a></li>
+        <li class="nav__item"><a href="#curriculum" class="nav__link">Curriculum</a></li>
+        <li class="nav__item"><a href="#instructor" class="nav__link">Instructor</a></li>
+        <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
+        <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+      </ul>
+
+      <a href="#pricing" class="btn btn--primary btn--nav">Enroll Now</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">Master Web Development in 12 Weeks</h1>
+          <p class="hero__subtitle">
+            Build real-world projects and launch your career as a professional web developer
+          </p>
+
+          <div class="hero__cta">
+            <a href="#pricing" class="btn btn--primary btn--large">Enroll Now - $99</a>
+            <a href="#preview" class="btn btn--secondary btn--large">Watch Preview</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__number">10,000+</span>
+              <span class="stat__label">Students</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">4.9/5</span>
+              <span class="stat__label">Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <!-- TODO: Add hero image or video preview -->
+          <img src="images/hero-image.jpg" alt="Web development course preview" class="hero__image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="section overview" id="overview">
+      <div class="container">
+        <h2 class="section__title">What You'll Learn</h2>
+        <p class="section__subtitle">Master the essential skills to become a professional web developer</p>
+
+        <div class="overview__grid">
+          <!-- TODO: Add 6-8 learning outcome items -->
+          <div class="overview__item">
+            <i class="fas fa-check-circle overview__icon"></i>
+            <h3>HTML & CSS Fundamentals</h3>
+            <p>Build semantic, accessible websites from scratch</p>
+          </div>
+
+          <div class="overview__item">
+            <i class="fas fa-check-circle overview__icon"></i>
+            <h3>JavaScript Programming</h3>
+            <p>Master modern JavaScript and ES6+ features</p>
+          </div>
+
+          <!-- Add more learning outcomes... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits" id="benefits">
+      <div class="container">
+        <h2 class="section__title">Why Choose This Course</h2>
+
+        <div class="benefits__grid">
+          <!-- TODO: Add 6-8 benefit cards with icons -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="benefit-card__title">Learn By Doing</h3>
+            <p class="benefit-card__description">
+              Build 10+ real-world projects to apply your skills immediately
+            </p>
+          </div>
+
+          <!-- Add 5-7 more benefit cards... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum/Modules Section -->
+    <section class="section curriculum" id="curriculum">
+      <div class="container">
+        <h2 class="section__title">Course Curriculum</h2>
+        <p class="section__subtitle">12 comprehensive modules covering everything you need</p>
+
+        <div class="curriculum__list">
+
+          <!-- TODO: Create CSS-only accordion for modules -->
+          <!-- Hint: Use hidden checkbox pattern from hints.md -->
+
+          <!-- Module 1 -->
+          <div class="module">
+            <input type="checkbox" id="module1" class="module__toggle">
+            <label for="module1" class="module__header">
+              <div class="module__number">01</div>
+              <div class="module__info">
+                <h3 class="module__title">Introduction to Web Development</h3>
+                <p class="module__meta">8 lessons • 2hr 30min</p>
+              </div>
+              <span class="module__icon">+</span>
+            </label>
+            <div class="module__content">
+              <ul class="module__lessons">
+                <li>What is Web Development?</li>
+                <li>How the Web Works</li>
+                <li>Setting Up Your Dev Environment</li>
+                <!-- Add more lessons -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Add modules 2-12... -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="section instructor" id="instructor">
+      <div class="container">
+        <h2 class="section__title">Meet Your Instructor</h2>
+
+        <div class="instructor__profile">
+          <div class="instructor__image">
+            <!-- TODO: Add instructor photo -->
+            <img src="images/instructor.jpg" alt="Instructor Name">
+          </div>
+          <div class="instructor__bio">
+            <h3>John Doe</h3>
+            <p class="instructor__title">Senior Web Developer & Instructor</p>
+            <p>
+              <!-- TODO: Write compelling instructor bio (2-3 paragraphs) -->
+              John has 10+ years of experience building web applications for companies
+              like Google, Microsoft, and startups. He's taught over 50,000 students
+              and is passionate about making programming accessible to everyone.
+            </p>
+            <p>
+              When he's not coding, John contributes to open-source projects and
+              speaks at web development conferences worldwide.
+            </p>
+            <!-- TODO: Add social media links -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section__title">What Students Say</h2>
+
+        <div class="testimonials__grid">
+
+          <!-- TODO: Add 4-6 testimonial cards -->
+          <div class="testimonial-card">
+            <div class="testimonial__rating">★★★★★</div>
+            <p class="testimonial__quote">
+              "This course completely changed my career. Within 6 months of completion,
+              I landed my dream job as a frontend developer!"
+            </p>
+            <div class="testimonial__author">
+              <img src="images/student-1.jpg" alt="Sarah Johnson" class="testimonial__image">
+              <div class="testimonial__info">
+                <p class="testimonial__name">Sarah Johnson</p>
+                <p class="testimonial__role">Frontend Developer at Tech Co</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add 3-5 more testimonials... -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <h2 class="section__title">Choose Your Plan</h2>
+        <p class="section__subtitle">Start learning today with our flexible pricing options</p>
+
+        <div class="pricing__grid">
+
+          <!-- Basic Plan -->
+          <div class="pricing-card">
+            <h3 class="pricing-card__title">Basic</h3>
+            <p class="pricing-card__price">
+              <span class="price__amount">$49</span>
+              <span class="price__period">/month</span>
+            </p>
+            <ul class="pricing-card__features">
+              <li>✓ Full course access</li>
+              <li>✓ 10+ projects</li>
+              <li>✓ Community access</li>
+              <li>✓ Course certificate</li>
+              <li>✗ 1-on-1 mentorship</li>
+              <li>✗ Job placement support</li>
+            </ul>
+            <a href="#" class="btn btn--secondary btn--large">Get Started</a>
+          </div>
+
+          <!-- Pro Plan (Featured) -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-card__badge">Most Popular</div>
+            <h3 class="pricing-card__title">Pro</h3>
+            <p class="pricing-card__price">
+              <span class="price__amount">$99</span>
+              <span class="price__period">/month</span>
+            </p>
+            <ul class="pricing-card__features">
+              <li>✓ Full course access</li>
+              <li>✓ 10+ projects</li>
+              <li>✓ Community access</li>
+              <li>✓ Course certificate</li>
+              <li>✓ 1-on-1 mentorship</li>
+              <li>✗ Job placement support</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--large">Get Started</a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="pricing-card">
+            <h3 class="pricing-card__title">Premium</h3>
+            <p class="pricing-card__price">
+              <span class="price__amount">$199</span>
+              <span class="price__period">/month</span>
+            </p>
+            <ul class="pricing-card__features">
+              <li>✓ Full course access</li>
+              <li>✓ 10+ projects</li>
+              <li>✓ Community access</li>
+              <li>✓ Course certificate</li>
+              <li>✓ 1-on-1 mentorship</li>
+              <li>✓ Job placement support</li>
+            </ul>
+            <a href="#" class="btn btn--secondary btn--large">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats/Numbers Section -->
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat-item">
+            <p class="stat-item__number">10,000+</p>
+            <p class="stat-item__label">Students Enrolled</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item__number">4.9/5</p>
+            <p class="stat-item__label">Average Rating</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item__number">50+</p>
+            <p class="stat-item__label">Hours of Content</p>
+          </div>
+          <div class="stat-item">
+            <p class="stat-item__number">95%</p>
+            <p class="stat-item__label">Completion Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2 class="section__title">Frequently Asked Questions</h2>
+
+        <div class="faq__list">
+
+          <!-- TODO: Add 8-10 FAQ items with CSS-only accordion -->
+          <!-- Use same pattern as curriculum modules -->
+
+          <div class="faq-item">
+            <input type="checkbox" id="faq1" class="faq__toggle">
+            <label for="faq1" class="faq__question">
+              <span>How long do I have access to the course?</span>
+              <span class="faq__icon">+</span>
+            </label>
+            <div class="faq__answer">
+              <p>You have lifetime access to all course materials, including any future updates and additions.</p>
+            </div>
+          </div>
+
+          <!-- Add 7-9 more FAQ items... -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section cta" id="cta">
+      <div class="container cta__container">
+        <h2 class="cta__title">Ready to Start Your Web Development Journey?</h2>
+        <p class="cta__text">Join 10,000+ students learning to code. Limited spots available this month!</p>
+        <a href="#pricing" class="btn btn--primary btn--large btn--cta">Enroll Now - $99</a>
+        <p class="cta__guarantee">
+          <i class="fas fa-shield-alt"></i>
+          30-day money-back guarantee • No questions asked
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__container">
+
+      <div class="footer__section">
+        <h3>About This Course</h3>
+        <p>
+          Complete web development course for beginners. Learn HTML, CSS, JavaScript,
+          and modern frameworks to become a professional developer.
+        </p>
+      </div>
+
+      <div class="footer__section">
+        <h3>Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="#overview">Course Overview</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h3>Legal</h3>
+        <ul class="footer__links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h3>Connect</h3>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <!-- TODO: Add trust badges -->
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2025 CourseTitle. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

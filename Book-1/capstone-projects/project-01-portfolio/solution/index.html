@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alex Johnson - Front-End Developer specializing in HTML, CSS, and creating beautiful, accessible web experiences.">
+  <meta name="keywords" content="front-end developer, web developer, HTML, CSS, JavaScript, portfolio">
+  <meta name="author" content="Alex Johnson">
+  <title>Alex Johnson - Front-End Developer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Skip to Main Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">AJ</a>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero__content container">
+      <h1 class="hero__title">Hi, I'm Alex Johnson</h1>
+      <p class="hero__subtitle">Front-End Developer</p>
+      <p class="hero__tagline">I craft beautiful, accessible websites with clean code</p>
+      <div class="hero__buttons">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll Down</span>
+      <svg class="hero__scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section__title">About Me</h2>
+        <div class="about__content">
+          <div class="about__image">
+            <img src="images/profile.jpg" alt="Alex Johnson - Front-End Developer">
+          </div>
+          <div class="about__text">
+            <p class="about__intro">
+              I'm a passionate front-end developer who loves creating beautiful,
+              functional websites that provide great user experiences.
+            </p>
+            <p>
+              After discovering my love for web development while building my first
+              website, I immersed myself in learning HTML, CSS, and modern web technologies.
+              I believe that good design and clean code go hand in hand, and I strive to
+              create websites that are not only visually appealing but also accessible
+              and performant.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring local coffee shops,
+              reading about design trends, or contributing to open-source projects.
+              I'm always eager to learn new technologies and tackle challenging problems.
+            </p>
+            <a href="assets/resume.pdf" class="btn btn--outline" download aria-label="Download my resume as PDF">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section__title">My Projects</h2>
+        <p class="section__subtitle">Here are some of my recent works</p>
+
+        <div class="projects__grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-card__image-wrapper">
+              <img src="images/projects/project1.jpg" alt="E-Commerce website project screenshot" class="project-card__image">
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://example.com" class="btn btn--small btn--primary" target="_blank" rel="noopener noreferrer" aria-label="View live demo of E-Commerce website">
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/username/project" class="btn btn--small btn--outline" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub">
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">E-Commerce Website</h3>
+              <p class="project-card__description">
+                A fully responsive e-commerce website with product filtering,
+                shopping cart, and checkout flow. Built with semantic HTML and
+                modern CSS techniques.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">CSS Grid</span>
+                <span class="tech-badge">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-card__image-wrapper">
+              <img src="images/projects/project2.jpg" alt="Restaurant website project screenshot" class="project-card__image">
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://example.com" class="btn btn--small btn--primary" target="_blank" rel="noopener noreferrer" aria-label="View live demo of restaurant website">
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/username/project" class="btn btn--small btn--outline" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub">
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Restaurant Website</h3>
+              <p class="project-card__description">
+                Multi-page restaurant website featuring an interactive menu,
+                online reservations, and image gallery. Emphasizes accessibility
+                and mobile-first design.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Flexbox</span>
+                <span class="tech-badge">A11y</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-card__image-wrapper">
+              <img src="images/projects/project3.jpg" alt="Weather dashboard project screenshot" class="project-card__image">
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://example.com" class="btn btn--small btn--primary" target="_blank" rel="noopener noreferrer" aria-label="View live demo of weather dashboard">
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/username/project" class="btn btn--small btn--outline" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub">
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Weather Dashboard</h3>
+              <p class="project-card__description">
+                Clean, modern weather application displaying current conditions
+                and forecasts. Features smooth animations and an intuitive
+                user interface.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Animations</span>
+                <span class="tech-badge">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section__title">Skills & Technologies</h2>
+
+        <div class="skills__grid">
+          <div class="skills__category">
+            <div class="skills__category-icon">💻</div>
+            <h3 class="skills__category-title">Front-End</h3>
+            <ul class="skills__list">
+              <li class="skill-item">HTML5 & Semantic Markup</li>
+              <li class="skill-item">CSS3 & Sass</li>
+              <li class="skill-item">Responsive Design</li>
+              <li class="skill-item">CSS Grid & Flexbox</li>
+              <li class="skill-item">CSS Animations</li>
+              <li class="skill-item">Accessibility (WCAG)</li>
+            </ul>
+          </div>
+
+          <div class="skills__category">
+            <div class="skills__category-icon">🛠️</div>
+            <h3 class="skills__category-title">Tools & Workflow</h3>
+            <ul class="skills__list">
+              <li class="skill-item">Git & GitHub</li>
+              <li class="skill-item">VS Code</li>
+              <li class="skill-item">Chrome DevTools</li>
+              <li class="skill-item">Figma</li>
+              <li class="skill-item">npm & Package Management</li>
+              <li class="skill-item">Command Line</li>
+            </ul>
+          </div>
+
+          <div class="skills__category">
+            <div class="skills__category-icon">📚</div>
+            <h3 class="skills__category-title">Currently Learning</h3>
+            <ul class="skills__list">
+              <li class="skill-item">JavaScript ES6+</li>
+              <li class="skill-item">React</li>
+              <li class="skill-item">TypeScript</li>
+              <li class="skill-item">Web Performance</li>
+              <li class="skill-item">Node.js</li>
+              <li class="skill-item">Testing & QA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section__title">Get In Touch</h2>
+        <p class="section__subtitle">
+          I'm currently looking for new opportunities. Whether you have a question
+          or just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <div class="contact__content">
+          <!-- Contact Form -->
+          <form class="contact__form" action="#" method="post">
+            <div class="form-group">
+              <label for="name" class="form-label">
+                Name <span class="required" aria-label="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                placeholder="Your name"
+                aria-required="true"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">
+                Email <span class="required" aria-label="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                placeholder="your.email@example.com"
+                aria-required="true"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">
+                Message <span class="required" aria-label="required">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-input form-textarea"
+                rows="5"
+                required
+                placeholder="Your message..."
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+          </form>
+
+          <!-- Contact Info -->
+          <div class="contact__info">
+            <h3 class="contact__info-title">Let's Connect</h3>
+            <p class="contact__info-text">
+              Feel free to reach out through the form or connect with me on social media.
+            </p>
+            <div class="contact__links">
+              <a href="mailto:alex.johnson@example.com" class="contact__link">
+                <svg class="contact__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>alex.johnson@example.com</span>
+              </a>
+              <a href="https://github.com/alexjohnson" class="contact__link" target="_blank" rel="noopener noreferrer">
+                <svg class="contact__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>github.com/alexjohnson</span>
+              </a>
+              <a href="https://linkedin.com/in/alexjohnson" class="contact__link" target="_blank" rel="noopener noreferrer">
+                <svg class="contact__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>linkedin.com/in/alexjohnson</span>
+              </a>
+              <a href="https://twitter.com/alexjohnson" class="contact__link" target="_blank" rel="noopener noreferrer">
+                <svg class="contact__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+                <span>twitter.com/alexjohnson</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text">
+          &copy; 2025 Alex Johnson. Built with HTML & CSS.
+        </p>
+        <div class="footer__social">
+          <a href="https://github.com/alexjohnson" class="footer__link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/alexjohnson" class="footer__link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://twitter.com/alexjohnson" class="footer__link" aria-label="Twitter profile" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+      </div>
+      <a href="#hero" class="footer__back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
+

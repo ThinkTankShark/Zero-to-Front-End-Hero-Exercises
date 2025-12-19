@@ -297,6 +297,35 @@ Each project demonstrates professional full-stack capabilities:
 
 ---
 
+## 🎯 Capstone Projects
+
+**Ready to build full-stack applications?**
+
+Complete your journey with a **full-stack capstone project** that demonstrates end-to-end engineering excellence.
+
+📁 **Location:** `capstone-projects/`
+
+**Available Projects:**
+1. **Full-Stack Blog Platform** ⭐⭐⭐ - Complete CMS with authentication (80-100 hours)
+2. **Real-Time Chat Application** ⭐⭐⭐⭐ - WebSocket-powered chat (100-120 hours)
+3. **SaaS Starter Template** ⭐⭐⭐⭐⭐ - Production SaaS boilerplate (120-150 hours)
+
+Each capstone includes:
+- Complete backend API specification
+- Database schema design
+- Frontend architecture
+- Docker containerization
+- CI/CD pipeline configuration
+- Cloud deployment guide
+- Security checklist
+- API documentation
+
+**These are portfolio pieces that prove you can build production apps!**
+
+See `capstone-projects/README.md` for full details.
+
+---
+
 ## 🏆 Volume 4 Completion
 
 After finishing all Volume 4 exercises:
@@ -306,6 +335,7 @@ After finishing all Volume 4 exercises:
 - ✅ Cloud deployment experience
 - ✅ Backend API development
 - ✅ System design knowledge
+- ✅ **Production full-stack app deployed to cloud**
 - ✅ **Senior-level engineering capabilities**
 - ✅ **Ready for technical leadership roles**
 
